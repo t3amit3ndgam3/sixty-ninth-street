@@ -1,12 +1,10 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Header from './components/Header/Header';
+import Home from './components/Home/Home';
 
 function App() {
   return (
     <div>
-      <Navbar/>
-      <Header/>
+      <Home/>
       <h3>This is Sixty Ninth streets home page....</h3>
     </div>
   );

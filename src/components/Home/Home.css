@@ -1,0 +1,88 @@
+/* ........... Rabby Hasan.............. */
+/* ....... Nav bar .............  */
+.navItemCustom{
+    margin-right: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+.navItemCustom:hover{
+    color: rgba(255, 255, 255, 0.);
+    border-bottom: 2px solid rgba(11, 207, 60, 0.788);
+    transition: ease 1s all;
+}
+.topNavbarCustom{
+    padding: 20px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}   
+.scrolltrue{
+    padding: 5px 0px;
+    background:white;
+    transition: ease-in-out 0.6s all;
+}
+.scrollfalse{
+    transition: ease-in-out 0.6s all;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+.navbar-light .navbar-brand {
+    color: rgba(255, 255, 255, 0.9);
+}
+.scrolltrue.navbar-light .navbar-nav .nav-link {
+    color: rgb(0, 0, 0);
+}
+
+.scrolltrue.navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+
+
+
+/* ........... Header ...........  */
+.sliderImg{
+    position: relative;
+    height: 100vh;
+    box-sizing:  border-box;
+}
+.sliderBlack{
+    position: relative;
+    text-transform: uppercase;
+}
+.sliderBlack::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.521);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    top: 40%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    z-index: 100;
+}
+
+.sliderButton{
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0, 255, 255, 0.616);
+    padding:10px 30px;
+    border-radius: 4px;
+    margin-top: 20px;
+    font-weight: 500;
+    transition: ease 0.6s all;
+}
+.sliderButton:hover{
+    color: black;
+}
+/* ........... Rabby Hasan.............. */
