@@ -28,8 +28,13 @@
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
     transition: ease-in-out 0.6s all;
 }
-.scrollfalse{
-    transition: ease-in-out 0.6s all;
+.scrolltrue {
+  padding: 5px 0px;
+  background: white;
+  transition: ease-in-out 0.6s all;
+}
+.scrollfalse {
+  transition: ease-in-out 0.6s all;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -60,36 +65,36 @@
     color: rgba(0, 0, 0);
 }
 /* ........... Header ...........  */
-.sliderImg{
-    position: relative;
-    height: 100vh;
-    box-sizing:  border-box;
+.sliderImg {
+  position: relative;
+  height: 100vh;
+  box-sizing: border-box;
 }
-.sliderBlack{
-    position: relative;
-    text-transform: uppercase;
+.sliderBlack {
+  position: relative;
+  text-transform: uppercase;
 }
 .sliderBlack::after {
-    content: "";
-    background: rgba(0, 0, 0, 0.521);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
+  content: "";
+  background: rgba(0, 0, 0, 0.521);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
 .carousel-caption {
-    position: absolute;
-    right: 15%;
-    bottom: 1.25rem;
-    left: 15%;
-    top: 40%;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    color: #fff;
-    z-index: 100;
+  position: absolute;
+  right: 15%;
+  bottom: 1.25rem;
+  left: 15%;
+  top: 40%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  z-index: 100;
 }
 .sliderText{
     animation-name: moveLeft;
@@ -149,3 +154,4 @@
     }
 }
 /* ........... Rabby Hasan.............. */
+/* Unmoy Biswas */
