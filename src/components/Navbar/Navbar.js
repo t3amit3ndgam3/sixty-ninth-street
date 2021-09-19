@@ -1,0 +1,66 @@
+import React, { useEffect, useState } from "react";
+import './Navbar.css'
+
+const Navbar = () => {
+    const [fixedTop, setScroll] = useState(true);
+
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			setScroll(window.scrollY > 1);
+		});
+	}, []);
+
+	return (
+		<div>
+			<nav class={`navbar navbar-expand-lg fixed-top navbar-light topNavbarCustom scroll${fixedTop}`}>
+				<div class="container">
+					<a class="navbar-brand" href="#">
+                    SIXTY NINETH STREET
+					</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ms-auto mb-2 fl-right mb-lg-0">
+							<li class="nav-item ">
+								<a to=""class="nav-link navItemCustom" aria-current="page" href="#">
+									HOME
+								</a>
+							</li>
+                            <li class="nav-item">
+								<a to=""class="nav-link navItemCustom" aria-current="page" href="#">
+									PROPERTIES
+								</a>
+							</li>
+                            <li class="nav-item">
+								<a to=""class="nav-link navItemCustom" aria-current="page" href="#">
+									AGENTS
+								</a>
+							</li>
+                            <li class="nav-item">
+								<a to=""class="nav-link navItemCustom" aria-current="page" href="#">
+									ABOUT
+								</a>
+							</li>
+                            <li class="nav-item">
+								<a to=""class="nav-link navItemCustom" aria-current="page" href="#">
+									CONTACT
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	);
+};
+
+export default Navbar;
