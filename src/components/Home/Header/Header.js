@@ -31,22 +31,26 @@ const Header = () => {
 					<div class="carousel-item active sliderBlack">
 						<img src={sliderOne} class="d-block w-100 sliderImg" alt="..." />
 						<div class="carousel-caption  d-md-block">
-							<h3>Find your perfect property</h3>
-							<h4>For your home</h4>
-							<p className="mb-5">
-								Some representative placeholder content for the first slide.
-							</p>
-							<a href="" className="sliderButton">Get Started</a>
+							<div className="sliderText">
+								<h3>Find your perfect property</h3>
+								<h4>For your home</h4>
+								<p className="mb-5">
+									Some representative placeholder content for the first slide.
+								</p>
+							</div>
+							<a href=""> <button className="sliderButton">Get Started</button></a>
 						</div>
 					</div>
 					<div class="carousel-item sliderBlack">
 						<img src={sliderTwo} class="d-block w-100 sliderImg" alt="..." />
 						<div class="carousel-caption  d-md-block">
-							<h3>Buy and Sell property here</h3>
-							<p className="mb-5">
-								Some representative placeholder content for the second slide.
-							</p>
-							<a href="" className="sliderButton">Get Started</a>
+							<div className="sliderText">
+								<h3>Buy and Sell property here</h3>
+								<p className="mb-5">
+									Some representative placeholder content for the second slide.
+								</p>
+							</div>
+							<a href=""> <button className="sliderButton">Get Started</button></a>
 						</div>
 					</div>
 				</div>

@@ -1,13 +1,22 @@
 /* ........... Rabby Hasan.............. */
 /* ....... Nav bar .............  */
 .navItemCustom{
+    position: relative;
     margin-right: 20px;
     border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
-.navItemCustom:hover{
-    color: rgba(255, 255, 255, 0.);
-    border-bottom: 2px solid rgba(11, 207, 60, 0.788);
-    transition: ease 1s all;
+.navItemCustom:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid rgb(7, 241, 78);
+    transform:scale(0);
+    transition:300ms ease-out;
+}
+.navItemCustom:hover:before{
+    transform:scaleY(1);
 }
 .topNavbarCustom{
     padding: 20px 0px;
@@ -16,6 +25,7 @@
 .scrolltrue{
     padding: 5px 0px;
     background:white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
     transition: ease-in-out 0.6s all;
 }
 .scrollfalse{
@@ -23,22 +33,32 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: white;
+    color: rgba(255, 255, 255, 0.685);
 }
 .navbar-light .navbar-brand {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.685);
 }
-.scrolltrue.navbar-light .navbar-nav .nav-link {
-    color: rgb(0, 0, 0);
+.scrolltrue.navbar-light .navbar-nav .nav-link {    
+    color: rgba(0, 0, 0, 0.788);
 }
 
 .scrolltrue.navbar-light .navbar-brand {
-    color: rgba(0, 0, 0, 0.9);
+    color: rgba(0, 0, 0, 0.788);
 }
 
+.navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255);
+}
+.navbar-light .navbar-brand:hover {
+    color: rgba(255, 255, 255);
+}
+.scrolltrue.navbar-light .navbar-nav .nav-link:hover {
+    color: rgb(0, 0, 0);
+}
 
-
-
+.scrolltrue.navbar-light .navbar-brand:hover {
+    color: rgba(0, 0, 0);
+}
 /* ........... Header ...........  */
 .sliderImg{
     position: relative;
@@ -71,18 +91,61 @@
     color: #fff;
     z-index: 100;
 }
-
-.sliderButton{
-    text-decoration: none;
-    color: #fff;
-    background-color: rgba(0, 255, 255, 0.616);
-    padding:10px 30px;
-    border-radius: 4px;
-    margin-top: 20px;
-    font-weight: 500;
-    transition: ease 0.6s all;
+.sliderText{
+    animation-name: moveLeft;
+    animation-duration: 1.5s;
 }
-.sliderButton:hover{
-    color: black;
+
+.sliderButton {
+    font-size: 16px;
+    border:2px solid white;
+    border-radius: 4px;
+    outline: none;
+    background-color:#11cf90;
+    color:black;
+    padding:6px 25px;
+    position: relative;
+    transform: translateZ(0);
+    animation-name: moveUp;
+    animation-duration: 1s;
+    cursor:pointer;
+}
+.sliderButton:before{
+    content:"";
+    position: absolute;
+    border-radius: 4px;
+    z-index: -1;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    background: #eeff00;
+    transform:scaleX(0);
+    transition:300ms ease-out;
+}
+.sliderButton:hover:before{
+    transform: scale(1);
+}
+
+
+@keyframes moveUp{
+    0%{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    100%{
+        opacity:1;
+        transform:translate(0px);
+    }
+}
+@keyframes moveLeft{
+    0%{
+        opacity:0;
+        transform:translateX(-100px);
+    }
+    100%{
+        opacity:1;
+        transform:translate(0px);
+    }
 }
 /* ........... Rabby Hasan.............. */

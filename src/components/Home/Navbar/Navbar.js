@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import '../Home.css'
 
 const Navbar = () => {
-    const [fixedTop, setScroll] = useState(true);
+    const [fixedTop, setScroll] = useState(false);
 
 	useEffect(() => {
 		window.addEventListener("scroll", () => {
-			setScroll(window.scrollY > 1);
+			setScroll(window.scrollY > 10);
 		});
 	}, []);
 
