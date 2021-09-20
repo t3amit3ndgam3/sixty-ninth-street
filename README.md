@@ -17,7 +17,7 @@ So its better and recommended to make you own branch and do code in that branch 
 Note:  Don't forget to inform all of you team member before you merge any request.
 
 To create and switch to a branch, run:
-`git checkout -b 'branchName'`
+`git checkout -b branchName`
 
 To confirm before code, run: 
 `git branch`
@@ -27,7 +27,7 @@ To check git status, run:
 `git status`
 
 to switch other branch, run:
-`git checkout "branchName"`
+`git checkout branchName`
 
 To pull from the server, u must switch to local main branch
 
@@ -40,4 +40,4 @@ For any further issue with git, Discuss with your team members or "Md Rahatul Is
 
 # Note: Remember that always write your code into your branch then push. Never write your code within main branch and push until emergency case or after discussing in group.
 
-# Note: Don't merge from github without discussing in group. If you need to merge your code ask to the group or the guy who is responsible to controll main branch. Its better to avoid errors and conflicts.
+# Note: Don't merge from github without discussing in group. If you need to merge your code ask to the group or the guy who is responsible to control main branch. Its better to avoid errors and conflicts.
