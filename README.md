@@ -17,7 +17,7 @@ So its better and recommended to make you own branch and do code in that branch 
 Note:  Don't forget to inform all of you team member before you merge any request.
 
 To create and switch to a branch, run:
-`git checkout -b 'branchName'`
+`git checkout -b branchName`
 
 To confirm before code, run: 
 `git branch`
@@ -27,7 +27,7 @@ To check git status, run:
 `git status`
 
 to switch other branch, run:
-`git checkout "branchName"`
+`git checkout branchName`
 
 To pull from the server, u must switch to local main branch
 
