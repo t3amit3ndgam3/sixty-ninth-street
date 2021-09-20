@@ -32,7 +32,7 @@ to switch other branch, run:
 
 To pull from the server, u must switch to local main branch
 
-after pulling the code into you local main branch. switch back to your branch by `git checkout "branchname"`
+after pulling the code into you local main branch. switch back to your branch by `git checkout branchname`
 
 Then you must get the updated code (those u pulled right before) to your branch.
 to do that, run:
@@ -41,6 +41,6 @@ to do that, run:
 
 #### For any further issue with git, Discuss with your team members or "Md Rahatul Islam"
 
-# Note: Remember that always write your code into your branch then push. Never write your code within main branch and push until emergency case or after discussing in group.
+#### Note: Remember that always write your code into your branch then push. Never write your code within main branch and push until emergency case or after discussing in group.
 
-# Note: Don't merge from github without discussing in group. If you need to merge your code ask to the group or the guy who is responsible to control main branch. Its better to avoid errors and conflicts.
+#### Note: Don't merge from github without discussing in group. If you need to merge your code ask to the group or the guy who is responsible to control main branch. Its better to avoid errors and conflicts.
