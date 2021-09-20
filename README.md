@@ -1,6 +1,7 @@
 
 ## Available Scripts
-After cloning the repo you must install npm by `npm install` for once.
+After cloning the repo you must install npm by:
+### `npm install`
 
 In the project directory, you can run:
 ### `npm start`
@@ -17,26 +18,28 @@ So its better and recommended to make you own branch and do code in that branch 
 Note:  Don't forget to inform all of you team member before you merge any request.
 
 To create and switch to a branch, run:
-`git checkout -b branchName`
+### `git checkout -b branchName`
 
 To confirm before code, run: 
-`git branch`
+### `git branch`
 before switching between branches must add and commit your changes, other wise u may face error.
 
 To check git status, run:
-`git status`
+### `git status`
 
 to switch other branch, run:
-`git checkout branchName`
+### `git checkout branchName`
 
 To pull from the server, u must switch to local main branch
 
 after pulling the code into you local main branch. switch back to your branch by `git checkout "branchname"`
 
 Then you must get the updated code (those u pulled right before) to your branch.
-to do that, run: `git rebase main` (main because u pulled to main branch, if it master then replace it with master branch)
+to do that, run:
+### `git rebase main` 
+(main because u pulled to main branch, if it master then replace it with master branch)
 
-For any further issue with git, Discuss with your team members or "Md Rahatul Islam"
+#### For any further issue with git, Discuss with your team members or "Md Rahatul Islam"
 
 # Note: Remember that always write your code into your branch then push. Never write your code within main branch and push until emergency case or after discussing in group.
 
