@@ -40,4 +40,4 @@ For any further issue with git, Discuss with your team members or "Md Rahatul Is
 
 # Note: Remember that always write your code into your branch then push. Never write your code within main branch and push until emergency case or after discussing in group.
 
-# Note: Don't merge from github without discussing in group. If you need to merge your code ask to the group or the guy who is responsible to controll main branch. Its better to avoid errors and conflicts.
+# Note: Don't merge from github without discussing in group. If you need to merge your code ask to the group or the guy who is responsible to control main branch. Its better to avoid errors and conflicts.
