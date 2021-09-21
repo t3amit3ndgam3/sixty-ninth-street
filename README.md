@@ -6,7 +6,7 @@ After cloning the repo you must install npm by:
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start
 
 Well It should run now.
 
