@@ -36,7 +36,7 @@ const Header = () => {
               <p className="mb-5">
                 Some representative placeholder content for the first slide.
               </p>
-              <a href="" className="sliderButton">
+              <a href="/" className="sliderButton">
                 Get Started
               </a>
             </div>
@@ -48,7 +48,7 @@ const Header = () => {
               <p className="mb-5">
                 Some representative placeholder content for the second slide.
               </p>
-              <a href="" className="sliderButton">
+              <a href="/" className="sliderButton">
                 Get Started
               </a>
             </div>
