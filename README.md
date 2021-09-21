@@ -21,7 +21,7 @@ Note: Don't forget to inform all of you team member before you merge any request
 
 To create and switch to a branch, run:
 
-### `git checkout -b branchName`
+#### `git checkout -b branchName`
 
 To confirm before code, run:
 
