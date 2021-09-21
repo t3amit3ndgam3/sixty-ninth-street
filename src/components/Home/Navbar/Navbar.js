@@ -16,7 +16,7 @@ const Navbar = () => {
         class={`navbar navbar-expand-lg fixed-top navbar-light topNavbarCustom scroll${fixedTop}`}
       >
         <div class="container">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             SIXTY NINETH STREET
           </a>
           <button
@@ -37,7 +37,7 @@ const Navbar = () => {
                   to=""
                   class="nav-link navItemCustom"
                   aria-current="page"
-                  href="#"
+                  href="/"
                 >
                   HOME
                 </a>
@@ -47,7 +47,7 @@ const Navbar = () => {
                   to=""
                   class="nav-link navItemCustom"
                   aria-current="page"
-                  href="#"
+                  href="/"
                 >
                   PROPERTIES
                 </a>
@@ -57,7 +57,7 @@ const Navbar = () => {
                   to=""
                   class="nav-link navItemCustom"
                   aria-current="page"
-                  href="#"
+                  href="/"
                 >
                   AGENTS
                 </a>
@@ -67,7 +67,7 @@ const Navbar = () => {
                   to=""
                   class="nav-link navItemCustom"
                   aria-current="page"
-                  href="#"
+                  href="/"
                 >
                   ABOUT
                 </a>
@@ -77,7 +77,7 @@ const Navbar = () => {
                   to=""
                   class="nav-link navItemCustom"
                   aria-current="page"
-                  href="#"
+                  href="/"
                 >
                   CONTACT
                 </a>
