@@ -153,5 +153,161 @@
         transform:translate(0px);
     }
 }
+
+
+/* Dream Home Section  start*/
+.dreamHomeHeader{
+    margin-top:50px;
+    margin-bottom:50px;
+    text-align: center;
+}
+.dreamHomeHeader h1{
+    color: #1f6f8b;
+}
+.imgDiv{
+    width:100%;
+    height:450px;
+    position: relative;
+}
+.imgDiv img{
+    width:90%;
+    height:450px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+.imgDiv::before{
+    content: "";
+    position: absolute;
+    width: 40%;
+    height:200px;
+    background-image: url("../../images/DreamHome/dot.png");
+    right: 0px;
+    bottom: -40px;
+    z-index: -1;
+}
+
+.dreamRightContent{
+    /* padding-left: 50px; */
+}
+.quality{
+    display:flex;
+    margin-bottom: 50px;
+}
+.dreamIconMain{
+    margin-right: 15px;
+    
+}
+.dreamIcon{
+    color:black;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    background-color: #efefef;
+    height:85px;
+    width:85px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    transition: all 0.6s ease;
+}
+.dreamText{
+    margin-top: 10px;
+}
+.dreamText h5 {
+    padding-bottom: 0px;
+}
+.quality:hover .dreamIcon{
+    color:rgb(116, 7, 241);
+    border: 1px solid rgb(2, 102, 32);
+}
+
+.dreamCount{
+    text-align: center;
+}
+.DreamNumber{
+    font-size:40px;
+    font-weight: 600;
+    color: #1f6f8b;
+}
+.NumberText{
+    color:rgba(0,0,0,.5);
+    font-size:14px;
+}
+/* #1f6f8b!important */
+/* Dream Home Section  end*/
 /* ........... Rabby Hasan.............. */
 /* Unmoy Biswas */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ...........................Responsive........................................... */
