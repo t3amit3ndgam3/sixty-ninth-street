@@ -3,9 +3,7 @@ import "../Home.css";
 const Footer = () => {
   return (
     <footer className="footer_wrapper">
-      <div className='option_wrapper'>
-
-      </div>
+      <div className="option_wrapper"></div>
       <div className="footer_section">
         <div className="company_header">
           <h1>
