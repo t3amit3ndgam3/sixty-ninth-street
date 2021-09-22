@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Header />
-      <DreamHome/>
+      <DreamHome />
       <Footer />
     </div>
   );
