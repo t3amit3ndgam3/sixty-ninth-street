@@ -7,6 +7,7 @@ import Testimonials from "./Testimonials/Testimonials";
 import DreamHome from "./DreamHome/DreamHome";
 import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
+import Agents from "./Agents/Agents";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <Agents />
     </div>
   );
 };
