@@ -2,6 +2,7 @@ import React from "react";
 import agent1 from "../../../images/agent.jpeg";
 import agent from "../../../images/agent1.jpeg";
 import Agent from "../Agent/Agent";
+import "../Rahat.css";
 
 const Agents = () => {
   const agentsData = [
@@ -38,7 +39,7 @@ const Agents = () => {
   ];
   return (
     <>
-      <section className="my-5 container">
+      <section className="my-5 py-3 container">
         <div className="text-center">
           <h2>Our Agents</h2>
           <small>
@@ -46,7 +47,7 @@ const Agents = () => {
             showcase your properties
           </small>
         </div>
-        <div className="text-center my-5">
+        <div className="text-center my-5 row agentsOvrFlow">
           {agentsData.map((agentData) => (
             <Agent data={agentData}></Agent>
           ))}
