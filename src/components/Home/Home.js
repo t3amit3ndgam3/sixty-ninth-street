@@ -1,8 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar/Navbar";
 import Header from "./Header/Header";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import Work from "./Work/Work";
 import Properties from "./Properties/Properties";
 import Testimonials from "./Testimonials/Testimonials";
