@@ -34,7 +34,7 @@ const Testimonials = () => {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic non architecto nobis, adipisci recusandae repellat accusantium consequuntur, qui nisi deserunt blanditiis mollitia, illo! ",
       name: "JAMES PHELPS",
       from: "Customer",
-      img: Wilson ,
+      img: Wilson,
     },
   ];
   return (
@@ -43,20 +43,18 @@ const Testimonials = () => {
         <div className="section-header">
           <h1
             className="text-uppercase text-center"
-            style={{ color: "#ffc107" }}
+            style={{ color: "#ff783d", fontFamily: "Roboto" }}
           >
             Testimonial
           </h1>
         </div>
         <div className="d-flex justify-content-center card-deck">
           <div className="w-120 row mt-5 pt-5">
-          {testimonialData.map((testimonial) => (
-            <Testimonial testimonial={testimonial}></Testimonial>
-          ))}
-            
+            {testimonialData.map((testimonial) => (
+              <Testimonial testimonial={testimonial}></Testimonial>
+            ))}
           </div>
         </div>
-        
       </div>
     </section>
   );

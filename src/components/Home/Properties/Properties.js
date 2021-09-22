@@ -2,20 +2,27 @@ import React from "react";
 import Flat1 from "../../../images/Flat1.jpg";
 import Flat2 from "../../../images/Flat2.jpg";
 import Flat3 from "../../../images/Flat3.jpg";
-import Flat4 from "../../../images/Flat4.jpg";
-import Flat5 from "../../../images/Flat5.jpg";
-import Flat6 from "../../../images/Flat6.jpg";
-import Flat7 from "../../../images/Flat7.jpg";
-import Flat8 from "../../../images/Flat8.jpg";
-import Flat9 from "../../../images/Flat9.jpg";
+// import Flat4 from "../../../images/Flat4.jpg";
+// import Flat5 from "../../../images/Flat5.jpg";
+// import Flat6 from "../../../images/Flat6.jpg";
+// import Flat7 from "../../../images/Flat7.jpg";
+// import Flat8 from "../../../images/Flat8.jpg";
+// import Flat9 from "../../../images/Flat9.jpg";
 const Properties = () => {
   return (
-    <section className="services-container mt-5">
-      <div className="">
-        <h1 className="text-warning text-center">Properties</h1>
+    <section
+      style={{ fontFamily: "Roboto" }}
+      className="services-container mt-5"
+    >
+      <div>
+        <h1
+          style={{ color: " #ff783d ", fontFamily: "Roboto" }}
+          className="text-center"
+        >
+          Properties
+        </h1>
         {/* <h3 className="text-warning text-center mt-5">New Properties</h3> */}
         <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
-            
           <div class="col">
             <div class="card h-100">
               <img src={Flat1} className="card-img-top" alt="" />
@@ -31,7 +38,18 @@ const Properties = () => {
                 <h5 class="card-text">Location: Mirpur</h5>
               </div>
               <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div className="btn btn-primary">Buy Now</div>
+                <div
+                  className="btn"
+                  style={{
+                    background: "#ff783d",
+                    color: "#000",
+                    border: "2px soild #ff783d",
+                    padding: " 6px 25px",
+                    fontFamily: "Roboto",
+                  }}
+                >
+                  Buy Now
+                </div>
               </div>
             </div>
           </div>
@@ -50,7 +68,18 @@ const Properties = () => {
                 <h5 class="card-text">Location: Gulshan</h5>
               </div>
               <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div className="btn btn-primary">Buy Now</div>
+                <div
+                  className="btn"
+                  style={{
+                    background: "#ff783d",
+                    color: "#000",
+                    border: "2px soild #ff783d",
+                    padding: " 6px 25px",
+                    fontFamily: "Roboto",
+                  }}
+                >
+                  Buy Now
+                </div>
               </div>
             </div>
           </div>
@@ -69,12 +98,21 @@ const Properties = () => {
                 <h5 class="card-text">Location: Dhanmondi</h5>
               </div>
               <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div className="btn btn-primary">Buy Now</div>
+                <div
+                  className="btn"
+                  style={{
+                    background: "#ff783d",
+                    color: "#000",
+                    border: "2px soild #ff783d",
+                    padding: " 6px 25px",
+                    fontFamily: "Roboto",
+                  }}
+                >
+                  Buy Now
+                </div>
               </div>
             </div>
           </div>
-          
-          
         </div>
         {/* <h3 className="text-warning text-center mt-5">Recent Properties</h3>
         <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
@@ -198,8 +236,7 @@ const Properties = () => {
               </div>
             </div>
           </div> */}
-          
-          
+
         {/* </div> */}
       </div>
     </section>
