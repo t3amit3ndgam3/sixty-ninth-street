@@ -10,7 +10,6 @@ import DreamHome from "./DreamHome/DreamHome";
 import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
 
-
 const Home = () => {
   return (
     <div>
@@ -19,7 +18,6 @@ const Home = () => {
       <DreamHome />
       <Contact />
       <Footer />
-
     </div>
   );
 };
