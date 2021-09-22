@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../Home.css";
 
 const Navbar = () => {
-    const [fixedTop, setScroll] = useState(false);
+  const [fixedTop, setScroll] = useState(false);
 
-	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			setScroll(window.scrollY > 10);
-		});
-	}, []);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 10);
+    });
+  }, []);
 
   return (
     <div>

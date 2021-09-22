@@ -8,21 +8,16 @@ import Testimonials from "./Testimonials/Testimonials";
 
 import DreamHome from "./DreamHome/DreamHome";
 import Footer from "./Footer/Footer";
-
+import Contact from "./Contact/Contact";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Header />
-
-      <Work></Work>
-      <Properties></Properties>
-      <Testimonials></Testimonials>
-
-      <DreamHome/>
+      <DreamHome />
+      <Contact />
       <Footer />
-
     </div>
   );
 };

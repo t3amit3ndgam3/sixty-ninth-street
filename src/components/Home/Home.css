@@ -1,32 +1,32 @@
 /* ........... Rabby Hasan.............. */
 /* ....... Nav bar .............  */
-.navItemCustom{
-    position: relative;
-    margin-right: 20px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0);
+.navItemCustom {
+  position: relative;
+  margin-right: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
-.navItemCustom:before{
-    content: "";
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    border-bottom: 1px solid rgb(7, 241, 78);
-    transform:scale(0);
-    transition:300ms ease-out;
+.navItemCustom:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid rgb(7, 241, 78);
+  transform: scale(0);
+  transition: 300ms ease-out;
 }
-.navItemCustom:hover:before{
-    transform:scaleY(1);
+.navItemCustom:hover:before {
+  transform: scaleY(1);
 }
-.topNavbarCustom{
-    padding: 20px 0px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}   
-.scrolltrue{
-    padding: 5px 0px;
-    background:white;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
-    transition: ease-in-out 0.6s all;
+.topNavbarCustom {
+  padding: 20px 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.scrolltrue {
+  padding: 5px 0px;
+  background: white;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
+  transition: ease-in-out 0.6s all;
 }
 .scrolltrue {
   padding: 5px 0px;
@@ -38,31 +38,31 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.685);
+  color: rgba(255, 255, 255, 0.685);
 }
 .navbar-light .navbar-brand {
-    color: rgba(255, 255, 255, 0.685);
+  color: rgba(255, 255, 255, 0.685);
 }
-.scrolltrue.navbar-light .navbar-nav .nav-link {    
-    color: rgba(0, 0, 0, 0.788);
+.scrolltrue.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.788);
 }
 
 .scrolltrue.navbar-light .navbar-brand {
-    color: rgba(0, 0, 0, 0.788);
+  color: rgba(0, 0, 0, 0.788);
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: rgba(255, 255, 255);
+  color: rgba(255, 255, 255);
 }
 .navbar-light .navbar-brand:hover {
-    color: rgba(255, 255, 255);
+  color: rgba(255, 255, 255);
 }
 .scrolltrue.navbar-light .navbar-nav .nav-link:hover {
-    color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .scrolltrue.navbar-light .navbar-brand:hover {
-    color: rgba(0, 0, 0);
+  color: rgba(0, 0, 0);
 }
 /* ........... Header ...........  */
 .sliderImg {
@@ -96,146 +96,142 @@
   color: #fff;
   z-index: 100;
 }
-.sliderText{
-    animation-name: moveLeft;
-    animation-duration: 1.5s;
+.sliderText {
+  animation-name: moveLeft;
+  animation-duration: 1.5s;
 }
 
 .sliderButton {
-    font-size: 16px;
-    border:2px solid white;
-    border-radius: 4px;
-    outline: none;
-    background-color:#11cf90;
-    color:black;
-    padding:6px 25px;
-    position: relative;
-    transform: translateZ(0);
-    animation-name: moveUp;
-    animation-duration: 1s;
-    cursor:pointer;
+  font-size: 16px;
+  border: 2px solid white;
+  border-radius: 4px;
+  outline: none;
+  background-color: #11cf90;
+  color: black;
+  padding: 6px 25px;
+  position: relative;
+  transform: translateZ(0);
+  animation-name: moveUp;
+  animation-duration: 1s;
+  cursor: pointer;
 }
-.sliderButton:before{
-    content:"";
-    position: absolute;
-    border-radius: 4px;
-    z-index: -1;
-    top:0;
-    left:0;
-    right: 0;
-    bottom:0;
-    background: #eeff00;
-    transform:scaleX(0);
-    transition:300ms ease-out;
+.sliderButton:before {
+  content: "";
+  position: absolute;
+  border-radius: 4px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #eeff00;
+  transform: scaleX(0);
+  transition: 300ms ease-out;
 }
-.sliderButton:hover:before{
-    transform: scale(1);
-}
-
-
-@keyframes moveUp{
-    0%{
-        opacity:0;
-        transform:translateY(50px);
-    }
-    100%{
-        opacity:1;
-        transform:translate(0px);
-    }
-}
-@keyframes moveLeft{
-    0%{
-        opacity:0;
-        transform:translateX(-100px);
-    }
-    100%{
-        opacity:1;
-        transform:translate(0px);
-    }
+.sliderButton:hover:before {
+  transform: scale(1);
 }
 
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
 
 /* Dream Home Section  start*/
-.dreamHomeHeader{
-    margin-top:50px;
-    margin-bottom:50px;
-    text-align: center;
+.dreamHomeHeader {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
 }
-.dreamHomeHeader h1{
-    color: #1f6f8b;
+.dreamHomeHeader h1 {
+  color: #1f6f8b;
 }
-.imgDiv{
-    width:100%;
-    height:450px;
-    position: relative;
+.imgDiv {
+  width: 100%;
+  height: 450px;
+  position: relative;
 }
-.imgDiv img{
-    width:90%;
-    height:450px;
-    box-sizing: border-box;
-    z-index: 10;
+.imgDiv img {
+  width: 90%;
+  height: 450px;
+  box-sizing: border-box;
+  z-index: 10;
 }
-.imgDiv::before{
-    content: "";
-    position: absolute;
-    width: 40%;
-    height:200px;
-    background-image: url("../../images/DreamHome/dot.png");
-    right: 0px;
-    bottom: -40px;
-    z-index: -1;
+.imgDiv::before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 200px;
+  background-image: url("../../images/DreamHome/dot.png");
+  right: 0px;
+  bottom: -40px;
+  z-index: -1;
 }
 
-.dreamRightContent{
-    /* padding-left: 50px; */
+.dreamRightContent {
+  /* padding-left: 50px; */
 }
-.quality{
-    display:flex;
-    margin-bottom: 50px;
+.quality {
+  display: flex;
+  margin-bottom: 50px;
 }
-.dreamIconMain{
-    margin-right: 15px;
-    
+.dreamIconMain {
+  margin-right: 15px;
 }
-.dreamIcon{
-    color:black;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 50%;
-    background-color: #efefef;
-    height:85px;
-    width:85px;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    transition: all 0.6s ease;
+.dreamIcon {
+  color: black;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  background-color: #efefef;
+  height: 85px;
+  width: 85px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  transition: all 0.6s ease;
 }
-.dreamText{
-    margin-top: 10px;
+.dreamText {
+  margin-top: 10px;
 }
 .dreamText h5 {
-    padding-bottom: 0px;
+  padding-bottom: 0px;
 }
-.quality:hover .dreamIcon{
-    color:rgb(116, 7, 241);
-    border: 1px solid rgb(2, 102, 32);
+.quality:hover .dreamIcon {
+  color: rgb(116, 7, 241);
+  border: 1px solid rgb(2, 102, 32);
 }
 
-.dreamCount{
-    text-align: center;
+.dreamCount {
+  text-align: center;
 }
-.DreamNumber{
-    font-size:40px;
-    font-weight: 600;
-    color: #1f6f8b;
+.DreamNumber {
+  font-size: 40px;
+  font-weight: 600;
+  color: #1f6f8b;
 }
-.NumberText{
-    color:rgba(0,0,0,.5);
-    font-size:14px;
+.NumberText {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
 }
 /* Dream Home Section  end*/
 /* ........... Rabby Hasan.............. */
 /* Unmoy Biswas */
-
 
 /* ...........................Responsive........................................... */
 /*.............. Unmoy Biswas ...........*/
@@ -303,6 +299,105 @@
   color: #676767;
   font-family: "Lato", sans-serif;
   padding: 5px 35px;
+}
+
+/*.............. Contact Section ...........*/
+.contact_wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../images/bg234.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: content-box;
+}
+.left_side {
+  width: 30%;
+}
+.form_wrapper {
+  height: 450px;
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 5px grey;
+  padding: 30px;
+}
+.group {
+  position: relative;
+  margin-bottom: 45px;
+  font-family: "Mukta", sans-serif;
+}
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+input:focus {
+  outline: none;
+}
+
+/* LABEL ================*/
+label {
+  color: #999;
+  font-size: 15px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+/* BOTTOM BARS ============== */
+.bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: red;
+  transition: 0.2s ease all;
+  -moz-transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.button_wrap button {
+  width: 80%;
+  margin: 0 auto;
+  border: none;
+  padding: 13px 30px;
+  background-color: #ff783d;
 }
 
 /*.............. Unmoy Biswas ...........*/
