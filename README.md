@@ -1,72 +1,42 @@
-# Getting Started with Create React App
+After cloning the repo you must install npm by:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
+npm install
 In the project directory, you can run:
 
-### `npm start`
+npm start
+Well It should run now.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+About github:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+After cloning the repository, you will get the default branch. Most of the time its Main branch.
 
-### `npm test`
+Usually at production level projects we should not change code in local main branch as it can change the original code in from main branch server when we push our code from local. So its better and recommended to make you own branch and do code in that branch and then push your changes to you branch in server. It will make a merge request in github repository. One responsible person will merge the code to main branch in server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Note: Don't forget to inform all of you team member before you merge any request.
 
-### `npm run build`
+To create and switch to a branch, run:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+git checkout -b branchName
+To confirm before code, run:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+git branch
+before switching between branches must add and commit your changes, other wise u may face error.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To check git status, run:
 
-### `npm run eject`
+git status
+to switch other branch, run:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+git checkout branchName
+To pull from the server, u must switch to local main branch
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+after pulling the code into you local main branch. switch back to your branch by git checkout branchname
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Then you must get the updated code (those u pulled right before) to your branch. to do that, run:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+git rebase main
+(main because u pulled to main branch, if it master then replace it with master branch)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Sixty-Ninth-Street
-# sixty-ninth-street
+For any further issue with git, Discuss with your team members or "Md Rahatul Islam"
+Note: Remember that always write your code into your branch then push. Never write your code within main branch and push until emergency case or after discussing in group.
+Note: Don't merge from github without discussing in group. If you need to merge your code ask to the group or the guy who is responsible to control main branch. Its better to avoid errors and conflicts.
