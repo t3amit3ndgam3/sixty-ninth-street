@@ -35,7 +35,7 @@ after pulling the code into you local main branch. switch back to your branch by
 Then you must get the updated code (those u pulled right before) to your branch. to do that, run:
 
 git rebase main
-(main because u pulled to main branch, if it master then replace it with master branch)
+(if it master then replmain because u pulled to main branch, ace it with master branch)
 
 For any further issue with git, Discuss with your team members or "Md Rahatul Islam"
 Note: Remember that always write your code into your branch then push. Never write your code within main branch and push until emergency case or after discussing in group.
