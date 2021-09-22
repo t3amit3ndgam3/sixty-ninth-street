@@ -1,3 +1,5 @@
+/* =========== base color: #ff783d   ======== */
+
 /* ........... Rabby Hasan.............. */
 /* ....... Nav bar .............  */
 .navItemCustom {
@@ -11,7 +13,7 @@
   width: 100%;
   bottom: 0;
   left: 0;
-  border-bottom: 1px solid rgb(7, 241, 78);
+  border-bottom: 2px solid #ff783d;
   transform: scale(0);
   transition: 300ms ease-out;
 }
@@ -52,10 +54,12 @@
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: rgba(255, 255, 255);
+  /* color: rgba(255, 255, 255); */
+  color: #ff783d;
 }
 .navbar-light .navbar-brand:hover {
-  color: rgba(255, 255, 255);
+  /* color: rgba(255, 255, 255); */
+  color: #ff783d;
 }
 .scrolltrue.navbar-light .navbar-nav .nav-link:hover {
   color: rgb(0, 0, 0);
@@ -102,11 +106,12 @@
 }
 
 .sliderButton {
+  font-family: "Roboto";
   font-size: 16px;
-  border: 2px solid white;
+  border: 2px solid #ff783d;
   border-radius: 4px;
   outline: none;
-  background-color: #11cf90;
+  background-color: #ff783d;
   color: black;
   padding: 6px 25px;
   position: relative;
@@ -158,9 +163,10 @@
   margin-top: 50px;
   margin-bottom: 50px;
   text-align: center;
+  font-family: "Roboto";
 }
 .dreamHomeHeader h1 {
-  color: #1f6f8b;
+  color: #ff783d;
 }
 .imgDiv {
   width: 100%;
@@ -218,12 +224,13 @@
 }
 
 .dreamCount {
+  font-family: "Roboto";
   text-align: center;
 }
 .DreamNumber {
   font-size: 40px;
   font-weight: 600;
-  color: #1f6f8b;
+  color: #ff783d;
 }
 .NumberText {
   color: rgba(0, 0, 0, 0.5);
@@ -302,6 +309,7 @@
 }
 
 /*.............. Contact Section ...........*/
+
 .contact_wrapper {
   display: flex;
   justify-content: space-evenly;
@@ -321,10 +329,14 @@
   background-color: #fff;
   box-shadow: 5px grey;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .group {
   position: relative;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
   font-family: "Mukta", sans-serif;
 }
 input {
@@ -352,8 +364,6 @@ label {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-
-/* active state */
 input:focus ~ label,
 input:valid ~ label {
   top: -20px;
@@ -385,19 +395,17 @@ input:valid ~ label {
 .bar:after {
   right: 50%;
 }
-
-/* active state */
 input:focus ~ .bar:before,
 input:focus ~ .bar:after {
   width: 50%;
 }
-
 .button_wrap button {
-  width: 80%;
-  margin: 0 auto;
   border: none;
-  padding: 13px 30px;
+  padding: 13px 100px;
   background-color: #ff783d;
+  opacity: 0.9;
 }
-
+.button_wrap button:hover {
+  opacity: 1;
+}
 /*.............. Unmoy Biswas ...........*/

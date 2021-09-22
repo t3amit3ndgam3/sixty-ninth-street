@@ -15,7 +15,7 @@ const Navbar = () => {
       <nav
         class={`navbar navbar-expand-lg fixed-top navbar-light topNavbarCustom scroll${fixedTop}`}
       >
-        <div class="container">
+        <div style={{ fontFamily: "Roboto" }} class="container">
           <a class="navbar-brand" href="/">
             SIXTY NINETH STREET
           </a>
