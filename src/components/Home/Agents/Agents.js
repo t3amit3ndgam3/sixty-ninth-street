@@ -31,17 +31,22 @@ const Agents = () => {
       img: agent,
       description: "Real Estate Agent",
     },
-    {
-      name: "Hero Alom",
-      img: agent1,
-      description: "Real Estate Agent",
-    },
+    // {
+    //   name: "Hero Alom",
+    //   img: agent1,
+    //   description: "Real Estate Agent",
+    // },
   ];
   return (
     <>
       <section className="my-5 py-3 container">
         <div className="text-center">
-          <h2>Our Agents</h2>
+          <h1
+            className="text-uppercase text-center"
+            style={{ color: "#ff783d", fontFamily: "Roboto" }}
+          >
+            Our Agents
+          </h1>
           <small>
             Get started by choosing from one of our pre-built page templates to
             showcase your properties
