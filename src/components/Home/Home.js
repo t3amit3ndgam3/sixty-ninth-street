@@ -17,10 +17,10 @@ const Home = () => {
       <Work />
       <Properties />
       <DreamHome />
+      <Agents />
       <Testimonials />
       <Contact />
       <Footer />
-      <Agents />
     </div>
   );
 };
