@@ -1,5 +1,5 @@
 import React from "react";
-import "../Home.css";
+
 const WorkDetails = ({ Work }) => {
   return (
     <div className="col-md-4 text-center">

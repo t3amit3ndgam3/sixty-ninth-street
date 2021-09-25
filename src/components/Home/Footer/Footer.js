@@ -1,5 +1,5 @@
 import React from "react";
-import "../Home.css";
+import "../Unmoy.css";
 const Footer = () => {
   return (
     <footer className="footer_wrapper">

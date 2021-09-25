@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import "../Home.css";
+import "../Rabby.css";
 import dream from "../../../images/DreamHome/dream.jpg";
-import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faHome, faShieldAlt } from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";
