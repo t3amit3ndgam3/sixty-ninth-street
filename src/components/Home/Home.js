@@ -8,12 +8,14 @@ import DreamHome from "./DreamHome/DreamHome";
 import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
 import Agents from "./Agents/Agents";
+import BuySellRentHome from "./BuySellRentHome/BuySellRentHome";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Header />
+      <BuySellRentHome/>
       <Work />
       <Properties />
       <DreamHome />

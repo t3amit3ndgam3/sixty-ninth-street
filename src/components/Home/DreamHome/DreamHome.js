@@ -7,7 +7,7 @@ import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
 const DreamHome = () => {
-  const [numberVisible, setNumberVisible] = useState(true);
+  const [focus, setFocus] = useState(false);
   const home = <FontAwesomeIcon icon={faHome} />;
   const user = <FontAwesomeIcon icon={faUser} />;
   const shield = <FontAwesomeIcon icon={faShieldAlt} />;
@@ -70,54 +70,54 @@ const DreamHome = () => {
         {/* .............................. */}
         <div className="mt-2 row">
           <div className="col-6 col-sm-6 col-md-3 dreamCount">
-            <span className="DreamNumber">
-              <CountUp end={2917} duration={1}>
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span onChange={setNumberVisible(false)} ref={countUpRef} />
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-            </span>
-            <br />
+          <CountUp start={focus ? 0 : null} end={2986} duration={1} redraw={true}>
+            {({ countUpRef }) => (
+                <VisibilitySensor onChange={(isVisible) => {
+                    if (isVisible) { setFocus(true); }
+                }}>
+                    <span className="DreamNumber" ref={countUpRef} />
+                </VisibilitySensor>
+            )}
+          </CountUp>
+        <br />
             <span className="NumberText"># of Buy Properties</span>
           </div>
           <div className="col-6 col-sm-6 col-md-3 dreamCount">
-            <span className="DreamNumber">
-              <CountUp end={3867} duration={2}>
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
+            <CountUp start={focus ? 0 : null} end={2768} duration={1} redraw={true}>
+              {({ countUpRef }) => (
+                  <VisibilitySensor onChange={(isVisible) => {
+                      if (isVisible) { setFocus(true); }
+                  }}>
+                      <span className="DreamNumber" ref={countUpRef} />
                   </VisibilitySensor>
-                )}
-              </CountUp>
-            </span>
+              )}
+            </CountUp>
             <br />
             <span className="NumberText"># of Sell Properties</span>
           </div>
           <div className="col-6 col-sm-6 col-md-3 dreamCount">
-            <span className="DreamNumber">
-              <CountUp end={38976} duration={2}>
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
+            <CountUp start={focus ? 0 : null} end={38469} duration={1} redraw={true}>
+              {({ countUpRef }) => (
+                  <VisibilitySensor onChange={(isVisible) => {
+                      if (isVisible) { setFocus(true); }
+                  }}>
+                      <span className="DreamNumber" ref={countUpRef} />
                   </VisibilitySensor>
-                )}
-              </CountUp>
-            </span>
+              )}
+            </CountUp>
             <br />
             <span className="NumberText"># of All Properties</span>
           </div>
           <div className="col-6 col-sm-6 col-md-3 dreamCount">
-            <span className="DreamNumber">
-              <CountUp end={1149} redraw={true} duration={2}>
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
+            <CountUp start={focus ? 0 : null} end={1139} duration={1} redraw={true}>
+              {({ countUpRef }) => (
+                  <VisibilitySensor onChange={(isVisible) => {
+                      if (isVisible) { setFocus(true); }
+                  }}>
+                      <span className="DreamNumber" ref={countUpRef} />
                   </VisibilitySensor>
-                )}
-              </CountUp>
-            </span>
+              )}
+            </CountUp>
             <br />
             <span className="NumberText"># of Agents</span>
           </div>
