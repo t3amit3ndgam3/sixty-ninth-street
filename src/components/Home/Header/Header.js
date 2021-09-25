@@ -1,5 +1,5 @@
 import React from "react";
-import "../Home.css";
+import "../Rabby.css";
 import sliderOne from "../../../images/slider/sliderOne.jpg";
 import sliderTwo from "../../../images/slider/sliderTwo.jpg";
 

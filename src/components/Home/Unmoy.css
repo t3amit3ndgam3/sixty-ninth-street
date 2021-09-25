@@ -1,0 +1,167 @@
+/*.............. Footer Section ...........*/
+.footer_wrapper {
+  color: #fff;
+  background-color: #0d263c;
+}
+
+.footer_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 0;
+}
+.company_header {
+  width: 350px;
+  border-right: 2px solid #45484e;
+}
+.company_header h1 {
+  text-transform: uppercase;
+}
+.c_logo {
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: 8px;
+  line-height: 0;
+}
+.c_logo_2 {
+  font-size: 25px;
+  opacity: 0.5;
+  letter-spacing: 2px;
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 0;
+}
+.company_header p {
+  width: 70%;
+  text-align: justify;
+  text-justify: auto;
+}
+.footer_column {
+  margin: 30px;
+}
+.footer_column h2 {
+  font-size: 18px;
+  font-weight: 500;
+  /* padding-top: 65px; */
+  margin-bottom: 33px;
+}
+.footer_column ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.footer_column ul li {
+  font-size: 16px;
+  margin-bottom: 13px;
+  opacity: 0.7;
+}
+.copyright_section {
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #676767;
+  font-family: "Lato", sans-serif;
+  padding: 5px 35px;
+}
+
+/*.............. Contact Section ...........*/
+
+.contact_wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../images/bg234.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: content-box;
+}
+.left_side {
+  width: 30%;
+}
+.form_wrapper {
+  height: 450px;
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 5px grey;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.group {
+  position: relative;
+  margin-bottom: 30px;
+  font-family: "Mukta", sans-serif;
+}
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+input:focus {
+  outline: none;
+}
+
+/* LABEL ================*/
+label {
+  color: #999;
+  font-size: 15px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+/* BOTTOM BARS ============== */
+.bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: red;
+  transition: 0.2s ease all;
+  -moz-transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+.button_wrap button {
+  border: none;
+  padding: 13px 100px;
+  background-color: #ff783d;
+  opacity: 0.9;
+}
+.button_wrap button:hover {
+  opacity: 1;
+}
+/*.............. Unmoy Biswas ...........*/
