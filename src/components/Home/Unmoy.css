@@ -27,9 +27,6 @@
   font-size: 25px;
   opacity: 0.5;
   letter-spacing: 2px;
-  margin-top: 0;
-  padding-top: 0;
-  line-height: 0;
 }
 .company_header p {
   width: 70%;
@@ -42,7 +39,6 @@
 .footer_column h2 {
   font-size: 18px;
   font-weight: 500;
-  /* padding-top: 65px; */
   margin-bottom: 33px;
 }
 .footer_column ul {
@@ -70,7 +66,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   background-image: url("../../images/bg234.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -83,8 +79,6 @@
   height: 450px;
   width: 400px;
   background-color: #fff;
-  box-shadow: 5px grey;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,4 +158,51 @@ input:focus ~ .bar:after {
 .button_wrap button:hover {
   opacity: 1;
 }
-/*.............. Unmoy Biswas ...........*/
+
+/******************* RESPONSIVE BREAKPOINTS ********************/
+@media only screen and (max-width: 600px) {
+  /* CONTACT SECTION */
+  .contact_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .left_side {
+    width: 80%;
+    padding: 20px;
+    margin-top: 10px;
+  }
+  .form_wrapper {
+    height: 420px;
+    width: 320px;
+  }
+  .button_wrap button {
+    padding: 13px 40px;
+    margin-bottom: 10px;
+  }
+  /* CONTACT SECTION */
+
+  /* FOOTER SECTION */
+  .footer_section {
+    flex-direction: column;
+    display: block;
+    padding: 60px 0;
+  }
+  .company_header {
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+    border-right: 0;
+  }
+  .company_header p {
+    width: 100%;
+    padding: 20px;
+  }
+  .footer_column {
+    margin-top: 30px;
+  }
+  /* FOOTER SECTION */
+}
