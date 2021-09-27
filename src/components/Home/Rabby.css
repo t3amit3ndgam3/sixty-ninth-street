@@ -159,6 +159,10 @@
 }
 
 /* Dream Home Section  start*/
+.RjDreamHomeTopHEader{
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.281);
+}
 .dreamHomeHeader {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -237,7 +241,7 @@
   font-size: 14px;
 }
 
-
+/* Dream Home Section  end*/
 
 
 /* ......... buying, selling or renting,.................  */
@@ -294,8 +298,66 @@
   border-color: #0d6efd;
 }
 
+/* ........... Agents Section .................  */
+.slick-prev:before, .slick-next:before {
+  color: #040101!important;
+}
+.RJAgentCARD{
+  width: 250px !important;
+  height: 250px !important;
+  text-align: center;
+  transition: ease 54s all;
+}
+.RJcardDownText{
+  background-color: red;
+  padding-bottom: 50px;
+}
+.RJcardDownText p{
+ color: black;
+}
+.RjAgentCardImg{
+  position: relative;
+  overflow: hidden;
+}
+.RjAgenticon{
+  position:absolute;
+  font-size: 22px;
+  text-shadow: 2px 2px 2px red;
+  bottom: -20px;
+  transform: translate(-40%,0);
+  visibility: hidden;
+ 
+}
+.RjAgentIconOver a{
+  text-decoration: none;
+}
+.AgentFacebbok{
+  transition: ease-in-out 0.5s all;
+  color:#0502c7;
+  left: 40%;
+}
 
-/* Dream Home Section  end*/
+.AgentEmail{
+  transition: ease-in-out 0.7s all;
+  color:#c2200b;
+  left: 50%;
+}
+.AgentLinkend{
+  transition: ease-in-out 0.9s all;
+  color:#0502c7;
+  left: 60%;
+}
+.RJAgentCARD:hover .RjAgenticon{
+  bottom: 10px;
+  visibility: visible;
+}
+.RjAgenticon:hover{
+  color:rgb(0, 0, 0);
+}
+
+
+
+
 /* ........... Rabby Hasan.............. */
 
 @media (min-width: 20px) and (max-width: 998px) { 

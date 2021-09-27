@@ -13,7 +13,7 @@ const DreamHome = () => {
   const shield = <FontAwesomeIcon icon={faShieldAlt} />;
 
   return (
-    <div className="mb-5">
+    <div className="RjDreamHomeTopHEader mb-5">
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-12">
