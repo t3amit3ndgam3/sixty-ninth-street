@@ -86,10 +86,10 @@
 }
 .group {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-family: "Mukta", sans-serif;
 }
-input {
+.contact_input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
@@ -97,12 +97,12 @@ input {
   border: none;
   border-bottom: 1px solid #757575;
 }
-input:focus {
+.contact_input:focus {
   outline: none;
 }
 
 /* LABEL ================*/
-label {
+.contact_label {
   color: #999;
   font-size: 15px;
   font-weight: normal;
@@ -114,9 +114,9 @@ label {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-input:focus ~ label,
-input:valid ~ label {
-  top: -20px;
+.contact_input:focus ~ .contact_label,
+.contact_input:valid ~ .contact_label {
+  top: -10px;
   font-size: 14px;
   color: #5264ae;
 }
@@ -134,7 +134,7 @@ input:valid ~ label {
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: red;
+  background: #10257f;
   transition: 0.2s ease all;
   -moz-transition: 0.5s ease all;
   -webkit-transition: 0.5s ease all;
@@ -159,6 +159,100 @@ input:focus ~ .bar:after {
   opacity: 1;
 }
 
+/* LOGIN SECTION */
+.login_wrapper {
+  background-image: url(../../images/Authentication_images/bg-white-3.png);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_card {
+  height: 600px;
+  width: 390px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto Slab";
+  font-weight: 100;
+}
+.login_header {
+  text-align: center;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_button_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_button_wrap button {
+  border: none;
+  padding: 13px 80px;
+  background: #10257f;
+  opacity: 0.9;
+  color: #ffffff;
+  border-radius: 30px;
+  opacity: 1;
+}
+.login_button_wrap button:hover {
+  opacity: 0.9;
+}
+
+/* LOGIN SECTION */
+
+/* SIGNUP SECTION */
+
+.signup_header {
+  height: 20%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social_wrapper {
+  text-align: center;
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+.social_wrapper p {
+  margin-bottom: 0;
+}
+.social_links {
+  font-size: 40px;
+}
+.social_icons1 {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  margin: 10px;
+  background: #e72734;
+}
+.social_icons2 {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  margin: 10px;
+  background: #3b5998;
+}
+.social_icons3 {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  margin: 10px;
+  background: #1da0f2;
+}
+/* SIGNUP SECTION */
 /******************* RESPONSIVE BREAKPOINTS ********************/
 @media only screen and (max-width: 600px) {
   /* CONTACT SECTION */

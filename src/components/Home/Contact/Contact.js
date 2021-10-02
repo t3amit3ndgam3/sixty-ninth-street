@@ -37,24 +37,39 @@ const Contact = () => {
       <div className="right_side">
         <form ref={form} onSubmit={handleSubmit} className="form_wrapper">
           <div class="group">
-            <input name="name" type="text" required />
+            <input className="contact_input" name="name" type="text" required />
             <span class="bar"></span>
-            <label>Name</label>
+            <label className="contact_label">Name</label>
           </div>
           <div class="group">
-            <input name="number" type="number" required />
+            <input
+              className="contact_input"
+              name="number"
+              type="number"
+              required
+            />
             <span class="bar"></span>
-            <label>Phone Number</label>
+            <label className="contact_label">Phone Number</label>
           </div>
           <div class="group">
-            <input name="email" type="text" required />
+            <input
+              className="contact_input"
+              name="email"
+              type="text"
+              required
+            />
             <span class="bar"></span>
-            <label>Email</label>
+            <label className="contact_label">Email</label>
           </div>
           <div class="group">
-            <input name="message" type="text" required />
+            <input
+              className="contact_input"
+              name="message"
+              type="text"
+              required
+            />
             <span class="bar"></span>
-            <label>Your Messege</label>
+            <label className="contact_label">Your Messege</label>
           </div>
           <div className="button_wrap">
             <button type="submit">Send Messege</button>
