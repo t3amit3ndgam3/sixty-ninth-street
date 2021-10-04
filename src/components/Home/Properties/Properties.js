@@ -1,4 +1,5 @@
 import React from "react";
+import { MDBBtn, MDBIcon, MDBRipple } from "mdb-react-ui-kit";
 import Flat1 from "../../../images/Flat1.jpg";
 import Flat2 from "../../../images/Flat2.jpg";
 import Flat3 from "../../../images/Flat3.jpg";
@@ -10,236 +11,211 @@ import Flat3 from "../../../images/Flat3.jpg";
 // import Flat9 from "../../../images/Flat9.jpg";
 const Properties = () => {
   return (
-    <section
-      style={{ fontFamily: "Roboto" }}
-      className="services-container mt-5"
-    >
-      <div>
-        <h1
-          style={{ color: " #ff783d ", fontFamily: "Roboto" }}
-          className="text-center"
-        >
-          Properties
-        </h1>
-        {/* <h3 className="text-warning text-center mt-5">New Properties</h3> */}
-        <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
-          <div class="col">
-            <div class="card h-100">
-              <img src={Flat1} className="card-img-top" alt="" />
-              <div class="card-body">
-                <h2 class="card-title">$469,000</h2>
-                <h5 class="card-text">6 beds || 2 baths || 2436 sqrt</h5>
-                <p class="card-text">
-                  Donec eget efficitur ex. Donec eget dolor vitae eros feugiat
-                  tristique id vitae massa. Proin vulputate congue rutrum. Fusce
-                  lobortis a enim eget tempus. Class aptent taciti sociosqu ad
-                  litora.
-                </p>
-                <h5 class="card-text">Location: Mirpur</h5>
-              </div>
-              <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div
-                  className="btn"
-                  style={{
-                    background: "#ff783d",
-                    color: "#000",
-                    border: "2px soild #ff783d",
-                    padding: " 6px 25px",
-                    fontFamily: "Roboto",
-                  }}
-                >
-                  Buy Now
+    <div>
+      <div className="container pt-5 ">
+        <div className="row p-3">
+          <div className=" col-md-12 RJBuySellRentHeader mb-5">
+            <h1 className="text-center" style={{ color: "#ff783d" }}>
+              Properties
+            </h1>
+          </div>
+          <div className="col-md-4 mt-3">
+            <div className="BSRSec">
+              <a href="" className="RjcardLInk">
+                <div class="card RjcustomCard">
+                  <MDBRipple
+                    className="bg-image hover-overlay shadow-1-strong rounded"
+                    style={{ maxWidth: "22rem" }}
+                    rippleTag="div"
+                    rippleColor="light"
+                  >
+                    <img src={Flat1} className="w-100" />
+                    <a href="#!">
+                      <div
+                        className="mask"
+                        style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
+                      >
+                        <p className="text-black mb-0">
+                          <MDBIcon
+                            className="ms-1"
+                            icon="location-arrow"
+                            size="sm"
+                          />
+                          Baridhara,Dhaka
+                        </p>
+                      </div>
+                    </a>
+                  </MDBRipple>
+                  <div class="card-body">
+                    <h5 class="card-title text-start">
+                      Luxury Apartments in Baridhara
+                    </h5>
+                    <h6 class="card-title text-start"> ৳ 85,50,000</h6>
+                    <p class="card-text text-start">
+                      Find your place with an immersive photo experience and the
+                      most listings, including things you won’t find anywhere
+                      else.[more]
+                    </p>
+                    <div className="col-md-12 text-start">
+                      <span style={{ marginRight: "10px" }}>
+                        <MDBIcon className="ms-1" icon="bed" size="sm" /> 3
+                      </span>
+                      <span style={{ marginRight: "10px" }}>
+                        <MDBIcon className="ms-1" icon="bath" size="sm" /> 3
+                      </span>
+                      <span style={{ marginRight: "10px" }}>
+                        <MDBIcon
+                          className="ms-1"
+                          icon="angle-right"
+                          size="sm"
+                        />{" "}
+                        1200 Sqrt
+                      </span>
+                      <button
+                        className="btn position-absolute"
+                        style={{ backgroundColor: "#ff783d" }}
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src={Flat2} className="card-img-top" alt="" />
-              <div class="card-body">
-                <h2 class="card-title">$669,000</h2>
-                <h5 class="card-text">6 beds || 3 baths || 2936 sqrt</h5>
-                <p class="card-text">
-                  Donec eget efficitur ex. Donec eget dolor vitae eros feugiat
-                  tristique id vitae massa. Proin vulputate congue rutrum. Fusce
-                  lobortis a enim eget tempus. Class aptent taciti sociosqu ad
-                  litora.
-                </p>
-                <h5 class="card-text">Location: Gulshan</h5>
-              </div>
-              <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div
-                  className="btn"
-                  style={{
-                    background: "#ff783d",
-                    color: "#000",
-                    border: "2px soild #ff783d",
-                    padding: " 6px 25px",
-                    fontFamily: "Roboto",
-                  }}
-                >
-                  Buy Now
+          <div className="col-md-4 mt-3">
+            <div className="BSRSec">
+              <a href="" className="RjcardLInk">
+                <div class="card RjcustomCard">
+                  <MDBRipple
+                    className="bg-image hover-overlay shadow-1-strong rounded"
+                    style={{ maxWidth: "22rem" }}
+                    rippleTag="div"
+                    rippleColor="light"
+                  >
+                    <img src={Flat1} className="w-100" />
+                    <a href="#!">
+                      <div
+                        className="mask"
+                        style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
+                      >
+                        <p className="text-black mb-0">
+                          <MDBIcon
+                            className="ms-1"
+                            icon="location-arrow"
+                            size="sm"
+                          />
+                          Gulshan,Dhaka
+                        </p>
+                      </div>
+                    </a>
+                  </MDBRipple>
+                  <div class="card-body">
+                    <h5 class="card-title text-start">
+                      Luxury Apartments in Gulshan
+                    </h5>
+                    <h6 class="card-title text-start"> ৳ 85,50,000</h6>
+                    <p class="card-text text-start">
+                      Find your place with an immersive photo experience and the
+                      most listings, including things you won’t find anywhere
+                      else.[more]
+                    </p>
+                    <div className="col-md-12 text-start">
+                      <span style={{ marginRight: "10px" }}>
+                        <MDBIcon className="ms-1" icon="bed" size="sm" /> 3
+                      </span>
+                      <span style={{ marginRight: "10px" }}>
+                        <MDBIcon className="ms-1" icon="bath" size="sm" /> 3
+                      </span>
+                      <span style={{ marginRight: "10px" }}>
+                        <MDBIcon
+                          className="ms-1"
+                          icon="angle-right"
+                          size="sm"
+                        />{" "}
+                        1200 Sqrt
+                      </span>
+                      <button
+                        className="btn position-absolute"
+                        style={{ backgroundColor: "#ff783d" }}
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src={Flat3} className="card-img-top" alt="" />
-              <div class="card-body">
-                <h2 class="card-title">$769,000</h2>
-                <h5 class="card-text">6 beds || 4 baths || 3436 sqrt</h5>
-                <p class="card-text">
-                  Donec eget efficitur ex. Donec eget dolor vitae eros feugiat
-                  tristique id vitae massa. Proin vulputate congue rutrum. Fusce
-                  lobortis a enim eget tempus. Class aptent taciti sociosqu ad
-                  litora.
-                </p>
-                <h5 class="card-text">Location: Dhanmondi</h5>
-              </div>
-              <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div
-                  className="btn"
-                  style={{
-                    background: "#ff783d",
-                    color: "#000",
-                    border: "2px soild #ff783d",
-                    padding: " 6px 25px",
-                    fontFamily: "Roboto",
-                  }}
-                >
-                  Buy Now
+          <div className="col-md-4 mt-3">
+            <div className="BSRSec">
+              <a href="" className="RjcardLInk">
+                <div class="card RjcustomCard">
+                  <MDBRipple
+                    className="bg-image hover-overlay shadow-1-strong rounded"
+                    style={{ maxWidth: "22rem" }}
+                    rippleTag="div"
+                    rippleColor="light"
+                  >
+                    <img src={Flat3} className="w-100" />
+                    <a href="#!">
+                      <div
+                        className="mask"
+                        style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
+                      >
+                        <p className="text-black mb-0">
+                          <MDBIcon
+                            className="ms-1"
+                            icon="location-arrow"
+                            size="sm"
+                          />
+                          Banani,Dhaka
+                        </p>
+                      </div>
+                    </a>
+                  </MDBRipple>
+                  <div class="card-body">
+                    <h5 class="card-title text-start">
+                      Luxury Apartments in Banani
+                    </h5>
+                    <h6 class="card-title text-start"> ৳ 85,50,000</h6>
+                    <p class="card-text text-start">
+                      Find your place with an immersive photo experience and the
+                      most listings, including things you won’t find anywhere
+                      else.[more]
+                    </p>
+                    <div className="col-md-12 text-start">
+                      <span style={{ marginRight: "10px" }}>
+                        <MDBIcon className="ms-1" icon="bed" size="sm" /> 3
+                      </span>
+                      <span style={{ marginRight: "10px" }}>
+                        <MDBIcon className="ms-1" icon="bath" size="sm" /> 3
+                      </span>
+                      <span style={{ marginRight: "10px" }}>
+                        <MDBIcon
+                          className="ms-1"
+                          icon="angle-right"
+                          size="sm"
+                        />{" "}
+                        1200 Sqrt
+                      </span>
+                      <button
+                        className="btn position-absolute"
+                        style={{ backgroundColor: "#ff783d" }}
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
-        {/* <h3 className="text-warning text-center mt-5">Recent Properties</h3>
-        <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
-          <div class="col">
-            <div class="card h-100">
-              <img src={Flat4} className="card-img-top" alt="" />
-              <div class="card-body">
-                <h2 class="card-title">$469,000</h2>
-                <h5 class="card-text">6 beds || 2 baths || 2436 sqrt</h5>
-                <p class="card-text">
-                  Donec eget efficitur ex. Donec eget dolor vitae eros feugiat
-                  tristique id vitae massa. Proin vulputate congue rutrum. Fusce
-                  lobortis a enim eget tempus. Class aptent taciti sociosqu ad
-                  litora.
-                </p>
-                <h5 class="card-text">Location: Mirpur</h5>
-              </div>
-              <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div className="btn btn-primary">Buy Now</div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src={Flat5} className="card-img-top" alt="" />
-              <div class="card-body">
-                <h2 class="card-title">$469,000</h2>
-                <h5 class="card-text">6 beds || 2 baths || 2436 sqrt</h5>
-                <p class="card-text">
-                  Donec eget efficitur ex. Donec eget dolor vitae eros feugiat
-                  tristique id vitae massa. Proin vulputate congue rutrum. Fusce
-                  lobortis a enim eget tempus. Class aptent taciti sociosqu ad
-                  litora.
-                </p>
-                <h5 class="card-text">Location: Mirpur</h5>
-              </div>
-              <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div className="btn btn-primary">Buy Now</div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src={Flat6} className="card-img-top" alt="" />
-              <div class="card-body">
-                <h2 class="card-title">$469,000</h2>
-                <h5 class="card-text">6 beds || 2 baths || 2436 sqrt</h5>
-                <p class="card-text">
-                  Donec eget efficitur ex. Donec eget dolor vitae eros feugiat
-                  tristique id vitae massa. Proin vulputate congue rutrum. Fusce
-                  lobortis a enim eget tempus. Class aptent taciti sociosqu ad
-                  litora.
-                </p>
-                <h5 class="card-text">Location: Mirpur</h5>
-              </div>
-              <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div className="btn btn-primary">Buy Now</div>
-              </div>
-            </div>
-          </div>
-          
-          
-        </div>
-
-        <h3 className="text-warning text-center mt-5">Old Properties</h3>
-        <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
-          <div class="col">
-            <div class="card h-100">
-              <img src={Flat7} className="card-img-top" alt="" />
-              <div class="card-body">
-                <h2 class="card-title">$469,000</h2>
-                <h5 class="card-text">6 beds || 2 baths || 2436 sqrt</h5>
-                <p class="card-text">
-                  Donec eget efficitur ex. Donec eget dolor vitae eros feugiat
-                  tristique id vitae massa. Proin vulputate congue rutrum. Fusce
-                  lobortis a enim eget tempus. Class aptent taciti sociosqu ad
-                  litora.
-                </p>
-                <h5 class="card-text">Location: Mirpur</h5>
-              </div>
-              <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div className="btn btn-primary">Buy Now</div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src={Flat8} className="card-img-top" alt="" />
-              <div class="card-body">
-                <h2 class="card-title">$469,000</h2>
-                <h5 class="card-text">6 beds || 2 baths || 2436 sqrt</h5>
-                <p class="card-text">
-                  Donec eget efficitur ex. Donec eget dolor vitae eros feugiat
-                  tristique id vitae massa. Proin vulputate congue rutrum. Fusce
-                  lobortis a enim eget tempus. Class aptent taciti sociosqu ad
-                  litora.
-                </p>
-                <h5 class="card-text">Location: Mirpur</h5>
-              </div>
-              <div style={{ marginLeft: "15px", marginBottom: "20px" }}>
-                <div className="btn btn-primary">Buy Now</div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src={Flat9} className="card-img-top" alt="" />
-              <div class="card-body">
-                <h2 class="card-title">$469,000</h2>
-                <h5 class="card-text">6 beds || 2 baths || 2436 sqrt</h5>
-                <p class="card-text">
-                  Donec eget efficitur ex. Donec eget dolor vitae eros feugiat
-                  tristique id vitae massa. Proin vulputate congue rutrum. Fusce
-                  lobortis a enim eget tempus. Class aptent taciti sociosqu ad
-                  litora.
-                </p>
-                <h5 class="card-text">Location: Mirpur</h5>
-              </div>
-              <div style={{ marginLeft: "15px", marginBottom: "20px"}}>
-                <div className="btn btn-primary">Buy Now</div>
-              </div>
-            </div>
-          </div> */}
-
-        {/* </div> */}
+        <MDBBtn style={{backgroundColor:'#ff783d'}} className="position-absolute start-50 translate-middle mt-5">Load More Appointment</MDBBtn>
+        
       </div>
-    </section>
+    </div>
   );
 };
 
