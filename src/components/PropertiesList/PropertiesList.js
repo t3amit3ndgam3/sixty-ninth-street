@@ -59,10 +59,10 @@ const PropertiesList = () => {
 
 							<div className="propertiesForm typesCount mt-5">
 								<Range
-									step={1}
+									step={20}
 									min={0}
 									className="propertyRange"
-									max={10000000}
+									max={1000000}
 									values={range}
 									onChange={(values) => setRange(values)}
 									renderTrack={({ props, children }) => (
@@ -97,7 +97,7 @@ const PropertiesList = () => {
 						</div>
 					</div>
 					<div className="col-12  col-md-8 ">
-						{/* {list.map(ls=>( */}
+						{list.map(ls=>(
 							<Link to="" className="RjPropertiesLInk bg-default">
 							<div class="card mb-3 RjPropertiseCard">
 								<div class="row g-0">
@@ -137,7 +137,7 @@ const PropertiesList = () => {
 								</div>
 							</div>
 						</Link>
-						{/* ))} */}
+						))}
 
 						
 					</div>
