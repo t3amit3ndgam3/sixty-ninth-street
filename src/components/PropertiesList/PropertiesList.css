@@ -1,0 +1,82 @@
+.propertyColFour{
+   
+}
+
+.propertiesForm{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    box-shadow:0px 1px 2px #302a2a;
+}
+.RjpropertiseHEading{
+    padding: 50px 0px;
+}
+.typesCount{
+    padding-bottom: 80px;
+}
+.propertiesForm{
+    position: relative;
+    z-index: 1;
+}
+.propertiesRangeCount{
+    position:absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+}
+.RjPropertiseCard{
+    margin-left: 10px;
+    margin-bottom: 30px !important;
+    max-width: 100%;
+    box-shadow:0px 1px 2px #302a2a;
+}
+.RjPropertiesLInk{
+    text-decoration: none;
+    color: black;
+}
+.RjPropertiesLInk:hover{
+    color: black;
+}
+.RjPropertiesImg{
+    overflow: hidden;
+}
+.RjPropertiesImg img{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+   
+}
+
+
+
+.RjPropertiseCard:hover{
+    box-shadow:0px 4px 10px #302a2a;
+    transition: ease 0.6s all;
+}
+.RjPropertiseCard:hover .RjPropertiesImg img{
+    transform: scale(1.1);
+    transition: ease 0.6s all;
+}
+.card-title {
+    margin-bottom: 1px !important;
+}
+
+.RjPropertiseUserSection{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.RjProUser img{
+    width: 30px;
+    height:30px;
+    box-sizing: border-box;
+}
+
+.RjPropertiesListIcon{
+    display:flex;
+    align-items: center;
+}
+.RjPropertiesListIcon a:hover{
+    color: rgb(218, 11, 4);
+    transition: ease 0.6s all;
+}
