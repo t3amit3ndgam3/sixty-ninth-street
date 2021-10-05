@@ -14,7 +14,9 @@ const Properties = () => {
     <div>
       <div className="container pt-5">
         <div className="col-md-12 RJBuySellRentHeader mb-5 text-center">
-          <h1 style={{ color: " #ff783d ", fontFamily: "Roboto" }}>Properties</h1>
+          <h1 style={{ color: " #ff783d ", fontFamily: "Roboto" }}>
+            Properties
+          </h1>
         </div>
         <div className="row p-3">
           <div className="col-md-4 mt-3">
@@ -231,6 +233,11 @@ const Properties = () => {
               </a>
             </div>
           </div>
+        </div>
+        <div class="d-flex justify-content-evenly">
+          <MDBBtn outline rounded className="mx-2" color="Black"  style={{backgroundColor:'#ff783d'}}>
+            Load More Feature
+          </MDBBtn>
         </div>
       </div>
     </div>
