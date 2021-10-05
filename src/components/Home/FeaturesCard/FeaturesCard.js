@@ -8,7 +8,7 @@ import Flat6 from "../../../images/Flat6.jpg";
 import Flat7 from "../../../images/Flat7.jpg";
 import Flat8 from "../../../images/Flat8.jpg";
 import Flat9 from "../../../images/Flat9.jpg";
-import AppointmentFeatureDetails from "../AppointmentFeatureDetails/AppointmentFeatureDetails";
+import AppointmentFeatureDetails from "../FeatureDetails/AppointmentFeatureDetails";
 const featureInfo = [
   {
     appointmentHeading: "Boutique Space Greenville",
