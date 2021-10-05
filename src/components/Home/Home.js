@@ -9,8 +9,8 @@ import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
 import Agents from "./Agents/Agents";
 import BuySellRentHome from "./BuySellRentHome/BuySellRentHome";
-import AppointmentFeature from "./AppointmentFeature/AppointmentFeature";
-import AppointmentFeatureDetails from "./AppointmentFeatureDetails/AppointmentFeatureDetails";
+import FeaturesCard from "./FeaturesCard/FeaturesCard";
+
 
 const Home = () => {
   return (
@@ -23,7 +23,7 @@ const Home = () => {
       <DreamHome />
       <Agents />
       <Testimonials />
-      <AppointmentFeature></AppointmentFeature>
+      <FeaturesCard></FeaturesCard>
       <Contact />
       <Footer />
     </div>
