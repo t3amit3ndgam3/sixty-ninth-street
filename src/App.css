@@ -1,8 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.navSpace{
-  padding-top: 100px;
+
+/* background-color: #fafafc
+  button background color: #10257f
+  button background hover color: #0073e1
+  Primary font : Roboto
+  primary font weight : 600
+  Secondary font : Roboto Slab
+  secondary font weight : 400
+  heading color : #222222
+  */
+.p_heading {
+  color: #222222;
+}
+.p_font {
+  font-family: "Roboto";
+}
+.s_font {
+  font-family: " Roboto Slab";
 }
