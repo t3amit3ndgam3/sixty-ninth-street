@@ -1,34 +1,25 @@
 import React from "react";
-import { MDBBtn, MDBIcon, MDBRipple } from "mdb-react-ui-kit";
-import Flat1 from "../../../images/Flat1.jpg";
-import Flat2 from "../../../images/Flat2.jpg";
-import Flat3 from "../../../images/Flat3.jpg";
-// import Flat4 from "../../../images/Flat4.jpg";
-// import Flat5 from "../../../images/Flat5.jpg";
-// import Flat6 from "../../../images/Flat6.jpg";
-// import Flat7 from "../../../images/Flat7.jpg";
-// import Flat8 from "../../../images/Flat8.jpg";
-// import Flat9 from "../../../images/Flat9.jpg";
-const Properties = () => {
+import { MDBIcon, MDBRipple } from "mdb-react-ui-kit";
+
+const AppointmentFeatureDetails = ({ feature }) => {
   return (
     <div>
       <div className="container pt-5">
-        <div className="col-md-12 RJBuySellRentHeader mb-5 text-center">
-          <h1 style={{ color: " #ff783d ", fontFamily: "Roboto" }}>
-            Properties
-          </h1>
-        </div>
         <div className="row p-3">
           <div className="col-md-4 mt-3">
             <div className="BSRSec">
-              <a href="" className="RjcardLInk">
+              <a href=" "  className="RjcardLInk">
                 <div
                   class="card RjcustomCard bg-image hover-overlay shadow-1-strong rounded"
                   style={{ maxWidth: "22rem" }}
                   rippleTag="div"
                   rippleColor="light"
                 >
-                  <img src={Flat1} class="card-img-top RJcardImg" alt="..." />
+                  <img
+                    src={feature.image}
+                    class="card-img-top RJcardImg"
+                    alt="..."
+                  />
                   <a href="#!">
                     <div
                       className="mask"
@@ -47,9 +38,9 @@ const Properties = () => {
 
                   <div class="card-body">
                     <h5 class="card-title text-start">
-                      Luxury Apartments in Baridhara
+                      {feature.appointmentHeading}
                     </h5>
-                    <h6 class="card-title text-start"> ৳ 85,50,000</h6>
+                    <h6 class="card-title text-start"> {feature.price}</h6>
                     <p class="card-text text-start">
                       Downtown Frederick hot spot. Top location for local
                       entertainment. All fixtures are included. Liquor license
@@ -100,7 +91,11 @@ const Properties = () => {
                   rippleTag="div"
                   rippleColor="light"
                 >
-                  <img src={Flat2} class="card-img-top RJcardImg" alt="..." />
+                  <img
+                    src={feature.image}
+                    class="card-img-top RJcardImg"
+                    alt="..."
+                  />
                   <a href="#!">
                     <div
                       className="mask"
@@ -118,9 +113,9 @@ const Properties = () => {
                   </a>
                   <div class="card-body">
                     <h5 class="card-title text-start">
-                      Luxury Apartments in Baridhara
+                      {feature.appointmentHeading}
                     </h5>
-                    <h6 class="card-title text-start"> ৳ 85,50,000</h6>
+                    <h6 class="card-title text-start"> {feature.price}</h6>
                     <p class="card-text text-start">
                       Downtown Frederick hot spot. Top location for local
                       entertainment. All fixtures are included. Liquor license
@@ -171,7 +166,11 @@ const Properties = () => {
                   rippleTag="div"
                   rippleColor="light"
                 >
-                  <img src={Flat3} class="card-img-top RJcardImg" alt="..." />
+                  <img
+                    src={feature.image}
+                    class="card-img-top RJcardImg"
+                    alt="..."
+                  />
                   <a href="#!">
                     <div
                       className="mask"
@@ -189,9 +188,9 @@ const Properties = () => {
                   </a>
                   <div class="card-body">
                     <h5 class="card-title text-start">
-                      Luxury Apartments in Banani
+                      {feature.appointmentHeading}
                     </h5>
-                    <h6 class="card-title text-start"> ৳ 85,50,000</h6>
+                    <h6 class="card-title text-start"> {feature.price}</h6>
                     <p class="card-text text-start">
                       Downtown Frederick hot spot. Top location for local
                       entertainment. All fixtures are included. Liquor license
@@ -234,14 +233,9 @@ const Properties = () => {
             </div>
           </div>
         </div>
-        <div class="d-flex justify-content-evenly">
-          <MDBBtn outline rounded className="mx-2" color="Black"  style={{backgroundColor:'#ff783d'}}>
-            Load More Feature
-          </MDBBtn>
-        </div>
       </div>
     </div>
   );
 };
 
-export default Properties;
+export default AppointmentFeatureDetails;
