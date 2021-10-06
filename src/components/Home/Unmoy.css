@@ -259,18 +259,17 @@ input:focus ~ .bar:after {
 }
 .spp_wrapper {
   width: 80%;
-  margin: 50px auto;
+  margin: 0 auto;
 }
 .notice_area {
   display: flex;
   justify-content: space-between;
-  margin: 0 30px 0 30px;
 }
 .property_details_container {
   display: flex;
 }
 .listing_content {
-  width: 50%;
+  width: 70%;
 }
 .label_btn .type_label {
   display: inline-block;
@@ -309,7 +308,7 @@ input:focus ~ .bar:after {
   text-transform: capitalize;
 }
 .property_image_carousels {
-  width: 60%;
+  width: 90%;
 }
 .property_image_carousels img {
   width: 100%;
@@ -320,7 +319,7 @@ input:focus ~ .bar:after {
   box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
   border-radius: 2px;
   margin-bottom: 30px;
-  width: 60%;
+  width: 90%;
   display: inline-block;
   line-height: 1.65em;
 }
@@ -340,15 +339,15 @@ input:focus ~ .bar:after {
   background-color: #fff;
   padding: 30px;
   display: inline-block;
-  width: 60%;
+  width: 90%;
   min-height: 1px;
   line-height: 1.6em;
   box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
   border-radius: 2px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .accordion {
-  width: 60%;
+  width: 90%;
   margin-bottom: 20px;
 }
 .item {
@@ -407,10 +406,40 @@ input:focus ~ .bar:after {
   align-items: center;
   flex-direction: column;
   background-color: #fff;
-  width: 50%;
+  width: 30%;
+  height: 100%;
+  max-height: 200vh;
+  padding: 20px;
+  font-family: "Nunito Sans";
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
 }
-.owner_details_form {
-  color: #0d263c;
+.owner_details_section h5 {
+  background-color: #f5f5f5;
+  width: 100%;
+  text-align: center;
+  color: #222222;
+}
+.spp_button_wrap button {
+  border: none;
+  padding: 13px 100px;
+  background-color: #10257f;
+  opacity: 0.9;
+  color: #fff;
+}
+.spp_button_wrap button:hover {
+  opacity: 1;
+}
+.prop_icon_phone {
+  padding: 2px;
+  margin-right: 2px;
+}
+.prop_btn_icon {
+  margin-right: 5px;
+}
+.title_prop_icon {
+  margin-right: 2px;
+  padding: 2px;
+  color: grey;
 }
 /* SinglePageProperty */
 
@@ -471,7 +500,7 @@ input:focus ~ .bar:after {
     font-size: 28px;
   }
   .prop_btn button {
-    margin: 0 5px 0 0;
+    margin: 0 5px 10px 0;
   }
   .property_overview {
     width: 100%;
@@ -494,6 +523,19 @@ input:focus ~ .bar:after {
     width: 100%;
   }
   .right_content {
+    width: 100%;
+  }
+  .property_details_container {
+    display: flex;
+    flex-direction: column;
+  }
+  .owner_details_section {
+    width: 100%;
+  }
+  .listing_content {
+    width: 100%;
+  }
+  .property_image_carousels {
     width: 100%;
   }
   /* SinglePageProperty */

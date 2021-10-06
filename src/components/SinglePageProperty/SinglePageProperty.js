@@ -1,8 +1,17 @@
 import React, { useState, useRef } from "react";
 import image1 from "../../images/DreamHome/dream.jpg";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBed, faLandmark, faShower } from "@fortawesome/free-solid-svg-icons";
-
+import {
+  faBed,
+  faLandmark,
+  faShower,
+  faPhoneAlt,
+  faShareAlt,
+  faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 const SinglePageProperty = () => {
   const [show, setShow] = useState(true);
   const form = useRef();
@@ -20,14 +29,26 @@ const SinglePageProperty = () => {
               <div className="type_label">House Type</div>
             </div>
             <h1 className="entry_title">Gorgeous Farm in Jersey</h1>
-            <p>Ferris Park, Jersey City, Greenville</p>
+
+            <p>
+              <FontAwesomeIcon
+                className="title_prop_icon"
+                icon={faMapMarkerAlt}
+              />
+              Ferris Park, Jersey City, Greenville
+            </p>
           </div>
           <div className="single_property_labels_right">
             <div className="price_label">$780,000</div>
             <div className="prop_btn">
-              <button>Share</button>
-              <button>Add to favourites</button>
-              <button>Print</button>
+              <button>
+                <FontAwesomeIcon className="prop_btn_icon" icon={faShareAlt} />
+                Share
+              </button>
+              <button>
+                <FontAwesomeIcon className="prop_btn_icon" icon={faHeart} />
+                Add to favourites
+              </button>
             </div>
           </div>
         </div>
@@ -35,7 +56,22 @@ const SinglePageProperty = () => {
         <div className="property_details_container">
           <div className="listing_content">
             <div className="property_image_carousels">
-              <img src={image1} alt="" />
+              <Carousel
+                interval="2000"
+                transitionTime="1000"
+                showStatus={false}
+                showIndicators={false}
+              >
+                <div>
+                  <img src="https://picsum.photos/700/400?img=1" alt="" />
+                </div>
+                <div>
+                  <img src="https://picsum.photos/700/400?img=2" alt="" />
+                </div>
+                <div>
+                  <img src="https://picsum.photos/700/400?img=3" alt="" />
+                </div>
+              </Carousel>
             </div>
             <div className="property_overview">
               <h4>Overview</h4>
@@ -120,7 +156,7 @@ const SinglePageProperty = () => {
                           <strong>Type:</strong> Apartment
                         </li>
                         <li>
-                          <strong>Price:</strong> 220,000{" "}
+                          <strong>Price:</strong> 220,000
                         </li>
                         <li>
                           <strong>Bedrooms:</strong> 4
@@ -170,10 +206,13 @@ const SinglePageProperty = () => {
             </div>
           </div>
           <div className="owner_details_section">
-            <h4>Property owner Details</h4>
-            <h3>Owner name</h3>
+            <h5>Property owner details</h5>
+            <h4>Owner name</h4>
             <p>Property id: 222222</p>
-            <h2>0167648982</h2>
+            <h6>
+              <FontAwesomeIcon className="prop_icon_phone" icon={faPhoneAlt} />
+              0167648982
+            </h6>
             <form
               ref={form}
               onSubmit={handleSubmit}
@@ -219,7 +258,7 @@ const SinglePageProperty = () => {
                 <span class="bar"></span>
                 <label className="contact_label">Your Messege</label>
               </div>
-              <div className="button_wrap">
+              <div className="spp_button_wrap">
                 <button type="submit">Send Messege</button>
               </div>
             </form>
