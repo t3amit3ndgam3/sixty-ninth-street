@@ -3,6 +3,7 @@ import Property from "../../../images/Property.png";
 import BuyProperty from "../../../images/BuyProperty.png";
 import MakeInvestment from "../../../images/MakeInvestment.png";
 import WorkDetails from "../WorkDetails/WorkDetails";
+
 const Work = () => {
   const worksData = [
     {

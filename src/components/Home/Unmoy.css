@@ -27,9 +27,6 @@
   font-size: 25px;
   opacity: 0.5;
   letter-spacing: 2px;
-  margin-top: 0;
-  padding-top: 0;
-  line-height: 0;
 }
 .company_header p {
   width: 70%;
@@ -42,7 +39,6 @@
 .footer_column h2 {
   font-size: 18px;
   font-weight: 500;
-  /* padding-top: 65px; */
   margin-bottom: 33px;
 }
 .footer_column ul {
@@ -70,7 +66,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   background-image: url("../../images/bg234.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -83,8 +79,6 @@
   height: 450px;
   width: 400px;
   background-color: #fff;
-  box-shadow: 5px grey;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,10 +86,10 @@
 }
 .group {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-family: "Mukta", sans-serif;
 }
-input {
+.contact_input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
@@ -103,12 +97,12 @@ input {
   border: none;
   border-bottom: 1px solid #757575;
 }
-input:focus {
+.contact_input:focus {
   outline: none;
 }
 
 /* LABEL ================*/
-label {
+.contact_label {
   color: #999;
   font-size: 15px;
   font-weight: normal;
@@ -120,9 +114,9 @@ label {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-input:focus ~ label,
-input:valid ~ label {
-  top: -20px;
+.contact_input:focus ~ .contact_label,
+.contact_input:valid ~ .contact_label {
+  top: -10px;
   font-size: 14px;
   color: #5264ae;
 }
@@ -140,7 +134,7 @@ input:valid ~ label {
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: red;
+  background: #10257f;
   transition: 0.2s ease all;
   -moz-transition: 0.5s ease all;
   -webkit-transition: 0.5s ease all;
@@ -164,4 +158,425 @@ input:focus ~ .bar:after {
 .button_wrap button:hover {
   opacity: 1;
 }
-/*.............. Unmoy Biswas ...........*/
+
+/* LOGIN SECTION */
+.login_wrapper {
+  background-image: url(../../images/Authentication_images/bg-white-3.png);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_card {
+  height: 600px;
+  width: 390px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto Slab";
+  font-weight: 100;
+}
+.login_header {
+  text-align: center;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_button_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_button_wrap button {
+  border: none;
+  padding: 13px 80px;
+  background: #10257f;
+  opacity: 0.9;
+  color: #ffffff;
+  border-radius: 30px;
+  opacity: 1;
+}
+.login_button_wrap button:hover {
+  opacity: 0.9;
+}
+
+/* LOGIN SECTION */
+
+/* SIGNUP SECTION */
+
+.signup_header {
+  height: 20%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social_wrapper {
+  text-align: center;
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+.social_wrapper p {
+  margin-bottom: 0;
+}
+.social_links {
+  font-size: 40px;
+}
+.social_icons1 {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  margin: 10px;
+  background: #e72734;
+}
+.social_icons2 {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  margin: 10px;
+  background: #3b5998;
+}
+.social_icons3 {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  margin: 10px;
+  background: #1da0f2;
+}
+/* SIGNUP SECTION */
+/* SinglePageProperty */
+.spp_container {
+  background-color: #edefea;
+}
+.spp_wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+.notice_area {
+  display: flex;
+  justify-content: space-between;
+}
+.property_details_container {
+  display: flex;
+}
+.listing_content {
+  width: 70%;
+}
+.label_btn .type_label {
+  display: inline-block;
+  background-color: #10257f;
+  margin-right: 5px;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 1;
+}
+.entry_title {
+  font-size: 38px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+.single_property_labels_right {
+  margin-top: 36px;
+}
+.price_label {
+  text-align: right;
+  font-size: 28px;
+}
+.prop_btn button {
+  border: none;
+  background: #fff;
+  padding: 7px 14px;
+  border-radius: 3px;
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
+  font-weight: 700;
+  line-height: 10px;
+  font-size: 12px;
+  color: #222;
+  margin-left: 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.property_image_carousels {
+  width: 90%;
+}
+.property_image_carousels img {
+  width: 100%;
+}
+.property_overview {
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
+  border-radius: 2px;
+  margin-bottom: 30px;
+  width: 90%;
+  display: inline-block;
+  line-height: 1.65em;
+}
+.overview_element {
+  list-style: none;
+  margin: 10px 0 0;
+  float: left;
+  width: 16%;
+}
+.overview_element li {
+  text-align: center;
+  line-height: 20px;
+  font-weight: 600;
+  color: #222;
+}
+.property_description {
+  background-color: #fff;
+  padding: 30px;
+  display: inline-block;
+  width: 90%;
+  min-height: 1px;
+  line-height: 1.6em;
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+.accordion {
+  width: 90%;
+  margin-bottom: 20px;
+}
+.item {
+  background-color: #fff;
+  padding: 20px;
+  line-height: 1.6em;
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
+  border-radius: 2px;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content {
+  height: auto;
+  overflow: hidden;
+  padding: 10px;
+}
+.property_details_content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Roboto";
+  padding-top: 10px;
+}
+.left_content {
+  width: 50%;
+}
+.left_content ul li {
+  list-style-type: none;
+}
+.left_content ul li strong {
+  letter-spacing: 0.5px;
+}
+
+.right_content {
+  width: 50%;
+}
+.right_content ul li {
+  list-style-type: none;
+}
+.right_content ul li strong {
+  letter-spacing: 0.5px;
+}
+.floor_image_container {
+  width: 100%;
+  padding: 20px;
+}
+.floor_image_container img {
+  width: 100%;
+}
+.owner_details_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  width: 30%;
+  height: 100%;
+  max-height: 200vh;
+  padding: 20px;
+  font-family: "Nunito Sans";
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
+}
+.owner_details_section h5 {
+  background-color: #f5f5f5;
+  width: 100%;
+  text-align: center;
+  color: #222222;
+}
+.spp_button_wrap button {
+  border: none;
+  padding: 13px 100px;
+  background-color: #10257f;
+  opacity: 0.9;
+  color: #fff;
+}
+.spp_button_wrap button:hover {
+  opacity: 1;
+}
+.prop_icon_phone {
+  padding: 2px;
+  margin-right: 2px;
+}
+.prop_btn_icon {
+  margin-right: 5px;
+}
+.title_prop_icon {
+  margin-right: 2px;
+  padding: 2px;
+  color: grey;
+}
+/* SinglePageProperty */
+
+/******************* RESPONSIVE BREAKPOINTS ********************/
+@media only screen and (max-width: 600px) {
+  /* CONTACT SECTION */
+  .contact_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  .left_side {
+    width: 80%;
+    padding: 20px;
+    margin-top: 10px;
+  }
+  .form_wrapper {
+    height: 420px;
+    width: 320px;
+  }
+  .button_wrap button {
+    padding: 13px 40px;
+    margin-bottom: 10px;
+  }
+  /* CONTACT SECTION */
+
+  /* FOOTER SECTION */
+  .footer_section {
+    flex-direction: column;
+    display: block;
+    padding: 60px 0;
+  }
+  .company_header {
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+    border-right: 0;
+  }
+  .company_header p {
+    width: 100%;
+    padding: 20px;
+  }
+  .footer_column {
+    margin-top: 30px;
+  }
+  /* FOOTER SECTION */
+  /* SinglePageProperty */
+  .notice_area {
+    flex-direction: column;
+  }
+  .single_property_labels_right {
+    margin-top: 0;
+  }
+  .price_label {
+    text-align: left;
+    font-size: 28px;
+  }
+  .prop_btn button {
+    margin: 0 5px 10px 0;
+  }
+  .property_overview {
+    width: 100%;
+  }
+  .overview_element {
+    width: 30%;
+  }
+  .property_description {
+    width: 100%;
+  }
+  .accordion {
+    width: 100%;
+  }
+  .property_details_content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .left_content {
+    width: 100%;
+  }
+  .right_content {
+    width: 100%;
+  }
+  .property_details_container {
+    display: flex;
+    flex-direction: column;
+  }
+  .owner_details_section {
+    width: 100%;
+  }
+  .listing_content {
+    width: 100%;
+  }
+  .property_image_carousels {
+    width: 100%;
+  }
+  /* SinglePageProperty */
+}
+@media only screen and (max-width: 360px) {
+  /* SinglePageProperty */
+  .notice_area {
+    flex-direction: column;
+  }
+  .single_property_labels_right {
+    margin-top: 0;
+  }
+  .price_label {
+    text-align: left;
+    font-size: 28px;
+  }
+  .prop_btn button {
+    margin: 0 5px 0 0;
+  }
+  .property_overview {
+    width: 100%;
+  }
+  .overview_element {
+    width: 30%;
+  }
+  .property_description {
+    width: 100%;
+  }
+  .accordion {
+    width: 100%;
+  }
+  .property_details_content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .left_content {
+    width: 100%;
+  }
+  .right_content {
+    width: 100%;
+  }
+  /* SinglePageProperty */
+}
