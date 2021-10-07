@@ -1,0 +1,18 @@
+/*--------- dashboard left side card -------------*/
+.custom-card-left {
+  margin: 30px 20px 20px 30px;
+}
+.card-img-top {
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 50%;
+}
+.custom-user-dash {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.custom-user-title {
+  margin: 30px auto;
+}

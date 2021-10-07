@@ -1,6 +1,8 @@
 import React from "react";
 import { MDBIcon, MDBRipple } from "mdb-react-ui-kit";
-
+import Nestor from "../../../images/NESTOR.png";
+import James from "../../../images/JAMES PHELPS.png";
+import EMA from "../../../images/ema.png";
 const AppointmentFeatureDetails = ({ feature }) => {
   return (
     <div>
@@ -77,6 +79,12 @@ const AppointmentFeatureDetails = ({ feature }) => {
                         Details
                       </button>
                     </div>
+                    <div className="card-footer d-flex  align-items-center">
+                      <img className="mx-2" src={Nestor} alt="" width="50" />
+                      <div>
+                        <h6 style={{ color: "black" }}> Nestor</h6>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -152,6 +160,12 @@ const AppointmentFeatureDetails = ({ feature }) => {
                         Details
                       </button>
                     </div>
+                    <div className="card-footer d-flex  align-items-center">
+                      <img className="mx-2" src={James} alt="" width="50" />
+                      <div>
+                        <h6 style={{ color: "black" }}> James</h6>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -226,6 +240,12 @@ const AppointmentFeatureDetails = ({ feature }) => {
                       >
                         Details
                       </button>
+                    </div>
+                    <div className="card-footer d-flex  align-items-center">
+                      <img className="mx-2" src={EMA} alt="" width="50" />
+                      <div>
+                        <h6 style={{ color: "black" }}> Ema Watson</h6>
+                      </div>
                     </div>
                   </div>
                 </div>

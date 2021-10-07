@@ -6,6 +6,7 @@ import PrivateRoute from "./components/Authentication/PrivateRoute";
 import Signup from "./components/Authentication/Signup";
 import Login from "./components/Authentication/Login";
 import SinglePageProperty from "./components/SinglePageProperty/SinglePageProperty";
+import UserDashboard from "./components/Dashboard/UserDashboard";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <Route path="/spp" component={SinglePageProperty} />
+            <Route path="/userDashboard" component={UserDashboard} />
           </Switch>
         </Router>
       </AuthProvider>
