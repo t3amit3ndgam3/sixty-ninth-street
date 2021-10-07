@@ -3,8 +3,9 @@ import { MDBBtn, MDBIcon, MDBRipple } from "mdb-react-ui-kit";
 import Flat1 from "../../../images/Flat1.jpg";
 import Flat2 from "../../../images/Flat2.jpg";
 import Flat3 from "../../../images/Flat3.jpg";
-// import Flat4 from "../../../images/Flat4.jpg";
-// import Flat5 from "../../../images/Flat5.jpg";
+import Allison from "../../../images/ALLISON.png";
+import Aliza from "../../../images/aliza.png";
+import EMA from "../../../images/ema.png";
 // import Flat6 from "../../../images/Flat6.jpg";
 // import Flat7 from "../../../images/Flat7.jpg";
 // import Flat8 from "../../../images/Flat8.jpg";
@@ -86,6 +87,12 @@ const Properties = () => {
                         Details
                       </button>
                     </div>
+                    <div className="card-footer d-flex  align-items-center">
+                      <img className="mx-2" src={Allison} alt="" width="50" />
+                      <div>
+                        <h6 style={{ color: "black" }}> Allison</h6>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -156,6 +163,12 @@ const Properties = () => {
                       >
                         Details
                       </button>
+                    </div>
+                    <div className="card-footer d-flex  align-items-center">
+                      <img className="mx-2" src={Aliza} alt="" width="50" />
+                      <div>
+                        <h6 style={{ color: "black" }}> Aliza</h6>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -228,6 +241,12 @@ const Properties = () => {
                         Details
                       </button>
                     </div>
+                    <div className="card-footer d-flex  align-items-center">
+                      <img className="mx-2" src={EMA} alt="" width="50" />
+                      <div>
+                        <h6 style={{ color: "black" }}> Ema Watson</h6>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -235,7 +254,13 @@ const Properties = () => {
           </div>
         </div>
         <div class="d-flex justify-content-evenly">
-          <MDBBtn outline rounded className="mx-2" color="Black"  style={{backgroundColor:'#ff783d'}}>
+          <MDBBtn
+            outline
+            rounded
+            className="mx-2"
+            color="Black"
+            style={{ backgroundColor: "#ff783d" }}
+          >
             Load More Feature
           </MDBBtn>
         </div>
