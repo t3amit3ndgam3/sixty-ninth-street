@@ -1,26 +1,23 @@
 import React from "react";
-import { MDBIcon, MDBRipple } from "mdb-react-ui-kit";
+import { MDBIcon } from "mdb-react-ui-kit";
 
-const AppointmentFeatureDetails = ({ feature }) => {
+const AppointmentFeatureDetails = () => {
+  // console.log(feature);
   return (
     <div>
       <div className="container pt-5">
         <div className="row p-3">
           <div className="col-md-4 mt-3">
             <div className="BSRSec">
-              <a href=" "  className="RjcardLInk">
+              <a href=" " className="RjcardLInk">
                 <div
                   class="card RjcustomCard bg-image hover-overlay shadow-1-strong rounded"
                   style={{ maxWidth: "22rem" }}
                   rippleTag="div"
                   rippleColor="light"
                 >
-                  <img
-                    src={feature.image}
-                    class="card-img-top RJcardImg"
-                    alt="..."
-                  />
-                  <a href="#!">
+                  <img src="/" class="card-img-top RJcardImg" alt="" />
+                  <a href="/">
                     <div
                       className="mask"
                       style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
@@ -30,17 +27,15 @@ const AppointmentFeatureDetails = ({ feature }) => {
                           className="ms-1"
                           icon="location-arrow"
                           size="sm"
-                        />{" "}
+                        />
                         Gulshan,Dhaka
                       </p>
                     </div>
                   </a>
 
                   <div class="card-body">
-                    <h5 class="card-title text-start">
-                      {feature.appointmentHeading}
-                    </h5>
-                    <h6 class="card-title text-start"> {feature.price}</h6>
+                    <h5 class="card-title text-start">gg</h5>
+                    <h6 class="card-title text-start"> 20</h6>
                     <p class="card-text text-start">
                       Downtown Frederick hot spot. Top location for local
                       entertainment. All fixtures are included. Liquor license
@@ -84,18 +79,14 @@ const AppointmentFeatureDetails = ({ feature }) => {
           </div>
           <div className="col-md-4 mt-3">
             <div className="BSRSec">
-              <a href="" className="RjcardLInk">
+              <a href="/" className="RjcardLInk">
                 <div
                   class="card RjcustomCard bg-image hover-overlay shadow-1-strong rounded"
                   style={{ maxWidth: "22rem" }}
                   rippleTag="div"
                   rippleColor="light"
                 >
-                  <img
-                    src={feature.image}
-                    class="card-img-top RJcardImg"
-                    alt="..."
-                  />
+                  <img src="/" class="card-img-top RJcardImg" alt="..." />
                   <a href="#!">
                     <div
                       className="mask"
@@ -106,16 +97,14 @@ const AppointmentFeatureDetails = ({ feature }) => {
                           className="ms-1"
                           icon="location-arrow"
                           size="sm"
-                        />{" "}
+                        />
                         Baridhara,Dhaka
                       </p>
                     </div>
                   </a>
                   <div class="card-body">
-                    <h5 class="card-title text-start">
-                      {feature.appointmentHeading}
-                    </h5>
-                    <h6 class="card-title text-start"> {feature.price}</h6>
+                    <h5 class="card-title text-start">Heading</h5>
+                    <h6 class="card-title text-start">1</h6>
                     <p class="card-text text-start">
                       Downtown Frederick hot spot. Top location for local
                       entertainment. All fixtures are included. Liquor license
@@ -159,18 +148,14 @@ const AppointmentFeatureDetails = ({ feature }) => {
           </div>
           <div className="col-md-4 mt-3">
             <div className="BSRSec">
-              <a href="" className="RjcardLInk">
+              <a href="/" className="RjcardLInk">
                 <div
                   class="card RjcustomCard bg-image hover-overlay shadow-1-strong rounded"
                   style={{ maxWidth: "22rem" }}
                   rippleTag="div"
                   rippleColor="light"
                 >
-                  <img
-                    src={feature.image}
-                    class="card-img-top RJcardImg"
-                    alt="..."
-                  />
+                  <img src="/" class="card-img-top RJcardImg" alt="..." />
                   <a href="#!">
                     <div
                       className="mask"
@@ -181,16 +166,14 @@ const AppointmentFeatureDetails = ({ feature }) => {
                           className="ms-1"
                           icon="location-arrow"
                           size="sm"
-                        />{" "}
+                        />
                         Banani,Dhaka
                       </p>
                     </div>
                   </a>
                   <div class="card-body">
-                    <h5 class="card-title text-start">
-                      {feature.appointmentHeading}
-                    </h5>
-                    <h6 class="card-title text-start"> {feature.price}</h6>
+                    <h5 class="card-title text-start">heading</h5>
+                    <h6 class="card-title text-start"> 22</h6>
                     <p class="card-text text-start">
                       Downtown Frederick hot spot. Top location for local
                       entertainment. All fixtures are included. Liquor license

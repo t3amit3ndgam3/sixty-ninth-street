@@ -1,10 +1,13 @@
 # Available Scripts
+
 After cloning the repo you must install npm by:
 
 ### npm install
+
 In the project directory, you can run:
 
 ### npm start
+
 Well It should run now.
 
 About github:
@@ -18,15 +21,19 @@ Usually at production level projects we should not change code in local main bra
 To create and switch to a branch, run:
 
 ### git checkout -b branchName
+
 To confirm before code, run:
 
 ### git branch
+
 before switching between branches must add and commit your changes, other wise u may face error.
 
 To check git status, run:
+
 ### git status
 
 to switch other branch, run:
+
 ### git checkout branchName
 
 To pull from the server, u must switch to local main branch
@@ -36,6 +43,7 @@ after pulling the code into you local main branch. switch back to your branch by
 Then you must get the updated code (those u pulled right before) to your branch. to do that, run:
 
 ### git rebase main
+
 (main because u pulled to main branch, if it master then replace it with master branch)
 
 For any further issue with git, Discuss with your team members or "Md Rahatul Islam"
