@@ -9,11 +9,7 @@ import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
 import Agents from "./Agents/Agents";
 import BuySellRentHome from "./BuySellRentHome/BuySellRentHome";
-<<<<<<< HEAD
-import AgentList from "./AgentList/AgentList";
-=======
 import FeaturesCard from "./FeaturesCard/FeaturesCard";
->>>>>>> main
 
 const Home = () => {
   return (
@@ -24,7 +20,7 @@ const Home = () => {
       <Work />
       <Properties />
       <DreamHome />
-      <AgentList />
+      {/* <AgentList /> */}
       {/* <Agents/> */}
       <Testimonials />
       {/* <FeaturesCard></FeaturesCard> */}
