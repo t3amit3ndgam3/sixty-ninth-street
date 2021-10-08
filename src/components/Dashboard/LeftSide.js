@@ -1,10 +1,10 @@
 import React from "react";
-import Profile_avater from "../../images/Profile_avatar.png";
+// import Profile_avater from "../../images/Profile_avatar.png";
 function LeftSide() {
   return (
     <div>
       <div className="card custom-card-left">
-        <img src={Profile_avater} className="card-img-top" alt="..." />
+        <img src="/" className="card-img-top" alt="..." />
         <div className="card-body custom-user-dash">
           <h5 className="card-title custom-user-title">User Name</h5>
           <p className="card-text">
