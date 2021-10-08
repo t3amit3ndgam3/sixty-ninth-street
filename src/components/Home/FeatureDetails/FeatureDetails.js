@@ -1,15 +1,16 @@
 import React from "react";
-import { MDBIcon } from "mdb-react-ui-kit";
-
-const AppointmentFeatureDetails = () => {
-  // console.log(feature);
+import { MDBIcon, MDBRipple } from "mdb-react-ui-kit";
+import Nestor from "../../../images/NESTOR.png";
+import James from "../../../images/JAMES PHELPS.png";
+import EMA from "../../../images/ema.png";
+const AppointmentFeatureDetails = ({ feature }) => {
   return (
     <div>
       <div className="container pt-5">
         <div className="row p-3">
           <div className="col-md-4 mt-3">
             <div className="BSRSec">
-              <a href=" " className="RjcardLInk">
+              <a href="/" className="RjcardLInk">
                 <div
                   class="card RjcustomCard bg-image hover-overlay shadow-1-strong rounded"
                   style={{ maxWidth: "22rem" }}
@@ -72,6 +73,12 @@ const AppointmentFeatureDetails = () => {
                         Details
                       </button>
                     </div>
+                    <div className="card-footer d-flex  align-items-center">
+                      <img className="mx-2" src={Nestor} alt="" width="50" />
+                      <div>
+                        <h6 style={{ color: "black" }}> Nestor</h6>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -126,7 +133,7 @@ const AppointmentFeatureDetails = () => {
                           className="ms-1"
                           icon="angle-right"
                           size="sm"
-                        />{" "}
+                        />
                         1200 sqrt
                       </span>
 
@@ -140,6 +147,12 @@ const AppointmentFeatureDetails = () => {
                       >
                         Details
                       </button>
+                    </div>
+                    <div className="card-footer d-flex  align-items-center">
+                      <img className="mx-2" src={James} alt="" width="50" />
+                      <div>
+                        <h6 style={{ color: "black" }}> James</h6>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -209,6 +222,12 @@ const AppointmentFeatureDetails = () => {
                       >
                         Details
                       </button>
+                    </div>
+                    <div className="card-footer d-flex  align-items-center">
+                      <img className="mx-2" src={EMA} alt="" width="50" />
+                      <div>
+                        <h6 style={{ color: "black" }}> Ema Watson</h6>
+                      </div>
                     </div>
                   </div>
                 </div>
