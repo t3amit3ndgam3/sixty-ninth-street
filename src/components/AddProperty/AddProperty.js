@@ -11,6 +11,7 @@ const AddProperty = () => {
               <div className="label_wrapper">
                 <h6>Property for:</h6>
               </div>
+              m
               <div className="ckeckbox_wrapper">
                 <div className="input_wrapper">
                   <input type="checkbox" name="sale" required />
