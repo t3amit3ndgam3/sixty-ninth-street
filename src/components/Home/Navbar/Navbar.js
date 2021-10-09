@@ -49,24 +49,22 @@ const Navbar = () => {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 fl-right mb-lg-0">
                 <li class="nav-item ">
-                  <a
-                    to=""
+                  <Link
+                    to="/"
                     class="nav-link navItemCustom"
                     aria-current="page"
-                    href="/"
                   >
                     HOME
-                  </a>
+                  </Link>
                 </li>
                 <li class="nav-item">
-                  <a
-                    to=""
+                  <Link
+                    to="/properties"
                     class="nav-link navItemCustom"
                     aria-current="page"
-                    href="/"
                   >
                     PROPERTIES
-                  </a>
+                  </Link>
                 </li>
                 <li class="nav-item">
                   <Link
@@ -78,31 +76,31 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <a
+                  <Link
                     to=""
                     class="nav-link navItemCustom"
                     aria-current="page"
                     href="/"
                   >
                     ABOUT
-                  </a>
+                  </Link>
                 </li>
                 <li class="nav-item">
-                  <a
+                  <Link
                     to=""
                     class="nav-link navItemCustom"
                     aria-current="page"
                     href="/"
                   >
                     CONTACT
-                  </a>
+                  </Link>
                 </li>
-                <li class="nav-item">
+                {/* <li class="nav-item">
                   {currentUser && currentUser.displayName}
                   {currentUser && (
                     <button onClick={handleLogout}>Log Out</button>
                   )}
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -112,9 +110,9 @@ const Navbar = () => {
       <div className="MoboNav">
         <nav class="navbar navbar-light bg-light fixed-top moboShadow">
           <div class="container-fluid ">
-            <a class="navbar-brand navbarBrandEdit" href="/">
+            <Link class="navbar-brand navbarBrandEdit" href="/">
               SIXTY NINETH STREET
-            </a>
+            </Link>
             <button
               class="navbar-toggler"
               type="button"
@@ -144,54 +142,49 @@ const Navbar = () => {
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item ">
-                    <a
-                      to=""
+                    <Link
+                      to="/"
                       class="nav-link navItemCustom"
                       aria-current="page"
-                      href="/"
                     >
                       HOME
-                    </a>
+                    </Link>
                   </li>
                   <li class="nav-item">
-                    <a
-                      to=""
+                    <Link
+                      to="/"
                       class="nav-link navItemCustom"
                       aria-current="page"
-                      href="/"
                     >
                       PROPERTIES
-                    </a>
+                    </Link>
                   </li>
                   <li class="nav-item">
-                    <a
-                      to=""
+                    <Link
+                      to="/"
                       class="nav-link navItemCustom"
                       aria-current="page"
-                      href="/"
                     >
                       AGENTS
-                    </a>
+                    </Link>
                   </li>
                   <li class="nav-item">
-                    <a
-                      to=""
+                    <Link
+                      to="/"
                       class="nav-link navItemCustom"
                       aria-current="page"
-                      href="/"
                     >
                       ABOUT
-                    </a>
+                    </Link>
                   </li>
                   <li class="nav-item">
-                    <a
-                      to=""
+                    <Link
+                      to="/"
                       class="nav-link navItemCustom"
                       aria-current="page"
-                      href="/"
                     >
                       CONTACT
-                    </a>
+                    </Link>
                   </li>
                   <li class="nav-item">
                     {currentUser && currentUser.displayName}

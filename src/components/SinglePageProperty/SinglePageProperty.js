@@ -20,7 +20,7 @@ const SinglePageProperty = () => {
     e.preventDefault();
   };
   return (
-    <div className="spp_container">
+    <div className="spp_container navSpace pt-3">
       <div className="spp_wrapper">
         <div className="notice_area">
           <div className="single_property_labels_left">
