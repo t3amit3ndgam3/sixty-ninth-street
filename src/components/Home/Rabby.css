@@ -32,16 +32,14 @@
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
   transition: ease-in-out 0.6s all;
 }
-.scrolltrue {
-  padding: 5px 0px;
-  background: white;
-  transition: ease-in-out 0.6s all;
-}
+
 .scrollfalse {
+ 
   transition: ease-in-out 0.6s all;
 }
 
 .navbar-light .navbar-nav .nav-link {
+  
   color: rgba(255, 255, 255, 0.685);
 }
 .navbar-light .navbar-brand {
@@ -50,9 +48,15 @@
 .scrolltrue.navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0, 0.788);
 }
+.scrollfalse.navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.788);
+}
 
 .scrolltrue.navbar-light .navbar-brand {
   color: rgba(0, 0, 0, 0.788);
+}
+.scrollfalse.navbar-light .navbar-brand {
+  color: rgba(255, 255, 255, 0.788);
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -66,9 +70,11 @@
 .scrolltrue.navbar-light .navbar-nav .nav-link:hover {
   color: rgb(0, 0, 0);
 }
-
-.scrolltrue.navbar-light .navbar-brand:hover {
-  color: rgba(0, 0, 0);
+.scrollfalse.navbar-light .navbar-nav .nav-link:hover {
+  color: rgb(255, 255, 255);
+}
+.scrollfalse.navbar-light .navbar-brand:hover {
+  color: rgb(255, 255, 255);
 }
 /* ........... Header ...........  */
 .sliderImg {

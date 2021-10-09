@@ -14,7 +14,7 @@ import FeaturesCard from "./FeaturesCard/FeaturesCard";
 const Home = () => {
   return (
     <div>
-      <Navbar />
+     
       <Header />
       <BuySellRentHome />
       <Work />
