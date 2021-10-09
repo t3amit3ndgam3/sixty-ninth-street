@@ -13,13 +13,14 @@ import BuySellRentHome from "./BuySellRentHome/BuySellRentHome";
 const Home = () => {
   return (
     <div>
-      <Navbar />
+     
       <Header />
       <BuySellRentHome />
       <Work />
       <Properties />
       <DreamHome />
-      <Agents />
+      {/* <AgentList /> */}
+      {/* <Agents/> */}
       <Testimonials />
       <Contact />
       <Footer />

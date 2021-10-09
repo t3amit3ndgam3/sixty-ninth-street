@@ -2,7 +2,7 @@ import React from "react";
 import "../Home/Unmoy.css";
 const AddProperty = () => {
   return (
-    <div className="addProperty_section">
+    <div className="addProperty_section navSpace">
       <div className="addProperty_wrapper">
         <h1>Add Property</h1>
         <div>
@@ -11,15 +11,29 @@ const AddProperty = () => {
               <div className="label_wrapper">
                 <h6>Property for:</h6>
               </div>
-              m
               <div className="ckeckbox_wrapper">
                 <div className="input_wrapper">
-                  <input type="checkbox" name="sale" required />
-                  <label for="sale">Sell</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="PropertyFor"
+                    id="flexRadioDefault1"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Sell
+                  </label>
                 </div>
                 <div className="input_wrapper">
-                  <input type="checkbox" name="rent" />
-                  <label for="rent">Rent</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="PropertyFor"
+                    id="flexRadioDefault2"
+                    checked
+                  />
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Rent
+                  </label>
                 </div>
               </div>
             </div>
@@ -243,6 +257,11 @@ const AddProperty = () => {
                   <input className="input_field" type="text" name="" />
                 </div>
               </div>
+            </div>
+            <div className="input_section p-5">
+              <button type="submit" className="btn btn-info container">
+                Done
+              </button>
             </div>
           </form>
         </div>
