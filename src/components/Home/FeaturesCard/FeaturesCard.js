@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Flat1 from "../../../images/Flat1.jpg";
 import Flat2 from "../../../images/Flat2.jpg";
 import Flat3 from "../../../images/Flat3.jpg";
@@ -73,12 +73,13 @@ const featureInfo = [
   },
 ];
 const AppointmentFeature = () => {
+  const [properties, setProperties] = useState(featureInfo);
   console.log(featureInfo);
   return (
-    <div className="col-md-12 RJBuySellRentHeader mb-5 text-center">
+    <div className="col-md-12 mb-5 text-center">
       <h1 style={{ color: " #ff783d ", fontFamily: "Roboto" }}>Feature</h1>
 
-      {featureInfo.map((feature) => (
+      {properties.map((feature) => (
         <AppointmentFeatureDetails
           feature={feature}
         ></AppointmentFeatureDetails>
