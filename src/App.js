@@ -10,6 +10,8 @@ import UserDashboard from "./components/Dashboard/UserDashboard";
 import PropertiesList from "./components/PropertiesList/PropertiesList"
 import Navbar from "./components/Home/Navbar/Navbar"
 
+import AppointmentFeatureDetails from "./components/Home/FeatureDetails/FeatureDetails";
+import AddProperty from "./components/AddProperty/AddProperty";
 function App() {
   return (
     <>
@@ -23,6 +25,8 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/spp" component={SinglePageProperty} />
             <Route path="/userDashboard" component={UserDashboard} />
+            <Route path="/feature" component={AppointmentFeatureDetails} />
+            <Route path="/addProperty" component={AddProperty} />
           </Switch>
         </Router>
       </AuthProvider>

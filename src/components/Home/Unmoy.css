@@ -442,7 +442,65 @@ input:focus ~ .bar:after {
   color: grey;
 }
 /* SinglePageProperty */
-
+/* #fafafc */
+/* AddProperty */
+.addProperty_section {
+  background-color: #eaf7f4;
+  height: auto;
+  padding-top: 20px;
+}
+.addProperty_wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid rgb(223, 228, 239);
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.addProperty_wrapper h1 {
+  text-align: center;
+  font-family: "Roboto Slab";
+  text-transform: uppercase;
+  font-size: 30px;
+  padding: 10px;
+}
+.ckeckbox_wrapper {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin: 0 60px;
+}
+.ckeckbox_wrapper input {
+  margin-right: 2px;
+}
+.input_wrapper {
+  margin-right: 10px;
+  /* width: 100%; */
+}
+.input_wrapper .select_box {
+  padding: 5px 13px;
+  width: 80%;
+  background-color: #eaf7f4;
+}
+.input_box {
+  width: 70%;
+  margin: 0px auto;
+}
+.label_wrapper {
+  padding-top: 5px;
+  width: 20%;
+}
+.input_section {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+.input_field {
+  width: 80%;
+}
+/* AddProperty */
 /******************* RESPONSIVE BREAKPOINTS ********************/
 @media only screen and (max-width: 600px) {
   /* CONTACT SECTION */

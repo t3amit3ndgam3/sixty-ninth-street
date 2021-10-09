@@ -8,7 +8,7 @@ import Flat6 from "../../../images/Flat6.jpg";
 import Flat7 from "../../../images/Flat7.jpg";
 import Flat8 from "../../../images/Flat8.jpg";
 import Flat9 from "../../../images/Flat9.jpg";
-import FeatureDetails from "../FeatureDetails/FeatureDetails";
+import AppointmentFeatureDetails from "../FeatureDetails/FeatureDetails";
 const featureInfo = [
   {
     appointmentHeading: "Boutique Space Greenville",
@@ -16,7 +16,7 @@ const featureInfo = [
     price: "৳ 85,50,000",
     description: "",
   },
-  
+
   {
     appointmentHeading: "Office Space Central Ave",
     image: Flat2,
@@ -73,15 +73,15 @@ const featureInfo = [
   },
 ];
 const AppointmentFeature = () => {
+  console.log(featureInfo);
   return (
     <div className="col-md-12 RJBuySellRentHeader mb-5 text-center">
       <h1 style={{ color: " #ff783d ", fontFamily: "Roboto" }}>Feature</h1>
 
-      {
-      featureInfo.map((feature) => (
-        <FeatureDetails
+      {featureInfo.map((feature) => (
+        <AppointmentFeatureDetails
           feature={feature}
-        ></FeatureDetails>
+        ></AppointmentFeatureDetails>
       ))}
     </div>
   );
