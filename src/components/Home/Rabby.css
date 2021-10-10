@@ -169,7 +169,6 @@
 /* Dream Home Section  start*/
 .RjDreamHomeTopHEader{
   padding-bottom: 50px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.281);
 }
 .dreamHomeHeader {
   margin-top: 50px;
@@ -363,9 +362,48 @@
   color:rgb(0, 0, 0);
 }
 
+/* / Testimonials/ */
+.RjtestimonialsHeading{
+  color:#5b4e49f5;
+}
+.RjtestimonislsBackgoround{
+  background-color: #6bd58c7d;
+}
+.RjtestimonialsCol12{
+  padding-top: 30px;
+  padding-bottom: 80px;
+}
+.RjuserTestimonials{
+  border:red;
+  padding: 20px;
+  cursor: pointer;
+ 
+}
 
-
-
+.Rjtestimonialsbody{
+  box-shadow: 0px 1px 7px #0798e117;
+  padding: 20px;
+  position: relative;
+  transition: ease-in-out 0.6s all;
+}
+.Rjtestimonialsbody::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 33px;
+  left: 10px;
+  border-left: 2px solid #ededed;
+  transition: ease-in-out 0.6s all;
+}
+.Rjtestimonialsbody:hover{
+  box-shadow: 0px 1px 7px #11111140;
+}
+.Rjtestimonialsbody:hover::before{
+  border-left: 2px solid #11111140;
+}
+.RjtestimonialsPTest{
+  /* height:200px; */
+}
 /* ........... Rabby Hasan.............. */
 
 @media (min-width: 20px) and (max-width: 998px) { 
