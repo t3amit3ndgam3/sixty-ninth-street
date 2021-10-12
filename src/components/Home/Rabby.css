@@ -21,9 +21,9 @@
   transform: scaleY(1);
 }
 .topNavbarCustom {
-  padding: 20px 0px;
+  padding: 15px 0px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  background: #000000d8;
+  background: #00000094;
 }
 .scrolltrue {
   padding: 5px 0px;
@@ -166,7 +166,6 @@
 /* Dream Home Section  start*/
 .RjDreamHomeTopHEader {
   padding-bottom: 50px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.281);
 }
 .dreamHomeHeader {
   margin-top: 50px;
@@ -268,14 +267,18 @@
   margin-bottom: 10px;
   width: 90%;
   text-align: center;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
+  /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39); */
+  box-shadow: 0px 0px 5px rgb(0 0 0 / 39%);
+  transition: ease 0.6s all;
+  overflow: hidden;
 }
 .BSRSec .RjcustomCard:hover {
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 0px;
   margin-bottom: 20px;
-  box-shadow: 2px 20px 30px rgb(0 0 0 / 39%);
+  /* box-shadow: 2px 20px 30px rgb(0 0 0 / 39%); */
+  box-shadow: 0px 5px 12px rgb(0 0 0 / 39%);
 }
 .RjcardLInk {
   text-decoration: none;
@@ -288,6 +291,17 @@
   box-sizing: border-box;
   margin-bottom: 20px;
 }
+.RjagentsCardImg {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: ease-in-out 0.6s all;
+}
+.RjcustomCard:hover .RjagentsCardImg {
+  padding: 0px;
+  transform: scale(1.1);
+}
 .RJcustomcardButton {
   color: #000;
   background-color: #ffffff;
@@ -299,6 +313,53 @@
   color: #000;
   background-color: #20db84;
   border-color: #0d6efd;
+}
+/* .............agents page................    */
+/* .AgentPagesliderBlack {
+    position: relative;
+    text-transform: uppercase;
+  }
+  .AgentPagesliderBlack::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.986);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  } */
+.AgentPagesliderImg {
+  position: relative;
+  height: 500px;
+  box-sizing: border-box;
+}
+.AgentPageTextSlider {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  z-index: 10;
+}
+.AgentPageTextSlider p {
+  color: rgba(255, 255, 255, 0.932);
+}
+.RjAgentsLeftIcon {
+  float: left;
+}
+.RjAgentsrighttIcon {
+  float: right;
+}
+.RjAgentPageSpan {
+  color: rgb(47, 46, 46);
+}
+.RjAgentsPageIconSection a {
+  color: #000000;
+}
+.RjAgentsPageIconSection a:hover {
+  color: #0d6efd;
 }
 
 /* ........... Agents Section .................  */
@@ -358,6 +419,47 @@
   color: rgb(0, 0, 0);
 }
 
+/* / Testimonials/ */
+.RjtestimonialsHeading {
+  color: #5b4e49f5;
+}
+.RjtestimonislsBackgoround {
+  background-color: #6bd58c7d;
+}
+.RjtestimonialsCol12 {
+  padding-top: 30px;
+  padding-bottom: 80px;
+}
+.RjuserTestimonials {
+  border: red;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.Rjtestimonialsbody {
+  box-shadow: 0px 1px 7px #0798e117;
+  padding: 20px;
+  position: relative;
+  transition: ease-in-out 0.6s all;
+}
+.Rjtestimonialsbody::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 33px;
+  left: 10px;
+  border-left: 2px solid #ededed;
+  transition: ease-in-out 0.6s all;
+}
+.Rjtestimonialsbody:hover {
+  box-shadow: 0px 1px 7px #11111140;
+}
+.Rjtestimonialsbody:hover::before {
+  border-left: 2px solid #11111140;
+}
+.RjtestimonialsPTest {
+  /* height:200px; */
+}
 /* ........... Rabby Hasan.............. */
 
 @media (min-width: 20px) and (max-width: 998px) {
