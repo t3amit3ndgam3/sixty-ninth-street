@@ -24,7 +24,10 @@
 .s_font {
   font-family: " Roboto Slab";
 }
+.p_bg{
+  background-color: #edefea;
+}
 
 .navSpace{
-  margin-top:80px;
+  margin-top:70px;
 }
