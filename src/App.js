@@ -13,6 +13,7 @@ import Navbar from "./components/Home/Navbar/Navbar";
 import AppointmentFeatureDetails from "./components/Home/FeatureDetails/FeatureDetails";
 import AddProperty from "./components/AddProperty/AddProperty";
 import AgentsPage from "./components/AgentsPage/AgentsPage";
+import SingleAgent from "./components/SingleAgent/SingleAgent";
 function App() {
   return (
     <>
@@ -33,6 +34,7 @@ function App() {
             />
             <Route exact path="/addProperty" component={AddProperty} />
             <Route exact path="/agents" component={AgentsPage} />
+            <Route exact path="/singleAgent" component={SingleAgent} />
           </Switch>
         </Router>
       </AuthProvider>
