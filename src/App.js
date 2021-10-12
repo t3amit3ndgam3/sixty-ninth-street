@@ -7,8 +7,8 @@ import Signup from "./components/Authentication/Signup";
 import Login from "./components/Authentication/Login";
 import SinglePageProperty from "./components/SinglePageProperty/SinglePageProperty";
 import UserDashboard from "./components/Dashboard/UserDashboard";
-import PropertiesList from "./components/PropertiesList/PropertiesList"
-import Navbar from "./components/Home/Navbar/Navbar"
+import PropertiesList from "./components/PropertiesList/PropertiesList";
+import Navbar from "./components/Home/Navbar/Navbar";
 
 import AppointmentFeatureDetails from "./components/Home/FeatureDetails/FeatureDetails";
 import AddProperty from "./components/AddProperty/AddProperty";

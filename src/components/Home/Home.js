@@ -7,20 +7,20 @@ import Testimonials from "./Testimonials/Testimonials";
 import DreamHome from "./DreamHome/DreamHome";
 import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
-import Agents from "./Agents/Agents";
+
 import BuySellRentHome from "./BuySellRentHome/BuySellRentHome";
+import AgentList from "./AgentList/AgentList";
 
 const Home = () => {
   return (
     <div>
-     
       <Header />
       <BuySellRentHome />
       <Work />
       <Properties />
       <DreamHome />
-      {/* <AgentList /> */}
-      {/* <Agents/> */}
+      <AgentList />
+
       <Testimonials />
       <Contact />
       <Footer />

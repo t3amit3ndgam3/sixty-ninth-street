@@ -1,12 +1,11 @@
 /* ....... Nav bar .............  */
-.MoboNav{
+.MoboNav {
   display: none;
 }
 .navItemCustom {
   position: relative;
   margin-right: 20px;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
-  
 }
 .navItemCustom:before {
   content: "";
@@ -34,12 +33,10 @@
 }
 
 .scrollfalse {
- 
   transition: ease-in-out 0.6s all;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  
   color: rgba(255, 255, 255, 0.685);
 }
 .navbar-light .navbar-brand {
@@ -167,7 +164,7 @@
 }
 
 /* Dream Home Section  start*/
-.RjDreamHomeTopHEader{
+.RjDreamHomeTopHEader {
   padding-bottom: 50px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.281);
 }
@@ -251,12 +248,11 @@
 
 /* Dream Home Section  end*/
 
-
 /* ......... buying, selling or renting,.................  */
-.RJBuySellRentHeader{
+.RJBuySellRentHeader {
   position: relative;
 }
-.RjHeaderDownBar{
+.RjHeaderDownBar {
   position: absolute;
   width: 14%;
   height: 3px;
@@ -265,127 +261,120 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
-.RjcustomCard{
-  margin-left:10px;
-  margin-right:10px;
-  margin-top:10px;
-  margin-bottom:10px;
+.RjcustomCard {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 90%;
   text-align: center;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
-  transition: ease 0.6s all;
 }
-.BSRSec .RjcustomCard:hover{
-  margin-left:10px;
-  margin-right:10px;
-  margin-top:0px;
-  margin-bottom:20px;
+.BSRSec .RjcustomCard:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 20px;
   box-shadow: 2px 20px 30px rgb(0 0 0 / 39%);
 }
-.RjcardLInk{
+.RjcardLInk {
   text-decoration: none;
   color: black;
 }
-.RjcardLInk:hover{
+.RjcardLInk:hover {
   color: black;
 }
-.RJcardImg{
+.RJcardImg {
   box-sizing: border-box;
   margin-bottom: 20px;
 }
-.RJcustomcardButton{
+.RJcustomcardButton {
   color: #000;
   background-color: #ffffff;
   border-color: #0d6efd;
-  transition: ease 0.6s all; 
+  transition: ease 0.6s all;
 }
 
-.RJcustomcardButton:hover{
+.RJcustomcardButton:hover {
   color: #000;
   background-color: #20db84;
   border-color: #0d6efd;
 }
 
 /* ........... Agents Section .................  */
-.slick-prev:before, .slick-next:before {
-  color: #040101!important;
+.slick-prev:before,
+.slick-next:before {
+  color: #040101 !important;
 }
-.RJAgentCARD{
+.RJAgentCARD {
   width: 250px !important;
   height: 250px !important;
   text-align: center;
   transition: ease 54s all;
 }
-.RJcardDownText{
+.RJcardDownText {
   background-color: red;
   padding-bottom: 50px;
 }
-.RJcardDownText p{
- color: black;
+.RJcardDownText p {
+  color: black;
 }
-.RjAgentCardImg{
+.RjAgentCardImg {
   position: relative;
   overflow: hidden;
 }
-.RjAgenticon{
-  position:absolute;
+.RjAgenticon {
+  position: absolute;
   font-size: 22px;
   text-shadow: 2px 2px 2px red;
   bottom: -20px;
-  transform: translate(-40%,0);
+  transform: translate(-40%, 0);
   visibility: hidden;
- 
 }
-.RjAgentIconOver a{
+.RjAgentIconOver a {
   text-decoration: none;
 }
-.AgentFacebbok{
+.AgentFacebbok {
   transition: ease-in-out 0.5s all;
-  color:#0502c7;
+  color: #0502c7;
   left: 40%;
 }
 
-.AgentEmail{
+.AgentEmail {
   transition: ease-in-out 0.7s all;
-  color:#c2200b;
+  color: #c2200b;
   left: 50%;
 }
-.AgentLinkend{
+.AgentLinkend {
   transition: ease-in-out 0.9s all;
-  color:#0502c7;
+  color: #0502c7;
   left: 60%;
 }
-.RJAgentCARD:hover .RjAgenticon{
+.RJAgentCARD:hover .RjAgenticon {
   bottom: 10px;
   visibility: visible;
 }
-.RjAgenticon:hover{
-  color:rgb(0, 0, 0);
+.RjAgenticon:hover {
+  color: rgb(0, 0, 0);
 }
-
-
-
 
 /* ........... Rabby Hasan.............. */
 
-@media (min-width: 20px) and (max-width: 998px) { 
-  .desktopNav{
+@media (min-width: 20px) and (max-width: 998px) {
+  .desktopNav {
     display: none;
   }
-  .MoboNav{
+  .MoboNav {
     display: block;
   }
-  .navbarBrandEdit{
-    color:black !important;
+  .navbarBrandEdit {
+    color: black !important;
   }
   .navItemCustom {
     color: black !important;
   }
-  .moboShadow{
+  .moboShadow {
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
     padding: 5px 10px;
   }
- }
-
-
-
+}

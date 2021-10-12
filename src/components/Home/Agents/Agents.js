@@ -2,7 +2,6 @@ import React from "react";
 import agent1 from "../../../images/agent.jpeg";
 import agent from "../../../images/agent1.jpeg";
 import Agent from "../Agent/Agent";
-import "../Rahat.css";
 
 const Agents = () => {
   const agentsData = [

@@ -3,7 +3,7 @@ import React from "react";
 function LeftSide() {
   return (
     <div>
-      <div className="card custom-card-left">
+      <div className="card custom-card-left navSpace">
         <img src="/" className="card-img-top" alt="..." />
         <div className="card-body custom-user-dash">
           <h5 className="card-title custom-user-title">User Name</h5>

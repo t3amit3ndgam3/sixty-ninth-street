@@ -1,5 +1,4 @@
 import React from "react";
-
 import LeftSide from "./LeftSide";
 import ChangePassword from "./tabs/ChangePassword";
 import DashboardTab from "./tabs/DashboardTab";
@@ -9,7 +8,7 @@ import MyRequirments from "./tabs/MyRequirments";
 
 function UserDashboard() {
   return (
-    <div className="row leftDashboardCard">
+    <div className="row leftDashboardCard navSpace">
       <div className="col-md-3 col-sm-12">
         <LeftSide></LeftSide>
       </div>
