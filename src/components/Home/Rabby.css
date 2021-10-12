@@ -1,12 +1,11 @@
 /* ....... Nav bar .............  */
-.MoboNav{
+.MoboNav {
   display: none;
 }
 .navItemCustom {
   position: relative;
   margin-right: 20px;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
-  
 }
 .navItemCustom:before {
   content: "";
@@ -24,7 +23,7 @@
 .topNavbarCustom {
   padding: 15px 0px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  background: #00000094
+  background: #00000094;
 }
 .scrolltrue {
   padding: 5px 0px;
@@ -34,12 +33,10 @@
 }
 
 .scrollfalse {
- 
   transition: ease-in-out 0.6s all;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  
   color: rgba(255, 255, 255, 0.685);
 }
 .navbar-light .navbar-brand {
@@ -167,7 +164,7 @@
 }
 
 /* Dream Home Section  start*/
-.RjDreamHomeTopHEader{
+.RjDreamHomeTopHEader {
   padding-bottom: 50px;
 }
 .dreamHomeHeader {
@@ -250,12 +247,11 @@
 
 /* Dream Home Section  end*/
 
-
 /* ......... buying, selling or renting,.................  */
-.RJBuySellRentHeader{
+.RJBuySellRentHeader {
   position: relative;
 }
-.RjHeaderDownBar{
+.RjHeaderDownBar {
   position: absolute;
   width: 14%;
   height: 3px;
@@ -264,62 +260,62 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
-.RjcustomCard{
-  margin-left:10px;
-  margin-right:10px;
-  margin-top:10px;
-  margin-bottom:10px;
+.RjcustomCard {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 90%;
-  text-align:center;
+  text-align: center;
   /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39); */
   box-shadow: 0px 0px 5px rgb(0 0 0 / 39%);
   transition: ease 0.6s all;
   overflow: hidden;
 }
-.BSRSec .RjcustomCard:hover{
-  margin-left:10px;
-  margin-right:10px;
-  margin-top:0px;
-  margin-bottom:20px;
+.BSRSec .RjcustomCard:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 20px;
   /* box-shadow: 2px 20px 30px rgb(0 0 0 / 39%); */
   box-shadow: 0px 5px 12px rgb(0 0 0 / 39%);
 }
-.RjcardLInk{
+.RjcardLInk {
   text-decoration: none;
   color: black;
 }
-.RjcardLInk:hover{
+.RjcardLInk:hover {
   color: black;
 }
-.RJcardImg{
+.RJcardImg {
   box-sizing: border-box;
   margin-bottom: 20px;
 }
-.RjagentsCardImg{
+.RjagentsCardImg {
   box-sizing: border-box;
   margin-bottom: 10px;
   overflow: hidden;
   box-sizing: border-box;
   transition: ease-in-out 0.6s all;
 }
-.RjcustomCard:hover .RjagentsCardImg{
-  padding:0px;
+.RjcustomCard:hover .RjagentsCardImg {
+  padding: 0px;
   transform: scale(1.1);
 }
-.RJcustomcardButton{
+.RJcustomcardButton {
   color: #000;
   background-color: #ffffff;
   border-color: #0d6efd;
-  transition: ease 0.6s all; 
+  transition: ease 0.6s all;
 }
 
-.RJcustomcardButton:hover{
+.RJcustomcardButton:hover {
   color: #000;
   background-color: #20db84;
   border-color: #0d6efd;
 }
-  /* .............agents page................    */
-  /* .AgentPagesliderBlack {
+/* .............agents page................    */
+/* .AgentPagesliderBlack {
     position: relative;
     text-transform: uppercase;
   }
@@ -333,115 +329,114 @@
     bottom: 0;
     z-index: 1;
   } */
-  .AgentPagesliderImg {
-    position: relative;
-    height: 500px;
-    box-sizing: border-box;
-  }
-  .AgentPageTextSlider{
-    position:absolute;
-    left:50%;
-    top:50%;
-    text-align: center;
-    transform: translate(-50%,-50%);
-    color: rgb(255, 255, 255);
-    z-index: 10;
-  }
-  .AgentPageTextSlider p{
-    color: rgba(255, 255, 255, 0.932);
-  }
-  .RjAgentsLeftIcon{
-    float: left;
-  }
-  .RjAgentsrighttIcon{
-    float: right;
-  }
-  .RjAgentPageSpan{
-    color: rgb(47, 46, 46);
-  }
-  .RjAgentsPageIconSection a{
-    color:#000000;
-  }
-  .RjAgentsPageIconSection a:hover{
-    color:#0d6efd;
-  }
+.AgentPagesliderImg {
+  position: relative;
+  height: 500px;
+  box-sizing: border-box;
+}
+.AgentPageTextSlider {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  z-index: 10;
+}
+.AgentPageTextSlider p {
+  color: rgba(255, 255, 255, 0.932);
+}
+.RjAgentsLeftIcon {
+  float: left;
+}
+.RjAgentsrighttIcon {
+  float: right;
+}
+.RjAgentPageSpan {
+  color: rgb(47, 46, 46);
+}
+.RjAgentsPageIconSection a {
+  color: #000000;
+}
+.RjAgentsPageIconSection a:hover {
+  color: #0d6efd;
+}
 
 /* ........... Agents Section .................  */
-.slick-prev:before, .slick-next:before {
-  color: #040101!important;
+.slick-prev:before,
+.slick-next:before {
+  color: #040101 !important;
 }
-.RJAgentCARD{
+.RJAgentCARD {
   width: 250px !important;
   height: 250px !important;
   text-align: center;
   transition: ease 54s all;
 }
-.RJcardDownText{
+.RJcardDownText {
   background-color: red;
   padding-bottom: 50px;
 }
-.RJcardDownText p{
- color: black;
+.RJcardDownText p {
+  color: black;
 }
-.RjAgentCardImg{
+.RjAgentCardImg {
   position: relative;
   overflow: hidden;
 }
-.RjAgenticon{
-  position:absolute;
+.RjAgenticon {
+  position: absolute;
   font-size: 22px;
   text-shadow: 2px 2px 2px red;
   bottom: -20px;
-  transform: translate(-40%,0);
+  transform: translate(-40%, 0);
   visibility: hidden;
- 
 }
-.RjAgentIconOver a{
+.RjAgentIconOver a {
   text-decoration: none;
 }
-.AgentFacebbok{
+.AgentFacebbok {
   transition: ease-in-out 0.5s all;
-  color:#0502c7;
+  color: #0502c7;
   left: 40%;
 }
 
-.AgentEmail{
+.AgentEmail {
   transition: ease-in-out 0.7s all;
-  color:#c2200b;
+  color: #c2200b;
   left: 50%;
 }
-.AgentLinkend{
+.AgentLinkend {
   transition: ease-in-out 0.9s all;
-  color:#0502c7;
+  color: #0502c7;
   left: 60%;
 }
-.RJAgentCARD:hover .RjAgenticon{
+.RJAgentCARD:hover .RjAgenticon {
   bottom: 10px;
   visibility: visible;
 }
-.RjAgenticon:hover{
-  color:rgb(0, 0, 0);
+.RjAgenticon:hover {
+  color: rgb(0, 0, 0);
 }
 
 /* / Testimonials/ */
-.RjtestimonialsHeading{
-  color:#5b4e49f5;
+.RjtestimonialsHeading {
+  color: #5b4e49f5;
 }
-.RjtestimonislsBackgoround{
+.RjtestimonislsBackgoround {
   background-color: #6bd58c7d;
 }
-.RjtestimonialsCol12{
+.RjtestimonialsCol12 {
   padding-top: 30px;
   padding-bottom: 80px;
 }
-.RjuserTestimonials{
-  border:red;
+.RjuserTestimonials {
+  border: red;
   padding: 20px;
   cursor: pointer;
- 
 }
 
-.Rjtestimonialsbody{
+.Rjtestimonialsbody {
   box-shadow: 0px 1px 7px #0798e117;
   padding: 20px;
   position: relative;
@@ -456,35 +451,32 @@
   border-left: 2px solid #ededed;
   transition: ease-in-out 0.6s all;
 }
-.Rjtestimonialsbody:hover{
+.Rjtestimonialsbody:hover {
   box-shadow: 0px 1px 7px #11111140;
 }
-.Rjtestimonialsbody:hover::before{
+.Rjtestimonialsbody:hover::before {
   border-left: 2px solid #11111140;
 }
-.RjtestimonialsPTest{
+.RjtestimonialsPTest {
   /* height:200px; */
 }
 /* ........... Rabby Hasan.............. */
 
-@media (min-width: 20px) and (max-width: 998px) { 
-  .desktopNav{
+@media (min-width: 20px) and (max-width: 998px) {
+  .desktopNav {
     display: none;
   }
-  .MoboNav{
+  .MoboNav {
     display: block;
   }
-  .navbarBrandEdit{
-    color:black !important;
+  .navbarBrandEdit {
+    color: black !important;
   }
   .navItemCustom {
     color: black !important;
   }
-  .moboShadow{
+  .moboShadow {
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
     padding: 5px 10px;
   }
- }
-
-
-
+}

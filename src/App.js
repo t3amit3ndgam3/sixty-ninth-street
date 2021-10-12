@@ -26,7 +26,11 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/spp" component={SinglePageProperty} />
             <Route exact path="/userDashboard" component={UserDashboard} />
-            <Route exact path="/feature" component={AppointmentFeatureDetails} />
+            <Route
+              exact
+              path="/feature"
+              component={AppointmentFeatureDetails}
+            />
             <Route exact path="/addProperty" component={AddProperty} />
             <Route exact path="/agents" component={AgentsPage} />
           </Switch>

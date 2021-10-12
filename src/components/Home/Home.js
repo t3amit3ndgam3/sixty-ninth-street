@@ -7,12 +7,11 @@ import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
 import BuySellRentHome from "./BuySellRentHome/BuySellRentHome";
 import UserTestimonials from "./UserTestimonials/UserTestimonials";
-import AgentList from './AgentList/AgentList';
+import AgentList from "./AgentList/AgentList";
 
 const Home = () => {
   return (
     <div>
-     
       <Header />
       <BuySellRentHome />
       <Work />
