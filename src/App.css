@@ -5,10 +5,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  background: #fafafc;
+}
 /* background-color: #fafafc
   button background color: #10257f
-  button background hover color: #0073e1
+  button background hover color: #0C33CE
   Primary font : Roboto
   primary font weight : 600
   Secondary font : Roboto Slab
@@ -25,6 +27,13 @@
   font-family: " Roboto Slab";
 }
 
-.navSpace{
-  margin-top:80px;
+.navSpace {
+  margin-top: 80px;
+}
+.section_headers h1 {
+  color: #222222;
+  font-family: "Roboto Slab";
+  font-size: 30px;
+  line-height: 1.2em;
+  text-align: center;
 }

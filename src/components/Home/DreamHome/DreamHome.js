@@ -17,7 +17,7 @@ const DreamHome = () => {
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-12">
-            <div className="dreamHomeHeader">
+            <div className="dreamHomeHeader section_headers">
               <h1>WE BRING DREAM HOMES TO REALITY</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
@@ -35,7 +35,7 @@ const DreamHome = () => {
               <img src={dream} alt="" />
             </div>
           </div>
-          <div className="col-sm-12 col-md-5 ">
+          <div className="col-sm-12 col-md-5">
             <div className="dreamRightContent ps-md-5">
               <div className="quality">
                 <div className="dreamIconMain">
@@ -70,52 +70,88 @@ const DreamHome = () => {
         {/* .............................. */}
         <div className="mt-2 row">
           <div className="col-6 col-sm-6 col-md-3 dreamCount">
-          <CountUp start={focus ? 0 : null} end={2986} duration={1} redraw={true}>
-            {({ countUpRef }) => (
-                <VisibilitySensor onChange={(isVisible) => {
-                    if (isVisible) { setFocus(true); }
-                }}>
-                    <span className="DreamNumber" ref={countUpRef} />
+            <CountUp
+              start={focus ? 0 : null}
+              end={2986}
+              duration={1}
+              redraw={true}
+            >
+              {({ countUpRef }) => (
+                <VisibilitySensor
+                  onChange={(isVisible) => {
+                    if (isVisible) {
+                      setFocus(true);
+                    }
+                  }}
+                >
+                  <span className="DreamNumber" ref={countUpRef} />
                 </VisibilitySensor>
-            )}
-          </CountUp>
-        <br />
+              )}
+            </CountUp>
+            <br />
             <span className="NumberText"># of Buy Properties</span>
           </div>
           <div className="col-6 col-sm-6 col-md-3 dreamCount">
-            <CountUp start={focus ? 0 : null} end={2768} duration={1} redraw={true}>
+            <CountUp
+              start={focus ? 0 : null}
+              end={2768}
+              duration={1}
+              redraw={true}
+            >
               {({ countUpRef }) => (
-                  <VisibilitySensor onChange={(isVisible) => {
-                      if (isVisible) { setFocus(true); }
-                  }}>
-                      <span className="DreamNumber" ref={countUpRef} />
-                  </VisibilitySensor>
+                <VisibilitySensor
+                  onChange={(isVisible) => {
+                    if (isVisible) {
+                      setFocus(true);
+                    }
+                  }}
+                >
+                  <span className="DreamNumber" ref={countUpRef} />
+                </VisibilitySensor>
               )}
             </CountUp>
             <br />
             <span className="NumberText"># of Sell Properties</span>
           </div>
           <div className="col-6 col-sm-6 col-md-3 dreamCount">
-            <CountUp start={focus ? 0 : null} end={38469} duration={1} redraw={true}>
+            <CountUp
+              start={focus ? 0 : null}
+              end={38469}
+              duration={1}
+              redraw={true}
+            >
               {({ countUpRef }) => (
-                  <VisibilitySensor onChange={(isVisible) => {
-                      if (isVisible) { setFocus(true); }
-                  }}>
-                      <span className="DreamNumber" ref={countUpRef} />
-                  </VisibilitySensor>
+                <VisibilitySensor
+                  onChange={(isVisible) => {
+                    if (isVisible) {
+                      setFocus(true);
+                    }
+                  }}
+                >
+                  <span className="DreamNumber" ref={countUpRef} />
+                </VisibilitySensor>
               )}
             </CountUp>
             <br />
             <span className="NumberText"># of All Properties</span>
           </div>
           <div className="col-6 col-sm-6 col-md-3 dreamCount">
-            <CountUp start={focus ? 0 : null} end={1139} duration={1} redraw={true}>
+            <CountUp
+              start={focus ? 0 : null}
+              end={1139}
+              duration={1}
+              redraw={true}
+            >
               {({ countUpRef }) => (
-                  <VisibilitySensor onChange={(isVisible) => {
-                      if (isVisible) { setFocus(true); }
-                  }}>
-                      <span className="DreamNumber" ref={countUpRef} />
-                  </VisibilitySensor>
+                <VisibilitySensor
+                  onChange={(isVisible) => {
+                    if (isVisible) {
+                      setFocus(true);
+                    }
+                  }}
+                >
+                  <span className="DreamNumber" ref={countUpRef} />
+                </VisibilitySensor>
               )}
             </CountUp>
             <br />

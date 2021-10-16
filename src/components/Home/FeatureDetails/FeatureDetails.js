@@ -1,12 +1,12 @@
 import React from "react";
-import { MDBIcon, MDBRipple } from "mdb-react-ui-kit";
+// import { MDBIcon, MDBRipple } from "mdb-react-ui-kit";
 import Nestor from "../../../images/NESTOR.png";
 import James from "../../../images/JAMES PHELPS.png";
 import EMA from "../../../images/ema.png";
 const AppointmentFeatureDetails = ({ feature }) => {
   return (
     <div>
-      <div className="container pt-5">
+      {/* <div className="container pt-5">
         <div className="row p-3">
           <div className="col-md-4 mt-3">
             <div className="BSRSec">
@@ -235,7 +235,8 @@ const AppointmentFeatureDetails = ({ feature }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      Feature Details
     </div>
   );
 };

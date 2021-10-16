@@ -74,6 +74,21 @@
 }
 .left_side {
   width: 30%;
+  color: #10257f;
+}
+.left_side h3 {
+  color: #222222;
+  font-family: "Roboto Slab";
+  font-size: 30px;
+  line-height: 1.2em;
+}
+.left_side span {
+  color: #10257f;
+}
+.left_side p {
+  color: #222222;
+  font-family: "Roboto";
+  font-weight: 500;
 }
 .form_wrapper {
   height: 450px;
@@ -152,11 +167,13 @@ input:focus ~ .bar:after {
 .button_wrap button {
   border: none;
   padding: 13px 100px;
-  background-color: #ff783d;
+  background-color: #10257f;
   opacity: 0.9;
+  color: #fff;
 }
 .button_wrap button:hover {
   opacity: 1;
+  color: #fff;
 }
 
 /* LOGIN SECTION */
@@ -545,13 +562,7 @@ input:focus ~ .bar:after {
   box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 10%);
   border-radius: 2px;
 }
-.property_header h1 {
-  color: #222222;
-  font-family: "Roboto Slab";
-  font-size: 30px;
-  line-height: 1.2em;
-  text-align: center;
-}
+
 .card_links {
   text-decoration: none;
   color: #222222;
@@ -607,16 +618,159 @@ input:focus ~ .bar:after {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px 30px;
+  padding: 8px 34px;
   margin: 0 auto;
   background-color: #10257f;
   color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 3px;
+  font-family: "Roboto";
+  border: 1px solid #10257f;
+  line-height: 2;
 }
 .more_btn button:hover {
-  background-color: #0073e1;
+  background-color: #0c33ce;
   color: #fff;
 }
 /* Home Properties */
+/* UserDashboard */
+::-webkit-scrollbar {
+  display: none;
+}
+.side-menu {
+  position: fixed;
+  background: #000;
+  width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 30px 20px;
+  transition: width 0.2s ease-in;
+}
+
+.side-menu.inactive {
+  width: 80px;
+}
+
+.side-menu .top-section {
+  position: relative;
+}
+
+.side-menu .top-section .logo {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: inline-block;
+}
+.side-menu .top-section .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-menu .top-section .toggle-menu-btn {
+  color: #666;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.side-menu.inactive .top-section .toggle-menu-btn {
+  right: -50px;
+}
+
+.side-menu .main-menu .menu-item {
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-menu .main-menu .menu-item.active {
+  background: #333;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.side-menu .main-menu {
+  margin: 5px 0;
+  position: relative;
+  max-height: 250px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.side-menu .main-menu .menu-item .menu-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item span {
+  position: absolute;
+  display: inline-block;
+  line-height: 40px;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
+.side-menu.inactive .main-menu .menu-item span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  border-radius: 1px;
+  background: #333;
+}
+.dashboard_panel {
+  margin-left: 300px;
+  transition: margin-left 0.2s ease-in;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.dashboard_panel.inactive {
+  margin-left: 80px;
+}
+/* UserDashboard */
+
+/* WorkDeatails */
+.workDetails_wrapper {
+  margin-bottom: 50px;
+  box-shadow: 0px 10px 31px -3px rgb(7 152 225 / 9%);
+  padding: 30px 20px;
+}
+.workDetails_wrapper:hover {
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 15%);
+  border-bottom: 1px solid #10257f;
+}
+.workdetails_read_more {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.3px;
+}
+.workDetails_wrapper h4 {
+  color: #222222;
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 1.2em;
+  text-align: center;
+}
+.workDetails_wrapper img {
+  height: 70px;
+}
+/* WorkDeatails */
 
 /******************* RESPONSIVE BREAKPOINTS ********************/
 @media only screen and (max-width: 600px) {

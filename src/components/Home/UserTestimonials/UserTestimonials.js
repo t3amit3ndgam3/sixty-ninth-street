@@ -57,7 +57,7 @@ const UserTestimonials = () => {
         <div className="row">
           <div className="col-md-12">
             <div className="RjtestimonialsHeading p-5">
-              <h1 className=" fst-italic">___ Testimonials ___</h1>
+              <h1 className="fst-italic">___ Testimonials ___</h1>
             </div>
           </div>
           <div className="col-md-12 RjtestimonialsCol12">

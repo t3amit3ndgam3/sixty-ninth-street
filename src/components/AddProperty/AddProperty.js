@@ -108,7 +108,7 @@ const AddProperty = () => {
                     id=""
                     className="select_box"
                   >
-                    <option value="flat">Apartment/Flat</option>
+                    <option value="flat">Apartment/</option>
                     <option value="duplex">Duplex Home</option>
                     <option value="showroom">Showroom</option>
                     <option value="office">Office Space</option>

@@ -57,7 +57,6 @@ const Header = () => {
                 </p>
               </div>
               <a href="/">
-                {" "}
                 <button className="sliderButton">Get Started</button>
               </a>
             </div>
