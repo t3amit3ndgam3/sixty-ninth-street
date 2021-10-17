@@ -13,7 +13,7 @@
   width: 100%;
   bottom: 0;
   left: 0;
-  border-bottom: 2px solid #ff783d;
+  border-bottom: 2px solid #0c33ce;
   transform: scale(0);
   transition: 300ms ease-out;
 }
@@ -112,13 +112,15 @@
 
 .sliderButton {
   font-family: "Roboto";
-  font-size: 16px;
-  border: 2px solid #ff783d;
-  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid #10257f;
+  border-radius: 3px;
   outline: none;
-  background-color: #ff783d;
-  color: black;
-  padding: 6px 25px;
+  background-color: #10257f;
+  color: #fff;
+  padding: 8px 30px;
+  line-height: 2;
   position: relative;
   transform: translateZ(0);
   animation-name: moveUp;
@@ -134,7 +136,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #eeff00;
+  background: #0c33ce;
   transform: scaleX(0);
   transition: 300ms ease-out;
 }
@@ -164,17 +166,16 @@
 }
 
 /* Dream Home Section  start*/
+.dreamHome_wrapper {
+  height: 90vh;
+}
 .RjDreamHomeTopHEader {
   padding-bottom: 50px;
 }
 .dreamHomeHeader {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   text-align: center;
-  font-family: "Roboto";
-}
-.dreamHomeHeader h1 {
-  color: #ff783d;
 }
 .imgDiv {
   width: 100%;
@@ -199,7 +200,7 @@
 }
 
 .dreamRightContent {
-  /* padding-left: 50px; */
+  margin-top: 50px;
 }
 .quality {
   display: flex;
@@ -212,36 +213,48 @@
   color: black;
   border: 1px solid rgb(255, 255, 255);
   border-radius: 50%;
-  background-color: #efefef;
+  background-color: #fff;
   height: 85px;
   width: 85px;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   transition: all 0.6s ease;
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 10%);
 }
 .dreamText {
   margin-top: 10px;
 }
 .dreamText h5 {
   padding-bottom: 0px;
+  color: #222222;
+  font-family: "Roboto";
+  font-weight: 550;
+  font-size: 20px;
 }
 .quality:hover .dreamIcon {
-  color: rgb(116, 7, 241);
-  border: 1px solid rgb(2, 102, 32);
-}
+  color: #10257f;
 
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 20%);
+}
 .dreamCount {
   font-family: "Roboto";
   text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
+}
+.dreamCount:hover {
+  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 15%);
 }
 .DreamNumber {
   font-size: 40px;
-  font-weight: 600;
-  color: #ff783d;
+  font-weight: 500;
+  color: #10257f;
+  font-family: "Roboto Slab";
 }
 .NumberText {
-  color: rgba(0, 0, 0, 0.5);
+  color: #222222;
   font-size: 14px;
 }
 
@@ -255,7 +268,7 @@
   position: absolute;
   width: 14%;
   height: 3px;
-  background: #ff783d;
+  background: #0c33ce;
   bottom: -28px;
   left: 50%;
   transform: translate(-50%, 0);
@@ -303,16 +316,18 @@
   transform: scale(1.1);
 }
 .RJcustomcardButton {
-  color: #000;
-  background-color: #ffffff;
-  border-color: #0d6efd;
+  color: #fff;
+  background-color: #10257f;
   transition: ease 0.6s all;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 3px;
+  border: 1px solid #10257f;
 }
 
 .RJcustomcardButton:hover {
-  color: #000;
-  background-color: #20db84;
-  border-color: #0d6efd;
+  color: #fff;
+  background-color: #0c33ce;
 }
 /* .............agents page................    */
 /* .AgentPagesliderBlack {
@@ -421,10 +436,12 @@
 
 /* / Testimonials/ */
 .RjtestimonialsHeading {
-  color: #5b4e49f5;
+  /* color: #5b4e49f5; */
+  color: #fff;
 }
 .RjtestimonislsBackgoround {
-  background-color: #6bd58c7d;
+  /* background-color: #6bd58c7d; */
+  background-color: #0c33ce;
 }
 .RjtestimonialsCol12 {
   padding-top: 30px;
@@ -441,6 +458,7 @@
   padding: 20px;
   position: relative;
   transition: ease-in-out 0.6s all;
+  color: #fff;
 }
 .Rjtestimonialsbody::before {
   content: "";
@@ -455,10 +473,11 @@
   box-shadow: 0px 1px 7px #11111140;
 }
 .Rjtestimonialsbody:hover::before {
-  border-left: 2px solid #11111140;
+  /* border-left: 2px solid #11111140; */
+  border-left: 2px solid #222222;
 }
-.RjtestimonialsPTest {
-  /* height:200px; */
+.Rjtestimonialsbody h6 {
+  color: #222222;
 }
 /* ........... Rabby Hasan.............. */
 

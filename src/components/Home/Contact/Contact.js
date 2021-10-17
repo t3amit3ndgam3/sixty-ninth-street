@@ -27,11 +27,13 @@ const Contact = () => {
   return (
     <div className="contact_wrapper">
       <div className="left_side">
-        <h3>We Help You Buy or Sell Your Property Quickly</h3>
+        <h3>
+          We Help You <span>Buy</span> or <span>Sell</span> Your Property
+          Quickly
+        </h3>
         <p>
-          Amet minim mollit non deserunt ullamco est sit aliqua sdolor do amet
-          sint. Velit officia consequat duis enim velit mollit. Exercitation
-          veniam consequat sunt nostrud amet.
+          Give us a call or drop by anytime, we are here to answer all questions
+          within 24 hours on business days.
         </p>
       </div>
       <div className="right_side">

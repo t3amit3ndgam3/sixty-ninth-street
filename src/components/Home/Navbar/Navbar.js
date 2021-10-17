@@ -77,12 +77,11 @@ const Navbar = () => {
                 </li>
                 <li class="nav-item">
                   <Link
-                    to=""
+                    to="/addProperty"
                     class="nav-link navItemCustom"
                     aria-current="page"
-                    href="/"
                   >
-                    ABOUT
+                    ADD LISTING
                   </Link>
                 </li>
                 <li class="nav-item">
@@ -90,7 +89,6 @@ const Navbar = () => {
                     to=""
                     class="nav-link navItemCustom"
                     aria-current="page"
-                    href="/"
                   >
                     CONTACT
                   </Link>

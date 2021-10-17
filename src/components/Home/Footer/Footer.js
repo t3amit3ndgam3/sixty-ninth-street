@@ -1,5 +1,8 @@
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "../Unmoy.css";
+
 const Footer = () => {
   return (
     <footer className="footer_wrapper">
@@ -61,7 +64,7 @@ const Footer = () => {
       <div className="copyright_section">
         <p>
           Copyright {new Date().getFullYear()} All Rights Reserved | this
-          project is made with love by team-it
+          project is made with <FontAwesomeIcon icon={faHeart} /> by team-it
         </p>
       </div>
     </footer>
