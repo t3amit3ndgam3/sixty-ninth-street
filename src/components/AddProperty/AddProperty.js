@@ -4,7 +4,7 @@ import "../Home/Unmoy.css";
 const AddProperty = () => {
   const [textData, setTextData] = useState({});
   const [fileData, setFileData] = useState({});
-  // console.log(textData);
+  console.log(textData.price_is);
   // console.log(fileData);
 
   const handleTextData = (e) => {

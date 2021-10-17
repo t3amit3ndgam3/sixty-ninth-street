@@ -13,6 +13,8 @@ import AddProperty from "./components/AddProperty/AddProperty";
 import AgentsPage from "./components/AgentsPage/AgentsPage";
 import Test from "./Test/Test";
 import SingleAgent from "./components/SingleAgent/SingleAgent";
+import UserReviews from "./components/UserReviews/UserReviews";
+import AddAgents from "./components/AddAgents/AddAgents";
 function App() {
   return (
     <>
@@ -30,6 +32,8 @@ function App() {
             <Route exact path="/agents" component={AgentsPage} />
             <Route exact path="/test" component={Test} />
             <Route exact path="/singleAgent" component={SingleAgent} />
+            <Route exact path="/userReview" component={UserReviews} />
+            <Route exact path="/addAgents" component={AddAgents} />
           </Switch>
         </Router>
       </AuthProvider>
