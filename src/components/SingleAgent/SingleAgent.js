@@ -26,8 +26,8 @@ const SingleAgent = () => {
 	const skype = <FontAwesomeIcon icon={faSkype} />;
 	const instagram = <FontAwesomeIcon icon={faInstagramSquare} />;
 	return (
-		<div className="p_bg navSpace pt-5 pb-5">
-			<div className="container">
+		<div className="p_bg navSpace pb-5">
+			<div className="container mt-3 ">
 				<div className="row">
 					<div className="col-md-8 offset-md-2 singlePageContainer p-3">
 						<div className="row">
