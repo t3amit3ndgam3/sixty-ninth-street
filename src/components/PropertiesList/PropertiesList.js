@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./PropertiesList.css";
 import { Range } from "react-range";
 import imgOne from "../../images/PropertyList/pone.jpg";
@@ -15,6 +15,11 @@ import aliza from "../../images/aliza.png";
 
 const PropertiesList = () => {
   const [range, setRange] = useState([0]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const list = [1, 2, 3, 4, 5];
   const bed = <FontAwesomeIcon icon={faBed} />;
   const bath = <FontAwesomeIcon icon={faBath} />;

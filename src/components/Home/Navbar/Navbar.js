@@ -26,10 +26,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <div className="desktopNav">
         <nav
-          class={`navbar navbar-expand-lg fixed-top navbar-light topNavbarCustom scroll${fixedTop}`}
+          class={`navbar  navbar-expand-lg fixed-top navbar-light topNavbarCustom scroll${fixedTop}`}
         >
           <div style={{ fontFamily: "Roboto" }} class="container">
             <a class="navbar-brand" href="/">
@@ -77,12 +77,11 @@ const Navbar = () => {
                 </li>
                 <li class="nav-item">
                   <Link
-                    to=""
+                    to="/addProperty"
                     class="nav-link navItemCustom"
                     aria-current="page"
-                    href="/"
                   >
-                    ABOUT
+                    ADD LISTING
                   </Link>
                 </li>
                 <li class="nav-item">
@@ -90,7 +89,6 @@ const Navbar = () => {
                     to=""
                     class="nav-link navItemCustom"
                     aria-current="page"
-                    href="/"
                   >
                     CONTACT
                   </Link>

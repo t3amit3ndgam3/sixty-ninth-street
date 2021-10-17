@@ -24,7 +24,9 @@ const Properties = () => {
                     <div className="status_type">Rentals</div>
                   </div>
                 </div>
-                <img src={Flat1} className="card-img-top" alt="" />
+                <div className="home_property_card_image">
+                  <img src={Flat1} className="card-img-top" alt="flat-imag" />
+                </div>
                 <div className="property_card_body">
                   <h5 className="card-title">Luxury Apartments in Baridhara</h5>
                   <h6>৳ 85,50,000</h6>

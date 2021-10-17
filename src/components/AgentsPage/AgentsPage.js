@@ -54,12 +54,12 @@ const AgentsPage = () => {
           {list.map((agent) => (
             <div className="col-12 col-sm-6 col-md-4 mt-3">
               <div className="BSRSec">
-                <a href="" className="RjcardLInk">
+                <Link to="/singleAgent" className="RjcardLInk">
                   <div class="card RjcustomCard">
                     <img
                       src={agentImg}
                       class="card-img-top RjagentsCardImg"
-                      alt="..."
+                      alt="agent_image"
                     />
                     <div class="card-body">
                       <h5 class="card-title">Michael Sutther</h5>
@@ -83,7 +83,7 @@ const AgentsPage = () => {
                       </div>
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

@@ -79,7 +79,6 @@ const AgentList = () => {
               </a>
               <div className="RjAgentIconOver">
                 <a href="">
-                  {" "}
                   <span className="RjAgenticon AgentFacebbok">{facebook}</span>
                 </a>
                 <a href="">

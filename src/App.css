@@ -24,7 +24,10 @@ body {
   font-family: "Roboto";
 }
 .s_font {
-  font-family: " Roboto Slab";
+  font-family: "Roboto Slab";
+}
+.p_bg {
+  background-color: #edefea;
 }
 
 .navSpace {

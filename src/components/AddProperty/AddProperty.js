@@ -43,7 +43,7 @@ const AddProperty = () => {
     formData.append("image_one", fileData.image_one);
     formData.append("image_two", fileData.image_two);
     formData.append("image_three", fileData.image_three);
-    fetch("http://localhost:5000/addProperties", {
+    fetch("https://sixtyninethstreet.herokuapp.com/addProperties", {
       method: "POST",
       body: formData,
     })

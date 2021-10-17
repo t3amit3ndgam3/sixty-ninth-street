@@ -529,10 +529,18 @@ input:focus ~ .bar:after {
 .property_card:hover {
   box-shadow: 0 10px 31px 0 rgb(7 152 255 / 15%);
 }
+.home_property_card_image {
+  overflow: hidden;
+}
+.property_card:hover .home_property_card_image img {
+  transform: scale(1.2);
+  transition: ease-in-out 0.5s all;
+}
 .tag_wrapper {
   position: absolute;
   width: 100%;
   padding: 0 20px;
+  z-index: 99;
 }
 .feature_type {
   font-size: 11px;
