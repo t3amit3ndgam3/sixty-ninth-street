@@ -86,7 +86,7 @@ const Navbar = () => {
                 </li>
                 <li class="nav-item">
                   <Link
-                    to=""
+                    to="/sellHome"
                     class="nav-link navItemCustom"
                     aria-current="page"
                   >

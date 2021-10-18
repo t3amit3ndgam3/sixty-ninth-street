@@ -55,7 +55,7 @@ const AddProperty = () => {
   };
 
   return (
-    <div className="addProperty_section navSpace">
+    <div className="addProperty_section navSpace mb-5">
       <div className="addProperty_wrapper">
         <h1>Add Property</h1>
         <div>

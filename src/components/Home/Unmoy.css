@@ -464,7 +464,6 @@ input:focus ~ .bar:after {
 .addProperty_section {
   background-color: #eaf7f4;
   height: auto;
-  padding-top: 20px;
 }
 .addProperty_wrapper {
   background-color: #ffffff;

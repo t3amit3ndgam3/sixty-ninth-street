@@ -15,6 +15,8 @@ import Test from "./Test/Test";
 import SingleAgent from "./components/SingleAgent/SingleAgent";
 import UserReviews from "./components/UserReviews/UserReviews";
 import AddAgents from "./components/AddAgents/AddAgents";
+import SellHome from "./components/SellHome/SellHome";
+import Footer from './components/Home/Footer/Footer';
 function App() {
   return (
     <>
@@ -34,7 +36,9 @@ function App() {
             <Route exact path="/singleAgent" component={SingleAgent} />
             <Route exact path="/userReview" component={UserReviews} />
             <Route exact path="/addAgents" component={AddAgents} />
+            <Route exact path="/sellHome" component={SellHome} />
           </Switch>
+          <Footer />
         </Router>
       </AuthProvider>
     </>

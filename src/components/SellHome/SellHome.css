@@ -1,0 +1,48 @@
+.sellhomeTopClass{
+    background-image: url("../../images/sellHome/sellHome.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    text-align: center;
+}
+.sellHomeHead{
+    margin-top:10%;
+}
+.sellHomeHead h1{
+    font-weight: 700;
+    font-size:56px
+}
+.sellHomeDownSection{
+
+}
+.sellHomeFormSection{
+    margin-top:100px;
+}
+.sellHomeFormSection a{
+    text-decoration:none;
+    font-weight:bold;
+}
+.sellHomeFormSection a:hover{
+    text-decoration:underline;
+    font-weight:bold;
+}
+.sellHomeFormSectionInput{
+    margin-top: 30px;
+    width:70%;
+}
+.sellHomeSideImg{
+    width:100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+}
+.sellHomeSideImg img {  
+    height: 320px;
+    box-sizing: border-box;
+}
+
+.sellHomeTraditionaly{
+    background: rgb(231, 231, 231);
+}
