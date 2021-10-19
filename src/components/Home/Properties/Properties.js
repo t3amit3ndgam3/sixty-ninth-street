@@ -55,7 +55,7 @@ const Properties = () => {
                         className="card_prop_icon"
                         icon={faLandmark}
                       />
-                      3000 ft<sup>2</sup>
+                      s 3000 ft<sup>2</sup>
                     </span>
                     <span className="card_prop_button">
                       <button>Details</button>

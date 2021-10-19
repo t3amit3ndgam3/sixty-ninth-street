@@ -29,7 +29,7 @@ const Navbar = () => {
     <div className="">
       <div className="desktopNav">
         <nav
-          class={`navbar  navbar-expand-lg fixed-top navbar-light topNavbarCustom scroll${fixedTop}`}
+          class={`navbar navbar-expand-lg fixed-top navbar-light topNavbarCustom scroll${fixedTop}`}
         >
           <div style={{ fontFamily: "Roboto" }} class="container">
             <a class="navbar-brand" href="/">
@@ -91,6 +91,15 @@ const Navbar = () => {
                     aria-current="page"
                   >
                     CONTACT
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to="/dashboard"
+                    class="nav-link navItemCustom"
+                    aria-current="page"
+                  >
+                    DASHBOARD
                   </Link>
                 </li>
                 {/* <li class="nav-item">
