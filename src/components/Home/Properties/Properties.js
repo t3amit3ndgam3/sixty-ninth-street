@@ -14,13 +14,13 @@ const Properties = () => {
         </div>
         <div className="row p-3 ">
           <div className="col-md-4 mt-3">
-            <Link to="/feature" className="card_links">
-              <div className="property_card">
+            <div className="property_card">
+              <Link to="/spp" className="card_links">
                 <div className="tag_wrapper">
-                  <div className="featured_div">
+                  <div>
                     <div className="feature_type">Featured</div>
                   </div>
-                  <div className="status_wrapper">
+                  <div>
                     <div className="status_type">Rentals</div>
                   </div>
                 </div>
@@ -55,7 +55,7 @@ const Properties = () => {
                         className="card_prop_icon"
                         icon={faLandmark}
                       />
-                      3000 ft<sup>2</sup>
+                      s 3000 ft<sup>2</sup>
                     </span>
                     <span className="card_prop_button">
                       <button>Details</button>
@@ -71,8 +71,8 @@ const Properties = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="more_btn">

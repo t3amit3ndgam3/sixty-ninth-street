@@ -1,0 +1,219 @@
+.dasboard_board {
+  background-color: #fafafc;
+}
+.dashboard_item_container {
+  display: flex;
+}
+.dasboard_item {
+  width: 250px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 4px;
+  box-shadow: 0 10px 31px 5px rgb(7 152 255 / 9%);
+  cursor: pointer;
+  border-width: 1;
+}
+.dasboard_item:hover {
+  box-shadow: 0 10px 31px 5px rgb(7 152 255 / 20%);
+}
+.dasboard_item .dasboard_item_icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+.dashboard_item_content {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid #0c33ce;
+  padding-left: 15px;
+}
+.dashboard_item_content p {
+  margin: 0;
+}
+.profile_table {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 10px 31px 5px rgb(7 152 255 / 9%);
+  width: 50%;
+}
+.profile_info_header h4 {
+  font-family: "Roboto Slab";
+  line-height: 1;
+  margin-right: 10px;
+}
+.profile_table ul {
+  padding: 0;
+  margin: 0;
+}
+.profile_table li {
+  list-style: none;
+}
+
+.profile_table_head {
+  padding: 20px;
+}
+.profile_table_head li {
+  font-weight: bold;
+  margin: 10px;
+}
+.profile_table_content {
+  padding: 20px;
+}
+.profile_table_content li {
+  margin: 10px;
+}
+/* My Properties start */
+.dashboard_property_list_header {
+  display: flex;
+  align-items: center;
+}
+.dashboard_header h1 {
+  font-family: "Roboto Slab";
+  line-height: 1;
+  margin-right: 10px;
+}
+.dashboard_property_list_header button {
+  font-weight: 500;
+  font-size: 15px;
+  background-color: #071f88;
+  color: #fff;
+  border: none;
+  font-style: italic;
+  padding: 0 6px;
+  line-height: 0;
+  border-radius: 2px;
+  height: 20px;
+}
+.dashboard_property_list_header_link {
+  text-decoration: none;
+  color: #fff;
+}
+.dashboard_property_list_header_link:hover {
+  color: #fff;
+}
+.dashboard_property_list_header_icon {
+  font-size: 12px;
+  margin-right: 5px;
+}
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px auto;
+  font-size: 0.9em;
+  font-family: "Roboto";
+  width: 800px;
+  /* min-width: 400px; */
+  box-shadow: 0 10px 31px 5px rgb(7 152 255 / 20%);
+}
+.styled-table thead tr {
+  background-color: #071f88;
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.styled-table td img {
+  width: 200px;
+}
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #0c33ce;
+  color: #fff;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #071f88;
+}
+.property_list_cta_buttons button {
+  background-color: #071f88;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin: 0 5px;
+  font-size: 13px;
+  padding: 8px 10px;
+}
+.property_list_cta_buttons button:hover {
+  background-color: #fff;
+  border: 1px solid #071f88;
+  color: #222222;
+}
+/* My Properties end*/
+/* Chnage Password Start */
+.change_pass_wrapper {
+  width: 500px;
+  height: 400px;
+  display: flex;
+}
+
+.change_password_content {
+  background-color: #fff;
+  box-shadow: 0 10px 31px 5px rgb(7 152 255 / 15%);
+  border-radius: 5px;
+  width: 50%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.change_password_content h5 {
+  margin-top: 20px;
+  padding: 10px;
+  font-family: "Roboto";
+  font-weight: 500;
+}
+.change_password_content input {
+  width: 50%;
+  margin: 10px;
+  padding: 8px;
+  background: #fafafc;
+}
+.change_password_content button {
+  margin-top: 10px;
+  color: #fff;
+  background-color: #10257f;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 3px;
+  border: 1px solid #10257f;
+  padding: 8px 10px;
+}
+/* Chnage Password End */
+/* Requirement section */
+
+.requirement_wrapper {
+  display: flex;
+  width: 100%;
+}
+.requirement_content_left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+.requirement_content_right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+.select_wrappers {
+  padding: 10px;
+}
+.select_wrappers input {
+  width: 50%;
+  padding: 10px;
+}
+.select_wrappers select {
+  width: 50%;
+  padding: 10px;
+}
+/* Requirement section */

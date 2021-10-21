@@ -537,7 +537,6 @@ input:focus ~ .bar:after {
 }
 .tag_wrapper {
   position: absolute;
-  width: 100%;
   padding: 0 20px;
   z-index: 99;
 }
@@ -562,8 +561,8 @@ input:focus ~ .bar:after {
   color: #fff;
   position: relative;
   padding: 1px 17px;
-  top: 20px;
-  left: 175px;
+  top: 0;
+  left: 245px;
   text-align: center;
   line-height: 20px;
   box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 10%);
@@ -642,112 +641,7 @@ input:focus ~ .bar:after {
 }
 /* Home Properties */
 /* UserDashboard */
-::-webkit-scrollbar {
-  display: none;
-}
-.side-menu {
-  position: fixed;
-  background: #000;
-  width: 300px;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 30px 20px;
-  transition: width 0.2s ease-in;
-}
 
-.side-menu.inactive {
-  width: 80px;
-}
-
-.side-menu .top-section {
-  position: relative;
-}
-
-.side-menu .top-section .logo {
-  width: 40px;
-  height: 40px;
-  overflow: hidden;
-  display: inline-block;
-}
-.side-menu .top-section .logo img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.side-menu .top-section .toggle-menu-btn {
-  color: #666;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.side-menu.inactive .top-section .toggle-menu-btn {
-  right: -50px;
-}
-
-.side-menu .main-menu .menu-item {
-  color: #333;
-  text-decoration: none;
-  font-size: 15px;
-  display: block;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.side-menu .main-menu .menu-item.active {
-  background: #333;
-  border-radius: 5px;
-  color: #fff;
-}
-
-.side-menu .main-menu {
-  margin: 5px 0;
-  position: relative;
-  max-height: 250px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-.side-menu .main-menu .menu-item .menu-icon {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  line-height: 40px;
-  text-align: center;
-}
-
-.side-menu .main-menu .menu-item span {
-  position: absolute;
-  display: inline-block;
-  line-height: 40px;
-  opacity: 1;
-  transition: opacity 0.2s ease-in;
-}
-
-.side-menu.inactive .main-menu .menu-item span {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-.divider {
-  width: 100%;
-  height: 1px;
-  border-radius: 1px;
-  background: #333;
-}
-.dashboard_panel {
-  margin-left: 300px;
-  transition: margin-left 0.2s ease-in;
-  padding: 50px;
-  box-sizing: border-box;
-}
-.dashboard_panel.inactive {
-  margin-left: 80px;
-}
 /* UserDashboard */
 
 /* WorkDeatails */

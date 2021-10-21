@@ -17,6 +17,11 @@ body {
   secondary font weight : 400
   heading color : #222222
   */
+
+/* useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); */
+
 .p_heading {
   color: #222222;
 }
@@ -30,7 +35,6 @@ body {
   background-color: #edefea;
 }
 
-
 .section_headers h1 {
   color: #222222;
   font-family: "Roboto Slab";
@@ -38,6 +42,6 @@ body {
   line-height: 1.2em;
   text-align: center;
 }
-.navSpace{
-  padding-top:70px;
+.navSpace {
+  padding-top: 70px;
 }
