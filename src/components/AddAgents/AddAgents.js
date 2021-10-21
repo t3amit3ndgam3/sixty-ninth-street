@@ -28,7 +28,7 @@ const AddAgents = () => {
 		formData.append("agent_skype", agentInfo.agent_skype);
 		formData.append("agent_image", AgentImg);
 
-		fetch("http://localhost:5000/addAgent", {
+		fetch("https://sixtyninethstreet.herokuapp.com/addAgent", {
 			method: "POST",
 			body: formData,
 		})

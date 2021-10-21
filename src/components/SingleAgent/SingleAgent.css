@@ -28,6 +28,8 @@
     position: relative;
     padding:5px;
     margin-bottom: 120px;
+}.singleAgentImg{
+    position: relative;
 }
 .singleAgentImg2 img{
     height:200px;

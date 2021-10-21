@@ -207,9 +207,7 @@ const SellHome = () => {
 							<p>
 								When selling yourself, start with home prep, staging, and hiring
 								a professional photographer. Once your marketing materials are
-								ready, research comparable homes to help price your home. Then,
-								create a listing on Zillow. You’ll likely host home showings or
-								open houses. Then select an offer, negotiate, accept and close.
+								ready, research comparable homes to help price your home. 
 							</p>
 						</div>
 					</div>

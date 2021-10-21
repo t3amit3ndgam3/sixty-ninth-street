@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Flat1 from "../../../images/Flat1.jpg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,6 +6,17 @@ import { faBed, faLandmark, faBath } from "@fortawesome/free-solid-svg-icons";
 import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 const Properties = () => {
+
+  const [properties, setProperties] = useState([])
+  
+ 
+  useEffect(() => {
+    fetch('https://sixtyninethstreet.herokuapp.com/allProperty')
+    .then( res => res.json())
+    .then( data => setProperties(data))
+  }, [])
+  const sliced =  properties.slice(0, 3);
+  console.log('...',properties);
   return (
     <div>
       <div className="container">
@@ -13,6 +24,7 @@ const Properties = () => {
           <h1>Properties</h1>
         </div>
         <div className="row p-3 ">
+      {sliced && sliced.map( pro =>(  
           <div className="col-md-4 mt-3">
             <Link to="/feature" className="card_links">
               <div className="property_card">
@@ -21,7 +33,7 @@ const Properties = () => {
                     <div className="feature_type">Featured</div>
                   </div>
                   <div className="status_wrapper">
-                    <div className="status_type">Rentals</div>
+                    <div className="status_type">{pro.property_for}</div>
                   </div>
                 </div>
                 <div className="home_property_card_image">
@@ -73,7 +85,7 @@ const Properties = () => {
                 </div>
               </div>
             </Link>
-          </div>
+          </div>))}
         </div>
         <div className="more_btn">
           <button>Load More Listings</button>
