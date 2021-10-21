@@ -26,14 +26,14 @@ const Properties = () => {
         <div className="row p-3 ">
       {sliced && sliced.map( pro =>(  
           <div className="col-md-4 mt-3">
-            <Link to="/feature" className="card_links">
-              <div className="property_card">
+            <div className="property_card">
+              <Link to="/spp" className="card_links">
                 <div className="tag_wrapper">
-                  <div className="featured_div">
+                  <div>
                     <div className="feature_type">Featured</div>
                   </div>
-                  <div className="status_wrapper">
-                    <div className="status_type">{pro.property_for}</div>
+                  <div>
+                    <div className="status_type">Rentals</div>
                   </div>
                 </div>
                 <div className="home_property_card_image">
@@ -67,7 +67,7 @@ const Properties = () => {
                         className="card_prop_icon"
                         icon={faLandmark}
                       />
-                      3000 ft<sup>2</sup>
+                      s 3000 ft<sup>2</sup>
                     </span>
                     <span className="card_prop_button">
                       <button>Details</button>
@@ -83,9 +83,15 @@ const Properties = () => {
                     </div>
                   </div>
                 </div>
+<<<<<<< HEAD
               </div>
             </Link>
           </div>))}
+=======
+              </Link>
+            </div>
+          </div>
+>>>>>>> b7f610e17634531e3b3eca91f75a760dcc5897d2
         </div>
         <div className="more_btn">
           <button>Load More Listings</button>
