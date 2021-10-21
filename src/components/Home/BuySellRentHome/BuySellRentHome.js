@@ -38,7 +38,7 @@ const BuySellRentHome = () => {
           </div>
           <div className="col-12 col-md-4 mt-3">
             <div className="BSRSec">
-              <a href="/" className="RjcardLInk">
+              <Link to="/sellHome" className="RjcardLInk">
                 <div class="card RjcustomCard">
                   <img src={sell} class="card-img-top RJcardImg" alt="..." />
                   <div class="card-body">
@@ -51,7 +51,7 @@ const BuySellRentHome = () => {
                     <p class="btn RJcustomcardButton mt-3">See Your Options</p>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-12 col-md-4 mt-3">

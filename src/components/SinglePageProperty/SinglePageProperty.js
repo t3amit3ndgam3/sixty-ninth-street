@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import image1 from "../../images/DreamHome/dream.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
@@ -19,9 +19,12 @@ const SinglePageProperty = () => {
     console.log(e.target.value);
     e.preventDefault();
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <div className="spp_container navSpace pt-3">
-      <div className="spp_wrapper">
+    <div className="spp_container navSpace">
+      <div className="spp_wrapper pt-3">
         <div className="notice_area">
           <div className="single_property_labels_left">
             <div className="label_btn">

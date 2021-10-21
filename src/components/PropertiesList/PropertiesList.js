@@ -28,7 +28,7 @@ const PropertiesList = () => {
   const share = <FontAwesomeIcon icon={faShareAlt} />;
   return (
     <>
-      <div className="container navSpace">
+      <div className="container navSpace mb-5">
         <div className="row">
           <div className="col-mmd-12">
             <div className="RjpropertiseHEading">

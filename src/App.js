@@ -13,7 +13,10 @@ import AddProperty from "./components/AddProperty/AddProperty";
 import AgentsPage from "./components/AgentsPage/AgentsPage";
 import SingleAgent from "./components/SingleAgent/SingleAgent";
 import UserDashboard from "./UserDashboard/UserDashboard";
-
+import UserReviews from "./components/UserReviews/UserReviews";
+import AddAgents from "./components/AddAgents/AddAgents";
+import SellHome from "./components/SellHome/SellHome";
+import Footer from "./components/Home/Footer/Footer";
 function App() {
   return (
     <>
@@ -32,6 +35,11 @@ function App() {
               <Route exact path="/addProperty" component={AddProperty} />
               <Route exact path="/agents" component={AgentsPage} />
               <Route exact path="/singleAgent" component={SingleAgent} />
+              <Route exact path="/properties" component={PropertiesList} />
+              <Route exact path="/userReview" component={UserReviews} />
+              <Route exact path="/addAgents" component={AddAgents} />
+              <Route exact path="/sellHome" component={SellHome} />
+              <Footer />
             </div>
           </Switch>
         </Router>

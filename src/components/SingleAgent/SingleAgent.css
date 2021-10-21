@@ -22,15 +22,18 @@
     line-height: 13px;
     color: #777;
 }
-.singleAgentImg{
+
+.sellHomeSideImg2{
     height:250px;
     position: relative;
     padding:5px;
+    margin-bottom: 120px;
 }
-.singleAgentImg img{
-    height:250px;
+.singleAgentImg2 img{
+    height:200px;
     width:100%;
     box-sizing: border-box;
+    
 }
 .singleAgentImgOverContent{
     position: absolute;
@@ -80,7 +83,6 @@
     border-color: #0073e1;
     color: #ffffff;
     background-color: #0073e1;
-    /* background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, #0073e1)); */
     background-image: linear-gradient(to right, transparent 50%, #0073e1 50%);
     background-size: 200% 100%;
     background-position: right bottom;

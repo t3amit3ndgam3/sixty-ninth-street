@@ -464,7 +464,6 @@ input:focus ~ .bar:after {
 .addProperty_section {
   background-color: #eaf7f4;
   height: auto;
-  padding-top: 20px;
 }
 .addProperty_wrapper {
   background-color: #ffffff;
@@ -538,7 +537,6 @@ input:focus ~ .bar:after {
 }
 .tag_wrapper {
   position: absolute;
-  width: 100%;
   padding: 0 20px;
   z-index: 99;
 }
@@ -563,8 +561,8 @@ input:focus ~ .bar:after {
   color: #fff;
   position: relative;
   padding: 1px 17px;
-  top: 20px;
-  left: 175px;
+  top: 0;
+  left: 245px;
   text-align: center;
   line-height: 20px;
   box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 10%);

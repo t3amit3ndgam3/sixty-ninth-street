@@ -4,7 +4,7 @@ import "../Home/Unmoy.css";
 const AddProperty = () => {
   const [textData, setTextData] = useState({});
   const [fileData, setFileData] = useState({});
-  // console.log(textData);
+  console.log(textData.price_is);
   // console.log(fileData);
 
   const handleTextData = (e) => {
@@ -56,7 +56,7 @@ const AddProperty = () => {
   };
 
   return (
-    <div className="addProperty_section navSpace">
+    <div className="addProperty_section navSpace mb-5">
       <div className="addProperty_wrapper">
         <h1>Add Property</h1>
         <div>

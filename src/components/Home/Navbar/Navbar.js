@@ -86,11 +86,11 @@ const Navbar = () => {
                 </li>
                 <li class="nav-item">
                   <Link
-                    to=""
+                    to="/addAgents"
                     class="nav-link navItemCustom"
                     aria-current="page"
                   >
-                    CONTACT
+                    ADD AGENT
                   </Link>
                 </li>
                 <li class="nav-item">
