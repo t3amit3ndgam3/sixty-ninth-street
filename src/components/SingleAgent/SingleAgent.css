@@ -1,105 +1,107 @@
-.singlePageContainer{
-    background:white;
-    box-shadow: 0px 2px 20px #00000030;
+.singlePageContainer {
+  background: white;
+  box-shadow: 0px 2px 20px #00000030;
+}
+.singleAgentImg {
+  position: relative;
 }
 .singlePageTopIcon {
-    color: #777;
-    margin-right: 10px;
-    font-size: 12px;
-    background: #f2f2f2;
-    position: relative;
-    width: 27px;
-    height: 27px;
-    line-height: 27px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    margin-bottom: 5px;
+  color: #777;
+  margin-right: 10px;
+  font-size: 12px;
+  background: #f2f2f2;
+  position: relative;
+  width: 27px;
+  height: 27px;
+  line-height: 27px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 5px;
 }
 .agent_position {
-    font-size: 13px;
-    margin: 0px 0px 10px 0px;
-    line-height: 13px;
-    color: #777;
+  font-size: 13px;
+  margin: 0px 0px 10px 0px;
+  line-height: 13px;
+  color: #777;
 }
 
-.sellHomeSideImg2{
-    height:250px;
-    position: relative;
-    padding:5px;
-    margin-bottom: 120px;
+.sellHomeSideImg2 {
+  height: 250px;
+  position: relative;
+  padding: 5px;
+  margin-bottom: 120px;
 }
-.singleAgentImg2 img{
-    height:200px;
-    width:100%;
-    box-sizing: border-box;
-    
+.singleAgentImg2 img {
+  height: 200px;
+  width: 100%;
+  box-sizing: border-box;
 }
-.singleAgentImgOverContent{
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    bottom:-30px;
-    left:50%;
-    transform:translate(-50%,-30%);
-    width: 50%;
-    border-radius: 4px;
-    margin:auto;
-    text-align:center;
-    background:#ffffff;
-    padding: 2% 0px;
-    box-shadow: 0px 2px 3px #c2bed9;
+.singleAgentImgOverContent {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: -30px;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 50%;
+  border-radius: 4px;
+  margin: auto;
+  text-align: center;
+  background: #ffffff;
+  padding: 2% 0px;
+  box-shadow: 0px 2px 3px #c2bed9;
 }
-.singleAgentImgOverContent a{
-    text-decoration: none;
-    padding:6px 6px;
-    color:black;
-    transition: all 0.6s;
+.singleAgentImgOverContent a {
+  text-decoration: none;
+  padding: 6px 6px;
+  color: black;
+  transition: all 0.6s;
 }
-.singleAgentImgOverContent a:hover{
-    color:rgb(7, 199, 36);
-}
-
-.singleAgentForm{
-    padding-top:10px;
+.singleAgentImgOverContent a:hover {
+  color: rgb(7, 199, 36);
 }
 
-.singleAgentFormInput{
-    width:100%;
+.singleAgentForm {
+  padding-top: 10px;
+}
+
+.singleAgentFormInput {
+  width: 100%;
 }
 #agent_submit {
-    margin-bottom: 0px;
-    margin-right: 15px;
-    min-width: 170px;
+  margin-bottom: 0px;
+  margin-right: 15px;
+  min-width: 170px;
 }
 .wpresidence_button {
-    text-shadow: none;
-    margin-bottom: 15px;
-    border-radius: 0px;
-    text-transform: capitalize;
-    padding: 8px 34px;
-    border: 1px solid;
-    line-height: 2;
-    border-color: #0073e1;
-    color: #ffffff;
-    background-color: #0073e1;
-    background-image: linear-gradient(to right, transparent 50%, #0073e1 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 3px;
+  text-shadow: none;
+  margin-bottom: 15px;
+  border-radius: 0px;
+  text-transform: capitalize;
+  padding: 8px 34px;
+  border: 1px solid;
+  line-height: 2;
+  border-color: #0073e1;
+  color: #ffffff;
+  background-color: #0073e1;
+  background-image: linear-gradient(to right, transparent 50%, #0073e1 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 3px;
 }
 
 .wpresidence_button:hover {
-    background-color: #0761b7;
-    text-decoration: none;
-    background-color: transparent;
-    background-position: left bottom;
-    color: #0073e6;
-    border-color: #0073e6;
-    transition: all 300ms ease;
-    cursor: pointer;
+  background-color: #0761b7;
+  text-decoration: none;
+  background-color: transparent;
+  background-position: left bottom;
+  color: #0073e6;
+  border-color: #0073e6;
+  transition: all 300ms ease;
+  cursor: pointer;
 }

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "../Home/Unmoy.css";
-
+import { toast, ToastContainer } from "react-toastify";
+import "./AddProperty.css";
+import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 const AddProperty = () => {
   const [textData, setTextData] = useState({});
   const [fileData, setFileData] = useState({});
-  console.log(textData.price_is);
+  // console.log(textData.price_is);
   // console.log(fileData);
 
   const handleTextData = (e) => {
@@ -23,6 +25,7 @@ const AddProperty = () => {
     const formData = new FormData();
     formData.append("property_for", textData.property_for);
     formData.append("property_type", textData.property_type);
+    formData.append("title", textData.title);
     formData.append("city", textData.city);
     formData.append("address", textData.address);
     formData.append("property_name", textData.property_name);
@@ -49,7 +52,12 @@ const AddProperty = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        window.alert("Data Inserted");
+        toast("Data Succesfully Inserted", {
+          className: "custom-alert",
+          theme: "dark",
+          hideProgressBar: true,
+          autoClose: 3000,
+        });
       })
       .catch((error) => console.error(error));
     e.target.reset();
@@ -57,6 +65,7 @@ const AddProperty = () => {
 
   return (
     <div className="addProperty_section navSpace mb-5">
+      <ToastContainer />
       <div className="addProperty_wrapper">
         <h1>Add Property</h1>
         <div>

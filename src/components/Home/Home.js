@@ -3,7 +3,6 @@ import Header from "./Header/Header";
 import Work from "./Work/Work";
 import Properties from "./Properties/Properties";
 import DreamHome from "./DreamHome/DreamHome";
-import Footer from "./Footer/Footer";
 import Contact from "./Contact/Contact";
 import BuySellRentHome from "./BuySellRentHome/BuySellRentHome";
 import UserTestimonials from "./UserTestimonials/UserTestimonials";
@@ -20,7 +19,6 @@ const Home = () => {
       <UserTestimonials />
       <AgentList />
       <Contact />
-     
     </div>
   );
 };

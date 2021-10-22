@@ -102,12 +102,14 @@ const Navbar = () => {
                     DASHBOARD
                   </Link>
                 </li>
-                {/* <li class="nav-item">
-                  {currentUser && currentUser.displayName}
+                <li class="nav-item">
+                  <span style={{ color: "#fff", margin: "10px" }}>
+                    {currentUser && currentUser.displayName}
+                  </span>
                   {currentUser && (
                     <button onClick={handleLogout}>Log Out</button>
                   )}
-                </li> */}
+                </li>
               </ul>
             </div>
           </div>

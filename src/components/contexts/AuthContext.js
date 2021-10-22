@@ -46,6 +46,18 @@ export const AuthProvider = ({ children }) => {
   function logout() {
     return auth.signOut();
   }
+  // function updateUserPassword(user, newPassword) {
+  //   return authentication
+  //     .updatePassword(user, newPassword)
+  //     .then(() => {
+  //       // Update successful.
+  //     })
+  //     .catch((error) => {
+  //       // An error ocurred
+  //       // ...
+  //     });
+  // }
+
   useEffect(() => {
     const unsubscribe = authentication.onAuthStateChanged((user) => {
       setCurrentUser(user);
@@ -54,7 +66,14 @@ export const AuthProvider = ({ children }) => {
     return unsubscribe;
   }, []);
 
-  const value = { currentUser, signUp, login, signInWithGoogle, logout };
+  const value = {
+    currentUser,
+    signUp,
+    login,
+    signInWithGoogle,
+    // updateUserPassword,
+    logout,
+  };
   return (
     <AuthContext.Provider value={value}>
       {!loading && children}
