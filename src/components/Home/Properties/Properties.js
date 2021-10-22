@@ -24,7 +24,7 @@ const Properties = () => {
           <h1>Properties</h1>
         </div>
         <div className="row p-3 ">
-      {sliced && sliced.map( pro =>(  
+      {/* {sliced && sliced.map( pro =>(   */}
           <div className="col-md-4 mt-3">
             <div className="property_card">
               <Link to="/spp" className="card_links">
@@ -83,15 +83,9 @@ const Properties = () => {
                     </div>
                   </div>
                 </div>
-<<<<<<< HEAD
-              </div>
-            </Link>
-          </div>))}
-=======
               </Link>
             </div>
           </div>
->>>>>>> b7f610e17634531e3b3eca91f75a760dcc5897d2
         </div>
         <div className="more_btn">
           <button>Load More Listings</button>

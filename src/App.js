@@ -35,7 +35,6 @@ function App() {
               <Route exact path="/addProperty" component={AddProperty} />
               <Route exact path="/agents" component={AgentsPage} />
               <Route exact path="/singleAgent" component={SingleAgent} />
-              <Route exact path="/properties" component={PropertiesList} />
               <Route exact path="/userReview" component={UserReviews} />
               <Route exact path="/addAgents" component={AddAgents} />
               <Route exact path="/sellHome" component={SellHome} />
