@@ -233,3 +233,11 @@
 .hide{
   display: none;
 }
+.closeButtonmain{
+  position: relative;
+}
+.loseButtonaction{
+  position: absolute;
+  bottom: -5;
+  right: 0;
+}

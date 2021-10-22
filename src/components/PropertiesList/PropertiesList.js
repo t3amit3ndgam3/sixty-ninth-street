@@ -20,19 +20,38 @@ const PropertiesList = () => {
 	const love = <FontAwesomeIcon icon={faHeart} />;
 	const objectGroup = <FontAwesomeIcon icon={faObjectGroup} />;
 	const share = <FontAwesomeIcon icon={faShareAlt} />;
+	const [propertiesAll, setPropertiesAll] = useState([]);
 	const [properties, setProperties] = useState([]);
-
+	const [loadData, setLoadData] = useState(5);
+	const [btnFlag, setBtnFlag] = useState(true);
+	
 	useEffect(() => {
 		fetch("https://sixtyninethstreet.herokuapp.com/allProperty")
 			.then((res) => res.json())
-			.then((data) => setProperties(data));
+			.then((data) => {
+				setPropertiesAll(data);
+				
+			});
 	}, []);
+	useEffect(() => {
+		const cutData =  propertiesAll.slice(0, loadData);
+		setProperties(cutData);
+		// console.log(properties,loadData);
+	}, [propertiesAll])
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const list = [1, 2, 3, 4, 5];
+
+	const handleLoadMore =() =>{
+		const cutData =  propertiesAll.slice(0, loadData+loadData);
+		setProperties(cutData)
+		if(loadData+loadData >= propertiesAll.length){
+			setBtnFlag(false)
+		}
+		setLoadData(loadData+2);
+	}
 	return (
 		<>
 			<div className="container navSpace mb-5">
@@ -130,9 +149,13 @@ const PropertiesList = () => {
 												<h5 class="card-title">{pro.property_name}</h5>
 												<h6 class="card-title">$ {pro.price}</h6>
 												<p>{pro.property_description.substring(0, 80)}...</p>
-												<span>{bed}  {pro.bedroom}</span>
+												<span>
+													{bed} {pro.bedroom}
+												</span>
 												&nbsp;&nbsp;
-												<span>{bath} {pro.bathroom}</span>
+												<span>
+													{bath} {pro.bathroom}
+												</span>
 												&nbsp;&nbsp;
 												<span>
 													{objectGroup} s{pro.property_size} ft<sup>2</sup>{" "}
@@ -155,6 +178,14 @@ const PropertiesList = () => {
 								</div>
 							</Link>
 						))}
+
+						{btnFlag && <button
+							class="wpresidence_button  agent_submit_class mb-3 col-md-4 offset-md-4"
+							id="agent_submit"
+							onClick={handleLoadMore}
+						>
+							Load More
+						</button>}
 					</div>
 				</div>
 			</div>
