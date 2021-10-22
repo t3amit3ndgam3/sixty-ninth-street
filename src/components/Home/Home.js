@@ -19,8 +19,8 @@ const Home = () => {
       <DreamHome />
       <UserTestimonials />
       <AgentList />
+      <br/>
       <Contact />
-     
     </div>
   );
 };

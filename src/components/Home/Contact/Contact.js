@@ -25,7 +25,7 @@ const Contact = () => {
     e.target.reset();
   };
   return (
-    <div className="contact_wrapper">
+    <div className="contact_wrapper ">
       <div className="left_side">
         <h3>
           We Help You <span>Buy</span> or <span>Sell</span> Your Property

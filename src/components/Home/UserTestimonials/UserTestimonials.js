@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -50,7 +50,20 @@ var settings = {
 };
 
 const UserTestimonials = () => {
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  const [reviews, setReviews] = useState([]);
+  console.log("............",reviews);
+  useEffect(() => {
+    fetch('https://sixtyninethstreet.herokuapp.com/getReviews')
+    .then( res => res.json())
+    .then( data => {
+      const collect = data.length;
+      const reviewsCut =  data.slice(collect-5, collect);
+      setReviews(reviewsCut);
+    })
+
+  }, [])
+
   return (
     <div className="RjtestimonislsBackgoround">
       <div className="container ">
@@ -62,16 +75,14 @@ const UserTestimonials = () => {
           </div>
           <div className="col-md-12 RjtestimonialsCol12">
             <Slider {...settings}>
-              {array.map((arr) => (
+              {reviews && reviews.map((rew) => (
                 <div className="RjuserTestimonials">
                   <div className="RjtestimonialsBody shadow p-3">
                     <div className="Rjtestimonialsbody fst-italic">
                       <p className="RjtestimonialsPTest">
-                        “In her more-than-three-decade career, Mills has racked
-                        up more than $3 billion in sales, consistently ranking
-                        as one of the top producers in the country.”
+                        “{rew.user_reviews}”
                       </p>
-                      <h6>– Hollywood Reporter</h6>
+                      <h6>– {rew.user_name}</h6>
                     </div>
                   </div>
                 </div>
