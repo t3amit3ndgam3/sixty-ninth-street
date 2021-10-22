@@ -234,7 +234,6 @@
 }
 .quality:hover .dreamIcon {
   color: #10257f;
-
   box-shadow: 0 10px 31px 0 rgb(7 152 255 / 20%);
 }
 .dreamCount {
@@ -242,10 +241,7 @@
   text-align: center;
   margin-top: 30px;
   padding: 20px;
-  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
-}
-.dreamCount:hover {
-  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 15%);
+  
 }
 .DreamNumber {
   font-size: 40px;
@@ -402,28 +398,27 @@
 .RjAgenticon {
   position: absolute;
   font-size: 22px;
-  text-shadow: 2px 2px 2px red;
+  text-shadow: 2px 2px 2px rgb(22, 17, 17);
   bottom: -20px;
   transform: translate(-40%, 0);
   visibility: hidden;
+  transition: ease-in-out 0.5s all;
+  color: #2a2a2e;
 }
 .RjAgentIconOver a {
   text-decoration: none;
 }
 .AgentFacebbok {
   transition: ease-in-out 0.5s all;
-  color: #0502c7;
   left: 40%;
 }
 
 .AgentEmail {
   transition: ease-in-out 0.7s all;
-  color: #c2200b;
   left: 50%;
 }
 .AgentLinkend {
   transition: ease-in-out 0.9s all;
-  color: #0502c7;
   left: 60%;
 }
 .RJAgentCARD:hover .RjAgenticon {
@@ -431,7 +426,7 @@
   visibility: visible;
 }
 .RjAgenticon:hover {
-  color: rgb(0, 0, 0);
+  color: rgb(25, 0, 255);
 }
 
 /* / Testimonials/ */
@@ -474,6 +469,9 @@
 .Rjtestimonialsbody:hover::before {
   /* border-left: 2px solid #11111140; */
   border-left: 2px solid #222222;
+}
+.RjtestimonialsPTest{
+  min-height: 150px;
 }
 .Rjtestimonialsbody h6 {
   color: #222222;

@@ -48,7 +48,7 @@ const BuySellRentHome = () => {
                       most listings, including things you won’t find anywhere
                       else.
                     </p>
-                    <p class="btn RJcustomcardButton mt-3">See Your Options</p>
+                    <p class="btn RJcustomcardButton mt-3">Choose Options</p>
                   </div>
                 </div>
               </Link>

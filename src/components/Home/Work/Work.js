@@ -28,7 +28,7 @@ const Work = () => {
       <div className="text-center section_headers">
         <h1>How It Works</h1>
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center ">
         <div className="w-75 row mt-5">
           {worksData.map((Work) => (
             <WorkDetails Work={Work}></WorkDetails>

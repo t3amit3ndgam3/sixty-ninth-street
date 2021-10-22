@@ -54,6 +54,8 @@ export const AuthProvider = ({ children }) => {
     return unsubscribe;
   }, []);
 
+
+
   const value = { currentUser, signUp, login, signInWithGoogle, logout };
   return (
     <AuthContext.Provider value={value}>

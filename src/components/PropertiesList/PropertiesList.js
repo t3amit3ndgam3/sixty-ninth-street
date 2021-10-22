@@ -15,17 +15,24 @@ import aliza from "../../images/aliza.png";
 
 const PropertiesList = () => {
 	const [range, setRange] = useState([0]);
+	const bed = <FontAwesomeIcon icon={faBed} />;
+	const bath = <FontAwesomeIcon icon={faBath} />;
+	const love = <FontAwesomeIcon icon={faHeart} />;
+	const objectGroup = <FontAwesomeIcon icon={faObjectGroup} />;
+	const share = <FontAwesomeIcon icon={faShareAlt} />;
+	const [properties, setProperties] = useState([]);
+
+	useEffect(() => {
+		fetch("https://sixtyninethstreet.herokuapp.com/allProperty")
+			.then((res) => res.json())
+			.then((data) => setProperties(data));
+	}, []);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
 	const list = [1, 2, 3, 4, 5];
-	const bed = <FontAwesomeIcon icon={faBed} />;
-	const bath = <FontAwesomeIcon icon={faBath} />;
-	const love = <FontAwesomeIcon icon={faHeart} />;
-	const objectGroup = <FontAwesomeIcon icon={faObjectGroup} />;
-	const share = <FontAwesomeIcon icon={faShareAlt} />;
 	return (
 		<>
 			<div className="container navSpace mb-5">
@@ -104,8 +111,11 @@ const PropertiesList = () => {
 						</div>
 					</div>
 					<div className="col-12  col-md-8 ">
-						{list.map((ls) => (
-							<Link to="" className="RjPropertiesLInk bg-default">
+						{properties.map((pro) => (
+							<Link
+								to={`/spp/${pro.key}`}
+								className="RjPropertiesLInk bg-default"
+							>
 								<div class="card mb-3 RjPropertiseCard">
 									<div class="row g-0">
 										<div class="col-sm-12 col-md-4 RjPropertiesImg">
@@ -117,18 +127,17 @@ const PropertiesList = () => {
 										</div>
 										<div class="col-sm-12 col-md-8">
 											<div class="card-body">
-												<h5 class="card-title">Restaurant and Bar Hudson</h5>
-												<h6 class="card-title">$15000.00</h6>
-												<p class="card-title">
-													Downtown Frederick hot spot. Top location for local
-													...
-												</p>
-												<span>{bed} 2</span>&nbsp;&nbsp;<span>{bath} 2</span>
+												<h5 class="card-title">{pro.property_name}</h5>
+												<h6 class="card-title">$ {pro.price}</h6>
+												<p>{pro.property_description.substring(0, 80)}...</p>
+												<span>{bed}  {pro.bedroom}</span>
+												&nbsp;&nbsp;
+												<span>{bath} {pro.bathroom}</span>
 												&nbsp;&nbsp;
 												<span>
-													{objectGroup} m<sup>2</sup>{" "}
+													{objectGroup} s{pro.property_size} ft<sup>2</sup>{" "}
 												</span>
-												<div className="RjPropertiseUserSection">
+												{/* <div className="RjPropertiseUserSection">
 													<div className="RjProUser">
 														<img src={aliza} alt="" />
 														&nbsp;&nbsp;
@@ -139,7 +148,7 @@ const PropertiesList = () => {
 														&nbsp;&nbsp;&nbsp;&nbsp;
 														<Link to="">{share}</Link>
 													</div>
-												</div>
+												</div> */}
 											</div>
 										</div>
 									</div>
@@ -150,7 +159,7 @@ const PropertiesList = () => {
 				</div>
 			</div>
 		</>
-	)
-}
+	);
+};
 
 export default PropertiesList;
