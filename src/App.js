@@ -51,7 +51,7 @@ function App() {
 							<Route exact path="/userReview" component={UserReviews} />
 							<Route exact path="/addAgents" component={AddAgents} />
 							<Route exact path="/sellHome" component={SellHome} />
-							{/* <Footer /> */}
+							<Footer />
 						</div>
 					</Switch>
 				</Router>

@@ -4,7 +4,6 @@ import "../UserReviews/UserReviews.css";
 const AddAgents = () => {
 	const [agentInfo, setAgentInfo] = useState({});
 	const [AgentImg, setAgentImg] = useState();
-	console.log(agentInfo);
 
 	const handleAgentForm = (e) => {
 		const data = { ...agentInfo };
@@ -26,6 +25,8 @@ const AddAgents = () => {
 		formData.append("agent_instagram", agentInfo.agent_instagram);
 		formData.append("agent_skype", agentInfo.agent_skype);
 		formData.append("agent_description", agentInfo.agent_description);
+		formData.append("experience", agentInfo.experience);
+		formData.append("fees", agentInfo.fees);
 		formData.append("agent_image", AgentImg);
 
 		fetch("https://sixtyninethstreet.herokuapp.com/addAgent", {
@@ -34,10 +35,10 @@ const AddAgents = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
+				e.target.reset();
 				window.alert("Data Inserted");
 			})
 			.catch((error) => console.error(error));
-			e.target.reset();
 	};
 	return (
 		<div className="navSpace p_bg ">
@@ -113,6 +114,32 @@ const AddAgents = () => {
 									required
 								/>
 							</div>
+							<div class="mb-3">
+								<label for="experienceYear" class="form-label">
+									Year of experience
+								</label>
+								<input
+									type="number"
+									class="form-control"
+									id="experienceYear"
+									name="experience"
+									onBlur={handleAgentForm}
+									required
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="AgentFee" class="form-label">
+									Agent Fees
+								</label>
+								<input
+									type="number"
+									class="form-control"
+									id="AgentFee"
+									name="fees"
+									onBlur={handleAgentForm}
+									required
+								/>
+							</div>
 						</div>
 					</div>
 					<div className="col-md-6 p-5">
@@ -169,6 +196,19 @@ const AddAgents = () => {
 									required
 								/>
 							</div>
+							<div class="mb-5">
+								<label for="Descriptioninput" class="form-label">
+									Description
+								</label>
+								<textarea
+									type="text"
+									class="form-control p-4"
+									id="Descriptioninput"
+									name="agent_description"
+									onBlur={handleAgentForm}
+									required
+								/>
+							</div>
 							<div class="mb-3">
 								<label for="agentImage" class="form-label">
 									Agent Formal Image
@@ -184,21 +224,7 @@ const AddAgents = () => {
 									required
 								/>
 							</div>
-						</div>
-					</div>
-					<div className="col-md-10 offset-md-1">
-						<div class="mb-3">
-							<label for="Descriptioninput" class="form-label">
-								Description
-							</label>
-							<textarea
-								type="text"
-								class="form-control p-3"
-								id="Descriptioninput"
-								name="agent_description"
-								onBlur={handleAgentForm}
-								required
-							/>
+
 						</div>
 					</div>
 					<div className="col-md-6 offset-md-3">
