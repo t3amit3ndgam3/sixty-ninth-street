@@ -13,10 +13,9 @@ const AddAgents = () => {
 	};
 
 	const handleAgentSubmit = (e) => {
+		e.preventDefault();
 
-        e.preventDefault();
-
-		const formData =new FormData();
+		const formData = new FormData();
 		formData.append("agent_name", agentInfo.agent_name);
 		formData.append("agent_title", agentInfo.agent_title);
 		formData.append("agent_number", agentInfo.agent_number);
@@ -26,9 +25,10 @@ const AddAgents = () => {
 		formData.append("agent_twitter", agentInfo.agent_twitter);
 		formData.append("agent_instagram", agentInfo.agent_instagram);
 		formData.append("agent_skype", agentInfo.agent_skype);
+		formData.append("agent_description", agentInfo.agent_description);
 		formData.append("agent_image", AgentImg);
 
-		fetch("http://localhost:5000/addAgent", {
+		fetch("https://sixtyninethstreet.herokuapp.com/addAgent", {
 			method: "POST",
 			body: formData,
 		})
@@ -37,7 +37,7 @@ const AddAgents = () => {
 				window.alert("Data Inserted");
 			})
 			.catch((error) => console.error(error));
-    
+			e.target.reset();
 	};
 	return (
 		<div className="navSpace p_bg ">
@@ -176,7 +176,7 @@ const AddAgents = () => {
 								<input
 									type="file"
 									className="input_field"
-									id="agentSkype"
+									id="agentImage"
 									name="agent_image"
 									onChange={(e) => {
 										setAgentImg(e.target.files[0]);
@@ -184,6 +184,21 @@ const AddAgents = () => {
 									required
 								/>
 							</div>
+						</div>
+					</div>
+					<div className="col-md-10 offset-md-1">
+						<div class="mb-3">
+							<label for="Descriptioninput" class="form-label">
+								Description
+							</label>
+							<textarea
+								type="text"
+								class="form-control p-3"
+								id="Descriptioninput"
+								name="agent_description"
+								onBlur={handleAgentForm}
+								required
+							/>
 						</div>
 					</div>
 					<div className="col-md-6 offset-md-3">

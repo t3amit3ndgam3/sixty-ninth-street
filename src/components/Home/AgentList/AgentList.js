@@ -60,7 +60,7 @@ const AgentList = () => {
   const email = <FontAwesomeIcon icon={faEnvelope} />;
   const linkend = <FontAwesomeIcon icon={faLinkedin} />;
   return (
-    <div className="container pb-5 dreamHome_wrapper">
+    <div className="container pb-5 mb-5 dreamHome_wrapper">
       <div className="row">
         <div className="col-md-12">
           <div className="dreamHomeHeader section_headers">

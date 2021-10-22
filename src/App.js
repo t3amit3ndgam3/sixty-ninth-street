@@ -18,24 +18,36 @@ import AddAgents from "./components/AddAgents/AddAgents";
 import SellHome from "./components/SellHome/SellHome";
 import Footer from "./components/Home/Footer/Footer";
 function App() {
+  const wishlist = JSON.parse(localStorage.getItem("69wishlist") || "[]");
+  if (wishlist.length === 0) {
+    wishlist.push({
+      image: "",
+      name: "",
+      key: "",
+      price: "",
+      bed: "",
+      bath: "",
+      size: "hide",
+    });
+    localStorage.setItem("69wishlist", JSON.stringify(wishlist));
+  }
   return (
     <>
       <AuthProvider>
         <Router>
           <Switch>
-            <PrivateRoute exact path="/dashboard" component={UserDashboard} />
+            <Route exact path="/dashboard" component={UserDashboard} />
             <div>
               <Navbar />
               <Route exact path="/" component={Home} />
               <Route exact path="/properties" component={PropertiesList} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/spp" component={SinglePageProperty} />
+              <Route exact path="/spp/:id" component={SinglePageProperty} />
               <Route path="/feature" component={AppointmentFeatureDetails} />
               <Route exact path="/addProperty" component={AddProperty} />
               <Route exact path="/agents" component={AgentsPage} />
               <Route exact path="/singleAgent" component={SingleAgent} />
-              <Route exact path="/properties" component={PropertiesList} />
               <Route exact path="/userReview" component={UserReviews} />
               <Route exact path="/addAgents" component={AddAgents} />
               <Route exact path="/sellHome" component={SellHome} />

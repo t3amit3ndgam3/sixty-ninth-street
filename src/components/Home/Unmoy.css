@@ -647,11 +647,16 @@ input:focus ~ .bar:after {
 /* WorkDeatails */
 .workDetails_wrapper {
   margin-bottom: 50px;
-  box-shadow: 0px 10px 31px -3px rgb(7 152 225 / 9%);
+  box-shadow: 0px 10px 15px #00000033;
   padding: 30px 20px;
+  border-bottom: 1px solid #ffffff;
+  transition: all 0.6s ease;
+}
+.workDetails_wrapperP {
+  height: 45px;
 }
 .workDetails_wrapper:hover {
-  box-shadow: 0 10px 31px 0 rgb(7 152 255 / 15%);
+  box-shadow: 0 10px 31px 0 #03e76233;
   border-bottom: 1px solid #10257f;
 }
 .workdetails_read_more {
@@ -667,6 +672,7 @@ input:focus ~ .bar:after {
   font-size: 25px;
   line-height: 1.2em;
   text-align: center;
+  height: 40px;
 }
 .workDetails_wrapper img {
   height: 70px;
