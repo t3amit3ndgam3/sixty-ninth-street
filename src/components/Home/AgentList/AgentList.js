@@ -1,14 +1,15 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import agent from "../../../images/agent1.jpeg";
+import agentImg from "../../../images/agent1.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookSquare,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 var settings = {
   dots: true,
@@ -59,6 +60,23 @@ const AgentList = () => {
   const facebook = <FontAwesomeIcon icon={faFacebookSquare} />;
   const email = <FontAwesomeIcon icon={faEnvelope} />;
   const linkend = <FontAwesomeIcon icon={faLinkedin} />;
+
+  const [agent, setAgent] = useState([]);
+  console.log(agent);
+  useEffect(() => {
+      fetch('https://sixtyninethstreet.herokuapp.com/getAgent')
+      .then(res => res.json())
+      .then( data => {
+        // const cutAgent = data.slice(data.length - 5, data.length);
+        setAgent(data)
+      })
+  }, [])
+
+
+
+
+
+
   return (
     <div className="container pb-5 mb-5 dreamHome_wrapper">
       <div className="row">
@@ -72,264 +90,31 @@ const AgentList = () => {
           </div>
         </div>
         <Slider {...settings}>
-          <div class="card RJAgentCARD">
+          {agent&& agent.map( agt =>(
+          <div key={agt.key} class="card RJAgentCARD">
             <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
+              <Link to={`/singleAgent/${agt.key}`}>
+                <img src={agentImg} class="card-img-top" alt="..." />
+              </Link>
               <div className="RjAgentIconOver">
-                <a href="">
+                <a target="_blank" href={agt.agent_facebook} >
                   <span className="RjAgenticon AgentFacebbok">{facebook}</span>
                 </a>
-                <a href="">
+                <a target="_blank" href={agt.agent_email}>
                   <span className="RjAgenticon AgentEmail">{email}</span>
                 </a>
-                <a href="">
+                <a target="_blank" href={agt.agent_linkend}>
                   <span className="RjAgenticon AgentLinkend">{linkend}</span>
                 </a>
               </div>
             </div>
             <div class="card-body">
               <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
+                <span className="fs-4 fw-bold">{agt.agent_name}</span> <br /> {agt.agent_title}
               </p>
             </div>
-          </div>
-          {/* ................................. */}
-          <div class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
-              <div className="RjAgentIconOver">
-                <a href="">
-                  {" "}
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
-              </p>
-            </div>
-          </div>
-          {/* ................................. */}
-          <div class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
-              <div className="RjAgentIconOver">
-                <a href="">
-                  {" "}
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
-              </p>
-            </div>
-          </div>
-          {/* ................................. */}
-          <div class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
-              <div className="RjAgentIconOver">
-                <a href="">
-                  {" "}
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
-              </p>
-            </div>
-          </div>
-          {/* ................................. */}
-          <div class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
-              <div className="RjAgentIconOver">
-                <a href="">
-                  {" "}
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
-              </p>
-            </div>
-          </div>
-          {/* ................................. */}
-          <div class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
-              <div className="RjAgentIconOver">
-                <a href="">
-                  {" "}
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
-              </p>
-            </div>
-          </div>
-          {/* ................................. */}
-          <div class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
-              <div className="RjAgentIconOver">
-                <a href="">
-                  {" "}
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
-              </p>
-            </div>
-          </div>
-          {/* ................................. */}
-          <div class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
-              <div className="RjAgentIconOver">
-                <a href="">
-                  {" "}
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
-              </p>
-            </div>
-          </div>
-          {/* ................................. */}
-          <div class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
-              <div className="RjAgentIconOver">
-                <a href="">
-                  {" "}
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
-              </p>
-            </div>
-          </div>
-          {/* ................................. */}
-          <div class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
-              <div className="RjAgentIconOver">
-                <a href="">
-                  {" "}
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
-              </p>
-            </div>
-          </div>
+          </div
+          >))}
           {/* ................................. */}
         </Slider>
       </div>
