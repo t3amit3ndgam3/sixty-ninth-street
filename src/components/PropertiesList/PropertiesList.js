@@ -24,17 +24,17 @@ const PropertiesList = () => {
 	const [properties, setProperties] = useState([]);
 	const [loadData, setLoadData] = useState(5);
 	const [btnFlag, setBtnFlag] = useState(true);
-	
+
 	useEffect(() => {
 		fetch("https://sixtyninethstreet.herokuapp.com/allProperty")
 			.then((res) => res.json())
 			.then((data) => {
 				setPropertiesAll(data);
-				
+
 			});
 	}, []);
 	useEffect(() => {
-		const cutData =  propertiesAll.slice(0, loadData);
+		const cutData = propertiesAll.slice(0, loadData);
 		setProperties(cutData);
 		// console.log(properties,loadData);
 	}, [propertiesAll])
@@ -44,51 +44,48 @@ const PropertiesList = () => {
 	}, []);
 
 
-	const handleLoadMore =() =>{
-		const cutData =  propertiesAll.slice(0, loadData+loadData);
+	const handleLoadMore = () => {
+		const cutData = propertiesAll.slice(0, loadData + loadData);
 		setProperties(cutData)
-		if(loadData+loadData >= propertiesAll.length){
+		if (loadData + loadData >= propertiesAll.length) {
 			setBtnFlag(false)
 		}
-		setLoadData(loadData+2);
+		setLoadData(loadData + 2);
 	}
 	return (
 		<>
 			<div className="container navSpace mb-5">
 				<div className="row">
-					<div className="col-mmd-12">
+					{/* Page Heading */}
+					<div className="col-md-12">
 						<div className="RjpropertiseHEading">
 							<h1>Properties List –</h1>
 						</div>
 					</div>
+					{/* Left Side Filters Start */}
 					<div className="col-12 col-md-4">
 						<div className="propertyColFour">
-							<div className="propertiesForm types">
-								<select class="form-select" aria-label="Default select example">
-									<option selected>Types</option>
-									<option value="1">TypeOne</option>
-									<option value="2">TypeTwo</option>
-									<option value="3">TypeThree</option>
-								</select>
-							</div>
-							<div className="propertiesForm types">
-								<select class="form-select" aria-label="Default select example">
-									<option selected>Categories</option>
-									<option value="1">CatOne</option>
-									<option value="2">CatTwo</option>
-									<option value="3">CatThree</option>
-								</select>
-							</div>
-							<div className="propertiesForm types">
-								<select class="form-select" aria-label="Default select example">
-									<option selected>States</option>
-									<option value="1">StateOne</option>
-									<option value="2">StatesTwo</option>
-									<option value="3">StatesThree</option>
-								</select>
-							</div>
-
-							<div className="propertiesForm typesCount mt-5">
+							<select class="TypeSelector">
+								<option selected> Select Type</option>
+								<option>Apartment</option>
+								<option>Duplex</option>
+								<option>Banglo</option>
+							</select>
+							<select class="TypeSelector">
+								<option selected>Categories</option>
+								<option>CatOne</option>
+								<option>CatTwo</option>
+								<option>CatThree</option>
+							</select>
+							<select class="TypeSelector">
+								<option selected>States</option>
+								<option>Dhaka</option>
+								<option>Chattagram</option>
+								<option>Cumilla</option>
+								<option>Bogura</option>
+							</select>
+							{/* Range */}
+							<div className="propertiesForm typesCount">
 								<Range
 									step={20}
 									min={0}
@@ -118,49 +115,94 @@ const PropertiesList = () => {
 												height: "20px",
 												width: "20px",
 												backgroundColor: "#999",
-											}}
-										/>
-									)}
-								/>
-
+											}} />
+									)} />
 								<p className="propertiesRangeCount">
 									$0 &nbsp;&nbsp; - to - &nbsp;&nbsp; {range}
 								</p>
 							</div>
 						</div>
+						{/* Latest Listing Start */}
+						<div className="LatestListing mb-5">
+							<p className="fs-4 fw-bold pb-3">Latest Listing</p>
+							{
+								properties.map((property) => {
+									return (
+										// Cards
+										<>
+											<div className="LatestListingCards">
+												{/* Image */}
+												<img
+													src={imgOne}
+													alt=""
+													className="LatestListingImage" />
+												{/* Details */}
+												<div>
+													<p className="LatestListingNames">{property.property_name}</p>
+													<p className="fw-bold fs-5 text-success mb-1">${property.price}</p>
+													{/* Icons */}
+													<p className="LatestListingIcons mb-1">
+														<span>
+															{bed}&nbsp;
+															{property.bedroom}
+														</span>
+														&nbsp; &nbsp; &nbsp;
+														<span>
+															{bath}&nbsp;
+															{property.bathroom}
+														</span>
+														&nbsp; &nbsp; &nbsp;
+														<span>
+															{objectGroup}&nbsp;
+															{property.property_size}ft<sup>2</sup>
+														</span>
+													</p>
+												</div>
+											</div>
+											<hr />
+										</>
+									)
+								})
+							}
+						</div>
+						{/* Latest Listing Ends */}
 					</div>
-					<div className="col-12  col-md-8 ">
+					{/* Left Side Filters Ends */}
+
+					{/* Properties Lists Start */}
+					<div className="col-12 col-md-8 ">
 						{properties.map((pro) => (
 							<Link
 								to={`/spp/${pro.key}`}
-								className="RjPropertiesLInk bg-default"
-							>
+								className="RjPropertiesLInk bg-default">
 								<div class="card mb-3 RjPropertiseCard">
 									<div class="row g-0">
-										<div class="col-sm-12 col-md-4 RjPropertiesImg">
+										<div class="col-11 col-md-4 RjPropertiesImg">
 											<img
 												src={imgOne}
 												class="img-fluid rounded-start"
-												alt="..."
-											/>
+												alt="..." />
 										</div>
-										<div class="col-sm-12 col-md-8">
+										<div class="col-sm-12 col-md-7 pt-2">
 											<div class="card-body">
-												<h5 class="card-title">{pro.property_name}</h5>
-												<h6 class="card-title">$ {pro.price}</h6>
+												<h5 class="fw-bold">{pro.property_name}</h5>
+												<h6 class="fw-bold mb-2 text-success">$ {pro.price}</h6>
+												<p className="mb-2">
+													<span>
+														{bed} {pro.bedroom}
+													</span>
+													&nbsp; &nbsp; &nbsp; &nbsp;
+													<span>
+														{bath} {pro.bathroom}
+													</span>
+													&nbsp; &nbsp; &nbsp; &nbsp;
+													<span>
+														{objectGroup} s{pro.property_size} ft<sup>2</sup>{" "}
+													</span>
+												</p>
 												<p>{pro.property_description.substring(0, 80)}...</p>
-												<span>
-													{bed} {pro.bedroom}
-												</span>
-												&nbsp;&nbsp;
-												<span>
-													{bath} {pro.bathroom}
-												</span>
-												&nbsp;&nbsp;
-												<span>
-													{objectGroup} s{pro.property_size} ft<sup>2</sup>{" "}
-												</span>
-												{/* <div className="RjPropertiseUserSection">
+
+												<div className="RjPropertiseUserSection">
 													<div className="RjProUser">
 														<img src={aliza} alt="" />
 														&nbsp;&nbsp;
@@ -171,22 +213,22 @@ const PropertiesList = () => {
 														&nbsp;&nbsp;&nbsp;&nbsp;
 														<Link to="">{share}</Link>
 													</div>
-												</div> */}
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</Link>
 						))}
-
-						{btnFlag && <button
-							class="wpresidence_button  agent_submit_class mb-3 col-md-4 offset-md-4"
-							id="agent_submit"
-							onClick={handleLoadMore}
-						>
-							Load More
-						</button>}
+						{/* Load More Button */}
+						{btnFlag &&
+							<button
+								class="wpresidence_button  agent_submit_class mb-3 col-md-4 offset-md-4"
+								id="agent_submit"
+								onClick={handleLoadMore}>Load More
+							</button>}
 					</div>
+					{/* Properties Lists Start */}
 				</div>
 			</div>
 		</>
