@@ -35,7 +35,7 @@ const AddAgents = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				e.target.reset();
+				// e.target.reset();
 				window.alert("Data Inserted");
 			})
 			.catch((error) => console.error(error));

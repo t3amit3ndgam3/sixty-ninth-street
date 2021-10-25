@@ -36,7 +36,7 @@ function App() {
 			<AuthProvider>
 				<Router>
 					<Switch>
-						<Route exact path="/dashboard" component={UserDashboard} />
+						<PrivateRoute exact path="/dashboard" component={UserDashboard} />
 						<div>
 							<Navbar />
 							<Route exact path="/" component={Home} />
@@ -45,11 +45,11 @@ function App() {
 							<Route exact path="/login" component={Login} />
 							<Route exact path="/spp/:id" component={SinglePageProperty} />
 							<Route path="/feature" component={AppointmentFeatureDetails} />
-							<Route exact path="/addProperty" component={AddProperty} />
+							<PrivateRoute exact path="/addProperty" component={AddProperty} />
 							<Route exact path="/agents" component={AgentsPage} />
 							<Route exact path="/singleAgent/:id" component={SingleAgent} />
-							<Route exact path="/userReview" component={UserReviews} />
-							<Route exact path="/addAgents" component={AddAgents} />
+							<PrivateRoute exact path="/userReview" component={UserReviews} />
+							<PrivateRoute exact path="/addAgents" component={AddAgents} />
 							<Route exact path="/sellHome" component={SellHome} />
 							<Footer />
 						</div>

@@ -281,6 +281,11 @@
   transition: ease 0.6s all;
   overflow: hidden;
 }
+.RjagentsCardImg{
+  height:280px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 .BSRSec .RjcustomCard:hover {
   margin-left: 10px;
   margin-right: 10px;
