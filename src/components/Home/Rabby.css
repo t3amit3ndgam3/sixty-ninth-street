@@ -241,7 +241,6 @@
   text-align: center;
   margin-top: 30px;
   padding: 20px;
-  
 }
 .DreamNumber {
   font-size: 40px;
@@ -470,7 +469,7 @@
   /* border-left: 2px solid #11111140; */
   border-left: 2px solid #222222;
 }
-.RjtestimonialsPTest{
+.RjtestimonialsPTest {
   min-height: 150px;
 }
 .Rjtestimonialsbody h6 {

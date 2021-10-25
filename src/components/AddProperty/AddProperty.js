@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Home/Unmoy.css";
 import { toast, ToastContainer } from "react-toastify";
 import "./AddProperty.css";
-import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
+// import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 const AddProperty = () => {
   const [textData, setTextData] = useState({});
   const [fileData, setFileData] = useState({});

@@ -190,31 +190,33 @@
 /* Requirement section */
 
 .requirement_wrapper {
+  margin-top: 30px;
   display: flex;
-  width: 100%;
+  justify-content: center;
+  width: 80%;
+  height: 500px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 19px 19px 32px #daf0ff, -19px -19px 32px #daf0ff;
 }
 .requirement_content_left {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   width: 50%;
 }
 .requirement_content_right {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   width: 50%;
 }
 .select_wrappers {
   padding: 10px;
 }
 .select_wrappers input {
-  width: 50%;
-  padding: 10px;
+  width: 60%;
+  padding: 8px;
 }
 .select_wrappers select {
-  width: 50%;
-  padding: 10px;
+  width: 60%;
+  padding: 8px;
 }
 /* Requirement section */
 
@@ -225,4 +227,12 @@
 }
 .hide {
   display: none;
+}
+.closeButtonmain {
+  position: relative;
+}
+.loseButtonaction {
+  position: absolute;
+  bottom: -5;
+  right: 0;
 }

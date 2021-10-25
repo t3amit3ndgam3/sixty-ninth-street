@@ -1,11 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useAuth } from "../components/contexts/AuthContext";
 import "./UserDashboard.css";
 // import { toast } from "react-toastify";
-import { getAuth, reauthenticateWithCredential } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { updatePassword } from "firebase/auth";
-// TODO(you): prompt the user to re-provide their sign-in credentials
-// const credential = promptForCredentials();
 
 const Password = () => {
   const { currentUser } = useAuth();
@@ -30,7 +28,7 @@ const Password = () => {
       <div className="change_password_wrapper">
         <div className="change_password_content">
           <form onSubmit={handlePasswordUpdate}>
-            <h5>Password Change for: {currentUser.displayName}</h5>
+            {/* <h5>Password Change for: {currentUser.displayName}</h5> */}
             <input
               placeholder="Enter New Password"
               type="text"
