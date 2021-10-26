@@ -270,7 +270,7 @@ const HomeLoan = () => {
                             onChange={handleLoanInterest}
                             className={Styles.CalculatorInputs}
                             type="number"
-                            placeholder="10%"
+                            placeholder="10"
                         />
                     </div>
                     <div className="col-md-1"></div>
@@ -296,8 +296,7 @@ const HomeLoan = () => {
                             >
                                 {
                                     loanAmount
-                                }
-                                BDT
+                                } BDT
                             </p>
                             <button
                                 className={

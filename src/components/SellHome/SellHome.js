@@ -67,8 +67,7 @@ const SellHome = () => {
               </select>
               {/* Range details */}
               <p>
-                Selling range in this area is:
-                <span className="fs-5 text-danger">
+                Selling range in this area is: <span className="fs-5 text-danger">
                   {
                     range
                   }
