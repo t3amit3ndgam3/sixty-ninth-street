@@ -3,7 +3,7 @@ import './UserReviews.css'
 
 const UserReviews = () => {
     const [reviews, setReviews] = useState({});
-    // console.log(reviews);
+    console.log(reviews);
 
     const handleUserReviews=(e)=>{
         const data = {...reviews};
@@ -13,13 +13,14 @@ const UserReviews = () => {
 
     const handleUserSubmit=(e)=>{
 
-        fetch("https://sixtyninethstreet.herokuapp.com/addUserReview",{
+        fetch("http://localhost:5000/69/addReview",{
             method: "POST",
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(reviews)
         })
         .then( res => res.json())
 		.then( data => {
+			console.log(data)
 			window.alert("Reviews Done");
 		})
 		.catch(error=> console.error(error))
@@ -48,6 +49,7 @@ const UserReviews = () => {
 										id="exampleInputEmail1"
                                         name="user_name"
                                         onBlur={handleUserReviews}
+										required
                                         
 									/>
 								</div>
@@ -61,6 +63,7 @@ const UserReviews = () => {
 										id="exampleInputEmail2"
                                         name="user_reviews"
                                         onBlur={handleUserReviews}
+										required
 									/>
 								</div>
 								<div class="mb-3">

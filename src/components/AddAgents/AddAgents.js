@@ -4,6 +4,7 @@ import "../UserReviews/UserReviews.css";
 const AddAgents = () => {
 	const [agentInfo, setAgentInfo] = useState({});
 	const [AgentImg, setAgentImg] = useState();
+	const [agent_image, setAgentImgUrl] = useState();
 
 	const handleAgentForm = (e) => {
 		const data = { ...agentInfo };
@@ -15,30 +16,33 @@ const AddAgents = () => {
 		e.preventDefault();
 
 		const formData = new FormData();
-		formData.append("agent_name", agentInfo.agent_name);
-		formData.append("agent_title", agentInfo.agent_title);
-		formData.append("agent_number", agentInfo.agent_number);
-		formData.append("agent_email", agentInfo.agent_email);
-		formData.append("agent_facebook", agentInfo.agent_facebook);
-		formData.append("agent_linkend", agentInfo.agent_linkend);
-		formData.append("agent_twitter", agentInfo.agent_twitter);
-		formData.append("agent_instagram", agentInfo.agent_instagram);
-		formData.append("agent_skype", agentInfo.agent_skype);
-		formData.append("agent_description", agentInfo.agent_description);
-		formData.append("experience", agentInfo.experience);
-		formData.append("fees", agentInfo.fees);
-		formData.append("agent_image", AgentImg);
-
-		fetch("https://sixtyninethstreet.herokuapp.com/addAgent", {
-			method: "POST",
-			body: formData,
+		formData.append("file", AgentImg);
+		formData.append("upload_preset", "cubeit");
+		formData.append("cloud_name", "cubeitstoreimage");
+		fetch("https://api.cloudinary.com/v1_1/cubeitstoreimage/image/upload",{
+			method:"POST",
+			body:formData
 		})
-			.then((res) => res.json())
-			.then((data) => {
-				// e.target.reset();
-				window.alert("Data Inserted");
+		.then( res =>res.json())
+		.then( data => {
+			setAgentImgUrl(data.url);
+			console.log('image added');
+		})
+
+		const agentData = {...agentInfo,agent_image}
+		console.log(agentData);
+		if(agent_image){
+				fetch("http://localhost:5000/69/addAgent", {
+				method: "POST",
+				headers: { 'Content-Type': 'application/json'},
+				body: JSON.stringify(agentData)
 			})
-			.catch((error) => console.error(error));
+			.then( res =>res.json())
+			.then( data => console.log(data))
+		}
+		else{
+			window.alert("image not found yes=t");
+		}
 	};
 	return (
 		<div className="navSpace p_bg ">
@@ -59,7 +63,6 @@ const AddAgents = () => {
 									id="agentName"
 									name="agent_name"
 									onBlur={handleAgentForm}
-									required
 								/>
 							</div>
 							<div class="mb-3">
@@ -72,7 +75,7 @@ const AddAgents = () => {
 									id="agentTitle"
 									name="agent_title"
 									onBlur={handleAgentForm}
-									required
+									// required
 								/>
 							</div>
 							<div class="mb-3">
@@ -85,7 +88,7 @@ const AddAgents = () => {
 									id="agentNumber"
 									name="agent_number"
 									onBlur={handleAgentForm}
-									required
+									// required
 								/>
 							</div>
 							<div class="mb-3">
@@ -98,7 +101,7 @@ const AddAgents = () => {
 									id="agentEmail"
 									name="agent_email"
 									onBlur={handleAgentForm}
-									required
+									// required
 								/>
 							</div>
 							<div class="mb-3">
@@ -111,7 +114,7 @@ const AddAgents = () => {
 									id="agentFacebook"
 									name="agent_facebook"
 									onBlur={handleAgentForm}
-									required
+									// required
 								/>
 							</div>
 							<div class="mb-3">
@@ -124,7 +127,7 @@ const AddAgents = () => {
 									id="experienceYear"
 									name="experience"
 									onBlur={handleAgentForm}
-									required
+									// required
 								/>
 							</div>
 							<div class="mb-3">
@@ -137,7 +140,7 @@ const AddAgents = () => {
 									id="AgentFee"
 									name="fees"
 									onBlur={handleAgentForm}
-									required
+									// required
 								/>
 							</div>
 						</div>
@@ -154,7 +157,7 @@ const AddAgents = () => {
 									id="agentLinkend"
 									name="agent_linkend"
 									onBlur={handleAgentForm}
-									required
+									// required
 								/>
 							</div>
 							<div class="mb-3">
@@ -167,7 +170,7 @@ const AddAgents = () => {
 									id="agentTwitter"
 									name="agent_twitter"
 									onBlur={handleAgentForm}
-									required
+									// required
 								/>
 							</div>
 							<div class="mb-3">
@@ -180,7 +183,7 @@ const AddAgents = () => {
 									id="agentInstagram"
 									name="agent_instagram"
 									onBlur={handleAgentForm}
-									required
+									// required
 								/>
 							</div>
 							<div class="mb-3">
@@ -193,7 +196,7 @@ const AddAgents = () => {
 									id="agentSkype"
 									name="agent_skype"
 									onBlur={handleAgentForm}
-									required
+									// required/
 								/>
 							</div>
 							<div class="mb-5">
@@ -206,7 +209,7 @@ const AddAgents = () => {
 									id="Descriptioninput"
 									name="agent_description"
 									onBlur={handleAgentForm}
-									required
+									// required
 								/>
 							</div>
 							<div class="mb-3">
