@@ -1,0 +1,77 @@
+.homeloan_section {
+  background-color: #eaf7f4;
+  height: auto;
+}
+.homeloan_header {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+.homeloan_header h1 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  font-family: "Roboto Slab";
+  font-size: 3em;
+}
+.homeloan_header::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100vh;
+  height: 50vh;
+  background: #008dff;
+  border-radius: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) scale(4);
+}
+.homeloan_wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid rgb(223, 228, 239);
+  width: 70%;
+  margin: 20px auto;
+  padding: 20px;
+}
+.homeloan_input_section {
+  padding: 8px;
+}
+.homeloan_input_wrapper {
+  margin-right: 10px;
+}
+.homeloan_input_wrapper .homeloan_select_box {
+  padding: 5px 13px;
+  background-color: #eaf7f4;
+  width: 100%;
+  border-radius: 4px;
+}
+.homeloan_label_wrapper {
+  padding: 5px;
+}
+.homeloan_input_field {
+  width: 100%;
+  border-radius: 4px;
+  padding: 5px 13px;
+  background-color: #eaf7f4;
+  border: 1px solid #10257f;
+}
+.homeloan_input_field:focus {
+  border: 1.5px solid #0c33ce;
+}
+.homeloan_agreement_section {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.homeloan_agreement_section .agreement_checkbox {
+  margin-right: 10px;
+}
+.homeloan_agreement_section label {
+  font-size: 13px;
+}

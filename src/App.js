@@ -17,6 +17,9 @@ import UserReviews from "./components/UserReviews/UserReviews";
 import AddAgents from "./components/AddAgents/AddAgents";
 import SellHome from "./components/SellHome/SellHome";
 import Footer from "./components/Home/Footer/Footer";
+import AdminDashboard from "./AdminDashboard/AdminDashboard";
+import HomeLoanForm from "./components/HomeLoan/HomeLoanForm";
+
 function App() {
   const wishlist = JSON.parse(localStorage.getItem("69wishlist") || "[]");
   if (wishlist.length === 0) {
@@ -37,6 +40,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/dashboard" component={UserDashboard} />
+            <Route exact path="/admin" component={AdminDashboard} />
             <div>
               <Navbar />
               <Route exact path="/" component={Home} />
@@ -51,6 +55,7 @@ function App() {
               <Route exact path="/userReview" component={UserReviews} />
               <Route exact path="/addAgents" component={AddAgents} />
               <Route exact path="/sellHome" component={SellHome} />
+              <Route exact path="/loan" component={HomeLoanForm} />
               <Footer />
             </div>
           </Switch>

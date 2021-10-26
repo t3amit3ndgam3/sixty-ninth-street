@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./UserDashboard.css";
+import "../AdminDashboard/AdminDashboard.css";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAlignLeft,
@@ -10,86 +11,67 @@ import {
   faPeopleArrows,
   faUnlockAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import Dashboard from "./Dashboard";
-import Favourites from "./Favourites";
-import Requirement from "./Requirement";
-import Password from "./Password";
-import MyPropertiesList from "./MyPropertiesList";
-import { Link } from "react-router-dom";
-import LoanStatus from "./LoanStatus";
-import { faStaylinked } from "@fortawesome/free-brands-svg-icons";
+import HomeDashboard from "./HomeDashboard";
+import ManageAgents from "./ManageAgents";
+import ManageProperties from "./ManageProperties";
+import ManageLoans from "./ManageLoans";
+import MyProperties from "./MyProperties";
 
-const UserDashboard = () => {
+const AdminDashboard = () => {
   const [inactive, setInactive] = useState(false);
 
   const [data, setData] = useState({
     password: false,
-    properties: false,
-    dashboard: true,
-    requirement: false,
-    favourites: false,
-    loan_status: false,
+    MyProperties: false,
+    HomeDashboard: true,
+    ManageProperties: false,
+    ManageLoans: false,
   });
 
   const handleMenuBar = (menuName) => {
-    if (menuName === "password") {
+    if (menuName === "ManageAgents") {
       setData({
-        password: true,
-        properties: false,
-        dashboard: false,
-        requirement: false,
-        favourites: false,
-        loan_status: false,
+        ManageAgents: true,
+        MyProperties: false,
+        HomeDashboard: false,
+        ManageProperties: false,
+        ManageLoans: false,
       });
     }
-    if (menuName === "properties") {
+    if (menuName === "MyProperties") {
       setData({
-        password: false,
-        properties: true,
-        dashboard: false,
-        requirement: false,
-        favourites: false,
-        loan_status: false,
+        ManageAgents: false,
+        MyProperties: true,
+        HomeDashboard: false,
+        ManageProperties: false,
+        ManageLoans: false,
       });
     }
-    if (menuName === "dashboard") {
+    if (menuName === "HomeDashboard") {
       setData({
-        password: false,
-        properties: false,
-        dashboard: true,
-        requirement: false,
-        favourites: false,
-        loan_status: false,
+        ManageAgents: false,
+        MyProperties: false,
+        HomeDashboard: true,
+        ManageProperties: false,
+        ManageLoans: false,
       });
     }
-    if (menuName === "favourites") {
+    if (menuName === "ManageLoans") {
       setData({
-        password: false,
+        ManageAgents: false,
         properties: false,
-        dashboard: false,
-        requirement: false,
-        favourites: true,
-        loan_status: false,
+        HomeDashboard: false,
+        ManageProperties: false,
+        ManageLoans: true,
       });
     }
-    if (menuName === "requirement") {
+    if (menuName === "ManageProperties") {
       setData({
-        password: false,
-        properties: false,
-        dashboard: false,
-        requirement: true,
-        favourites: false,
-        loan_status: false,
-      });
-    }
-    if (menuName === "loan_status") {
-      setData({
-        password: false,
-        properties: false,
-        dashboard: false,
-        requirement: false,
-        favourites: false,
-        loan_status: true,
+        ManageAgents: false,
+        MyProperties: false,
+        HomeDashboard: false,
+        ManageProperties: true,
+        ManageLoans: false,
       });
     }
   };
@@ -138,40 +120,40 @@ const UserDashboard = () => {
               }}
             >
               <div
-                onClick={() => handleMenuBar("dashboard")}
+                onClick={() => handleMenuBar("HomeDashboard")}
                 className="menu-item"
               >
                 <div className="menu-icon">
                   <FontAwesomeIcon icon={faFileAlt} />
                 </div>
-                <span>Dashboard</span>
+                <span>Home Dashboard</span>
               </div>
             </li>
             <li>
               <div
-                onClick={() => handleMenuBar("favourites")}
+                onClick={() => handleMenuBar("ManageLoans")}
                 className="menu-item"
               >
                 <div className="menu-icon">
                   <FontAwesomeIcon icon={faBookmark} />
                 </div>
-                <span>My Favourites</span>
+                <span>Manage Loans</span>
               </div>
             </li>
             <li>
               <div
-                onClick={() => handleMenuBar("password")}
+                onClick={() => handleMenuBar("ManageAgents")}
                 className="menu-item"
               >
                 <div className="menu-icon">
                   <FontAwesomeIcon icon={faUnlockAlt} />
                 </div>
-                <span>Change Password</span>
+                <span>Manage Agents</span>
               </div>
             </li>
             <li>
               <div
-                onClick={() => handleMenuBar("properties")}
+                onClick={() => handleMenuBar("MyProperties")}
                 className="menu-item"
               >
                 <div className="menu-icon">
@@ -182,24 +164,13 @@ const UserDashboard = () => {
             </li>
             <li>
               <div
-                onClick={() => handleMenuBar("requirement")}
+                onClick={() => handleMenuBar("ManageProperties")}
                 className="menu-item"
               >
                 <div className="menu-icon">
                   <FontAwesomeIcon icon={faPeopleArrows} />
                 </div>
-                <span>Add new Requirements</span>
-              </div>
-            </li>
-            <li>
-              <div
-                onClick={() => handleMenuBar("loan_status")}
-                className="menu-item"
-              >
-                <div className="menu-icon">
-                  <FontAwesomeIcon icon={faStaylinked} />
-                </div>
-                <span>My Loan Status</span>
+                <span>Manage Properties</span>
               </div>
             </li>
           </ul>
@@ -208,15 +179,14 @@ const UserDashboard = () => {
       <div
         className={`col-md-10 dashboard_panel ${inactive ? "inactive" : ""}`}
       >
-        {data.password && <Password />}
-        {data.properties && <MyPropertiesList />}
-        {data.favourites && <Favourites />}
-        {data.dashboard && <Dashboard />}
-        {data.requirement && <Requirement />}
-        {data.loan_status && <LoanStatus />}
+        {data.ManageAgents && <ManageAgents />}
+        {data.MyProperties && <MyProperties />}
+        {data.ManageLoans && <ManageLoans />}
+        {data.HomeDashboard && <HomeDashboard />}
+        {data.ManageProperties && <ManageProperties />}
       </div>
     </div>
   );
 };
 
-export default UserDashboard;
+export default AdminDashboard;
