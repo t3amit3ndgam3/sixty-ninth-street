@@ -17,19 +17,21 @@ import UserReviews from "./components/UserReviews/UserReviews";
 import AddAgents from "./components/AddAgents/AddAgents";
 import SellHome from "./components/SellHome/SellHome";
 import Footer from "./components/Home/Footer/Footer";
+import HomeLoan from "./components/HomeLoan/HomeLoan";
+
 function App() {
 	const wishlist = JSON.parse(localStorage.getItem("69wishlist") || "[]");
-	if (wishlist.length===0) {
-    wishlist.push({
-      image: "",
-      name: "",
-      key:"",
-      price:"",
-      bed:"",
-      bath:"",
-      size:"hide" 
-      })
-      localStorage.setItem("69wishlist", JSON.stringify(wishlist));
+	if (wishlist.length === 0) {
+		wishlist.push({
+			image: "",
+			name: "",
+			key: "",
+			price: "",
+			bed: "",
+			bath: "",
+			size: "hide"
+		})
+		localStorage.setItem("69wishlist", JSON.stringify(wishlist));
 	}
 	return (
 		<>
@@ -51,6 +53,7 @@ function App() {
 							<Route exact path="/userReview" component={UserReviews} />
 							<Route exact path="/addAgents" component={AddAgents} />
 							<Route exact path="/sellHome" component={SellHome} />
+							<Route exact path="/homeLoan" component={HomeLoan} />
 							<Footer />
 						</div>
 					</Switch>

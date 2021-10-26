@@ -124,7 +124,13 @@ const PropertiesList = () => {
 						</div>
 						{/* Latest Listing Start */}
 						<div className="LatestListing mb-5">
-							<p className="fs-4 fw-bold pb-3">Latest Listing</p>
+							<p
+								className="
+									fs-4 
+									fw-bold 
+									pb-3">
+								Latest Listing
+							</p>
 							{
 								properties.map((property) => {
 									return (
@@ -138,8 +144,22 @@ const PropertiesList = () => {
 													className="LatestListingImage" />
 												{/* Details */}
 												<div>
-													<p className="LatestListingNames">{property.property_name}</p>
-													<p className="fw-bold fs-5 text-success mb-1">${property.price}</p>
+													<p
+														className="LatestListingNames">
+														{
+															property.property_name
+														}
+													</p>
+													<p
+														className="
+														fw-bold 
+														fs-5 
+														text-success 
+														mb-1">
+														${
+															property.price
+														}
+													</p>
 													{/* Icons */}
 													<p className="LatestListingIcons mb-1">
 														<span>
