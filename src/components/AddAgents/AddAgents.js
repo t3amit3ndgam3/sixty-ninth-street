@@ -3,45 +3,54 @@ import "../UserReviews/UserReviews.css";
 
 const AddAgents = () => {
 	const [agentInfo, setAgentInfo] = useState({});
-	const [AgentImg, setAgentImg] = useState();
+	const [AgentImg, setAgentImg] = useState({});
 	const [agent_image, setAgentImgUrl] = useState();
-
+	console.log(AgentImg);
 	const handleAgentForm = (e) => {
 		const data = { ...agentInfo };
 		data[e.target.name] = e.target.value;
 		setAgentInfo(data);
 	};
+	const handleFileData = (e) => {
+		const newFile = { ...AgentImg };
+		const formData = new FormData();
+		formData.append("file", e.target.files[0]);
+		formData.append("upload_preset", "cubeit");
+		formData.append("cloud_name", "cubeitstoreimage");
+
+		fetch("https://api.cloudinary.com/v1_1/cubeitstoreimage/image/upload", {
+			method: "POST",
+			body: formData,
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				newFile[e.target.name] = data.url;
+				setAgentImg(newFile);
+				console.log("image upload done");
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
 
 	const handleAgentSubmit = (e) => {
 		e.preventDefault();
 
-		const formData = new FormData();
-		formData.append("file", AgentImg);
-		formData.append("upload_preset", "cubeit");
-		formData.append("cloud_name", "cubeitstoreimage");
-		fetch("https://api.cloudinary.com/v1_1/cubeitstoreimage/image/upload",{
-			method:"POST",
-			body:formData
-		})
-		.then( res =>res.json())
-		.then( data => {
-			setAgentImgUrl(data.url);
-			console.log('image added');
-		})
-
-		const agentData = {...agentInfo,agent_image}
+		const agentData = {...agentInfo,...AgentImg}
 		console.log(agentData);
-		if(agent_image){
+		if(AgentImg){
 				fetch("http://localhost:5000/69/addAgent", {
 				method: "POST",
 				headers: { 'Content-Type': 'application/json'},
 				body: JSON.stringify(agentData)
 			})
 			.then( res =>res.json())
-			.then( data => console.log(data))
+			.then( data => {
+				window.alert("Agent Added done");
+			})
 		}
 		else{
-			window.alert("image not found yes=t");
+			window.alert("image not found yest");
 		}
 	};
 	return (
@@ -117,7 +126,7 @@ const AddAgents = () => {
 									// required
 								/>
 							</div>
-							<div class="mb-3">
+							<div class="mb-2">
 								<label for="experienceYear" class="form-label">
 									Year of experience
 								</label>
@@ -147,6 +156,19 @@ const AddAgents = () => {
 					</div>
 					<div className="col-md-6 p-5">
 						<div className="">
+						<div class="mb-3 mt-2">
+								<label for="agentImage" class="form-label">
+									Agent Formal Image
+								</label>
+								<input
+									type="file"
+									className="input_field"
+									id="agentImage"
+									name="agent_image"
+									onChange={handleFileData}
+									required
+								/>
+							</div>
 							<div class="mb-3">
 								<label for="agentLinkend" class="form-label">
 									Agent Linkend Link
@@ -186,7 +208,7 @@ const AddAgents = () => {
 									// required
 								/>
 							</div>
-							<div class="mb-3">
+							<div class="mb-4">
 								<label for="agentSkype" class="form-label">
 									Agent Skype Id
 								</label>
@@ -199,7 +221,7 @@ const AddAgents = () => {
 									// required/
 								/>
 							</div>
-							<div class="mb-5">
+							<div class="mb-1 mt-3">
 								<label for="Descriptioninput" class="form-label">
 									Description
 								</label>
@@ -212,21 +234,7 @@ const AddAgents = () => {
 									// required
 								/>
 							</div>
-							<div class="mb-3">
-								<label for="agentImage" class="form-label">
-									Agent Formal Image
-								</label>
-								<input
-									type="file"
-									className="input_field"
-									id="agentImage"
-									name="agent_image"
-									onChange={(e) => {
-										setAgentImg(e.target.files[0]);
-									}}
-									required
-								/>
-							</div>
+							
 
 						</div>
 					</div>

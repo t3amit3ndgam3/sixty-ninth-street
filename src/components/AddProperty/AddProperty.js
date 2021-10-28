@@ -4,11 +4,7 @@ import "../Home/Unmoy.css";
 const AddProperty = () => {
 	const [textData, setTextData] = useState({});
 	const [fileData, setFileData] = useState({});
-	const [imageUrl, setImageUrl] = useState([]);
-	const [urlFlag, setUrlFlag] = useState(false);
 	const [message, setMessage] = useState("");
-	console.log("flag change", urlFlag);
-	console.log("this is image url", imageUrl);
 	const handleTextData = (e) => {
 		const newText = { ...textData };
 		newText[e.target.name] = e.target.value;
@@ -16,80 +12,51 @@ const AddProperty = () => {
 	};
 	const handleFileData = (e) => {
 		const newFile = { ...fileData };
-		newFile[e.target.name] = e.target.files[0];
-		setFileData(newFile);
+
+		const formData = new FormData();
+		formData.append("file", e.target.files[0]);
+		formData.append("upload_preset", "cubeit");
+		formData.append("cloud_name", "cubeitstoreimage");
+
+		fetch("https://api.cloudinary.com/v1_1/cubeitstoreimage/image/upload", {
+			method: "POST",
+			body: formData,
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				newFile[e.target.name] = data.url;
+				setFileData(newFile);
+				console.log("image upload done");
+			})
+			.catch((error) => {
+				console.error(error);
+			});
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const totalFile = Object.values(fileData);
-		console.log("totalFile", totalFile);
-		let collect = [];
-		console.log(collect);
-		totalFile.map((fp, index) => {
-			const formData = new FormData();
-			formData.append("file", fp);
-			formData.append("upload_preset", "cubeit");
-			formData.append("cloud_name", "cubeitstoreimage");
 
-			fetch("https://api.cloudinary.com/v1_1/cubeitstoreimage/image/upload", {
-				method: "POST",
-				body: formData,
-			})
-				.then((res) => res.json())
-				.then((data) => {
-					imageUrl.push(data.url);
-					setImageUrl(imageUrl);
-          setMessage("Please wait its need some time for validation");
-          if(index==2){
-            setUrlFlag(true);
-          }
-				})
-				.catch((error) => {
-					console.error(error);
-				});
-		});
-
-    setTimeout(function(){ 
-      fun();
-    }, 5000);
-
-    const fun =()=>{
-      if (imageUrl == 2 || urlFlag) {
-        const totalData = { ...textData };
-        totalData.image_one = imageUrl[0];
-        totalData.image_two = imageUrl[1];
-        totalData.image_three = imageUrl[2];
-        console.log("total Data", totalData);
-        fetch("http://localhost:5000/api/addProperty", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(totalData),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            setMessage("Update Successful");
-            console.log(data)
-          })
-          .error(err=>{
-            setMessage("Please try again .. something is wrong");
-          })
-      }else{
-        setTimeout(function(){ 
-          fun();
-        }, 2000);
-    
-      }
-    }
-
-		// e.target.reset();
+		const totalData = { ...textData, ...fileData };
+		console.log("total Data", totalData);
+		fetch("http://localhost:5000/api/addProperty", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(totalData),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				setMessage("Update Successful");
+				console.log(data);
+			});
 	};
+
+	// e.target.reset();
 
 	return (
 		<div className="addProperty_section navSpace mb-5">
 			<div className="addProperty_wrapper">
 				<h1>Add Property</h1>
-        
+
 				<div>
 					<form onSubmit={handleSubmit}>
 						<div className="input_section">
@@ -322,6 +289,54 @@ const AddProperty = () => {
 								</div>
 							</div>
 						</div>
+            <div className="input_section">
+							<div className="label_wrapper">
+								<h6>Featured Image:</h6>
+							</div>
+							<div className="input_box">
+								<div className="input_field_wrapper">
+									<input
+										// required
+										onChange={handleFileData}
+										className="input_field"
+										type="file"
+										name="image_one"
+									/>
+								</div>
+							</div>
+						</div>
+						<div className="input_section">
+							<div className="label_wrapper">
+								<h6>Gallery Image:</h6>
+							</div>
+							<div className="input_box">
+								<div className="input_field_wrapper">
+									<input
+										// required
+										onChange={handleFileData}
+										className="input_field"
+										type="file"
+										name="image_two"
+									/>
+								</div>
+							</div>
+						</div>
+						<div className="input_section">
+							<div className="label_wrapper">
+								<h6>Floor Plan:</h6>
+							</div>
+							<div className="input_box">
+								<div className="input_field_wrapper">
+									<input
+										// required
+										onChange={handleFileData}
+										className="input_field"
+										type="file"
+										name="image_three"
+									/>
+								</div>
+							</div>
+						</div>
 						<div className="input_section">
 							<div className="label_wrapper">
 								<h6>Bedroom:</h6>
@@ -386,54 +401,7 @@ const AddProperty = () => {
 								</div>
 							</div>
 						</div>
-						<div className="input_section">
-							<div className="label_wrapper">
-								<h6>Featured Image:</h6>
-							</div>
-							<div className="input_box">
-								<div className="input_field_wrapper">
-									<input
-										// required
-										onChange={handleFileData}
-										className="input_field"
-										type="file"
-										name="image_one"
-									/>
-								</div>
-							</div>
-						</div>
-						<div className="input_section">
-							<div className="label_wrapper">
-								<h6>Gallery Image:</h6>
-							</div>
-							<div className="input_box">
-								<div className="input_field_wrapper">
-									<input
-										// required
-										onChange={handleFileData}
-										className="input_field"
-										type="file"
-										name="image_two"
-									/>
-								</div>
-							</div>
-						</div>
-						<div className="input_section">
-							<div className="label_wrapper">
-								<h6>Floor Plan:</h6>
-							</div>
-							<div className="input_box">
-								<div className="input_field_wrapper">
-									<input
-										// required
-										onChange={handleFileData}
-										className="input_field"
-										type="file"
-										name="image_three"
-									/>
-								</div>
-							</div>
-						</div>
+						
 						<div className="input_section">
 							<div className="label_wrapper">
 								<h6>Owner Name:</h6>
@@ -486,8 +454,8 @@ const AddProperty = () => {
 							<button type="submit" className="btn btn-info container">
 								Done
 							</button>
-              <p className="p-3 text-center text-danger">{message}</p>
 						</div>
+						<p className="p-3 text-center text-danger">{message}</p>
 					</form>
 				</div>
 			</div>
