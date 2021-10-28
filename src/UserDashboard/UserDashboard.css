@@ -1,3 +1,117 @@
+/* User Dashboard CSS */
+.side-menu {
+  position: fixed;
+  background: #000;
+  width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 30px 20px;
+  transition: width 0.2s ease-in;
+}
+
+.side-menu.inactive {
+  width: 80px;
+}
+
+.side-menu .top-section {
+  position: relative;
+}
+
+.side-menu .top-section .brand_name {
+  max-width: 100%;
+  max-height: 100%;
+  color: #fff;
+}
+
+.side-menu .top-section .toggle-menu-btn {
+  color: #0c33ce;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.side-menu.inactive .top-section .toggle-menu-btn {
+  right: -50px;
+}
+.main-menu ul {
+  margin: 0;
+  padding: 0;
+}
+.main-menu li {
+  list-style: none;
+}
+.side-menu .main-menu .menu-item {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.side-menu .main-menu .menu-item.active {
+  background: #10257f;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.side-menu .main-menu {
+  margin: 5px 0;
+  position: relative;
+  max-height: 250px;
+}
+.side-menu .main-menu::-webkit-scrollbar {
+  display: none;
+}
+.side-menu .main-menu .menu-item .menu-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item span {
+  position: absolute;
+  display: inline-block;
+  line-height: 40px;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+  color: #fff;
+}
+.side-menu.inactive .main-menu .menu-item span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.side-menu .main-menu .menu-item:hover {
+  background: #4f5257;
+  border-radius: 5px;
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  border-radius: 1px;
+  background: #333;
+}
+.dashboard_panel {
+  margin-left: 300px;
+  transition: margin-left 0.2s ease-in;
+  padding: 50px;
+  box-sizing: border-box;
+  background-color: #fafafc;
+}
+.dashboard_panel.inactive {
+  margin-left: 80px;
+}
+
+/* User Dashboard CSS */
 .dasboard_board {
   background-color: #fafafc;
 }
@@ -135,7 +249,7 @@
 .property_list_cta_buttons button {
   background-color: #071f88;
   color: #fff;
-  border: none;
+  border: 1px solid #071f88;
   border-radius: 4px;
   margin: 0 5px;
   font-size: 13px;
@@ -190,53 +304,60 @@
 /* Requirement section */
 
 .requirement_wrapper {
+  margin-top: 30px;
   display: flex;
-  width: 100%;
+  justify-content: center;
+  width: 80%;
+  height: 500px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 19px 19px 32px #daf0ff, -19px -19px 32px #daf0ff;
 }
 .requirement_content_left {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   width: 50%;
 }
 .requirement_content_right {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   width: 50%;
 }
 .select_wrappers {
   padding: 10px;
 }
 .select_wrappers input {
-  width: 50%;
-  padding: 10px;
+  width: 60%;
+  padding: 8px;
 }
 .select_wrappers select {
-  width: 50%;
-  padding: 10px;
+  width: 60%;
+  padding: 8px;
 }
 /* Requirement section */
+/* loan status */
 
-
-
-
-
-
-
-
-/* Rabby */
-.RjPropertiesImg2{
-  overflow: hidden;
-  height:150px
+.loan_status_btn button {
+  background-color: #d3d3d3;
+  color: #222222;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  margin: 0 5px;
+  font-size: 13px;
+  padding: 8px 10px;
+  font-weight: 500;
 }
-.hide{
+/* loan status */
+/* Rabby */
+.RjPropertiesImg2 {
+  overflow: hidden;
+  height: 150px;
+}
+.hide {
   display: none;
 }
-.closeButtonmain{
+.closeButtonmain {
   position: relative;
 }
-.loseButtonaction{
+.loseButtonaction {
   position: absolute;
   bottom: -5;
   right: 0;

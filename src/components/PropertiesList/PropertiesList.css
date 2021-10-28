@@ -12,7 +12,7 @@
 }
 
 .TypeSelector:hover {
-  transition: .3s ease-in-out all;
+  transition: 0.3s ease-in-out all;
   box-shadow: 0px 0px 15px rgb(203, 226, 255);
 }
 
@@ -32,12 +32,10 @@
   color: rgb(128, 128, 128);
 } */
 
-
 .propertiesForm:hover {
-  transition: .3s ease-in-out all;
+  transition: 0.3s ease-in-out all;
   box-shadow: 0px 0px 15px rgb(203, 226, 255);
 }
-
 
 .RjpropertiseHEading {
   padding: 20px 0px;
@@ -99,7 +97,6 @@
   box-sizing: border-box;
 }
 
-
 .card-title {
   margin-bottom: 1px !important;
 }
@@ -124,7 +121,6 @@
   transition: ease 0.6s all;
 }
 
-
 /* Latest Listing */
 
 .LatestListing {
@@ -142,7 +138,7 @@
 
 .LatestListingCards:hover .LatestListingImage {
   transform: scale(1.1);
-  transition: .5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
 }
 
 .LatestListingImage {

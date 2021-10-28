@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ".././Test/Test.css";
+import "./UserDashboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAlignLeft,
@@ -16,6 +16,8 @@ import Requirement from "./Requirement";
 import Password from "./Password";
 import MyPropertiesList from "./MyPropertiesList";
 import { Link } from "react-router-dom";
+import LoanStatus from "./LoanStatus";
+import { faStaylinked } from "@fortawesome/free-brands-svg-icons";
 
 const UserDashboard = () => {
   const [inactive, setInactive] = useState(false);
@@ -26,6 +28,7 @@ const UserDashboard = () => {
     dashboard: true,
     requirement: false,
     favourites: false,
+    loan_status: false,
   });
 
   const handleMenuBar = (menuName) => {
@@ -36,6 +39,7 @@ const UserDashboard = () => {
         dashboard: false,
         requirement: false,
         favourites: false,
+        loan_status: false,
       });
     }
     if (menuName === "properties") {
@@ -45,6 +49,7 @@ const UserDashboard = () => {
         dashboard: false,
         requirement: false,
         favourites: false,
+        loan_status: false,
       });
     }
     if (menuName === "dashboard") {
@@ -54,6 +59,7 @@ const UserDashboard = () => {
         dashboard: true,
         requirement: false,
         favourites: false,
+        loan_status: false,
       });
     }
     if (menuName === "favourites") {
@@ -63,6 +69,7 @@ const UserDashboard = () => {
         dashboard: false,
         requirement: false,
         favourites: true,
+        loan_status: false,
       });
     }
     if (menuName === "requirement") {
@@ -72,6 +79,17 @@ const UserDashboard = () => {
         dashboard: false,
         requirement: true,
         favourites: false,
+        loan_status: false,
+      });
+    }
+    if (menuName === "loan_status") {
+      setData({
+        password: false,
+        properties: false,
+        dashboard: false,
+        requirement: false,
+        favourites: false,
+        loan_status: true,
       });
     }
   };
@@ -173,17 +191,29 @@ const UserDashboard = () => {
                 <span>Add new Requirements</span>
               </div>
             </li>
+            <li>
+              <div
+                onClick={() => handleMenuBar("loan_status")}
+                className="menu-item"
+              >
+                <div className="menu-icon">
+                  <FontAwesomeIcon icon={faStaylinked} />
+                </div>
+                <span>My Loan Status</span>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
       <div
         className={`col-md-10 dashboard_panel ${inactive ? "inactive" : ""}`}
       >
-        {data.password && <Password></Password>}
-        {data.properties && <MyPropertiesList></MyPropertiesList>}
-        {data.favourites && <Favourites></Favourites>}
-        {data.dashboard && <Dashboard></Dashboard>}
-        {data.requirement && <Requirement></Requirement>}
+        {data.password && <Password />}
+        {data.properties && <MyPropertiesList />}
+        {data.favourites && <Favourites />}
+        {data.dashboard && <Dashboard />}
+        {data.requirement && <Requirement />}
+        {data.loan_status && <LoanStatus />}
       </div>
     </div>
   );

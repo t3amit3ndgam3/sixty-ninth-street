@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Home/Unmoy.css";
+import { toast, ToastContainer } from "react-toastify";
 
 const AddProperty = () => {
 	const [textData, setTextData] = useState({});

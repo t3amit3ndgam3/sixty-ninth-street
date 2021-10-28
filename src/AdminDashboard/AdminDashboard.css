@@ -1,6 +1,4 @@
-::-webkit-scrollbar {
-  display: none;
-}
+/* AdminDashboard */
 .side-menu {
   position: fixed;
   background: #000;
@@ -65,8 +63,9 @@
   margin: 5px 0;
   position: relative;
   max-height: 250px;
-  overflow-y: scroll;
-  overflow-x: hidden;
+}
+.side-menu .main-menu::-webkit-scrollbar {
+  display: none;
 }
 .side-menu .main-menu .menu-item .menu-icon {
   display: inline-block;
@@ -83,12 +82,17 @@
   line-height: 40px;
   opacity: 1;
   transition: opacity 0.2s ease-in;
+  color: #fff;
 }
 .side-menu.inactive .main-menu .menu-item span {
   opacity: 0;
   width: 0;
   height: 0;
   overflow: hidden;
+}
+.side-menu .main-menu .menu-item:hover {
+  background: #4f5257;
+  border-radius: 5px;
 }
 .divider {
   width: 100%;
@@ -106,3 +110,11 @@
 .dashboard_panel.inactive {
   margin-left: 80px;
 }
+/* AdminDashboard */
+/* Home Dashboard */
+.admin_dashboard_header h1 {
+  font-family: "Roboto Slab";
+  line-height: 1;
+  margin-right: 10px;
+}
+/* Home Dashboard */
