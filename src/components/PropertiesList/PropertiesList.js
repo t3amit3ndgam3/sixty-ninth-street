@@ -30,28 +30,26 @@ const PropertiesList = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				setPropertiesAll(data);
-
 			});
 	}, []);
 	useEffect(() => {
 		const cutData = propertiesAll.slice(0, loadData);
 		setProperties(cutData);
 		// console.log(properties,loadData);
-	}, [propertiesAll])
+	}, [propertiesAll]);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
-
 	const handleLoadMore = () => {
 		const cutData = propertiesAll.slice(0, loadData + loadData);
-		setProperties(cutData)
+		setProperties(cutData);
 		if (loadData + loadData >= propertiesAll.length) {
-			setBtnFlag(false)
+			setBtnFlag(false);
 		}
 		setLoadData(loadData + 2);
-	}
+	};
 	return (
 		<>
 			<div className="container navSpace mb-5">
@@ -115,8 +113,10 @@ const PropertiesList = () => {
 												height: "20px",
 												width: "20px",
 												backgroundColor: "#999",
-											}} />
-									)} />
+											}}
+										/>
+									)}
+								/>
 								<p className="propertiesRangeCount">
 									$0 &nbsp;&nbsp; - to - &nbsp;&nbsp; {range}
 								</p>
@@ -125,45 +125,44 @@ const PropertiesList = () => {
 						{/* Latest Listing Start */}
 						<div className="LatestListing mb-5">
 							<p className="fs-4 fw-bold pb-3">Latest Listing</p>
-							{
-								properties.map((property) => {
-									return (
-										// Cards
-										<>
-											<div className="LatestListingCards">
-												{/* Image */}
-												<img
-													src={imgOne}
-													alt=""
-													className="LatestListingImage" />
-												{/* Details */}
-												<div>
-													<p className="LatestListingNames">{property.property_name}</p>
-													<p className="fw-bold fs-5 text-success mb-1">${property.price}</p>
-													{/* Icons */}
-													<p className="LatestListingIcons mb-1">
-														<span>
-															{bed}&nbsp;
-															{property.bedroom}
-														</span>
-														&nbsp; &nbsp; &nbsp;
-														<span>
-															{bath}&nbsp;
-															{property.bathroom}
-														</span>
-														&nbsp; &nbsp; &nbsp;
-														<span>
-															{objectGroup}&nbsp;
-															{property.property_size}ft<sup>2</sup>
-														</span>
-													</p>
-												</div>
+							{properties.map((property) => {
+								return (
+									// Cards
+									<>
+										<div className="LatestListingCards">
+											{/* Image */}
+											<img src={imgOne} alt="" className="LatestListingImage" />
+											{/* Details */}
+											<div>
+												<p className="LatestListingNames">
+													{property.property_name}
+												</p>
+												<p className="fw-bold fs-5 text-success mb-1">
+													& {property.price}
+												</p>
+												{/* Icons */}
+												<p className="LatestListingIcons mb-1">
+													<span>
+														{bed}&nbsp;
+														{property.bedroom}
+													</span>
+													&nbsp; &nbsp; &nbsp;
+													<span>
+														{bath}&nbsp;
+														{property.bathroom}
+													</span>
+													&nbsp; &nbsp; &nbsp;
+													<span>
+														{objectGroup}&nbsp;
+														{property.property_size}ft<sup>2</sup>
+													</span>
+												</p>
 											</div>
-											<hr />
-										</>
-									)
-								})
-							}
+										</div>
+										<hr />
+									</>
+								);
+							})}
 						</div>
 						{/* Latest Listing Ends */}
 					</div>
@@ -174,16 +173,18 @@ const PropertiesList = () => {
 						{properties.map((pro) => (
 							<Link
 								to={`/spp/${pro.key}`}
-								className="RjPropertiesLInk bg-default">
-								<div class="card mb-3 RjPropertiseCard">
-									<div class="row g-0">
+								className="RjPropertiesLInk bg-default"
+							>
+								<div class="card mb-5 RjPropertiseCard">
+									<div class="row">
 										<div class="col-11 col-md-4 RjPropertiesImg">
 											<img
 												src={imgOne}
 												class="img-fluid rounded-start"
-												alt="..." />
+												alt="..."
+											/>
 										</div>
-										<div class="col-sm-12 col-md-7 pt-2">
+										<div class="col-sm-12 col-md-8">
 											<div class="card-body">
 												<h5 class="fw-bold">{pro.property_name}</h5>
 												<h6 class="fw-bold mb-2 text-success">$ {pro.price}</h6>
@@ -202,7 +203,7 @@ const PropertiesList = () => {
 												</p>
 												<p>{pro.property_description.substring(0, 80)}...</p>
 
-												<div className="RjPropertiseUserSection">
+												{/* <div className="RjPropertiseUserSection">
 													<div className="RjProUser">
 														<img src={aliza} alt="" />
 														&nbsp;&nbsp;
@@ -213,7 +214,7 @@ const PropertiesList = () => {
 														&nbsp;&nbsp;&nbsp;&nbsp;
 														<Link to="">{share}</Link>
 													</div>
-												</div>
+												</div> */}
 											</div>
 										</div>
 									</div>
@@ -221,12 +222,15 @@ const PropertiesList = () => {
 							</Link>
 						))}
 						{/* Load More Button */}
-						{btnFlag &&
+						{btnFlag && (
 							<button
 								class="wpresidence_button  agent_submit_class mb-3 col-md-4 offset-md-4"
 								id="agent_submit"
-								onClick={handleLoadMore}>Load More
-							</button>}
+								onClick={handleLoadMore}
+							>
+								Load More
+							</button>
+						)}
 					</div>
 					{/* Properties Lists Start */}
 				</div>
