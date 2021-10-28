@@ -16,8 +16,6 @@ const Properties = () => {
     .then( data => setProperties(data));
   }, [])
   const sliced =  properties.slice(0, 3);
-
-console.log(sliced);
  
 
 

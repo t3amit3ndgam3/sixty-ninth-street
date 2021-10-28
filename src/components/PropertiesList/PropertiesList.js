@@ -173,21 +173,21 @@ const PropertiesList = () => {
             {properties.map((pro) => (
               <Link
                 to={`/spp/${pro.key}`}
-                className="RjPropertiesLInk bg-default"
+                className="RjPropertiesLInk"
               >
                 <div class="card mb-3 RjPropertiseCard">
                   <div class="row g-0">
                     <div class="col-11 col-md-4 RjPropertiesImg">
                       <img
                         src={imgOne}
-                        class="img-fluid rounded-start"
+                        class="img-fluid"
                         alt="..."
                       />
                     </div>
                     <div class="col-sm-12 col-md-7 pt-2">
                       <div class="card-body">
                         <h5 class="fw-bold">{pro.property_name}</h5>
-                        <h6 class="fw-bold mb-2 text-success">$ {pro.price}</h6>
+                        <h6 class="fw-bold mb-2 text-info">$ {pro.price}</h6>
                         <p className="mb-2">
                           <span>
                             {bed} {pro.bedroom}
@@ -203,7 +203,7 @@ const PropertiesList = () => {
                         </p>
                         <p>{pro.property_description.substring(0, 80)}...</p>
 
-                        <div className="RjPropertiseUserSection">
+                        {/* <div className="RjPropertiseUserSection">
                           <div className="RjProUser">
                             <img src={aliza} alt="" />
                             &nbsp;&nbsp;
@@ -214,7 +214,7 @@ const PropertiesList = () => {
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <Link to="">{share}</Link>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>

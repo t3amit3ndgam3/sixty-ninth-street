@@ -1,8 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Home/Unmoy.css";
 import { toast, ToastContainer } from "react-toastify";
+import { useAuth } from './../contexts/AuthContext';
+
+
 
 const AddProperty = () => {
+	const [user_Info, setUser_Info] = useState({});
+
+	useEffect(() => {
+		const getUserInfo = JSON.parse(localStorage.getItem('userInfo'||"not found"));
+		setUser_Info(getUserInfo)
+	}, [])
+	
+	console.log("consol from property",user_Info);
+
 	const [textData, setTextData] = useState({});
 	const [fileData, setFileData] = useState({});
 	const [message, setMessage] = useState("");
@@ -37,7 +49,7 @@ const AddProperty = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		const totalData = { ...textData, ...fileData };
+		const totalData = { ...textData, ...fileData, ...user_Info};
 		console.log("total Data", totalData);
 		fetch("http://localhost:5000/api/addProperty", {
 			method: "POST",

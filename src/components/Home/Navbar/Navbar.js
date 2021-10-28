@@ -9,15 +9,17 @@ const Navbar = () => {
   const [error, setError] = useState("");
   const history = useHistory();
 
-  async function handleLogout() {
+   const  handleLogout= async()=> {
     setError("");
     try {
       await logout();
       localStorage.removeItem("token");
       history.push("/login");
+      localStorage.removeItem('userInfo');
     } catch {
       setError("Failed to log out");
     }
+    console.log('click');
   }
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -104,11 +106,11 @@ const Navbar = () => {
                 </li>
                 <li class="nav-item">
                   <span style={{ color: "#fff", margin: "10px" }}>
-                    {currentUser && currentUser.displayName}
+                    {currentUser && currentUser.user_name}
                   </span>
-                  {currentUser && (
+                  {currentUser && 
                     <button onClick={handleLogout}>Log Out</button>
-                  )}
+                  }
                 </li>
               </ul>
             </div>
@@ -197,9 +199,9 @@ const Navbar = () => {
                   </li>
                   <li class="nav-item">
                     {currentUser && currentUser.displayName}
-                    {/* {currentUser && (
+                    { currentUser && 
                       <button onClick={handleLogout}>Log Out</button>
-                    )} */}
+                    } 
                   </li>
                 </ul>
               </div>

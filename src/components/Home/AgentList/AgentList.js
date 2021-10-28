@@ -62,7 +62,6 @@ const AgentList = () => {
   const linkend = <FontAwesomeIcon icon={faLinkedin} />;
 
   const [agent, setAgent] = useState([]);
-  console.log(agent);
   useEffect(() => {
       fetch('https://sixtyninethstreet.herokuapp.com/getAgent')
       .then(res => res.json())

@@ -52,7 +52,6 @@ var settings = {
 const UserTestimonials = () => {
 
   const [reviews, setReviews] = useState([]);
-  console.log("............",reviews);
   useEffect(() => {
     fetch('https://sixtyninethstreet.herokuapp.com/getReviews')
     .then( res => res.json())
