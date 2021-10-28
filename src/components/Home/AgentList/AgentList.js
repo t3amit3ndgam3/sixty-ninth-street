@@ -2,7 +2,11 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import agent from "../../../images/agent1.jpeg";
+import agent1 from "../../../images/AgentDemoImage/h1.jpg";
+import agent4 from "../../../images/AgentDemoImage/m1.jpg";
+import agent5 from "../../../images/AgentDemoImage/f1.jpg";
+import agent2 from "../../../images//AgentDemoImage/12.jpg";
+import agent3 from "../../../images//AgentDemoImage/g1.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -75,7 +79,7 @@ const AgentList = () => {
           <div class="card RJAgentCARD">
             <div className="RjAgentCardImg">
               <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
+                <img src={agent1} class="card-img-top" alt="..." />
               </a>
               <div className="RjAgentIconOver">
                 <a href="">
@@ -100,33 +104,7 @@ const AgentList = () => {
           <div class="card RJAgentCARD">
             <div className="RjAgentCardImg">
               <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
-              </a>
-              <div className="RjAgentIconOver">
-                <a href="">
-                  {" "}
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a href="">
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
-                State Agent
-              </p>
-            </div>
-          </div>
-          {/* ................................. */}
-          <div class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
+                <img src={agent2} class="card-img-top" alt="..." />
               </a>
               <div className="RjAgentIconOver">
                 <a href="">
@@ -152,7 +130,7 @@ const AgentList = () => {
           <div class="card RJAgentCARD">
             <div className="RjAgentCardImg">
               <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
+                <img src={agent3} class="card-img-top" alt="..." />
               </a>
               <div className="RjAgentIconOver">
                 <a href="">
@@ -178,7 +156,7 @@ const AgentList = () => {
           <div class="card RJAgentCARD">
             <div className="RjAgentCardImg">
               <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
+                <img src={agent4} class="card-img-top" alt="..." />
               </a>
               <div className="RjAgentIconOver">
                 <a href="">
@@ -204,7 +182,7 @@ const AgentList = () => {
           <div class="card RJAgentCARD">
             <div className="RjAgentCardImg">
               <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
+                <img src={agent5} class="card-img-top" alt="..." />
               </a>
               <div className="RjAgentIconOver">
                 <a href="">
@@ -230,7 +208,7 @@ const AgentList = () => {
           <div class="card RJAgentCARD">
             <div className="RjAgentCardImg">
               <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
+                <img src={agent1} class="card-img-top" alt="..." />
               </a>
               <div className="RjAgentIconOver">
                 <a href="">
@@ -256,7 +234,7 @@ const AgentList = () => {
           <div class="card RJAgentCARD">
             <div className="RjAgentCardImg">
               <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
+                <img src={agent2} class="card-img-top" alt="..." />
               </a>
               <div className="RjAgentIconOver">
                 <a href="">
@@ -282,7 +260,7 @@ const AgentList = () => {
           <div class="card RJAgentCARD">
             <div className="RjAgentCardImg">
               <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
+                <img src={agent3} class="card-img-top" alt="..." />
               </a>
               <div className="RjAgentIconOver">
                 <a href="">
@@ -308,7 +286,33 @@ const AgentList = () => {
           <div class="card RJAgentCARD">
             <div className="RjAgentCardImg">
               <a href="">
-                <img src={agent} class="card-img-top" alt="..." />
+                <img src={agent4} class="card-img-top" alt="..." />
+              </a>
+              <div className="RjAgentIconOver">
+                <a href="">
+                  {" "}
+                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
+                </a>
+                <a href="">
+                  <span className="RjAgenticon AgentEmail">{email}</span>
+                </a>
+                <a href="">
+                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
+                </a>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <span className="fs-4 fw-bold">Golam Rabby</span> <br /> Real
+                State Agent
+              </p>
+            </div>
+          </div>
+          {/* ................................. */}
+          <div class="card RJAgentCARD">
+            <div className="RjAgentCardImg">
+              <a href="">
+                <img src={agent5} class="card-img-top" alt="..." />
               </a>
               <div className="RjAgentIconOver">
                 <a href="">

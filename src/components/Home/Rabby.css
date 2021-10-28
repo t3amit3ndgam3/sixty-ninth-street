@@ -241,7 +241,6 @@
   text-align: center;
   margin-top: 30px;
   padding: 20px;
-  
 }
 .DreamNumber {
   font-size: 40px;
@@ -342,7 +341,7 @@
   } */
 .AgentPagesliderImg {
   position: relative;
-  height: 500px;
+  height: 70vh;
   box-sizing: border-box;
 }
 .AgentPageTextSlider {
@@ -353,9 +352,14 @@
   transform: translate(-50%, -50%);
   color: rgb(255, 255, 255);
   z-index: 10;
+  margin-top: 20px;
+  font-family: "Roboto";
+  letter-spacing: 2px;
 }
 .AgentPageTextSlider p {
   color: rgba(255, 255, 255, 0.932);
+  letter-spacing: 2px;
+  font-weight: 500;
 }
 .RjAgentsLeftIcon {
   float: left;
@@ -470,7 +474,7 @@
   /* border-left: 2px solid #11111140; */
   border-left: 2px solid #222222;
 }
-.RjtestimonialsPTest{
+.RjtestimonialsPTest {
   min-height: 150px;
 }
 .Rjtestimonialsbody h6 {

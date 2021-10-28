@@ -640,9 +640,6 @@ input:focus ~ .bar:after {
   color: #fff;
 }
 /* Home Properties */
-/* UserDashboard */
-
-/* UserDashboard */
 
 /* WorkDeatails */
 .workDetails_wrapper {
@@ -652,8 +649,8 @@ input:focus ~ .bar:after {
   border-bottom: 1px solid #ffffff;
   transition: all 0.6s ease;
 }
-.workDetails_wrapperP{
-    height:45px;
+.workDetails_wrapperP {
+  height: 45px;
 }
 .workDetails_wrapper:hover {
   box-shadow: 0 10px 31px 0 #03e76233;
@@ -672,7 +669,7 @@ input:focus ~ .bar:after {
   font-size: 25px;
   line-height: 1.2em;
   text-align: center;
-  height:40px;
+  height: 40px;
 }
 .workDetails_wrapper img {
   height: 70px;
