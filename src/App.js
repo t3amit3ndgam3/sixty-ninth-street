@@ -19,7 +19,7 @@ import SellHome from "./components/SellHome/SellHome";
 import Footer from "./components/Home/Footer/Footer";
 import AdminDashboard from "./AdminDashboard/AdminDashboard";
 import HomeLoanForm from "./components/HomeLoan/HomeLoanForm";
-
+import HomeLoan from "./components/HomeLoan/HomeLoan";
 function App() {
   const wishlist = JSON.parse(localStorage.getItem("69wishlist") || "[]");
   if (wishlist.length === 0) {
@@ -56,6 +56,7 @@ function App() {
               <Route exact path="/addAgents" component={AddAgents} />
               <Route exact path="/sellHome" component={SellHome} />
               <Route exact path="/loan" component={HomeLoanForm} />
+              <Route exact path="/homeLoan" component={HomeLoan} />
               <Footer />
             </div>
           </Switch>
@@ -64,5 +65,4 @@ function App() {
     </>
   );
 }
-
 export default App;

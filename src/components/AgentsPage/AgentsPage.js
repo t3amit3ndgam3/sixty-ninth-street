@@ -9,8 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "../Home/Rabby.css";
 import { Link } from "react-router-dom";
-import sliderOne from "../../images/slider/sliderOne.jpg";
-import sliderTwo from "../../images/slider/sliderTwo.jpg";
+import agentbd1 from "../../images/agents/agent-bg1.jpg";
 
 const AgentsPage = () => {
   const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -21,7 +20,7 @@ const AgentsPage = () => {
   const twitter = <FontAwesomeIcon icon={faTwitterSquare} />;
 
   return (
-    <div className="mb-5">
+    <div className="mb-5 navSpace">
       <div
         id="carouselExampleSlidesOnly"
         class="carousel slide"
@@ -31,18 +30,18 @@ const AgentsPage = () => {
         <div class="carousel-inner">
           <div class="carousel-item active sliderBlack">
             <img
-              src={sliderOne}
+              src={agentbd1}
               class="d-block w-100 AgentPagesliderImg"
               alt="..."
             />
             <div className="AgentPageTextSlider">
               <h1>Our Trusted Agents</h1>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. .</p>
+              <p>Let us guide you home</p>
             </div>
           </div>
           <div class="carousel-item">
             <img
-              src={sliderTwo}
+              src={agentbd1}
               class="d-block w-100 AgentPagesliderImg"
               alt="..."
             />

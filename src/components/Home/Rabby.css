@@ -341,7 +341,7 @@
   } */
 .AgentPagesliderImg {
   position: relative;
-  height: 500px;
+  height: 70vh;
   box-sizing: border-box;
 }
 .AgentPageTextSlider {
@@ -352,9 +352,14 @@
   transform: translate(-50%, -50%);
   color: rgb(255, 255, 255);
   z-index: 10;
+  margin-top: 20px;
+  font-family: "Roboto";
+  letter-spacing: 2px;
 }
 .AgentPageTextSlider p {
   color: rgba(255, 255, 255, 0.932);
+  letter-spacing: 2px;
+  font-weight: 500;
 }
 .RjAgentsLeftIcon {
   float: left;

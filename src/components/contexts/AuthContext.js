@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { createContext } from "react";
 import { authentication } from "../../firebase";
+import axios from "axios";
 import {
   GoogleAuthProvider,
   getAuth,
@@ -15,9 +16,22 @@ export function useAuth() {
 }
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
+  const [tokenId, setTokenId] = useState("");
   const [loading, setLoading] = useState(true);
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
+  useEffect(() => {
+    if (tokenId.length) {
+      axios({
+        method: "POST",
+        url: "http://localhost:5000/api/googlelogin",
+        data: { tokenId: tokenId },
+      }).then((response) => {
+        console.log("Google signed in completed successfully", response);
+      });
+      console.log("working");
+    }
+  }, [tokenId]);
 
   function signUp(email, password, name) {
     return authentication
@@ -40,7 +54,10 @@ export const AuthProvider = ({ children }) => {
   }
 
   function signInWithGoogle() {
-    return signInWithPopup(auth, provider);
+    return signInWithPopup(auth, provider).then((userCredentials) => {
+      console.log(userCredentials._tokenResponse.idToken);
+      setTokenId(userCredentials._tokenResponse.idToken);
+    });
   }
 
   function logout() {

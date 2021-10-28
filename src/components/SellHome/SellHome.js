@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./SellHome.css";
 import sideImage from "../../images/sellHome/fixed.svg";
 import house from "../../images/sellHome/Agent_House.svg";
@@ -8,10 +8,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
 const SellHome = () => {
+
   const right = <FontAwesomeIcon icon={faAngleDoubleRight} />;
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Range query
+  const [range, setRange] = useState("")
+
+  const handleSelect = (e) => {
+    const area = e.target.value;
+    const Ranges = area === "Dhaka" ? "10,000 BDT - 40,000 BDT" : area === "Chattogram" ? "5,000 BDT - 20,000 BDT" : area === "Cumilla" ? "8,000 BDT - 24,000 BDT" : area === "Barishal" ? "5,000 BDT - 15,000 BDT" : "";
+    setRange(Ranges);
+  }
+
+
   return (
     <>
       <div className="sellhomeTopClass navSpace s_font">
@@ -42,22 +54,30 @@ const SellHome = () => {
                 care of the rest.
               </p>
             </div>
+            {/* Selling range checker start */}
             <div className="sellHomeFormSection">
               <h5>See how much 69th-street could pay for your home</h5>
-              <div class="input-group mb-3 sellHomeFormSectionInput">
-                <input
-                  type="text"
-                  class="form-control p-2"
-                  placeholder="Enter Your Aria"
-                  aria-label="Recipient's username"
-                  aria-describedby="button-addon2"
-                />
-                <button class="btn btn-info" type="button" id="button-addon2">
-                  Done
-                </button>
-              </div>
-              <Link to="/">Learn more about 69th-street Offers</Link>
+              {/* Select option */}
+              <select onClick={handleSelect}>
+                <option>Select</option>
+                <option>Dhaka</option>
+                <option>Chattogram</option>
+                <option>Cumilla</option>
+                <option>Barishal</option>
+              </select>
+              {/* Range details */}
+              <p>
+                Selling range in this area is: <span className="fs-5 text-danger">
+                  {
+                    range
+                  }
+                </span>
+              </p>
+              <Link to="/">
+                Learn more about 69th-street Offers
+              </Link>
             </div>
+            {/* Selling range checker start */}
           </div>
           <div className="col-md-4 order-1 order-lg-2">
             <div className="">

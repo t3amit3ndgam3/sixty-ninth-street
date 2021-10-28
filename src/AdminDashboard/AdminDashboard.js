@@ -6,12 +6,11 @@ import {
   faAlignLeft,
   faAlignRight,
   faBookmark,
-  faFileAlt,
   faListUl,
   faPeopleArrows,
   faUnlockAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import HomeDashboard from "./HomeDashboard";
+
 import ManageAgents from "./ManageAgents";
 import ManageProperties from "./ManageProperties";
 import ManageLoans from "./ManageLoans";
@@ -23,9 +22,8 @@ const AdminDashboard = () => {
   const [data, setData] = useState({
     password: false,
     MyProperties: false,
-    HomeDashboard: true,
     ManageProperties: false,
-    ManageLoans: false,
+    ManageLoans: true,
   });
 
   const handleMenuBar = (menuName) => {
@@ -33,7 +31,6 @@ const AdminDashboard = () => {
       setData({
         ManageAgents: true,
         MyProperties: false,
-        HomeDashboard: false,
         ManageProperties: false,
         ManageLoans: false,
       });
@@ -42,16 +39,6 @@ const AdminDashboard = () => {
       setData({
         ManageAgents: false,
         MyProperties: true,
-        HomeDashboard: false,
-        ManageProperties: false,
-        ManageLoans: false,
-      });
-    }
-    if (menuName === "HomeDashboard") {
-      setData({
-        ManageAgents: false,
-        MyProperties: false,
-        HomeDashboard: true,
         ManageProperties: false,
         ManageLoans: false,
       });
@@ -60,7 +47,6 @@ const AdminDashboard = () => {
       setData({
         ManageAgents: false,
         properties: false,
-        HomeDashboard: false,
         ManageProperties: false,
         ManageLoans: true,
       });
@@ -69,7 +55,6 @@ const AdminDashboard = () => {
       setData({
         ManageAgents: false,
         MyProperties: false,
-        HomeDashboard: false,
         ManageProperties: true,
         ManageLoans: false,
       });
@@ -119,17 +104,6 @@ const AdminDashboard = () => {
                 }
               }}
             >
-              <div
-                onClick={() => handleMenuBar("HomeDashboard")}
-                className="menu-item"
-              >
-                <div className="menu-icon">
-                  <FontAwesomeIcon icon={faFileAlt} />
-                </div>
-                <span>Home Dashboard</span>
-              </div>
-            </li>
-            <li>
               <div
                 onClick={() => handleMenuBar("ManageLoans")}
                 className="menu-item"
@@ -182,7 +156,6 @@ const AdminDashboard = () => {
         {data.ManageAgents && <ManageAgents />}
         {data.MyProperties && <MyProperties />}
         {data.ManageLoans && <ManageLoans />}
-        {data.HomeDashboard && <HomeDashboard />}
         {data.ManageProperties && <ManageProperties />}
       </div>
     </div>

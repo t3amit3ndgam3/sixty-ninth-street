@@ -1,0 +1,132 @@
+.HomeLoan {
+  width: 100%;
+}
+
+.Banner {
+  width: 70%;
+  /* height: 450px; */
+  margin: 0px 15%;
+  margin-top: -200px;
+  border-radius: 5px;
+}
+
+.BannerImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.loan_details {
+  margin-top: 20px;
+}
+.BannerButtons {
+  margin: 20px 20px 10px 0px;
+  background-color: #10257f;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 3px;
+  font-family: "Roboto";
+  border: 1px solid #10257f;
+  line-height: 2;
+  border-radius: 50px;
+  padding: 8px 34px;
+}
+
+.BannerButtonLinks .BannerButtons {
+  text-decoration: none;
+  color: white;
+}
+.BannerButtonLinks .BannerButtons:hover {
+  color: #10257f;
+}
+.BannerButtons:hover {
+  background: transparent;
+  color: #10257f;
+}
+
+.LoanDetailsButton {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: #10257f !important;
+  color: white !important;
+}
+
+.LoanDetailsButton:hover {
+  background-color: orangered;
+}
+
+.FeatureDetails {
+  width: 100%;
+  padding: 20px;
+  border-radius: 3px;
+  border: 1px solid rgb(168, 168, 168);
+}
+
+.FeatureDetails ul li {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: rgb(56, 56, 56);
+}
+
+.ApplyButton {
+  width: 120px;
+  height: 40px;
+  border-radius: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+  background: transparent;
+  border: 2px solid #10257f;
+}
+
+.ApplyButton:hover {
+  color: white;
+  background: #10257f;
+}
+
+.CalculatorInputs {
+  width: 100%;
+  border-radius: 3px;
+  color: #222222;
+  outline: none;
+  padding: 5px 10px;
+  border: 1px solid rgb(163, 163, 163);
+}
+
+.CalculatorFormOutput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 20px;
+  background: rgb(224, 224, 224);
+}
+
+.CalculatorFormOutputButton {
+  width: 100%;
+  color: white;
+  border-radius: 50px;
+  padding: 5px 0px 6px 0px;
+  border: none;
+  background: #10257f;
+}
+
+.Buttons:hover {
+  background: #0c33ce !important;
+}
+
+@media (max-width: 800px) {
+  .Banner {
+    margin-top: -250px;
+  }
+  .BannerImage {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .BannerButtons {
+    margin: 10px 0px;
+  }
+}
