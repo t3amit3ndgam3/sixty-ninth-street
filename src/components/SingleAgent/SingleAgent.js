@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./SingleAgent.css";
 import agentTwo from "../../images/agents/agentTwo.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,8 +15,12 @@ import {
   faInstagramSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router";
+
 
 const SingleAgent = () => {
+  const { id } = useParams([]);
+  console.log(id);
   const facebook = <FontAwesomeIcon icon={faFacebookSquare} />;
   const email = <FontAwesomeIcon icon={faEnvelope} />;
   const linkend = <FontAwesomeIcon icon={faLinkedin} />;
@@ -28,6 +32,16 @@ const SingleAgent = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [agent, setSingleAgent] = useState([]);
+  useEffect(() => {
+    fetch(`https://sixtyninethstreet.herokuapp.com/findAgent/${id}`)
+    .then( res => res.json())
+    .then( data => setSingleAgent(data[0]))
+  }, [])
+  console.log(agent);
+
+
   return (
     <div className="p_bg navSpace pb-5">
       <div className="container mt-3 ">
@@ -47,23 +61,23 @@ const SingleAgent = () => {
               </div>
               <div className="col-md-6">
                 <div className="singleAgentInfoTop">
-                  <h2>Janet Richmond</h2>
-                  <div class="agent_position">selling agent</div>
+                  <h2>{agent.agent_name}</h2>
+                  <div class="agent_position">{agent.agent_title}</div>
                   <div>
                     <span className=" singlePageTopIcon ">{phone}</span>
-                    <span>(305) 555-4555</span>
+                    <span>{agent.agent_number}</span>
                   </div>
-                  <div>
+                  {/* <div>
                     <span className="singlePageTopIcon ">{mobile}</span>
-                    <span>(305) 555-4555</span>
-                  </div>
+                    <span>{agent.agent_number}</span>
+                  </div> */}
                   <div>
                     <span className="singlePageTopIcon ">{email}</span>
-                    <span>janet@wpresidence.net</span>
+                    <span>{agent.agent_email}</span>
                   </div>
                   <div>
                     <span className="singlePageTopIcon ">{skype}</span>
-                    <span>janet.wp</span>
+                    <span>{agent.agent_skype}</span>
                   </div>
                   <div></div>
                   <div></div>
@@ -74,20 +88,7 @@ const SingleAgent = () => {
             <div className="singleAgentAboutMe mb-5">
               <h2>About Me</h2>
               <p>
-                Janet’s knowledge, honesty, integrity, and fairness have been
-                evident throughout her career. In addition, she possesses a keen
-                sense of the local luxury real estate climate, allowing her to
-                guide her clients in acquisitions of primary residences, second
-                homes, and investment properties.
-                <br />
-                <br /> She understands the importance of providing a truly
-                personalized service to her clients, always putting their needs
-                ahead of her own and paying close attention to every aspect of
-                the transaction.
-                <br />
-                <br /> Janet has long felt that to remain competitive in today’s
-                real estate market, a broad, technologically-savvy outreach is
-                imperative. She is excited about the years ahead.
+                {agent.agent_description}
               </p>
             </div>
             <div className="singleAgentContactForm">
