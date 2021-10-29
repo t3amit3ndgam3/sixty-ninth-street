@@ -1,0 +1,26 @@
+.author {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.author .avatar {
+    position: relative;
+    float: left;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.author .name {
+    position: relative;
+    float: left;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 1rem;
+}
+
+.meta {
+    float: left;
+    padding-left: 1rem;
+    size: .6rem;
+    color: #000;
+}
