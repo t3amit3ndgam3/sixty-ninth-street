@@ -106,9 +106,10 @@ const Navbar = () => {
                   <span style={{ color: "#fff", margin: "10px" }}>
                     {currentUser && currentUser.displayName}
                   </span>
-                  {currentUser && (
-                    <button onClick={handleLogout}>Log Out</button>
-                  )}
+                  {/* {currentUser &&
+                    currentUser.displayName(
+                      <button onClick={handleLogout}>Log Out</button>
+                    )} */}
                 </li>
               </ul>
             </div>

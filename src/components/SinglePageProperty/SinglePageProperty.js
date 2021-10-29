@@ -21,6 +21,7 @@ const SinglePageProperty = () => {
   const form = useRef();
   const { id } = useParams([]);
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetch(`https://sixtyninethstreet.herokuapp.com/findProperties/${id}`)
       .then((res) => res.json())
       .then((data) => setSingleProperties(data[0]));
@@ -30,9 +31,7 @@ const SinglePageProperty = () => {
     console.log(e.target.value);
     e.preventDefault();
   };
-  // useEffect(() => {
-  // 	window.scrollTo(0, 0);
-  // }, []);
+
   const [wishFlag, setWishFlag] = useState(true);
 
   const handleClickList = () => {
