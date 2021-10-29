@@ -51,7 +51,7 @@ const AddProperty = () => {
 
 		const totalData = { ...textData, ...fileData, ...user_Info};
 		console.log("total Data", totalData);
-		fetch("http://localhost:5000/api/addProperty", {
+		fetch("https://sixty9street.herokuapp.com/api/addProperty", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(totalData),

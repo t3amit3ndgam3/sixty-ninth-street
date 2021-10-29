@@ -14,8 +14,8 @@ const Navbar = () => {
     try {
       await logout();
       localStorage.removeItem("token");
-      history.push("/login");
       localStorage.removeItem('userInfo');
+      history.push("/login");
     } catch {
       setError("Failed to log out");
     }

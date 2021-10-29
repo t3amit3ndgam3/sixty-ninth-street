@@ -38,9 +38,9 @@ const AddAgents = () => {
 		e.preventDefault();
 
 		const agentData = {...agentInfo,...AgentImg}
-		console.log(agentData);
+		// console.log(agentData);
 		if(AgentImg){
-				fetch("http://localhost:5000/69/addAgent", {
+			fetch("https://sixtyninethstreet.herokuapp.com/api/addAgent", {
 				method: "POST",
 				headers: { 'Content-Type': 'application/json'},
 				body: JSON.stringify(agentData)

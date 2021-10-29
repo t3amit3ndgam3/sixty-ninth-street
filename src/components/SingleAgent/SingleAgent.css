@@ -108,3 +108,7 @@
   transition: all 300ms ease;
   cursor: pointer;
 }
+.HireMeButton{
+  padding:0px 20%;
+  margin:20px 0px;
+}
