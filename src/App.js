@@ -53,7 +53,7 @@ function App() {
               <Route exact path="/agents" component={AgentsPage} />
               <Route exact path="/singleAgent" component={SingleAgent} />
               <Route exact path="/userReview" component={UserReviews} />
-              <Route exact path="/addAgents" component={AddAgents} />
+              <Route exact path="/addAgents/:id" component={AddAgents} />
               <Route exact path="/sellHome" component={SellHome} />
               <Route exact path="/loan" component={HomeLoanForm} />
               <Route exact path="/homeLoan" component={HomeLoan} />
