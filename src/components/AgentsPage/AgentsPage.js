@@ -19,6 +19,14 @@ const AgentsPage = () => {
   const phone = <FontAwesomeIcon icon={faPhoneSquare} />;
   const twitter = <FontAwesomeIcon icon={faTwitterSquare} />;
 
+  const [agent, setAgent] = useState([]);
+
+  useEffect(() => {
+    fetch('https://sixtyninethstreet.herokuapp.com/api/getAgent')
+    .then( res => res.json())
+    .then( data => setAgent(data));
+  }, [])
+
   return (
     <div className="mb-5 navSpace">
       <div
@@ -50,10 +58,10 @@ const AgentsPage = () => {
       </div>
       <div className="container">
         <div className="row">
-          {list.map((agent) => (
+          {agent.map((agt) => (
             <div className="col-12 col-sm-6 col-md-4 mt-3">
               <div className="BSRSec">
-                <Link to="/singleAgent" className="RjcardLInk">
+                <Link to={`/singleAgent/${agt.key}`} className="RjcardLInk">
                   <div class="card RjcustomCard">
                     <img
                       src={agentImg}

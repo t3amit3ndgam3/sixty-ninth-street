@@ -12,8 +12,7 @@ const UserReviews = () => {
     }
 
     const handleUserSubmit=(e)=>{
-
-        fetch("http://localhost:5000/69/addReview",{
+		fetch('https://sixtyninethstreet.herokuapp.com/api/addReview',{
             method: "POST",
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(reviews)
