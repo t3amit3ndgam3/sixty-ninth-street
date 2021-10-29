@@ -80,7 +80,9 @@ const SingleAgent = () => {
                     <span>{agent.agent_skype}</span>
                   </div>
                   <div></div>
-                  <div></div>
+                  <div>
+                    
+                  </div>
                 </div>
               </div>
             </div>
