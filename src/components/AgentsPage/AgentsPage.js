@@ -22,7 +22,7 @@ const AgentsPage = () => {
   const [agent, setAgent] = useState([]);
 
   useEffect(() => {
-    fetch('https://sixtyninethstreet.herokuapp.com/getAgent')
+    fetch('https://sixtyninethstreet.herokuapp.com/api/getAgent')
     .then( res => res.json())
     .then( data => setAgent(data));
   }, [])
