@@ -26,10 +26,10 @@ const PropertiesList = () => {
   const [btnFlag, setBtnFlag] = useState(true);
 
   useEffect(() => {
-    fetch("https://sixtyninethstreet.herokuapp.com/allProperty")
+    fetch("https://sixtyninethstreet.herokuapp.com/api/allProperty")
       .then((res) => res.json())
       .then((data) => {
-        setPropertiesAll(data);
+        setPropertiesAll(data.data);
       });
   }, []);
   useEffect(() => {
@@ -172,19 +172,19 @@ const PropertiesList = () => {
           <div className="col-12 col-md-8 ">
             {properties.map((pro) => (
               <Link
-                to={`/spp/${pro.key}`}
+                to={`/spp/${pro._id}`}
                 className="RjPropertiesLInk"
               >
                 <div class="card mb-3 RjPropertiseCard">
                   <div class="row g-0">
-                    <div class="col-11 col-md-4 RjPropertiesImg">
+                    <div class="col-md-4 RjPropertiesImg">
                       <img
-                        src={imgOne}
-                        class="img-fluid"
+                        src={pro.image_one}
+                        class="img-fluid rounded-start"
                         alt="..."
                       />
                     </div>
-                    <div class="col-sm-12 col-md-7 pt-2">
+                    <div class="col-sm-12 col-md-8 pt-2">
                       <div class="card-body">
                         <h5 class="fw-bold">{pro.property_name}</h5>
                         <h6 class="fw-bold mb-2 text-info">$ {pro.price}</h6>

@@ -404,6 +404,9 @@
   position: relative;
   overflow: hidden;
 }
+.AgentSlideImg{
+  height: 250px;
+}
 .RjAgenticon {
   position: absolute;
   font-size: 22px;

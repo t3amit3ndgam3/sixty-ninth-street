@@ -73,7 +73,7 @@
 }
 
 .RjPropertiesImg {
-  margin: 8px;
+  padding: 8px;
   overflow: hidden;
   border-radius: 5px;
 }
@@ -94,10 +94,14 @@
 
 .RjPropertiesImg img {
   width: 100%;
-  height: 100%;
+  height:180px;
   box-sizing: border-box;
 }
-
+.RjPropertiesImg2 img{
+  width: 100%;
+  height:140px !important;
+  box-sizing: border-box;
+}
 .card-title {
   margin-bottom: 1px !important;
 }

@@ -9,11 +9,11 @@ const Properties = () => {
 
   const [properties, setProperties] = useState([]);
   
- 
+  console.log(properties);
   useEffect(() => {
-    fetch('https://sixtyninethstreet.herokuapp.com/allProperty')
+    fetch('https://sixtyninethstreet.herokuapp.com/api/allProperty')
     .then( res => res.json())
-    .then( data => setProperties(data));
+    .then( data => setProperties(data.data));
   }, [])
   const sliced =  properties.slice(0, 3);
  
@@ -27,10 +27,10 @@ const Properties = () => {
           <h1>Properties</h1>
         </div>
         <div className="row p-3 ">
-      {sliced && sliced.map( pro =>(  
+      {properties && sliced.map( pro =>(  
           <div className="col-md-4 mt-3">
             <div className="property_card">
-              <Link to={`/spp/${pro.key}`} className="card_links">
+              <Link to={`/spp/${pro._id}`} className="card_links">
                 <div className="tag_wrapper">
                   <div>
                     <div className="feature_type">Featured</div>
@@ -40,7 +40,8 @@ const Properties = () => {
                   </div>
                 </div>
                 <div className="home_property_card_image">
-                  <img src={Flat1} className="card-img-top" alt="flat-imag" />
+                  <img src={pro.image_one
+                  } className="card-img-top" alt="flat-imag" />
                 </div>
                 <div className="property_card_body">
                   <h5 className="card-title">{pro.property_name}</h5>
