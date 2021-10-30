@@ -11,7 +11,6 @@ import {
   faShareAlt,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import aliza from "../../images/aliza.png";
 
 const PropertiesList = () => {
   const [range, setRange] = useState([0]);
@@ -24,23 +23,39 @@ const PropertiesList = () => {
   const [properties, setProperties] = useState([]);
   const [loadData, setLoadData] = useState(5);
   const [btnFlag, setBtnFlag] = useState(true);
-
+  const [filteredCity, setFilteredCity] = useState([]);
+  const [filteredPropertyType, setfilteredPropertyType] = useState([]);
+  const [propertyCollection, setpropertyCollection] = useState([]);
+  const [filteredPropertyCategories, setfilteredPropertyCategories] = useState(
+    []
+  );
+  // const [filters, setFilters] = useState({
+  //   type: "",
+  // });
   useEffect(() => {
-    fetch("https://sixtyninethstreet.herokuapp.com/allProperty")
+    fetch("https://sixtyninethstreet.herokuapp.com/api/allProperty")
       .then((res) => res.json())
       .then((data) => {
-        setPropertiesAll(data);
+        setPropertiesAll(data.data);
+        // setpropertyCollection(data);
+        // console.log("41", data.data);
       });
   }, []);
   useEffect(() => {
+    window.scrollTo(0, 0);
     const cutData = propertiesAll.slice(0, loadData);
     setProperties(cutData);
-    // console.log(properties,loadData);
+    // const cities = [...new Set(propertiesAll.map((item) => item.city))];
+    // setFilteredCity(cities);
+    // const propertyType = [
+    //   ...new Set(propertiesAll.map((item) => item.property_type)),
+    // ];
+    // setfilteredPropertyType(propertyType);
+    // const propertyCategories = [
+    //   ...new Set(propertiesAll.map((item) => item.property_for)),
+    // ];
+    // setfilteredPropertyCategories(propertyCategories);
   }, [propertiesAll]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const handleLoadMore = () => {
     const cutData = propertiesAll.slice(0, loadData + loadData);
@@ -50,6 +65,32 @@ const PropertiesList = () => {
     }
     setLoadData(loadData + 2);
   };
+
+  // const handleTypeChange = (type) => {
+  //   const filteredData = propertiesAll.filter((item) => {
+  //     if (item.property_type === type) {
+  //       return item;
+  //     }
+  //   });
+  //   console.log("74", filteredData);
+  //   setPropertiesAll(filteredData);
+  // };
+  // const handleInput = (field) => (event) => {
+  //   const { value } = event.target;
+  //   console.log("79", value);
+  //   setFilters({
+  //     ...filters,
+  //     [field]: value,
+  //   });
+
+  //   switch (field) {
+  //     case "type":
+  //       handleTypeChange(value);
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // };
   return (
     <>
       <div className="container navSpace mb-5">
@@ -62,66 +103,6 @@ const PropertiesList = () => {
           </div>
           {/* Left Side Filters Start */}
           <div className="col-12 col-md-4">
-            <div className="propertyColFour">
-              <select class="TypeSelector">
-                <option selected> Select Type</option>
-                <option>Apartment</option>
-                <option>Duplex</option>
-                <option>Banglo</option>
-              </select>
-              <select class="TypeSelector">
-                <option selected>Categories</option>
-                <option>CatOne</option>
-                <option>CatTwo</option>
-                <option>CatThree</option>
-              </select>
-              <select class="TypeSelector">
-                <option selected>States</option>
-                <option>Dhaka</option>
-                <option>Chattagram</option>
-                <option>Cumilla</option>
-                <option>Bogura</option>
-              </select>
-              {/* Range */}
-              <div className="propertiesForm typesCount">
-                <Range
-                  step={20}
-                  min={0}
-                  className="propertyRange"
-                  max={1000000}
-                  values={range}
-                  onChange={(values) => setRange(values)}
-                  renderTrack={({ props, children }) => (
-                    <div
-                      {...props}
-                      style={{
-                        ...props.style,
-                        height: "6px",
-                        width: "90%",
-                        marginLeft: "20px",
-                        backgroundColor: "#ccc",
-                      }}
-                    >
-                      {children}
-                    </div>
-                  )}
-                  renderThumb={({ props }) => (
-                    <div
-                      {...props}
-                      style={{
-                        ...props.style,
-                        height: "20px",
-                        width: "20px",
-                        backgroundColor: "#999",
-                      }}
-                    />
-                  )}
-                />
-                <p className="propertiesRangeCount">
-                  $0 &nbsp;&nbsp; - to - &nbsp;&nbsp; {range}
-                </p>
-              </div>
-            </div>
             {/* Latest Listing Start */}
             <div className="LatestListing mb-5">
               <p className="fs-4 fw-bold pb-3">Latest Listing</p>
@@ -131,14 +112,18 @@ const PropertiesList = () => {
                   <>
                     <div className="LatestListingCards">
                       {/* Image */}
-                      <img src={imgOne} alt="" className="LatestListingImage" />
+                      <img
+                        src={property.image_one}
+                        alt=""
+                        className="LatestListingImage"
+                      />
                       {/* Details */}
                       <div>
                         <p className="LatestListingNames">
                           {property.property_name}
                         </p>
                         <p className="fw-bold fs-5 text-success mb-1">
-                          ${property.price}
+                          $ {property.price}
                         </p>
                         {/* Icons */}
                         <p className="LatestListingIcons mb-1">
@@ -171,23 +156,16 @@ const PropertiesList = () => {
           {/* Properties Lists Start */}
           <div className="col-12 col-md-8 ">
             {properties.map((pro) => (
-              <Link
-                to={`/spp/${pro.key}`}
-                className="RjPropertiesLInk bg-default"
-              >
+              <Link to={`/spp/${pro.key}`} className="RjPropertiesLInk">
                 <div class="card mb-3 RjPropertiseCard">
                   <div class="row g-0">
                     <div class="col-11 col-md-4 RjPropertiesImg">
-                      <img
-                        src={imgOne}
-                        class="img-fluid rounded-start"
-                        alt="..."
-                      />
+                      <img src={pro.image_one} class="img-fluid" alt="..." />
                     </div>
                     <div class="col-sm-12 col-md-7 pt-2">
                       <div class="card-body">
                         <h5 class="fw-bold">{pro.property_name}</h5>
-                        <h6 class="fw-bold mb-2 text-success">$ {pro.price}</h6>
+                        <h6 class="fw-bold mb-2 text-info">$ {pro.price}</h6>
                         <p className="mb-2">
                           <span>
                             {bed} {pro.bedroom}
@@ -198,12 +176,14 @@ const PropertiesList = () => {
                           </span>
                           &nbsp; &nbsp; &nbsp; &nbsp;
                           <span>
-                            {objectGroup} s{pro.property_size} ft<sup>2</sup>{" "}
+                            {objectGroup}
+                            {pro.property_size} ft<sup>2</sup>{" "}
                           </span>
                         </p>
-                        <p>{pro.property_description.substring(0, 80)}...</p>
+                        {/* <p>{pro.property_description.substring(0, 80)}...</p> */}
+                        <p>{pro.property_type}</p>
 
-                        <div className="RjPropertiseUserSection">
+                        {/* <div className="RjPropertiseUserSection">
                           <div className="RjProUser">
                             <img src={aliza} alt="" />
                             &nbsp;&nbsp;
@@ -214,7 +194,7 @@ const PropertiesList = () => {
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <Link to="">{share}</Link>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>

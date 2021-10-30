@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./UserDashboard.css";
 import i1 from "../images/UserBoard/e1.jpg";
@@ -8,8 +8,17 @@ import {
   faPlus,
   faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "../components/contexts/AuthContext";
 
 const MyPropertiesList = () => {
+  const {currentUser} = useAuth();
+  const [personalData, setPersonalData] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/findPropertiesByEmail/${currentUser.user_email}`)
+    .then( res=> res.json())
+    .then( data => console.log("consol log inside property",data))
+  }, [])
+
   return (
     <div>
       <div className="dashboard_property_list_header dashboard_header ">

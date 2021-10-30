@@ -20,7 +20,6 @@ const Signup = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-
     if (token) {
       history.push("/dashboard");
     }
@@ -50,15 +49,15 @@ const Signup = () => {
     history.push("/");
   };
   return (
-    <div className="login_wrapper">
-      <div className="login_card">
+    <div className="login_wrapper navSpace">
+      <div className="login_card ">
         <div className="signup_header">
-          <h2>
+          <h4>
             <span> Welcome to </span>
             <br /> Sixty Ninth Street
-          </h2>
+          </h4>
         </div>
-        <h4 className="text-center mb-4">Create an account</h4>
+        <h5 className="text-center mb-4">Create an account</h5>
         {error && <alert variant="danger">{error}</alert>}
         <form onSubmit={handleSubmit} className="login_content">
           <div class="group">

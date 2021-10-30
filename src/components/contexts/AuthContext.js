@@ -15,7 +15,12 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState();
+  const [currentUser, setCurrentUser] = useState({
+    user_name: "",
+    user_email: "",
+    user_phone: "01717-",
+  });
+  console.log("this is currentUser", currentUser);
   const [tokenId, setTokenId] = useState("");
   const [loading, setLoading] = useState(true);
   const provider = new GoogleAuthProvider();
@@ -77,7 +82,22 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = authentication.onAuthStateChanged((user) => {
-      setCurrentUser(user);
+      if (user) {
+        setCurrentUser({
+          user_name: user._delegate.displayName,
+          user_email: user._delegate.email,
+          user_phone: "01717-",
+        });
+        localStorage.setItem(
+          "userInfo",
+          JSON.stringify({
+            user_name: user._delegate.displayName,
+            user_email: user._delegate.email,
+            user_phone: "01717-",
+          })
+        );
+      }
+      console.log("....................test auth", user);
       setLoading(false);
     });
     return unsubscribe;

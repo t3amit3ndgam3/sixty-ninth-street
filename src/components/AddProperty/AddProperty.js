@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Home/Unmoy.css";
 import { toast, ToastContainer } from "react-toastify";
+import { useAuth } from "./../contexts/AuthContext";
 
 const AddProperty = () => {
+  const [user_Info, setUser_Info] = useState({});
+
+  useEffect(() => {
+    const getUserInfo = JSON.parse(
+      localStorage.getItem("userInfo" || "not found")
+    );
+    setUser_Info(getUserInfo);
+  }, []);
+
+  console.log("consol from property", user_Info);
+
   const [textData, setTextData] = useState({});
   const [fileData, setFileData] = useState({});
-  // console.log(textData.price_is);
-  // console.log(fileData);
-
+  const [message, setMessage] = useState("");
   const handleTextData = (e) => {
     const newText = { ...textData };
     newText[e.target.name] = e.target.value;
@@ -15,58 +25,52 @@ const AddProperty = () => {
   };
   const handleFileData = (e) => {
     const newFile = { ...fileData };
-    newFile[e.target.name] = e.target.files[0];
-    setFileData(newFile);
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
     const formData = new FormData();
-    formData.append("property_for", textData.property_for);
-    formData.append("property_type", textData.property_type);
-    formData.append("title", textData.title);
-    formData.append("city", textData.city);
-    formData.append("address", textData.address);
-    formData.append("property_name", textData.property_name);
-    formData.append("title", textData.title);
-    formData.append("property_description", textData.property_description);
-    formData.append("facing", textData.facing);
-    formData.append("property_size", textData.property_size);
-    formData.append("price", textData.price);
-    formData.append("price_is", textData.price_is);
-    formData.append("bedroom", textData.bedroom);
-    formData.append("garages", textData.garages);
-    formData.append("balconies", textData.balconies);
-    formData.append("bathroom", textData.bathroom);
-    formData.append("owner_name", textData.owner_name);
-    formData.append("owner_number", textData.owner_number);
-    formData.append("owner_gmail", textData.owner_gmail);
-    formData.append("image_one", fileData.image_one);
-    formData.append("image_two", fileData.image_two);
-    formData.append("image_three", fileData.image_three);
+    formData.append("file", e.target.files[0]);
+    formData.append("upload_preset", "cubeit");
+    formData.append("cloud_name", "cubeitstoreimage");
 
-    fetch("https://sixtyninethstreet.herokuapp.com/addProperties", {
+    fetch("https://api.cloudinary.com/v1_1/cubeitstoreimage/image/upload", {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
       .then((data) => {
-        toast("Data Succesfully Inserted", {
-          className: "custom-alert",
-          theme: "dark",
-          hideProgressBar: true,
-          autoClose: 3000,
-        });
+        newFile[e.target.name] = data.url;
+        setFileData(newFile);
+        console.log("image upload done");
       })
-      .catch((error) => console.error(error));
-    e.target.reset();
+      .catch((error) => {
+        console.error(error);
+      });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const totalData = { ...textData, ...fileData, ...user_Info };
+    console.log("total Data", totalData);
+    fetch("https://sixtyninethstreet.herokuapp.com/api/addProperty", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(totalData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setMessage("Update Successful");
+        console.log(data);
+        alert("success");
+      });
+  };
+
+  // e.target.reset();
 
   return (
     <div className="addProperty_section navSpace mb-5">
-      <ToastContainer />
       <div className="addProperty_wrapper">
         <h1>Add Property</h1>
+
         <div>
           <form onSubmit={handleSubmit}>
             <div className="input_section">
@@ -95,7 +99,7 @@ const AddProperty = () => {
                     name="property_for"
                     value="rent"
                     id="flexRadioDefault222"
-                    required
+                    // required
                     onBlur={handleTextData}
                   />
                   <label class="form-check-label" for="flexRadioDefault222">
@@ -111,7 +115,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_wrapper">
                   <select
-                    required
+                    // required
                     onBlur={handleTextData}
                     name="property_type"
                     id=""
@@ -133,7 +137,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_wrapper">
                   <select
-                    required
+                    // required
                     onBlur={handleTextData}
                     name="city"
                     id=""
@@ -159,7 +163,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onBlur={handleTextData}
                     className="input_field"
                     type="text"
@@ -175,7 +179,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onBlur={handleTextData}
                     className="input_field"
                     type="text"
@@ -191,7 +195,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onBlur={handleTextData}
                     className="input_field"
                     type="text"
@@ -207,7 +211,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onBlur={handleTextData}
                     className="input_field"
                     type="text"
@@ -223,7 +227,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onBlur={handleTextData}
                     className="input_field"
                     type="text"
@@ -239,7 +243,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onBlur={handleTextData}
                     className="input_field"
                     type="number"
@@ -255,7 +259,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onBlur={handleTextData}
                     className="input_field"
                     type="number"
@@ -276,7 +280,7 @@ const AddProperty = () => {
                     name="price_is"
                     id="Fixed"
                     value="fixed"
-                    required
+                    // required
                     onBlur={handleTextData}
                   />
                   <label class="form-check-label" for="Fixed">
@@ -290,7 +294,7 @@ const AddProperty = () => {
                     name="price_is"
                     value="negotiable"
                     id="Negotiable"
-                    required
+                    // required/
                     onBlur={handleTextData}
                   />
                   <label class="form-check-label" for="Negotiable">
@@ -301,76 +305,12 @@ const AddProperty = () => {
             </div>
             <div className="input_section">
               <div className="label_wrapper">
-                <h6>Bedroom:</h6>
-              </div>
-              <div className="input_box">
-                <div className="input_field_wrapper">
-                  <input
-                    required
-                    onBlur={handleTextData}
-                    className="input_field"
-                    type="number"
-                    name="bedroom"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="input_section">
-              <div className="label_wrapper">
-                <h6>Garages:</h6>
-              </div>
-              <div className="input_box">
-                <div className="input_field_wrapper">
-                  <input
-                    required
-                    onBlur={handleTextData}
-                    className="input_field"
-                    type="number"
-                    name="garages"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="input_section">
-              <div className="label_wrapper">
-                <h6>Balconies:</h6>
-              </div>
-              <div className="input_box">
-                <div className="input_field_wrapper">
-                  <input
-                    required
-                    onBlur={handleTextData}
-                    className="input_field"
-                    type="number"
-                    name="balconies"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="input_section">
-              <div className="label_wrapper">
-                <h6>Bathroom:</h6>
-              </div>
-              <div className="input_box">
-                <div className="input_field_wrapper">
-                  <input
-                    required
-                    onBlur={handleTextData}
-                    className="input_field"
-                    type="number"
-                    name="bathroom"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="input_section">
-              <div className="label_wrapper">
                 <h6>Featured Image:</h6>
               </div>
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onChange={handleFileData}
                     className="input_field"
                     type="file"
@@ -386,7 +326,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onChange={handleFileData}
                     className="input_field"
                     type="file"
@@ -402,7 +342,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onChange={handleFileData}
                     className="input_field"
                     type="file"
@@ -413,12 +353,77 @@ const AddProperty = () => {
             </div>
             <div className="input_section">
               <div className="label_wrapper">
+                <h6>Bedroom:</h6>
+              </div>
+              <div className="input_box">
+                <div className="input_field_wrapper">
+                  <input
+                    // required
+                    onBlur={handleTextData}
+                    className="input_field"
+                    type="number"
+                    name="bedroom"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="input_section">
+              <div className="label_wrapper">
+                <h6>Garages:</h6>
+              </div>
+              <div className="input_box">
+                <div className="input_field_wrapper">
+                  <input
+                    // required
+                    onBlur={handleTextData}
+                    className="input_field"
+                    type="number"
+                    name="garages"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="input_section">
+              <div className="label_wrapper">
+                <h6>Balconies:</h6>
+              </div>
+              <div className="input_box">
+                <div className="input_field_wrapper">
+                  <input
+                    // required
+                    onBlur={handleTextData}
+                    className="input_field"
+                    type="number"
+                    name="balconies"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="input_section">
+              <div className="label_wrapper">
+                <h6>Bathroom:</h6>
+              </div>
+              <div className="input_box">
+                <div className="input_field_wrapper">
+                  <input
+                    // required
+                    onBlur={handleTextData}
+                    className="input_field"
+                    type="number"
+                    name="bathroom"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="input_section">
+              <div className="label_wrapper">
                 <h6>Owner Name:</h6>
               </div>
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onBlur={handleTextData}
                     className="input_field"
                     type="text"
@@ -434,7 +439,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onBlur={handleTextData}
                     className="input_field"
                     type="number"
@@ -450,7 +455,7 @@ const AddProperty = () => {
               <div className="input_box">
                 <div className="input_field_wrapper">
                   <input
-                    required
+                    // required
                     onBlur={handleTextData}
                     className="input_field"
                     type="email"
@@ -464,6 +469,7 @@ const AddProperty = () => {
                 Done
               </button>
             </div>
+            {/* <p className="p-3 text-center text-danger">{message}</p> */}
           </form>
         </div>
       </div>

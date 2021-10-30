@@ -4,55 +4,54 @@ import "../UserReviews/UserReviews.css";
 
 const AddAgents = () => {
   const [agentInfo, setAgentInfo] = useState({});
-  const [AgentImg, setAgentImg] = useState();
-
+  const [AgentImg, setAgentImg] = useState({});
+  const [agent_image, setAgentImgUrl] = useState();
+  console.log(AgentImg);
   const handleAgentForm = (e) => {
     const data = { ...agentInfo };
     data[e.target.name] = e.target.value;
     setAgentInfo(data);
   };
-
-  const handleAgentSubmit = (e) => {
-    e.preventDefault();
-
+  const handleFileData = (e) => {
+    const newFile = { ...AgentImg };
     const formData = new FormData();
-    formData.append("agent_name", agentInfo.agent_name);
-    formData.append("agent_title", agentInfo.agent_title);
-    formData.append("agent_number", agentInfo.agent_number);
-    formData.append("agent_email", agentInfo.agent_email);
-    formData.append("agent_facebook", agentInfo.agent_facebook);
-    formData.append("agent_linkend", agentInfo.agent_linkend);
-    formData.append("agent_twitter", agentInfo.agent_twitter);
-    formData.append("agent_instagram", agentInfo.agent_instagram);
-    formData.append("agent_skype", agentInfo.agent_skype);
-    formData.append("agent_description", agentInfo.agent_description);
-    formData.append("experience", agentInfo.experience);
-    formData.append("fees", agentInfo.fees);
-    formData.append("agent_image", AgentImg);
+    formData.append("file", e.target.files[0]);
+    formData.append("upload_preset", "cubeit");
+    formData.append("cloud_name", "cubeitstoreimage");
 
-    fetch("https://sixtyninethstreet.herokuapp.com/addAgent", {
+    fetch("https://api.cloudinary.com/v1_1/cubeitstoreimage/image/upload", {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
       .then((data) => {
-        e.target.reset();
-        toast.success("Data Succesfully Inserted", {
-          position: "top-center",
-          className: "custom-alert",
-          theme: "dark",
-          autoClose: 3000,
-        });
+        newFile[e.target.name] = data.url;
+        setAgentImg(newFile);
+        console.log("image upload done");
       })
       .catch((error) => {
-        // console.error(error);
-        toast.error("Something went wrong please try again", {
-          className: "custom-alert",
-          theme: "dark",
-          autoClose: 3000,
-          position: "top-center",
-        });
+        console.error(error);
       });
+  };
+
+  const handleAgentSubmit = (e) => {
+    e.preventDefault();
+
+    const agentData = { ...agentInfo, ...AgentImg };
+    console.log(agentData);
+    if (AgentImg) {
+      fetch("https://sixtyninethstreet.herokuapp.com/api/addAgent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(agentData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          window.alert("Agent Added done");
+        });
+    } else {
+      window.alert("image not found yest");
+    }
   };
   return (
     <div className="navSpace p_bg ">
@@ -73,7 +72,6 @@ const AddAgents = () => {
                   id="agentName"
                   name="agent_name"
                   onBlur={handleAgentForm}
-                  required
                 />
               </div>
               <div class="mb-3">
@@ -86,7 +84,7 @@ const AddAgents = () => {
                   id="agentTitle"
                   name="agent_title"
                   onBlur={handleAgentForm}
-                  required
+                  // required
                 />
               </div>
               <div class="mb-3">
@@ -99,7 +97,7 @@ const AddAgents = () => {
                   id="agentNumber"
                   name="agent_number"
                   onBlur={handleAgentForm}
-                  required
+                  // required
                 />
               </div>
               <div class="mb-3">
@@ -112,7 +110,7 @@ const AddAgents = () => {
                   id="agentEmail"
                   name="agent_email"
                   onBlur={handleAgentForm}
-                  required
+                  // required
                 />
               </div>
               <div class="mb-3">
@@ -125,10 +123,10 @@ const AddAgents = () => {
                   id="agentFacebook"
                   name="agent_facebook"
                   onBlur={handleAgentForm}
-                  required
+                  // required
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-2">
                 <label for="experienceYear" class="form-label">
                   Year of experience
                 </label>
@@ -138,7 +136,7 @@ const AddAgents = () => {
                   id="experienceYear"
                   name="experience"
                   onBlur={handleAgentForm}
-                  required
+                  // required
                 />
               </div>
               <div class="mb-3">
@@ -151,13 +149,26 @@ const AddAgents = () => {
                   id="AgentFee"
                   name="fees"
                   onBlur={handleAgentForm}
-                  required
+                  // required
                 />
               </div>
             </div>
           </div>
           <div className="col-md-6 p-5">
             <div className="">
+              <div class="mb-3 mt-2">
+                <label for="agentImage" class="form-label">
+                  Agent Formal Image
+                </label>
+                <input
+                  type="file"
+                  className="input_field"
+                  id="agentImage"
+                  name="agent_image"
+                  onChange={handleFileData}
+                  required
+                />
+              </div>
               <div class="mb-3">
                 <label for="agentLinkend" class="form-label">
                   Agent Linkend Link
@@ -168,7 +179,7 @@ const AddAgents = () => {
                   id="agentLinkend"
                   name="agent_linkend"
                   onBlur={handleAgentForm}
-                  required
+                  // required
                 />
               </div>
               <div class="mb-3">
@@ -181,7 +192,7 @@ const AddAgents = () => {
                   id="agentTwitter"
                   name="agent_twitter"
                   onBlur={handleAgentForm}
-                  required
+                  // required
                 />
               </div>
               <div class="mb-3">
@@ -194,10 +205,10 @@ const AddAgents = () => {
                   id="agentInstagram"
                   name="agent_instagram"
                   onBlur={handleAgentForm}
-                  required
+                  // required
                 />
               </div>
-              <div class="mb-3">
+              <div class="mb-4">
                 <label for="agentSkype" class="form-label">
                   Agent Skype Id
                 </label>
@@ -207,10 +218,10 @@ const AddAgents = () => {
                   id="agentSkype"
                   name="agent_skype"
                   onBlur={handleAgentForm}
-                  required
+                  // required/
                 />
               </div>
-              <div class="mb-5">
+              <div class="mb-1 mt-3">
                 <label for="Descriptioninput" class="form-label">
                   Description
                 </label>
@@ -220,22 +231,7 @@ const AddAgents = () => {
                   id="Descriptioninput"
                   name="agent_description"
                   onBlur={handleAgentForm}
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="agentImage" class="form-label">
-                  Agent Formal Image
-                </label>
-                <input
-                  type="file"
-                  className="input_field"
-                  id="agentImage"
-                  name="agent_image"
-                  onChange={(e) => {
-                    setAgentImg(e.target.files[0]);
-                  }}
-                  required
+                  // required
                 />
               </div>
             </div>

@@ -178,16 +178,17 @@ input:focus ~ .bar:after {
 
 /* LOGIN SECTION */
 .login_wrapper {
-  background-image: url(../../images/Authentication_images/bg-white-3.png);
+  /* background-image: url(../../images/Authentication_images/bg-white-3.png); */
+  background-color: #1da0f2;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .login_card {
-  height: 600px;
-  width: 390px;
+  /* height: 700px; */
+  width: 420px;
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
@@ -196,10 +197,11 @@ input:focus ~ .bar:after {
   flex-direction: column;
   font-family: "Roboto Slab";
   font-weight: 100;
+  margin: 15px 0 15px 0;
+  padding: 20px;
 }
 .login_header {
   text-align: center;
-  height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -650,7 +652,7 @@ input:focus ~ .bar:after {
   transition: all 0.6s ease;
 }
 .workDetails_wrapperP {
-  height: 45px;
+  height: 95px;
 }
 .workDetails_wrapper:hover {
   box-shadow: 0 10px 31px 0 #03e76233;
@@ -671,9 +673,7 @@ input:focus ~ .bar:after {
   text-align: center;
   height: 40px;
 }
-.workDetails_wrapper img {
-  height: 70px;
-}
+
 /* WorkDeatails */
 
 /******************* RESPONSIVE BREAKPOINTS ********************/

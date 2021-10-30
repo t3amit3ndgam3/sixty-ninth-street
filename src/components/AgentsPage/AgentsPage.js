@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import agentImg from "../../images/agentOne.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhoneSquare } from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +18,13 @@ const AgentsPage = () => {
   const linkend = <FontAwesomeIcon icon={faLinkedin} />;
   const phone = <FontAwesomeIcon icon={faPhoneSquare} />;
   const twitter = <FontAwesomeIcon icon={faTwitterSquare} />;
-
+  useEffect(() => {
+    fetch("https://sixtyninethstreet.herokuapp.com/api/getAgent")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("41", data);
+      });
+  }, []);
   return (
     <div className="mb-5 navSpace">
       <div
