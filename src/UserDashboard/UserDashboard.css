@@ -237,6 +237,7 @@
 }
 .styled-table td img {
   width: 200px;
+  height: 120px;
 }
 .styled-table tbody tr:nth-of-type(even) {
   background-color: #0c33ce;

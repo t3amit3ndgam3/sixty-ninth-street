@@ -19,7 +19,6 @@ const UserReviews = () => {
         })
         .then( res => res.json())
 		.then( data => {
-			console.log(data)
 			window.alert("Reviews Done");
 		})
 		.catch(error=> console.error(error))

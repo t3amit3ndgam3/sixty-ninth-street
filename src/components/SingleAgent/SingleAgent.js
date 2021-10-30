@@ -35,10 +35,11 @@ const SingleAgent = () => {
 	}, []);
 
 	const [agent, setSingleAgent] = useState([]);
+	console.log(agent);
 	useEffect(() => {
-		fetch(`https://sixtyninethstreet.herokuapp.com/findAgent/${id}`)
+		fetch(`https://sixtyninethstreet.herokuapp.com/api/singleAgent/${id}`)
 			.then((res) => res.json())
-			.then((data) => setSingleAgent(data[0]));
+			.then((data) => setSingleAgent(data.data[0]));
 	}, []);
 	// console.log(agent);
 	const storeAgentInfo = () => {
@@ -48,11 +49,11 @@ const SingleAgent = () => {
 		localStorage.setItem(
 			"HireAgentInfo",
 			JSON.stringify({
-        agent_key:agent.key,
+      			 agent_key:agent.key,
 				agent_name: agent.agent_name,
 				agent_title: agent.agent_title,
-        fees:"empty",
-				agent_image: agent.agent_img,
+       			 fees:agent.fees,
+				agent_image: agent.agent_image,
 				agent_email: agent.agent_email,
 				user_email: userInfo.user_email,
 			})
@@ -67,7 +68,7 @@ const SingleAgent = () => {
 						<div className="row">
 							<div className="col-12 col-sm-12 col-md-6 mb-5">
 								<div className="singleAgentImg">
-									<img class="img-fluid" src={agentTwo} alt="" />
+									<img class="img-fluid" src={agent.agent_image} alt="" />
 									<div className="singleAgentImgOverContent">
 										<Link>{facebook}</Link>
 										<Link>{linkend}</Link>
@@ -129,8 +130,9 @@ const SingleAgent = () => {
 												<h5 class="modal-title" id="staticBackdropLabel">
 													Please Payment with Stripe
 												</h5>
-                        <p>{agent.agent_name}</p>
-                        <p>{agent.agent_title}</p>
+												<br />
+                      							  <p>{agent.agent_name}</p>
+                      							  <p>{agent.agent_title}</p>
 												<button
 													type="button"
 													class="btn-close"

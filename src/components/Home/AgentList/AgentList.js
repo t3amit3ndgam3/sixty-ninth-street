@@ -63,11 +63,11 @@ const AgentList = () => {
 
   const [agent, setAgent] = useState([]);
   useEffect(() => {
-      fetch('https://sixtyninethstreet.herokuapp.com/getAgent')
+      fetch('https://sixtyninethstreet.herokuapp.com/api/getAgent')
       .then(res => res.json())
       .then( data => {
         // const cutAgent = data.slice(data.length - 5, data.length);
-        setAgent(data)
+        setAgent(data.data)
       })
   }, [])
 
@@ -92,8 +92,8 @@ const AgentList = () => {
           {agent&& agent.map( agt =>(
           <div key={agt.key} class="card RJAgentCARD">
             <div className="RjAgentCardImg">
-              <Link to={`/singleAgent/${agt.key}`}>
-                <img src={agentImg} class="card-img-top" alt="..." />
+              <Link to={`/singleAgent/${agt._id}`}>
+                <img src={agt.agent_image} class="imh-fluid card-img-top AgentSlideImg" alt="..." />
               </Link>
               <div className="RjAgentIconOver">
                 <a target="_blank" href={agt.agent_facebook} >
