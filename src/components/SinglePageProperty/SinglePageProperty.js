@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import image1 from "../../images/DreamHome/dream.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { useParams } from "react-router";
+import "./SingleProperty.css";
 
 const SinglePageProperty = () => {
   const [show, setShow] = useState(true);
@@ -21,10 +21,9 @@ const SinglePageProperty = () => {
   const form = useRef();
   const { id } = useParams([]);
   useEffect(() => {
-    window.scrollTo(0, 0);
-    fetch(`https://sixtyninethstreet.herokuapp.com/findProperties/${id}`)
+    fetch(`https://sixtyninethstreet.herokuapp.com/api/findProperties/${id}`)
       .then((res) => res.json())
-      .then((data) => setSingleProperties(data[0]));
+      .then((data) => setSingleProperties(data.data[0]));
   }, []);
 
   const handleSubmit = (e) => {
@@ -45,7 +44,7 @@ const SinglePageProperty = () => {
       return setWishFlag(true);
     });
 
-    if (wishFlag && wishlist.length == count) {
+    if (wishFlag && wishlist.length === count) {
       wishlist.push({
         image: singleProperties.imgOne,
         name: singleProperties.property_name,
@@ -91,7 +90,7 @@ const SinglePageProperty = () => {
                 Share
               </button>
               <button>
-                <FontAwesomeIcon className="prop_btn_icon" icon={faHeart} />
+                <FontAwesomeIcon className="prop_btn_icon " icon={faHeart} />
                 Add to favourites
               </button>
             </div>
@@ -108,13 +107,13 @@ const SinglePageProperty = () => {
                 showIndicators={false}
               >
                 <div>
-                  <img src="https://picsum.photos/700/400?img=1" alt="" />
+                  <img src={singleProperties.image_one} alt="" />
                 </div>
                 <div>
-                  <img src="https://picsum.photos/700/400?img=2" alt="" />
+                  <img src={singleProperties.image_two} alt="" />
                 </div>
                 <div>
-                  <img src="https://picsum.photos/700/400?img=3" alt="" />
+                  <img src={singleProperties.image_three} alt="" />
                 </div>
               </Carousel>
             </div>
@@ -142,11 +141,11 @@ const SinglePageProperty = () => {
                   {singleProperties.property_size} ft<sup>2</sup>
                 </li>
               </ul>
-              <ul className="overview_element">
-                <li>
+              <ul className="overview_element ">
+                <li className="">
                   <FontAwesomeIcon
                     onClick={handleClickList}
-                    className="cta_icon"
+                    className="cta_icon wishlistIcon "
                     icon={faHeart}
                   />
                 </li>
@@ -165,9 +164,7 @@ const SinglePageProperty = () => {
                 </div>
                 {show && (
                   <div className="content">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Vel asperiores deserunt eligendi dolor velit numquam magnam
-                    suscipit laboriosam animi neque!
+                    Please Contact the owner for details
                   </div>
                 )}
               </div>
@@ -183,41 +180,46 @@ const SinglePageProperty = () => {
                     <div className="left_content">
                       <ul>
                         <li>
-                          <strong>Property id:</strong> 2521
+                          <strong>Property id:</strong> {singleProperties._id}
                         </li>
                         <li>
-                          <strong>Property Size:</strong> 5020 ft <sup>2</sup>{" "}
+                          <strong>Property Size:</strong>{" "}
+                          {singleProperties.property_size} ft <sup>2</sup>{" "}
                         </li>
                         <li>
-                          <strong>Rooms:</strong> 4
+                          <strong>Rooms:</strong> {singleProperties.bedroom}
                         </li>
                         <li>
-                          <strong>Bathrooms:</strong> 2
+                          <strong>Bathrooms:</strong>{" "}
+                          {singleProperties.bathroom}
                         </li>
                         <li>
-                          <strong>Garages:</strong> 1
+                          <strong>Garages:</strong> {singleProperties.garages}
                         </li>
                         <li>
-                          <strong>For:</strong> Sale
+                          <strong>For:</strong> {singleProperties.property_for}
                         </li>
                       </ul>
                     </div>
                     <div className="right_content">
                       <ul>
                         <li>
-                          <strong>Type:</strong> Apartment
+                          <strong>Type:</strong>{" "}
+                          {singleProperties.property_type}
                         </li>
                         <li>
-                          <strong>Price:</strong> 220,000
+                          <strong>Price:</strong>
+                          {singleProperties.price}
                         </li>
                         <li>
-                          <strong>Bedrooms:</strong> 4
+                          <strong>Bedrooms:</strong>
+                          {singleProperties.bedroom}
                         </li>
                         <li>
                           <strong>Year Built:</strong> 2002
                         </li>
                         <li>
-                          <strong>Rooms:</strong> 4
+                          <strong>Rooms:</strong> {singleProperties.bedroom}
                         </li>
                         <li>
                           <strong>Facing:</strong> North
@@ -251,7 +253,7 @@ const SinglePageProperty = () => {
                 </div>
                 {show && (
                   <div className="floor_image_container">
-                    <img src={image1} alt="" />
+                    <img src={singleProperties.image_three} alt="" />
                   </div>
                 )}
               </div>
@@ -259,11 +261,11 @@ const SinglePageProperty = () => {
           </div>
           <div className="owner_details_section">
             <h5>Property owner details</h5>
-            <h4>Owner name</h4>
-            <p>Property id: 222222</p>
+            <h4>{singleProperties.owner_name}</h4>
+            <p>{singleProperties.owner_gmail}</p>
             <h6>
               <FontAwesomeIcon className="prop_icon_phone" icon={faPhoneAlt} />
-              0167648982
+              {singleProperties.owner_number}
             </h6>
             <form
               ref={form}

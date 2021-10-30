@@ -18,13 +18,15 @@ const AgentsPage = () => {
   const linkend = <FontAwesomeIcon icon={faLinkedin} />;
   const phone = <FontAwesomeIcon icon={faPhoneSquare} />;
   const twitter = <FontAwesomeIcon icon={faTwitterSquare} />;
+
+  const [agent, setAgent] = useState([]);
+
   useEffect(() => {
     fetch("https://sixtyninethstreet.herokuapp.com/api/getAgent")
       .then((res) => res.json())
-      .then((data) => {
-        console.log("41", data);
-      });
+      .then((data) => setAgent(data.data));
   }, []);
+
   return (
     <div className="mb-5 navSpace">
       <div
@@ -56,24 +58,21 @@ const AgentsPage = () => {
       </div>
       <div className="container">
         <div className="row">
-          {list.map((agent) => (
+          {agent.map((agt) => (
             <div className="col-12 col-sm-6 col-md-4 mt-3">
               <div className="BSRSec">
-                <Link to="/singleAgent" className="RjcardLInk">
+                <Link to={`/singleAgent/${agt._id}`} className="RjcardLInk">
                   <div class="card RjcustomCard">
                     <img
-                      src={agentImg}
+                      src={agt.agent_image}
                       class="card-img-top RjagentsCardImg"
                       alt="agent_image"
                     />
                     <div class="card-body">
-                      <h5 class="card-title">Michael Sutther</h5>
-                      <span className="RjAgentPageSpan">
-                        real estate broker
-                      </span>
+                      <h5 class="card-title">{agt.agent_name}</h5>
+                      <span className="RjAgentPageSpan">{agt.agent_title}</span>
                       <p class="card-text pt-2 RjAgentPageP">
-                        Janet’s knowledge, honesty, integrity, and fairness have
-                        been evident throughout her career. In addition
+                        {agt.agent_description}
                       </p>
                       <div className="RjAgentsPageIconSection">
                         <div className="RjAgentsLeftIcon">

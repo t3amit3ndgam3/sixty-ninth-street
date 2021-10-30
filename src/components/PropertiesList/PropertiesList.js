@@ -37,8 +37,6 @@ const PropertiesList = () => {
       .then((res) => res.json())
       .then((data) => {
         setPropertiesAll(data.data);
-        // setpropertyCollection(data);
-        // console.log("41", data.data);
       });
   }, []);
   useEffect(() => {
@@ -156,13 +154,17 @@ const PropertiesList = () => {
           {/* Properties Lists Start */}
           <div className="col-12 col-md-8 ">
             {properties.map((pro) => (
-              <Link to={`/spp/${pro.key}`} className="RjPropertiesLInk">
+              <Link to={`/spp/${pro._id}`} className="RjPropertiesLInk">
                 <div class="card mb-3 RjPropertiseCard">
                   <div class="row g-0">
-                    <div class="col-11 col-md-4 RjPropertiesImg">
-                      <img src={pro.image_one} class="img-fluid" alt="..." />
+                    <div class="col-md-4 RjPropertiesImg">
+                      <img
+                        src={pro.image_one}
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
                     </div>
-                    <div class="col-sm-12 col-md-7 pt-2">
+                    <div class="col-sm-12 col-md-8 pt-2">
                       <div class="card-body">
                         <h5 class="fw-bold">{pro.property_name}</h5>
                         <h6 class="fw-bold mb-2 text-info">$ {pro.price}</h6>

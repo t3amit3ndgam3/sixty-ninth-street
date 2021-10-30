@@ -38,7 +38,7 @@ const AddAgents = () => {
     e.preventDefault();
 
     const agentData = { ...agentInfo, ...AgentImg };
-    console.log(agentData);
+    // console.log(agentData);
     if (AgentImg) {
       fetch("https://sixtyninethstreet.herokuapp.com/api/addAgent", {
         method: "POST",

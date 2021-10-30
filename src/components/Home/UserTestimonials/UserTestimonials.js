@@ -52,11 +52,13 @@ var settings = {
 const UserTestimonials = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://sixtyninethstreet.herokuapp.com/getReviews")
+    fetch("https://sixtyninethstreet.herokuapp.com/api/getReviews")
       .then((res) => res.json())
       .then((data) => {
-        const collect = data.length;
-        const reviewsCut = data.slice(collect - 5, collect);
+        console.log(data);
+        const collect = data.data.length;
+        const getData = data.data;
+        const reviewsCut = getData.slice(collect - 5, collect);
         setReviews(reviewsCut);
       });
   }, []);

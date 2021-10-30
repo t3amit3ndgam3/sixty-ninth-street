@@ -12,22 +12,17 @@ const UserReviews = () => {
   };
 
   const handleUserSubmit = (e) => {
-    fetch("https://sixty9street.herokuapp.com/api/addReview", {
+    fetch("https://sixtyninethstreet.herokuapp.com/api/addReview", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reviews),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         window.alert("Reviews Done");
       })
       .catch((error) => console.error(error));
-
-    e.preventDefault();
-    e.target.reset();
   };
-
   return (
     <div className="navSpace p_bg topUserReviewsSection">
       <div className="container">

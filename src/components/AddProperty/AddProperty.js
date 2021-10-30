@@ -64,7 +64,18 @@ const AddProperty = () => {
       });
   };
 
-  // e.target.reset();
+  const totalData = { ...textData, ...fileData, ...user_Info };
+  console.log("total Data", totalData);
+  fetch("https://sixtyninethstreet.herokuapp.com/api/addProperty", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(totalData),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      setMessage("Update Successful");
+      console.log(data);
+    });
 
   return (
     <div className="addProperty_section navSpace mb-5">
