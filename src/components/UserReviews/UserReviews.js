@@ -12,7 +12,6 @@ const UserReviews = () => {
     }
 
     const handleUserSubmit=(e)=>{
-
 		fetch('https://sixtyninethstreet.herokuapp.com/api/addReview',{
             method: "POST",
             headers: { 'Content-Type': 'application/json'},
