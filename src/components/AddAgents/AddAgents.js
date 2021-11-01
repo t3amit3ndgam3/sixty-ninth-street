@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import "../UserReviews/UserReviews.css";
 
 const AddAgents = () => {
+	const [alertMessage, setAlert] = useState("");
 	const [agentInfo, setAgentInfo] = useState({});
 	const [AgentImg, setAgentImg] = useState({});
 	const [agent_image, setAgentImgUrl] = useState();
@@ -37,23 +38,29 @@ const AddAgents = () => {
 	const handleAgentSubmit = (e) => {
 		e.preventDefault();
 
-		const agentData = {...agentInfo,...AgentImg}
+		const agentData = { ...agentInfo, ...AgentImg };
 		// console.log(agentData);
-		if(AgentImg){
+		if (AgentImg) {
 			fetch("https://sixtyninethstreet.herokuapp.com/api/addAgent", {
 				method: "POST",
-				headers: { 'Content-Type': 'application/json'},
-				body: JSON.stringify(agentData)
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(agentData),
 			})
-			.then( res =>res.json())
-			.then( data => {
-				window.alert("Agent Added done");
-			})
-		}
-		else{
+				.then((res) => res.json())
+				.then((data) => {
+					window.alert("Agent Added done");
+					setAlert(data.message);
+				});
+		} else {
 			window.alert("image not found yest");
 		}
+		e.target.reset();
 	};
+
+	setTimeout(function () {
+		setAlert("");
+	}, 5000);
+
 	return (
 		<div className="navSpace p_bg ">
 			<div className="container mt-5">
@@ -157,7 +164,7 @@ const AddAgents = () => {
 					</div>
 					<div className="col-md-6 p-5">
 						<div className="">
-						<div class="mb-3 mt-2">
+							<div class="mb-3 mt-2">
 								<label for="agentImage" class="form-label">
 									Agent Formal Image
 								</label>
@@ -235,8 +242,6 @@ const AddAgents = () => {
 									// required
 								/>
 							</div>
-							
-
 						</div>
 					</div>
 					<div className="col-md-6 offset-md-3">
@@ -249,6 +254,11 @@ const AddAgents = () => {
 							/>
 						</div>
 					</div>
+					{alertMessage && (
+						<div className="col-md-11 p-1 mt-2">
+							<p className="shadow text-center bg-info">{alertMessage}</p>
+						</div>
+					)}
 				</form>
 			</div>
 		</div>

@@ -3,11 +3,74 @@ import { Link } from "react-router-dom";
 import "../Rabby.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
+
+
 const Navbar = () => {
   const [fixedTop, setScroll] = useState(false);
   const { currentUser, logout } = useAuth();
   const [error, setError] = useState("");
   const history = useHistory();
+  const [checkAgent, setCheckAgent] = useState(false);
+
+  const [dashBoard, setDashBoard] = useState({
+    Admin:false,
+    Agent: false,
+    Normal: false
+  })
+  const [agent, setAgent] = useState([]);
+  useEffect(() => {
+      fetch('https://sixtyninethstreet.herokuapp.com/api/getAgent')
+      .then(res => res.json())
+      .then( data => {
+        setAgent(data.data)
+      })
+  }, [])
+
+  useEffect(()=>{
+    agent.find(agt =>{
+      if(agt.agent_email == currentUser.user_email){
+        setCheckAgent(true);
+      }
+      console.log(agt.agent_email , currentUser.user_email);
+    });
+    if(currentUser.user_email === "teamit.endgame@gmail.com"){
+      setDashBoard({
+        Admin:true,
+        Agent: false,
+        Normal: false
+      })
+    }else if(checkAgent){
+      setDashBoard({
+        Admin:true,
+        Agent: false,
+        Normal: false
+      })
+    }else if(!checkAgent){
+      agent.find(agt =>{
+        if(agt.agent_email == currentUser.user_email){
+          setDashBoard({
+            Admin:true,
+            Agent: false,
+            Normal: false
+          })
+        }
+      });
+      setDashBoard({
+        Admin:true,
+        Agent: false,
+        Normal: false
+      })
+    }
+    else{
+      setDashBoard({
+        Admin:false,
+        Agent: false,
+        Normal: true
+      })
+    }
+  },[agent])
+
+
 
    const  handleLogout= async()=> {
     setError("");
@@ -26,6 +89,8 @@ const Navbar = () => {
       setScroll(window.scrollY > 10);
     });
   }, []);
+
+
 
   return (
     <div className="">
@@ -96,22 +161,41 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <Link
+                 {dashBoard.Admin && <Link
+                    to="/admin"
+                    class="nav-link navItemCustom"
+                    aria-current="page"
+                  >
+                    DASHBOARD
+                  </Link>}
+                  {dashBoard.Normal && <Link
                     to="/dashboard"
                     class="nav-link navItemCustom"
                     aria-current="page"
                   >
                     DASHBOARD
-                  </Link>
+                  </Link>}
                 </li>
                 <li class="nav-item">
-                  <span style={{ color: "#fff", margin: "10px" }}>
-                    {currentUser && currentUser.user_name}
-                  </span>
-                  {currentUser && 
-                    <button onClick={handleLogout}>Log Out</button>
-                  }
+                  <Link
+                    to="/addAgents"
+                    class="nav-link navItemCustom"
+                    aria-current="page"
+                    onClick={handleLogout}
+                  >
+                    Log Out
+                  </Link>
                 </li>
+                {currentUser && <li class="nav-item">
+                  <Link
+                    to="/"
+                    class="nav-link navItemCustom bg-info"
+                    aria-current="page"
+                  >
+                    {currentUser.user_name}
+                  </Link>
+                </li>}
+               
               </ul>
             </div>
           </div>
