@@ -149,6 +149,8 @@ const SingleAgent = () => {
 																	<h5 class="card-title">{agent.agent_name}</h5>
 																	<p class="card-text">
 																	{agent.agent_title}
+																	<br />
+																	{agent.fees}
 																	</p>
 																</div>
 															</div>

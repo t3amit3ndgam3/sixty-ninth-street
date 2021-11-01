@@ -532,8 +532,12 @@ input:focus ~ .bar:after {
   overflow: hidden;
   height:320px;
 }
+.home_property_card_image img{
+  overflow: hidden;
+  height:320px;
+}
 .property_card:hover .home_property_card_image img {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: ease-in-out 0.5s all;
 }
 .tag_wrapper {

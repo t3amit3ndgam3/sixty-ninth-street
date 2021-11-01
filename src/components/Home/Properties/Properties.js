@@ -24,7 +24,7 @@ const Properties = () => {
         <div className="section_headers">
           <h1>Properties</h1>
         </div>
-        <div className="row p-3 ">
+        <div className="row p-3 mb-5">
       {properties && sliced.map( pro =>(  
           <div className="col-md-4 mt-3">
             <div className="property_card">

@@ -56,10 +56,11 @@ const UserTestimonials = () => {
     fetch('https://sixtyninethstreet.herokuapp.com/api/getReviews')
     .then( res => res.json())
     .then( data => {
-      const collect = data.data.length;
-      const getData = data.data;
-      const reviewsCut =  getData.slice(collect-5, collect);
-      setReviews(reviewsCut);
+      setReviews(data.data);
+      // const collect = data.data.length;
+      // const getData = data.data;
+      // const reviewsCut =  getData.slice(collect-5, collect);
+      // setReviews(reviewsCut);
     })
 
   }, [])

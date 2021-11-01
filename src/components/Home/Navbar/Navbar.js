@@ -56,9 +56,9 @@ const Navbar = () => {
         }
       });
       setDashBoard({
-        Admin:true,
+        Admin:false,
         Agent: false,
-        Normal: false
+        Normal: true
       })
     }
     else{
