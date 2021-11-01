@@ -74,7 +74,7 @@ const AgentsPage = () => {
                         {agt.agent_title}
                       </span>
                       <p class="card-text pt-2 RjAgentPageP">
-                        {agt.agent_description}
+                        {agt.agent_description.substring(0, 50)} .......
                       </p>
                       <div className="RjAgentsPageIconSection">
                         <div className="RjAgentsLeftIcon">

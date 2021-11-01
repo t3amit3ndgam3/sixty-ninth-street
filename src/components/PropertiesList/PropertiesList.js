@@ -201,7 +201,7 @@ const PropertiesList = () => {
                             {objectGroup} s{pro.property_size} ft<sup>2</sup>{" "}
                           </span>
                         </p>
-                        <p>{pro.property_description.substring(0, 80)}...</p>
+                        <p>{pro.property_description.substring(0, 60)}...</p>
 
                         {/* <div className="RjPropertiseUserSection">
                           <div className="RjProUser">

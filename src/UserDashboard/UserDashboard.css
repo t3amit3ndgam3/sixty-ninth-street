@@ -355,11 +355,18 @@
 .hide {
   display: none;
 }
+.undefined{
+  display: none;
+}
 .closeButtonmain {
   position: relative;
 }
 .loseButtonaction {
   position: absolute;
-  bottom: -5;
-  right: 0;
+  bottom: 0px;
+  right: 0px;
+ 
+}
+.btn-close:hover {
+  color: rgb(228, 9, 9) !important;
 }

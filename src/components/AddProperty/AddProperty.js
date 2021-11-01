@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "../Home/Unmoy.css";
 import { toast, ToastContainer } from "react-toastify";
-import { useAuth } from './../contexts/AuthContext';
-
-
+import { useAuth } from "./../contexts/AuthContext";
 
 const AddProperty = () => {
+	const [alertMessage, setAlert] = useState("");
 	const [user_Info, setUser_Info] = useState({});
 
 	useEffect(() => {
-		const getUserInfo = JSON.parse(localStorage.getItem('userInfo'||"not found"));
-		setUser_Info(getUserInfo)
-	}, [])
-	
-	console.log("consol from property",user_Info);
+		const getUserInfo = JSON.parse(
+			localStorage.getItem("userInfo" || "not found")
+		);
+		setUser_Info(getUserInfo);
+	}, []);
+
+	console.log("consol from property", user_Info);
 
 	const [textData, setTextData] = useState({});
 	const [fileData, setFileData] = useState({});
@@ -49,21 +50,24 @@ const AddProperty = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		const totalData = { ...textData, ...fileData, ...user_Info};
+		const totalData = { ...textData, ...fileData, ...user_Info };
 		console.log("total Data", totalData);
-		fetch('https://sixtyninethstreet.herokuapp.com/api/addProperty', {
+		fetch("https://sixtyninethstreet.herokuapp.com/api/addProperty", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(totalData),
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				setMessage("Update Successful");
-				console.log(data);
+				setMessage("Property add Successful");
+				setAlert(data.message);
 			});
+		e.target.reset();
 	};
 
-	// e.target.reset();
+	setTimeout(function () {
+		setAlert("");
+	}, 5000);
 
 	return (
 		<div className="addProperty_section navSpace mb-5">
@@ -302,7 +306,7 @@ const AddProperty = () => {
 								</div>
 							</div>
 						</div>
-            <div className="input_section">
+						<div className="input_section">
 							<div className="label_wrapper">
 								<h6>Featured Image:</h6>
 							</div>
@@ -414,7 +418,7 @@ const AddProperty = () => {
 								</div>
 							</div>
 						</div>
-						
+
 						<div className="input_section">
 							<div className="label_wrapper">
 								<h6>Owner Name:</h6>
@@ -468,7 +472,11 @@ const AddProperty = () => {
 								Done
 							</button>
 						</div>
-						<p className="p-3 text-center text-danger">{message}</p>
+						{alertMessage && (
+							<div className="col-md-11 p-1 mt-2">
+								<p className="shadow text-center bg-info">{alertMessage}</p>
+							</div>
+						)}
 					</form>
 				</div>
 			</div>
