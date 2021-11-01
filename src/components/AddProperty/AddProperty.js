@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../Home/Unmoy.css";
-import { toast, ToastContainer } from "react-toastify";
-import { useAuth } from "./../contexts/AuthContext";
+// import { toast, ToastContainer } from "react-toastify";
+// import { useAuth } from "./../contexts/AuthContext";
 
 const AddProperty = () => {
+  const [alertMessage, setAlert] = useState("");
   const [user_Info, setUser_Info] = useState({});
 
   useEffect(() => {
@@ -58,24 +59,15 @@ const AddProperty = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setMessage("Update Successful");
-        console.log(data);
-        alert("success");
+        setMessage("Property add Successful");
+        setAlert(data.message);
       });
+    e.target.reset();
   };
 
-  const totalData = { ...textData, ...fileData, ...user_Info };
-  console.log("total Data", totalData);
-  fetch("https://sixtyninethstreet.herokuapp.com/api/addProperty", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(totalData),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      setMessage("Update Successful");
-      console.log(data);
-    });
+  setTimeout(function () {
+    setAlert("");
+  }, 5000);
 
   return (
     <div className="addProperty_section navSpace mb-5">
@@ -96,7 +88,7 @@ const AddProperty = () => {
                     name="property_for"
                     value="sell"
                     id="PropertyFor"
-                    required
+                    // required
                     onBlur={handleTextData}
                   />
                   <label class="form-check-label" for="PropertyFor">
@@ -480,7 +472,11 @@ const AddProperty = () => {
                 Done
               </button>
             </div>
-            {/* <p className="p-3 text-center text-danger">{message}</p> */}
+            {alertMessage && (
+              <div className="col-md-11 p-1 mt-2">
+                <p className="shadow text-center bg-info">{alertMessage}</p>
+              </div>
+            )}
           </form>
         </div>
       </div>

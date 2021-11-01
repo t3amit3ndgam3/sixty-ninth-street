@@ -59,7 +59,6 @@ const UserTestimonials = () => {
         const getData = data.data;
         const reviewsCut = getData.slice(collect - 5, collect);
         setReviews(reviewsCut);
-        // console.log("r", getData);
       });
   }, []);
 

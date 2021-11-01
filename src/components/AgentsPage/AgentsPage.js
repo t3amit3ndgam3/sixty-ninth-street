@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import agentImg from "../../images/agentOne.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhoneSquare } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -72,7 +71,7 @@ const AgentsPage = () => {
                       <h5 class="card-title">{agt.agent_name}</h5>
                       <span className="RjAgentPageSpan">{agt.agent_title}</span>
                       <p class="card-text pt-2 RjAgentPageP">
-                        {agt.agent_description.substring(0, 90)}
+                        {agt.agent_description.substring(0, 50)} .......
                       </p>
                       <div className="RjAgentsPageIconSection">
                         <div className="RjAgentsLeftIcon">

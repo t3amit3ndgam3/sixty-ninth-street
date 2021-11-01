@@ -15,6 +15,7 @@ import { useParams } from "react-router";
 import "./SingleProperty.css";
 
 const SinglePageProperty = () => {
+  const [alertMessage, setAlert] = useState("");
   const [show, setShow] = useState(true);
   const [singleProperties, setSingleProperties] = useState([]);
   console.log(singleProperties);
@@ -30,7 +31,9 @@ const SinglePageProperty = () => {
     console.log(e.target.value);
     e.preventDefault();
   };
-
+  // useEffect(() => {
+  // 	window.scrollTo(0, 0);
+  // }, []);
   const [wishFlag, setWishFlag] = useState(true);
 
   const handleClickList = () => {
@@ -44,9 +47,9 @@ const SinglePageProperty = () => {
       return setWishFlag(true);
     });
 
-    if (wishFlag && wishlist.length === count) {
+    if (wishFlag && wishlist.length == count) {
       wishlist.push({
-        image: singleProperties.imgOne,
+        image: singleProperties.image_one,
         name: singleProperties.property_name,
         key: singleProperties.key,
         price: singleProperties.price,
@@ -55,13 +58,16 @@ const SinglePageProperty = () => {
         size: singleProperties.property_size,
       });
       localStorage.setItem("69wishlist", JSON.stringify(wishlist));
-      window.alert("Wish list Added");
+      setAlert("Wish list Added");
     }
 
     if (!wishFlag) {
-      window.alert("Already Added");
+      setAlert("Already Added");
     }
   };
+  setTimeout(function () {
+    setAlert("");
+  }, 5000);
 
   return (
     <div className="spp_container navSpace">
@@ -117,6 +123,11 @@ const SinglePageProperty = () => {
                 </div>
               </Carousel>
             </div>
+            {alertMessage && (
+              <div className="col-md-11 p-1">
+                <p className="shadow text-center bg-info">{alertMessage}</p>
+              </div>
+            )}
             <div className="property_overview">
               <h4>Overview</h4>
               <ul className="overview_element">

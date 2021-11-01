@@ -24,12 +24,20 @@ const Favourites = () => {
   const [flag, setFlag] = useState(true);
   useEffect(() => {
     setwishlist(JSON.parse(localStorage.getItem("69wishlist")));
-  }, []);
+  }, [wishlist]);
 
   console.log("wish list", wishlist.length);
 
-  const removeItem = () => {
-    console.log("click");
+  const removeWishlist = (key) => {
+    for(var i = 0; i < wishlist.length; i++) {
+      if(wishlist[i].key == key) {
+          wishlist.splice(i, 1);
+          console.log(wishlist);
+          localStorage.setItem('69wishlist',JSON.stringify(wishlist));
+          setwishlist(wishlist);
+          break;
+      }
+  }
   };
 
   return (
@@ -40,19 +48,21 @@ const Favourites = () => {
       <div>
         {flag &&
           wishlist.map((wish) => (
-            <Link
-              to={`/spp/${wish.key}`}
-              className="RjPropertiesLInk bg-default"
-            >
+            
               <div className="w-75">
                 <div class={`card mb-3 RjPropertiseCard  ${wish.size}`}>
                   <div class="row g-0">
                     <div class="col-sm-12 col-md-4 RjPropertiesImg RjPropertiesImg2">
+                    <Link
+              to={`/spp/${wish.key}`}
+              className="RjPropertiesLInk wishlistIndex bg-default"
+            >
                       <img
-                        src={imgOne}
+                        src={wish.image}
                         class="img-fluid rounded-start"
                         alt="..."
                       />
+                      </Link>
                     </div>
                     <div class="col-sm-12 col-md-8">
                       <div class="card-body">
@@ -74,8 +84,9 @@ const Favourites = () => {
                           <div className="loseButtonaction">
                             <button
                               type="button"
-                              class="btn-close"
+                              class="btn-close closeButton"
                               aria-label="Close"
+                              onClick={()=>removeWishlist(wish.key)}
                             ></button>
                           </div>
                         </div>
@@ -84,7 +95,7 @@ const Favourites = () => {
                   </div>
                 </div>
               </div>
-            </Link>
+            
           ))}
         {!flag && <h1>Wish List empty</h1>}
       </div>
