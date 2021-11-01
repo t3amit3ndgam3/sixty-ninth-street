@@ -11,6 +11,7 @@ import {
   faShareAlt,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
+import PropertyFilters from "./PropertyFilters";
 
 const PropertiesList = () => {
   const [range, setRange] = useState([0]);
@@ -23,15 +24,7 @@ const PropertiesList = () => {
   const [properties, setProperties] = useState([]);
   const [loadData, setLoadData] = useState(5);
   const [btnFlag, setBtnFlag] = useState(true);
-  const [filteredCity, setFilteredCity] = useState([]);
-  const [filteredPropertyType, setfilteredPropertyType] = useState([]);
-  const [propertyCollection, setpropertyCollection] = useState([]);
-  const [filteredPropertyCategories, setfilteredPropertyCategories] = useState(
-    []
-  );
-  // const [filters, setFilters] = useState({
-  //   type: "",
-  // });
+
   useEffect(() => {
     fetch("https://sixtyninethstreet.herokuapp.com/api/allProperty")
       .then((res) => res.json())
@@ -43,16 +36,6 @@ const PropertiesList = () => {
     window.scrollTo(0, 0);
     const cutData = propertiesAll.slice(0, loadData);
     setProperties(cutData);
-    // const cities = [...new Set(propertiesAll.map((item) => item.city))];
-    // setFilteredCity(cities);
-    // const propertyType = [
-    //   ...new Set(propertiesAll.map((item) => item.property_type)),
-    // ];
-    // setfilteredPropertyType(propertyType);
-    // const propertyCategories = [
-    //   ...new Set(propertiesAll.map((item) => item.property_for)),
-    // ];
-    // setfilteredPropertyCategories(propertyCategories);
   }, [propertiesAll]);
 
   const handleLoadMore = () => {
@@ -64,31 +47,6 @@ const PropertiesList = () => {
     setLoadData(loadData + 2);
   };
 
-  // const handleTypeChange = (type) => {
-  //   const filteredData = propertiesAll.filter((item) => {
-  //     if (item.property_type === type) {
-  //       return item;
-  //     }
-  //   });
-  //   console.log("74", filteredData);
-  //   setPropertiesAll(filteredData);
-  // };
-  // const handleInput = (field) => (event) => {
-  //   const { value } = event.target;
-  //   console.log("79", value);
-  //   setFilters({
-  //     ...filters,
-  //     [field]: value,
-  //   });
-
-  //   switch (field) {
-  //     case "type":
-  //       handleTypeChange(value);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
   return (
     <>
       <div className="container navSpace mb-5">
@@ -101,6 +59,7 @@ const PropertiesList = () => {
           </div>
           {/* Left Side Filters Start */}
           <div className="col-12 col-md-4">
+            <PropertyFilters></PropertyFilters>
             {/* Latest Listing Start */}
             <div className="LatestListing mb-5">
               <p className="fs-4 fw-bold pb-3">Latest Listing</p>

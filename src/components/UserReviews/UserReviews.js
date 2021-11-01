@@ -12,6 +12,7 @@ const UserReviews = () => {
   };
 
   const handleUserSubmit = (e) => {
+    e.preventDefault();
     fetch("https://sixtyninethstreet.herokuapp.com/api/addReview", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -20,6 +21,7 @@ const UserReviews = () => {
       .then((res) => res.json())
       .then((data) => {
         window.alert("Reviews Done");
+        e.target.reset();
       })
       .catch((error) => console.error(error));
   };

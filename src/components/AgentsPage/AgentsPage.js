@@ -72,7 +72,7 @@ const AgentsPage = () => {
                       <h5 class="card-title">{agt.agent_name}</h5>
                       <span className="RjAgentPageSpan">{agt.agent_title}</span>
                       <p class="card-text pt-2 RjAgentPageP">
-                        {agt.agent_description}
+                        {agt.agent_description.substring(0, 90)}
                       </p>
                       <div className="RjAgentsPageIconSection">
                         <div className="RjAgentsLeftIcon">

@@ -23,6 +23,8 @@ import HomeLoan from "./components/HomeLoan/HomeLoan";
 import SellDetails from "./components/Home/WorkDetails/SellDetails";
 import BuyDetails from "./components/Home/WorkDetails/BuyDetails";
 import AgentRoleDetails from "./components/Home/WorkDetails/AgentRoleDetails";
+import AgentDashboard from "./AgentDashboard/AgentDashboard";
+import PorpertiesListPage from "./Test/PorpertiesListPage";
 function App() {
   const wishlist = JSON.parse(localStorage.getItem("69wishlist") || "[]");
   if (wishlist.length === 0) {
@@ -43,7 +45,8 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/dashboard" component={UserDashboard} />
-            <Route exact path="/admin" component={AdminDashboard} />
+            <Route exact path="/adminDashboard" component={AdminDashboard} />
+            <Route exact path="/agentDashboard" component={AgentDashboard} />
             <div>
               <Navbar />
               <Route exact path="/" component={Home} />
@@ -61,6 +64,7 @@ function App() {
               <Route exact path="/loan" component={HomeLoanForm} />
               <Route exact path="/homeLoan" component={HomeLoan} />
               <Route exact path="/selldetails" component={SellDetails} />
+              <Route exact path="/test" component={PorpertiesListPage} />
               <Route
                 exact
                 path="/agentroledetails"

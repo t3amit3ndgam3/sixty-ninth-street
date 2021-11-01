@@ -108,7 +108,7 @@ const Navbar = () => {
                   <span style={{ color: "#fff", margin: "10px" }}>
                     {currentUser && currentUser.user_name}
                   </span>
-                  {currentUser && (
+                  {currentUser.user_name && (
                     <button onClick={handleLogout}>Log Out</button>
                   )}
                 </li>

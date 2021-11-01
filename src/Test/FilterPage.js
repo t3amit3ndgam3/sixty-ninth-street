@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Range } from "react-range";
 
-const PropertyFilters = () => {
+const FilterPage = () => {
   const [range, setRange] = useState([0]);
   return (
     <div className="propertyColFour">
@@ -62,4 +62,4 @@ const PropertyFilters = () => {
   );
 };
 
-export default PropertyFilters;
+export default FilterPage;

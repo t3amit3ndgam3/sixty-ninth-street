@@ -57,7 +57,13 @@
   text-transform: uppercase;
   color: #676767;
   font-family: "Lato", sans-serif;
-  padding: 5px 35px;
+  max-width: 700px;
+  margin: 0px auto;
+}
+.copyright_section img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
 }
 
 /*.............. Contact Section ...........*/
@@ -532,7 +538,7 @@ input:focus ~ .bar:after {
 }
 .home_property_card_image {
   overflow: hidden;
-  height:320px;
+  height: 320px;
 }
 .property_card:hover .home_property_card_image img {
   transform: scale(1.2);
@@ -617,11 +623,12 @@ input:focus ~ .bar:after {
   font-weight: 700;
   font-size: 15px;
 }
-.cta_btn .cta_icon {
-  margin: 10px;
-}
+/* .cta_btn .cta_icon {
+} */
 .cta_icon {
   font-size: 15px;
+  margin-right: 10px;
+  color: #0c33ce;
 }
 .more_btn button {
   display: flex;

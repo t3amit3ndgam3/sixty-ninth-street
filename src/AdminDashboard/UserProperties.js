@@ -8,11 +8,11 @@ import {
   faPlus,
   faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
-const ManageProperties = () => {
+const UserProperties = () => {
   return (
     <div>
       <div className="dashboard_property_list_header dashboard_header ">
-        <h1>My Properties Lists</h1>
+        <h1>User Properties Lists</h1>
         <button>
           <Link
             className="dashboard_property_list_header_link"
@@ -104,4 +104,4 @@ const ManageProperties = () => {
   );
 };
 
-export default ManageProperties;
+export default UserProperties;
