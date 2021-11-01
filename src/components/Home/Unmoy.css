@@ -57,7 +57,13 @@
   text-transform: uppercase;
   color: #676767;
   font-family: "Lato", sans-serif;
-  padding: 5px 35px;
+  max-width: 700px;
+  margin: 0px auto;
+}
+.copyright_section img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
 }
 
 /*.............. Contact Section ...........*/
@@ -178,16 +184,17 @@ input:focus ~ .bar:after {
 
 /* LOGIN SECTION */
 .login_wrapper {
-  background-image: url(../../images/Authentication_images/bg-white-3.png);
+  /* background-image: url(../../images/Authentication_images/bg-white-3.png); */
+  background-color: #1da0f2;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .login_card {
-  height: 600px;
-  width: 390px;
+  /* height: 700px; */
+  width: 420px;
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
@@ -196,10 +203,11 @@ input:focus ~ .bar:after {
   flex-direction: column;
   font-family: "Roboto Slab";
   font-weight: 100;
+  margin: 15px 0 15px 0;
+  padding: 20px;
 }
 .login_header {
   text-align: center;
-  height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -530,7 +538,7 @@ input:focus ~ .bar:after {
 }
 .home_property_card_image {
   overflow: hidden;
-  height:320px;
+  height: 320px;
 }
 .property_card:hover .home_property_card_image img {
   transform: scale(1.2);
@@ -615,11 +623,12 @@ input:focus ~ .bar:after {
   font-weight: 700;
   font-size: 15px;
 }
-.cta_btn .cta_icon {
-  margin: 10px;
-}
+/* .cta_btn .cta_icon {
+} */
 .cta_icon {
   font-size: 15px;
+  margin-right: 10px;
+  color: #0c33ce;
 }
 .more_btn button {
   display: flex;
@@ -651,7 +660,7 @@ input:focus ~ .bar:after {
   transition: all 0.6s ease;
 }
 .workDetails_wrapperP {
-  height: 45px;
+  height: 95px;
 }
 .workDetails_wrapper:hover {
   box-shadow: 0 10px 31px 0 #03e76233;
@@ -672,9 +681,7 @@ input:focus ~ .bar:after {
   text-align: center;
   height: 40px;
 }
-.workDetails_wrapper img {
-  height: 70px;
-}
+
 /* WorkDeatails */
 
 /******************* RESPONSIVE BREAKPOINTS ********************/

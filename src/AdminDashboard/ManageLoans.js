@@ -23,7 +23,12 @@ const ManageLoans = () => {
               <td>2021/09/28</td>
               <td>500,0000</td>
               <td className="property_list_cta_buttons">
-                <button>Status</button>
+                <form>
+                  <select>
+                    <option value="not approved">not approved</option>
+                    <option value="approved">approved</option>
+                  </select>
+                </form>
               </td>
             </tr>
           </tbody>

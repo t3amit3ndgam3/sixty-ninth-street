@@ -12,51 +12,66 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import ManageAgents from "./ManageAgents";
-import ManageProperties from "./ManageProperties";
+import UserProperties from "./UserProperties";
 import ManageLoans from "./ManageLoans";
-import MyProperties from "./MyProperties";
+import OurProperties from "./OurProperties";
+import AddAgents from "../components/AddAgents/AddAgents";
 
 const AdminDashboard = () => {
   const [inactive, setInactive] = useState(false);
 
   const [data, setData] = useState({
     password: false,
-    MyProperties: false,
-    ManageProperties: false,
+    OurProperties: false,
+    UserProperties: false,
     ManageLoans: true,
+    AddAgent: false,
   });
 
   const handleMenuBar = (menuName) => {
     if (menuName === "ManageAgents") {
       setData({
         ManageAgents: true,
-        MyProperties: false,
-        ManageProperties: false,
+        OurProperties: false,
+        UserProperties: false,
         ManageLoans: false,
+        AddAgent: false,
       });
     }
-    if (menuName === "MyProperties") {
+    if (menuName === "OurProperties") {
       setData({
         ManageAgents: false,
-        MyProperties: true,
-        ManageProperties: false,
+        OurProperties: true,
+        UserProperties: false,
         ManageLoans: false,
+        AddAgent: false,
       });
     }
     if (menuName === "ManageLoans") {
       setData({
         ManageAgents: false,
-        properties: false,
-        ManageProperties: false,
+        OurProperties: false,
+        UserProperties: false,
         ManageLoans: true,
+        AddAgent: false,
       });
     }
-    if (menuName === "ManageProperties") {
+    if (menuName === "UserProperties") {
       setData({
         ManageAgents: false,
-        MyProperties: false,
-        ManageProperties: true,
+        OurProperties: false,
+        UserProperties: true,
         ManageLoans: false,
+        AddAgent: false,
+      });
+    }
+    if (menuName === "AddAgent") {
+      setData({
+        ManageAgents: false,
+        OurProperties: false,
+        UserProperties: false,
+        ManageLoans: false,
+        AddAgent: true,
       });
     }
   };
@@ -127,24 +142,35 @@ const AdminDashboard = () => {
             </li>
             <li>
               <div
-                onClick={() => handleMenuBar("MyProperties")}
+                onClick={() => handleMenuBar("OurProperties")}
                 className="menu-item"
               >
                 <div className="menu-icon">
                   <FontAwesomeIcon icon={faListUl} />
                 </div>
-                <span>My Properties</span>
+                <span>Our Properties</span>
               </div>
             </li>
             <li>
               <div
-                onClick={() => handleMenuBar("ManageProperties")}
+                onClick={() => handleMenuBar("UserProperties")}
                 className="menu-item"
               >
                 <div className="menu-icon">
                   <FontAwesomeIcon icon={faPeopleArrows} />
                 </div>
-                <span>Manage Properties</span>
+                <span>User Properties</span>
+              </div>
+            </li>
+            <li>
+              <div
+                onClick={() => handleMenuBar("AddAgent")}
+                className="menu-item"
+              >
+                <div className="menu-icon">
+                  <FontAwesomeIcon icon={faPeopleArrows} />
+                </div>
+                <span>Add Agent</span>
               </div>
             </li>
           </ul>
@@ -154,9 +180,10 @@ const AdminDashboard = () => {
         className={`col-md-10 dashboard_panel ${inactive ? "inactive" : ""}`}
       >
         {data.ManageAgents && <ManageAgents />}
-        {data.MyProperties && <MyProperties />}
+        {data.OurProperties && <OurProperties />}
         {data.ManageLoans && <ManageLoans />}
-        {data.ManageProperties && <ManageProperties />}
+        {data.UserProperties && <UserProperties />}
+        {data.AddAgent && <AddAgents />}
       </div>
     </div>
   );

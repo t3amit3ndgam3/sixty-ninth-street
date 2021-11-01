@@ -11,7 +11,7 @@ import {
   faShareAlt,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import aliza from "../../images/aliza.png";
+import PropertyFilters from "./PropertyFilters";
 
 const PropertiesList = () => {
   const [range, setRange] = useState([0]);
@@ -33,14 +33,10 @@ const PropertiesList = () => {
       });
   }, []);
   useEffect(() => {
+    window.scrollTo(0, 0);
     const cutData = propertiesAll.slice(0, loadData);
     setProperties(cutData);
-    // console.log(properties,loadData);
   }, [propertiesAll]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const handleLoadMore = () => {
     const cutData = propertiesAll.slice(0, loadData + loadData);
@@ -50,6 +46,7 @@ const PropertiesList = () => {
     }
     setLoadData(loadData + 2);
   };
+
   return (
     <>
       <div className="container navSpace mb-5">
@@ -62,66 +59,7 @@ const PropertiesList = () => {
           </div>
           {/* Left Side Filters Start */}
           <div className="col-12 col-md-4">
-            <div className="propertyColFour">
-              <select class="TypeSelector">
-                <option selected> Select Type</option>
-                <option>Apartment</option>
-                <option>Duplex</option>
-                <option>Banglo</option>
-              </select>
-              <select class="TypeSelector">
-                <option selected>Categories</option>
-                <option>CatOne</option>
-                <option>CatTwo</option>
-                <option>CatThree</option>
-              </select>
-              <select class="TypeSelector">
-                <option selected>States</option>
-                <option>Dhaka</option>
-                <option>Chattagram</option>
-                <option>Cumilla</option>
-                <option>Bogura</option>
-              </select>
-              {/* Range */}
-              <div className="propertiesForm typesCount">
-                <Range
-                  step={20}
-                  min={0}
-                  className="propertyRange"
-                  max={1000000}
-                  values={range}
-                  onChange={(values) => setRange(values)}
-                  renderTrack={({ props, children }) => (
-                    <div
-                      {...props}
-                      style={{
-                        ...props.style,
-                        height: "6px",
-                        width: "90%",
-                        marginLeft: "20px",
-                        backgroundColor: "#ccc",
-                      }}
-                    >
-                      {children}
-                    </div>
-                  )}
-                  renderThumb={({ props }) => (
-                    <div
-                      {...props}
-                      style={{
-                        ...props.style,
-                        height: "20px",
-                        width: "20px",
-                        backgroundColor: "#999",
-                      }}
-                    />
-                  )}
-                />
-                <p className="propertiesRangeCount">
-                  $0 &nbsp;&nbsp; - to - &nbsp;&nbsp; {range}
-                </p>
-              </div>
-            </div>
+            <PropertyFilters></PropertyFilters>
             {/* Latest Listing Start */}
             <div className="LatestListing mb-5">
               <p className="fs-4 fw-bold pb-3">Latest Listing</p>
@@ -131,7 +69,11 @@ const PropertiesList = () => {
                   <>
                     <div className="LatestListingCards">
                       {/* Image */}
-                      <img src={imgOne} alt="" className="LatestListingImage" />
+                      <img
+                        src={property.image_one}
+                        alt=""
+                        className="LatestListingImage"
+                      />
                       {/* Details */}
                       <div>
                         <p className="LatestListingNames">
@@ -171,10 +113,7 @@ const PropertiesList = () => {
           {/* Properties Lists Start */}
           <div className="col-12 col-md-8 ">
             {properties.map((pro) => (
-              <Link
-                to={`/spp/${pro._id}`}
-                className="RjPropertiesLInk"
-              >
+              <Link to={`/spp/${pro._id}`} className="RjPropertiesLInk">
                 <div class="card mb-3 RjPropertiseCard">
                   <div class="row g-0">
                     <div class="col-md-4 RjPropertiesImg">
@@ -198,7 +137,8 @@ const PropertiesList = () => {
                           </span>
                           &nbsp; &nbsp; &nbsp; &nbsp;
                           <span>
-                            {objectGroup} s{pro.property_size} ft<sup>2</sup>{" "}
+                            {objectGroup}
+                            {pro.property_size} ft<sup>2</sup>{" "}
                           </span>
                         </p>
                         <p>{pro.property_description.substring(0, 60)}...</p>

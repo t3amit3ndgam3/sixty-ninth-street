@@ -223,54 +223,23 @@ const HomeLoan = () => {
       {/* EMI CALCULATOR Starts */}
       <section className="container py-5">
         <div className="row">
-          <p
-            className="
-                            col-md-12 
-                            fs-1 
-                            fw-bold 
-                            text-center"
-          >
-            EMI CALCULATOR
-          </p>
+          <p className="col-md-12 fs-1 fw-bold  text-center">EMI CALCULATOR</p>
           <div className={`${Styles.CalculatorForm} col-md-8 mb-5`}>
-            <p
-              className="
-                                fs-5 
-                                fw-bold 
-                                mb-1"
-            >
-              Loan Amount (BDT)
-            </p>
+            <p className=" fs-5 fw-bold mb-1">Loan Amount (BDT)</p>
             <input
               onChange={handleLoanAmount}
               className={Styles.CalculatorInputs}
               type="number"
               placeholder="1000"
             />
-            <p
-              className="
-                                fs-5 
-                                fw-bold 
-                                mb-1 
-                                mt-3"
-            >
-              Loan Tenure (Year)
-            </p>
+            <p className="fs-5 fw-bold mb-1 mt-3">Loan Tenure (Year)</p>
             <input
               onChange={handleYear}
               className={Styles.CalculatorInputs}
               type="number"
               placeholder="1"
             />
-            <p
-              className="
-                                fs-5 
-                                fw-bold 
-                                mb-1 
-                                mt-3"
-            >
-              Rate of Interest (%)
-            </p>
+            <p className="fs-5 fw-bold mb-1 mt-3">Rate of Interest (%)</p>
             <input
               onChange={handleLoanInterest}
               className={Styles.CalculatorInputs}
@@ -284,26 +253,14 @@ const HomeLoan = () => {
                         col-md-3`}
           >
             <div>
-              <p
-                className="
-                                    fs-3 
-                                    fw-bold 
-                                    text-center"
-              >
+              <p className="fs-3  fw-bold  text-center">
                 Equal Monthly Installment(EMI)
               </p>
-              <p
-                className="
-                                    fs-4 
-                                    fw-bold 
-                                    text-center 
-                                    text-danger"
-              >
+              <p className="fs-4 fw-bold  text-center text-danger">
                 {loanAmount} BDT
               </p>
               <button
-                className={`${Styles.CalculatorFormOutputButton} 
-                                    ${Styles.Buttons}`}
+                className={`${Styles.CalculatorFormOutputButton} ${Styles.Buttons}`}
               >
                 Apply Now
               </button>

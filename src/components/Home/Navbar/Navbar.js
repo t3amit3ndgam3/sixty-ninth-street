@@ -4,7 +4,6 @@ import "../Rabby.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 
-
 const Navbar = () => {
   const [fixedTop, setScroll] = useState(false);
   const { currentUser, logout } = useAuth();
@@ -13,84 +12,79 @@ const Navbar = () => {
   const [checkAgent, setCheckAgent] = useState(false);
 
   const [dashBoard, setDashBoard] = useState({
-    Admin:false,
+    Admin: false,
     Agent: false,
-    Normal: false
-  })
+    Normal: false,
+  });
   const [agent, setAgent] = useState([]);
   useEffect(() => {
-      fetch('https://sixtyninethstreet.herokuapp.com/api/getAgent')
-      .then(res => res.json())
-      .then( data => {
-        setAgent(data.data)
-      })
-  }, [])
+    fetch("https://sixtyninethstreet.herokuapp.com/api/getAgent")
+      .then((res) => res.json())
+      .then((data) => {
+        setAgent(data.data);
+      });
+  }, []);
 
-  useEffect(()=>{
-    agent.find(agt =>{
-      if(agt.agent_email == currentUser.user_email){
+  useEffect(() => {
+    agent.find((agt) => {
+      if (agt.agent_email == currentUser.user_email) {
         setCheckAgent(true);
       }
-      console.log(agt.agent_email , currentUser.user_email);
+      console.log(agt.agent_email, currentUser.user_email);
     });
-    if(currentUser.user_email === "teamit.endgame@gmail.com"){
+    if (currentUser.user_email == "teamit.endgame@gmail.com") {
       setDashBoard({
-        Admin:true,
+        Admin: true,
         Agent: false,
-        Normal: false
-      })
-    }else if(checkAgent){
+        Normal: false,
+      });
+    } else if (checkAgent) {
       setDashBoard({
-        Admin:true,
+        Admin: true,
         Agent: false,
-        Normal: false
-      })
-    }else if(!checkAgent){
-      agent.find(agt =>{
-        if(agt.agent_email == currentUser.user_email){
+        Normal: false,
+      });
+    } else if (!checkAgent) {
+      agent.find((agt) => {
+        if (agt.agent_email == currentUser.user_email) {
           setDashBoard({
-            Admin:true,
+            Admin: true,
             Agent: false,
-            Normal: false
-          })
+            Normal: false,
+          });
         }
       });
       setDashBoard({
-        Admin:true,
+        Admin: true,
         Agent: false,
-        Normal: false
-      })
-    }
-    else{
+        Normal: false,
+      });
+    } else {
       setDashBoard({
-        Admin:false,
+        Admin: false,
         Agent: false,
-        Normal: true
-      })
+        Normal: true,
+      });
     }
-  },[agent])
+  }, [agent]);
 
-
-
-   const  handleLogout= async()=> {
+  const handleLogout = async () => {
     setError("");
     try {
       await logout();
       localStorage.removeItem("token");
-      localStorage.removeItem('userInfo');
+      localStorage.removeItem("userInfo");
       history.push("/login");
     } catch {
       setError("Failed to log out");
     }
-    console.log('click');
-  }
+    console.log("click");
+  };
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 10);
     });
   }, []);
-
-
 
   return (
     <div className="">
@@ -161,20 +155,24 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li class="nav-item">
-                 {dashBoard.Admin && <Link
-                    to="/admin"
-                    class="nav-link navItemCustom"
-                    aria-current="page"
-                  >
-                    DASHBOARD
-                  </Link>}
-                  {dashBoard.Normal && <Link
-                    to="/dashboard"
-                    class="nav-link navItemCustom"
-                    aria-current="page"
-                  >
-                    DASHBOARD
-                  </Link>}
+                  {dashBoard.Admin && (
+                    <Link
+                      to="/admin"
+                      class="nav-link navItemCustom"
+                      aria-current="page"
+                    >
+                      DASHBOARD
+                    </Link>
+                  )}
+                  {dashBoard.Normal && (
+                    <Link
+                      to="/dashboard"
+                      class="nav-link navItemCustom"
+                      aria-current="page"
+                    >
+                      DASHBOARD
+                    </Link>
+                  )}
                 </li>
                 <li class="nav-item">
                   <Link
@@ -186,16 +184,17 @@ const Navbar = () => {
                     Log Out
                   </Link>
                 </li>
-                {currentUser && <li class="nav-item">
-                  <Link
-                    to="/"
-                    class="nav-link navItemCustom bg-info"
-                    aria-current="page"
-                  >
-                    {currentUser.user_name}
-                  </Link>
-                </li>}
-               
+                {currentUser && (
+                  <li class="nav-item">
+                    <Link
+                      to="/"
+                      class="nav-link navItemCustom bg-info"
+                      aria-current="page"
+                    >
+                      {currentUser.user_name}
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
@@ -283,9 +282,9 @@ const Navbar = () => {
                   </li>
                   <li class="nav-item">
                     {currentUser && currentUser.displayName}
-                    { currentUser && 
+                    {currentUser && (
                       <button onClick={handleLogout}>Log Out</button>
-                    } 
+                    )}
                   </li>
                 </ul>
               </div>

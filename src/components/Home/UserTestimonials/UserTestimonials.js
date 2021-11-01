@@ -50,19 +50,17 @@ var settings = {
 };
 
 const UserTestimonials = () => {
-
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch('https://sixtyninethstreet.herokuapp.com/api/getReviews')
-    .then( res => res.json())
-    .then( data => {
-      const collect = data.data.length;
-      const getData = data.data;
-      const reviewsCut =  getData.slice(collect-5, collect);
-      setReviews(reviewsCut);
-    })
-
-  }, [])
+    fetch("https://sixtyninethstreet.herokuapp.com/api/getReviews")
+      .then((res) => res.json())
+      .then((data) => {
+        const collect = data.data.length;
+        const getData = data.data;
+        const reviewsCut = getData.slice(collect - 5, collect);
+        setReviews(reviewsCut);
+      });
+  }, []);
 
   return (
     <div className="RjtestimonislsBackgoround">
@@ -75,18 +73,19 @@ const UserTestimonials = () => {
           </div>
           <div className="col-md-12 RjtestimonialsCol12">
             <Slider {...settings}>
-              {reviews && reviews.map((rew) => (
-                <div className="RjuserTestimonials">
-                  <div className="RjtestimonialsBody shadow p-3">
-                    <div className="Rjtestimonialsbody fst-italic">
-                      <p className="RjtestimonialsPTest">
-                        “{rew.user_reviews}”
-                      </p>
-                      <h6>– {rew.user_name}</h6>
+              {reviews &&
+                reviews.map((rew) => (
+                  <div className="RjuserTestimonials">
+                    <div className="RjtestimonialsBody shadow p-3">
+                      <div className="Rjtestimonialsbody fst-italic">
+                        <p className="RjtestimonialsPTest">
+                          “{rew.user_reviews}”
+                        </p>
+                        <h6>– {rew.user_name}</h6>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </Slider>
           </div>
         </div>
