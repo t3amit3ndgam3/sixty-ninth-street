@@ -49,10 +49,10 @@ const SingleAgent = () => {
 		localStorage.setItem(
 			"HireAgentInfo",
 			JSON.stringify({
-      			 agent_key:agent.key,
+				agent_key: agent.key,
 				agent_name: agent.agent_name,
 				agent_title: agent.agent_title,
-       			 fees:agent.fees,
+				fees: agent.fees,
 				agent_image: agent.agent_image,
 				agent_email: agent.agent_email,
 				user_email: userInfo.user_email,
@@ -130,9 +130,6 @@ const SingleAgent = () => {
 												<h5 class="modal-title" id="staticBackdropLabel">
 													Please Payment with Stripe
 												</h5>
-												<br />
-                      							  <p>{agent.agent_name}</p>
-                      							  <p>{agent.agent_title}</p>
 												<button
 													type="button"
 													class="btn-close"
@@ -141,6 +138,23 @@ const SingleAgent = () => {
 												></button>
 											</div>
 											<div class="modal-body">
+												<div className="hireAgentCard ">
+													<div class="card mb-3">
+														<div class="row g-0">
+															<div class="col-md-4">
+																<img class="img-fluid" src={agent.agent_image} alt="" />
+															</div>
+															<div class="col-md-8">
+																<div class="card-body">
+																	<h5 class="card-title">{agent.agent_name}</h5>
+																	<p class="card-text">
+																	{agent.agent_title}
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
 												<HireAgent />
 											</div>
 											<div class="modal-footer">

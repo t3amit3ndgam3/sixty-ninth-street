@@ -7,9 +7,7 @@ import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 const Properties = () => {
 
-  const [properties, setProperties] = useState([]);
-  
-  console.log(properties);
+  const [properties, setProperties] = useState([]); 
   useEffect(() => {
     fetch('https://sixtyninethstreet.herokuapp.com/api/allProperty')
     .then( res => res.json())
