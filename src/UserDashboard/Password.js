@@ -28,7 +28,7 @@ const Password = () => {
       <div className="change_password_wrapper">
         <div className="change_password_content">
           <form onSubmit={handlePasswordUpdate}>
-            {/* <h5>Password Change for: {currentUser.displayName}</h5> */}
+            <h5>Password Change for: {currentUser.displayName}</h5>
             <input
               placeholder="Enter New Password"
               type="text"
@@ -42,12 +42,6 @@ const Password = () => {
               ref={newPasswordRef}
             />
             <br />
-            {/* <input
-            onBlur={handlePasswordBlur}
-            placeholder="Retype New Password"
-            type="text"
-            required
-          /> */}
             <button type="submit">Update</button>
           </form>
         </div>

@@ -220,100 +220,58 @@ const HomeLoan = () => {
 			</section>
 			{/* Loan Details Switch ends */}
 
-			{/* EMI CALCULATOR Starts */}
-			<section className="container py-5">
-				<div className="row">
-					<p
-						className="
-                            col-md-12 
-                            fs-1 
-                            fw-bold 
-                            text-center"
-					>
-						EMI CALCULATOR
-					</p>
-					<div className={`${Styles.CalculatorForm} col-md-8 mb-5`}>
-						<p
-							className="
-                                fs-5 
-                                fw-bold 
-                                mb-1"
-						>
-							Loan Amount (BDT)
-						</p>
-						<input
-							onChange={handleLoanAmount}
-							className={Styles.CalculatorInputs}
-							type="number"
-							placeholder="1000"
-						/>
-						<p
-							className="
-                                fs-5 
-                                fw-bold 
-                                mb-1 
-                                mt-3"
-						>
-							Loan Tenure (Year)
-						</p>
-						<input
-							onChange={handleYear}
-							className={Styles.CalculatorInputs}
-							type="number"
-							placeholder="1"
-						/>
-						<p
-							className="
-                                fs-5 
-                                fw-bold 
-                                mb-1 
-                                mt-3"
-						>
-							Rate of Interest (%)
-						</p>
-						<input
-							onChange={handleLoanInterest}
-							className={Styles.CalculatorInputs}
-							type="number"
-							placeholder="10"
-						/>
-					</div>
-					<div className="col-md-1"></div>
-					<div
-						className={`${Styles.CalculatorFormOutput} 
+      {/* EMI CALCULATOR Starts */}
+      <section className="container py-5">
+        <div className="row">
+          <p className="col-md-12 fs-1 fw-bold  text-center">EMI CALCULATOR</p>
+          <div className={`${Styles.CalculatorForm} col-md-8 mb-5`}>
+            <p className=" fs-5 fw-bold mb-1">Loan Amount (BDT)</p>
+            <input
+              onChange={handleLoanAmount}
+              className={Styles.CalculatorInputs}
+              type="number"
+              placeholder="1000"
+            />
+            <p className="fs-5 fw-bold mb-1 mt-3">Loan Tenure (Year)</p>
+            <input
+              onChange={handleYear}
+              className={Styles.CalculatorInputs}
+              type="number"
+              placeholder="1"
+            />
+            <p className="fs-5 fw-bold mb-1 mt-3">Rate of Interest (%)</p>
+            <input
+              onChange={handleLoanInterest}
+              className={Styles.CalculatorInputs}
+              type="number"
+              placeholder="10"
+            />
+          </div>
+          <div className="col-md-1"></div>
+          <div
+            className={`${Styles.CalculatorFormOutput} 
                         col-md-3`}
-					>
-						<div>
-							<p
-								className="
-                                    fs-3 
-                                    fw-bold 
-                                    text-center"
-							>
-								Equal Monthly Installment(EMI)
-							</p>
-							<p
-								className="
-                                    fs-4 
-                                    fw-bold 
-                                    text-center 
-                                    text-danger"
-							>
-								{loanAmount} BDT
-							</p>
-							<button
-								className={`${Styles.CalculatorFormOutputButton} 
-                                    ${Styles.Buttons}`}
-							>
-								Apply Now
-							</button>
-						</div>
-					</div>
-				</div>
-			</section>
-			{/* EMI CALCULATOR Ends */}
-		</div>
-	);
+          >
+            <div>
+              <p className="fs-3  fw-bold  text-center">
+                Equal Monthly Installment(EMI)
+              </p>
+              <p className="fs-4 fw-bold  text-center text-danger">
+                {loanAmount} BDT
+              </p>
+              <button
+                className={`${Styles.CalculatorFormOutputButton} ${Styles.Buttons}`}
+              >
+                Apply Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* EMI CALCULATOR Ends */}
+    </div>
+  );
+
 };
 
 export default HomeLoan;

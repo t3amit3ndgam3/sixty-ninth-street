@@ -1,25 +1,31 @@
 import React from "react";
-import Property from "../../../images/Property.png";
-import BuyProperty from "../../../images/BuyProperty.png";
-import MakeInvestment from "../../../images/MakeInvestment.png";
 import WorkDetails from "../WorkDetails/WorkDetails";
+import logo1 from "../../../images/WorkDetailLogos/hub1.png";
+import logo2 from "../../../images/WorkDetailLogos/hub 2.png";
+import logo3 from "../../../images/WorkDetailLogos/hub 3.png";
 
 const worksData = [
   {
-    name: "Free access to our listings search",
-    image: Property,
-    description: "You can search for your dream homes just in a few clicks",
+    name: "See Role of a Listing Agent",
+    image: logo2,
+    description:
+      "A great real estate agent for a seller is a jack of all trades. They will help you prepare your home for sale, set a price, determine a selling strategy and negotiate with buyers. ",
+    to: "/agentroledetails",
   },
+
   {
     name: "Buy Property",
-    image: BuyProperty,
-    description: "Buy your sweet home with no worries",
+    image: logo1,
+    description:
+      "From finding the right agent to getting your keys, learn the basics of how to buy a home.",
+    to: "/buydetails",
   },
   {
-    name: "Save money and time with us",
-    image: MakeInvestment,
+    name: "How to Get Your House Ready to Sell",
+    image: logo3,
     description:
-      "You can buy with the correct price in the market and save time using our web",
+      "Ultimately, there are several steps that outlines the essential steps and considerations to prepare for selling your property.",
+    to: "/selldetails",
   },
 ];
 const Work = () => {

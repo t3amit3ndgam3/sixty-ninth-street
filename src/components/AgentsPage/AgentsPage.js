@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import agentImg from "../../images/agentOne.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhoneSquare } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -22,10 +21,10 @@ const AgentsPage = () => {
   const [agent, setAgent] = useState([]);
 
   useEffect(() => {
-    fetch('https://sixtyninethstreet.herokuapp.com/api/getAgent')
-    .then( res => res.json())
-    .then( data => setAgent(data.data));
-  }, [])
+    fetch("https://sixtyninethstreet.herokuapp.com/api/getAgent")
+      .then((res) => res.json())
+      .then((data) => setAgent(data.data));
+  }, []);
 
   return (
     <div className="mb-5 navSpace">
@@ -70,9 +69,7 @@ const AgentsPage = () => {
                     />
                     <div class="card-body">
                       <h5 class="card-title">{agt.agent_name}</h5>
-                      <span className="RjAgentPageSpan">
-                        {agt.agent_title}
-                      </span>
+                      <span className="RjAgentPageSpan">{agt.agent_title}</span>
                       <p class="card-text pt-2 RjAgentPageP">
                         {agt.agent_description.substring(0, 50)} .......
                       </p>

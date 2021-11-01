@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./UserDashboard";
 const Requirement = () => {
   const [inputData, setInputData] = useState({});
   // console.log(inputData);
@@ -17,7 +17,6 @@ const Requirement = () => {
       <div className="dashboard_header">
         <h1>Add New Requirements</h1>
       </div>
-
       <form onSubmit={handleSubmit}>
         <div className="requirement_header">
           <h5>Property I'm looking for</h5>
@@ -32,6 +31,7 @@ const Requirement = () => {
                 id="select_type"
                 onBlur={handleInputData}
               >
+                <option selected>Please Select</option>
                 <option value="rent">Rent</option>
                 <option value="buy">Buy</option>
               </select>
@@ -40,6 +40,7 @@ const Requirement = () => {
               <label htmlFor="select_type">Property Type:</label>
               <br />
               <select name="property_type" onBlur={handleInputData} required>
+                <option selected>Please Select</option>
                 <option value="flat">Apartment</option>
                 <option value="duplex">Duplex Home</option>
                 <option value="showroom">Showroom</option>
@@ -51,6 +52,7 @@ const Requirement = () => {
               <label htmlFor="select_type">City:</label>
               <br />
               <select name="city" id="" onBlur={handleInputData}>
+                <option selected>Please Select</option>
                 <option value="dhaka">Dhaka</option>
                 <option value="chittagong">Chittagong</option>
                 <option value="khulna">Khulna</option>
@@ -76,24 +78,37 @@ const Requirement = () => {
             <div className="select_wrappers">
               <label htmlFor="">Name:</label>
               <br />
-              <input type="text" name="name" onBlur={handleInputData} />
+
+              <input
+                type="text"
+                placeholder="Enter your Name"
+                name="name"
+                onBlur={handleInputData}
+              />
             </div>
 
             <div className="select_wrappers">
               <label htmlFor="">Email:</label>
               <br />
-              <input type="email" name="email" onBlur={handleInputData} />
+              <input
+                type="email"
+                placeholder="Enter your Email"
+                name="email"
+                onBlur={handleInputData}
+              />
             </div>
             <div className="select_wrappers">
-              <label htmlFor="">Phone:</label>
+              <label htmlFor="">Mobile no:</label>
               <br />
               <input type="number" name="phone" onBlur={handleInputData} />
             </div>
+            <div className="requirement_button">
+              <button className="wpresidence_button" type="submit">
+                Submit
+              </button>
+            </div>
           </div>
         </div>
-        <button className="wpresidence_button" type="submit">
-          Submit
-        </button>
       </form>
     </div>
   );

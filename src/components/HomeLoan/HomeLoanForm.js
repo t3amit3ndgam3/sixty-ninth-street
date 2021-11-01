@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
 import "./HomeLoan.css";
 const HomeLoanForm = () => {
   const [textData, setTextData] = useState({});
@@ -10,12 +9,17 @@ const HomeLoanForm = () => {
   const handleTextData = (e) => {
     const newText = { ...textData };
     newText[e.target.name] = e.target.value;
+    newText["process"] = "processing";
     setTextData(newText);
   };
   const handleFileData = (e) => {
     const newFile = { ...fileData };
     newFile[e.target.name] = e.target.files[0];
     setFileData(newFile);
+  };
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    console.log(textData);
   };
 
   return (
@@ -25,10 +29,9 @@ const HomeLoanForm = () => {
           <h1>Home Loan Application Form</h1>
         </div>
       </div>
-      <ToastContainer />
       <div className="homeloan_wrapper">
         <div>
-          <form onSubmit="">
+          <form onSubmit={handleSubmitForm}>
             <div className="homeloan_input_section">
               <div className="homeloan_label_wrapper">
                 <h6>Full Name (পুরো নাম)</h6>
@@ -117,8 +120,9 @@ const HomeLoanForm = () => {
                 <div className="homeloan_input_wrapper">
                   <select
                     required
-                    onBlur={handleTextData}
+                    onChange={handleTextData}
                     className="homeloan_select_box"
+                    name="city"
                   >
                     <option selected>Choose One</option>
                     <option value="dhaka">Dhaka</option>
@@ -243,8 +247,9 @@ const HomeLoanForm = () => {
                 <div className="homeloan_input_wrapper">
                   <select
                     required
-                    onBlur={handleTextData}
+                    onChange={handleTextData}
                     className="homeloan_select_box"
+                    name="loan_exist"
                   >
                     <option selected>Select One</option>
                     <option value="yes">Yes</option>
