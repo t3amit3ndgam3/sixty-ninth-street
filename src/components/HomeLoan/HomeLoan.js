@@ -4,29 +4,31 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const HomeLoan = () => {
-  const [loanAmount, setLoanAmount] = useState(0);
-  const [loanYear, setLoanYear] = useState(0);
-  const [loanInterest, setLoanInterst] = useState(0);
+  const [Pamount, setpAmount] = useState(0);
+  const [interest, setInterest] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const intr = interest / 1200;
+  const emi = duration
+    ? Math.round((Pamount * intr) / (1 - Math.pow(1 / (1 + intr), duration)))
+    : 0;
+  const totalAmount = duration * emi;
+  var TotalAmountOfCredit = duration
+    ? Math.round((emi / intr) * (1 - Math.pow(1 / (1 + intr), -duration)))
+    : 0;
 
-  const handleLoanAmount = (e) => {
-    const monthlyEMI = e.target.value / loanYear;
-    const loanYears = loanInterest / 100;
-    const EMIInterest = monthlyEMI * loanYears;
-    const totalEMI = monthlyEMI + EMIInterest;
-    const finalEMI = Math.round(totalEMI);
-    setLoanAmount(finalEMI);
+  const TotalAmountOfInterest = Math.round(totalAmount - TotalAmountOfCredit);
+  const handleAmountChange = (e) => {
+    setpAmount(e.target.value);
+    console.log(e.target.value);
   };
-
-  const handleYear = (e) => {
-    const loanyears = e.target.value * 12;
-    setLoanYear(loanyears);
+  const handleInterestChange = (e) => {
+    setInterest(e.target.value);
+    console.log(e.target.value);
   };
-
-  const handleLoanInterest = (e) => {
-    const loanInterests = e.target.value;
-    setLoanInterst(loanInterests);
+  const handleMonthsChange = (e) => {
+    setDuration(e.target.value);
+    console.log(e.target.value);
   };
-
   return (
     <div className={Styles.HomeLoan}>
       {/* SVG */}
@@ -223,28 +225,31 @@ const HomeLoan = () => {
       {/* EMI CALCULATOR Starts */}
       <section className="container py-5">
         <div className="row">
-          <p className="col-md-12 fs-1 fw-bold  text-center">EMI CALCULATOR</p>
-          <div className={`${Styles.CalculatorForm} col-md-8 mb-5`}>
+          <p className="col-md-12 fs-1 fw-bold text-center">EMI CALCULATOR</p>
+          <div className="col-md-8 mb-5">
             <p className=" fs-5 fw-bold mb-1">Loan Amount (BDT)</p>
             <input
-              onChange={handleLoanAmount}
+              onChange={handleAmountChange}
               className={Styles.CalculatorInputs}
               type="number"
-              placeholder="1000"
+              placeholder="1000 BDT"
+              defaultValue="1000"
             />
-            <p className="fs-5 fw-bold mb-1 mt-3">Loan Tenure (Year)</p>
+            <p className="fs-5 fw-bold mb-1 mt-3">Loan Tenure(in months)</p>
             <input
-              onChange={handleYear}
+              onChange={handleMonthsChange}
               className={Styles.CalculatorInputs}
               type="number"
-              placeholder="1"
+              placeholder="12 months"
+              defaultValue="12"
             />
             <p className="fs-5 fw-bold mb-1 mt-3">Rate of Interest (%)</p>
             <input
-              onChange={handleLoanInterest}
+              onChange={handleInterestChange}
               className={Styles.CalculatorInputs}
               type="number"
-              placeholder="10"
+              placeholder="10%"
+              defaultValue="10"
             />
           </div>
           <div className="col-md-1"></div>
@@ -256,8 +261,8 @@ const HomeLoan = () => {
               <p className="fs-3  fw-bold  text-center">
                 Equal Monthly Installment(EMI)
               </p>
-              <p className="fs-4 fw-bold  text-center text-danger">
-                {loanAmount} BDT
+              <p className="fs-4 fw-bold text-center text-danger">
+                <strong>&#2547;</strong> {emi ? emi : 0}
               </p>
               <button
                 className={`${Styles.CalculatorFormOutputButton} ${Styles.Buttons}`}

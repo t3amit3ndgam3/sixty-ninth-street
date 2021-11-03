@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Rabby.css";
-import dream from "../../../images/DreamHome/dream.jpg";
+import dream from "../../../images/DreamHome/dream_home.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faHome, faShieldAlt } from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";

@@ -3,19 +3,21 @@ import { Link } from "react-router-dom";
 import "../Rabby.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
+// import Dashboard from "./../../../UserDashboard/Dashboard";
 
 const Navbar = () => {
   const [fixedTop, setScroll] = useState(false);
   const { currentUser, logout } = useAuth();
   const [error, setError] = useState("");
   const history = useHistory();
-  const [checkAgent, setCheckAgent] = useState(false);
+  const [checkNormalUser, setCheckNormalUser] = useState(false);
 
   const [dashBoard, setDashBoard] = useState({
     Admin: false,
     Agent: false,
     Normal: false,
   });
+
   const [agent, setAgent] = useState([]);
   useEffect(() => {
     fetch("https://sixtyninethstreet.herokuapp.com/api/getAgent")
@@ -26,46 +28,37 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    agent.find((agt) => {
-      if (agt.agent_email == currentUser.user_email) {
-        setCheckAgent(true);
-      }
-      console.log(agt.agent_email, currentUser.user_email);
-    });
-    if (currentUser.user_email == "teamit.endgame@gmail.com") {
-      setDashBoard({
-        Admin: true,
-        Agent: false,
-        Normal: false,
-      });
-    } else if (checkAgent) {
-      setDashBoard({
-        Admin: true,
-        Agent: false,
-        Normal: false,
-      });
-    } else if (!checkAgent) {
-      agent.find((agt) => {
-        if (agt.agent_email == currentUser.user_email) {
-          setDashBoard({
-            Admin: true,
-            Agent: false,
-            Normal: false,
-          });
-        }
-      });
-      setDashBoard({
-        Admin: true,
-        Agent: false,
-        Normal: false,
-      });
-    } else {
+    if (checkNormalUser) {
       setDashBoard({
         Admin: false,
         Agent: false,
         Normal: true,
       });
     }
+    agent.find((agt) => {
+      if (agt.agent_email == currentUser.user_email) {
+        setDashBoard({
+          Admin: false,
+          Agent: true,
+          Normal: false,
+        });
+        console.log("agent is in");
+      } else {
+        setCheckNormalUser(true);
+      }
+    });
+
+    if (currentUser.user_email === "teamit.endgame@gmail.com") {
+      setDashBoard({
+        Admin: true,
+        Agent: false,
+        Normal: false,
+      });
+    } else {
+      setCheckNormalUser(true);
+    }
+
+    console.log(currentUser.user_email, dashBoard);
   }, [agent]);
 
   const handleLogout = async () => {
@@ -157,7 +150,16 @@ const Navbar = () => {
                 <li class="nav-item">
                   {dashBoard.Admin && (
                     <Link
-                      to="/admin"
+                      to="/adminDashboard"
+                      class="nav-link navItemCustom"
+                      aria-current="page"
+                    >
+                      DASHBOARD
+                    </Link>
+                  )}
+                  {dashBoard.Agent && (
+                    <Link
+                      to="/agentDashboard"
                       class="nav-link navItemCustom"
                       aria-current="page"
                     >
@@ -175,16 +177,18 @@ const Navbar = () => {
                   )}
                 </li>
                 <li class="nav-item">
-                  <Link
-                    to="/addAgents"
-                    class="nav-link navItemCustom"
-                    aria-current="page"
-                    onClick={handleLogout}
-                  >
-                    Log Out
-                  </Link>
+                  {currentUser.user_name && (
+                    <Link
+                      to="/addAgents"
+                      class="nav-link navItemCustom"
+                      aria-current="page"
+                      onClick={handleLogout}
+                    >
+                      Log Out
+                    </Link>
+                  )}
                 </li>
-                {currentUser && (
+                {currentUser.user_name && (
                   <li class="nav-item">
                     <Link
                       to="/"

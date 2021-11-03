@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 import agentbd1 from "../../images/agents/agent-bg1.jpg";
 
 const AgentsPage = () => {
-  const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const facebook = <FontAwesomeIcon icon={faFacebookSquare} />;
   const email = <FontAwesomeIcon icon={faEnvelope} />;
   const linkend = <FontAwesomeIcon icon={faLinkedin} />;
