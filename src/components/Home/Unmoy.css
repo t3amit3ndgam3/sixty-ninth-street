@@ -541,8 +541,12 @@ input:focus ~ .bar:after {
   overflow: hidden;
   height: 320px;
 }
+.home_property_card_image img{
+  overflow: hidden;
+  height:320px;
+}
 .property_card:hover .home_property_card_image img {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: ease-in-out 0.5s all;
 }
 .tag_wrapper {
@@ -660,8 +664,11 @@ input:focus ~ .bar:after {
   border-bottom: 1px solid #ffffff;
   transition: all 0.6s ease;
 }
+.workDetails_wrapper img{
+  height:100px;
+}
 .workDetails_wrapperP {
-  height: 95px;
+  height: 100px;
 }
 .workDetails_wrapper:hover {
   box-shadow: 0 10px 31px 0 #03e76233;
@@ -680,7 +687,7 @@ input:focus ~ .bar:after {
   font-size: 25px;
   line-height: 1.2em;
   text-align: center;
-  height: 40px;
+  height: 50px;
 }
 
 /* WorkDeatails */

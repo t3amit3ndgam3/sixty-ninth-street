@@ -6,7 +6,7 @@ const AddAgents = () => {
   const [agentInfo, setAgentInfo] = useState({});
   const [AgentImg, setAgentImg] = useState({});
   const [agent_image, setAgentImgUrl] = useState();
-  console.log(AgentImg);
+  console.log(agentInfo);
   const handleAgentForm = (e) => {
     const data = { ...agentInfo };
     data[e.target.name] = e.target.value;
@@ -61,8 +61,8 @@ const AddAgents = () => {
   }, 5000);
 
   return (
-    <div className="navSpace">
-      <div className="container mt-5">
+    <div className="me-5">
+      <div className="container ">
         <form onSubmit={handleAgentSubmit} className="row add_agent_wrapper">
           <div className="col-md-12">
             <h1>Add Trusted Agents</h1>

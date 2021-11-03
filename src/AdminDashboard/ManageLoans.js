@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./AdminDashboard.css";
 
 const ManageLoans = () => {
+  const [loan, setLoan] = useState([]);
+  const [operationUpdate, setOperation] = useState();
+  console.log(loan);
+  useEffect(() => {
+    fetch("https://sixtyninethstreet.herokuapp.com/api/getAllLoan")
+    .then( res => res.json()
+    
+    .then( data => setLoan(data.data)))
+  }, [operationUpdate])
+
+  const handleApproved = (id) => {
+    fetch(`https://sixtyninethstreet.herokuapp.com/api/updateStatus/${id}`,{
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+    })
+    .then( res => res.json()
+    .then( data => setOperation(data)))
+  }
+
+  const handleDelete = (id) => {
+    fetch(`https://sixtyninethstreet.herokuapp.com/api/delete/${id}`, {
+			method: "DELETE",
+		})	
+    .then((res) => res.json())
+    .then((data) => {
+      document.getElementById(id).style.display = "none";
+    });
+  }
+
   return (
     <div>
       <div className="admin_dashboard_header">
@@ -15,22 +44,21 @@ const ManageLoans = () => {
               <th>Applied Date</th>
               <th>Amount</th>
               <th>Status</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Brie Larson</td>
-              <td>2021/09/28</td>
-              <td>500,0000</td>
+            {loan && loan.map(ln =>(
+            <tr id={ln._id}>
+              <td>{ln.name}</td>
+              <td>{ln.createdAt}</td>
+              <td>{ln.loan_amount}</td>
+              <td>{ln.loan_status}</td>
               <td className="property_list_cta_buttons">
-                <form>
-                  <select>
-                    <option value="not approved">not approved</option>
-                    <option value="approved">approved</option>
-                  </select>
-                </form>
+                    <button onClick={()=>handleApproved(ln._id)}>approved</button>
+                    <button onClick={()=>handleDelete(ln._id)} >delete</button>
               </td>
-            </tr>
+            </tr>))}
           </tbody>
         </table>
       </div>

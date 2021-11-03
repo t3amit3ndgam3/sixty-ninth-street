@@ -18,6 +18,7 @@ import MyPropertiesList from "./MyPropertiesList";
 import { Link } from "react-router-dom";
 import LoanStatus from "./LoanStatus";
 import { faStaylinked } from "@fortawesome/free-brands-svg-icons";
+import Client from "./Client";
 
 const UserDashboard = () => {
   const [inactive, setInactive] = useState(false);
@@ -29,6 +30,7 @@ const UserDashboard = () => {
     requirement: false,
     favourites: false,
     loan_status: false,
+    client: false,
   });
 
   const handleMenuBar = (menuName) => {
@@ -40,6 +42,7 @@ const UserDashboard = () => {
         requirement: false,
         favourites: false,
         loan_status: false,
+        client: false,
       });
     }
     if (menuName === "properties") {
@@ -50,6 +53,7 @@ const UserDashboard = () => {
         requirement: false,
         favourites: false,
         loan_status: false,
+        client: false,
       });
     }
     if (menuName === "dashboard") {
@@ -60,6 +64,7 @@ const UserDashboard = () => {
         requirement: false,
         favourites: false,
         loan_status: false,
+        client: false,
       });
     }
     if (menuName === "favourites") {
@@ -70,6 +75,7 @@ const UserDashboard = () => {
         requirement: false,
         favourites: true,
         loan_status: false,
+        client: false,
       });
     }
     if (menuName === "requirement") {
@@ -80,6 +86,7 @@ const UserDashboard = () => {
         requirement: true,
         favourites: false,
         loan_status: false,
+        client: false,
       });
     }
     if (menuName === "loan_status") {
@@ -90,7 +97,19 @@ const UserDashboard = () => {
         requirement: false,
         favourites: false,
         loan_status: true,
-      });
+        client: false,
+      })
+    };
+      if (menuName === "client") {
+        setData({
+          password: false,
+          properties: false,
+          dashboard: false,
+          requirement: false,
+          favourites: false,
+          loan_status: false,
+          client: true,
+        });
     }
   };
 
@@ -145,6 +164,17 @@ const UserDashboard = () => {
                   <FontAwesomeIcon icon={faFileAlt} />
                 </div>
                 <span>Dashboard</span>
+              </div>
+            </li>
+            <li>
+              <div
+                onClick={() => handleMenuBar("client")}
+                className="menu-item"
+              >
+                <div className="menu-icon">
+                  <FontAwesomeIcon icon={faBookmark} />
+                </div>
+                <span>My Agent</span>
               </div>
             </li>
             <li>
@@ -214,6 +244,7 @@ const UserDashboard = () => {
         {data.dashboard && <Dashboard />}
         {data.requirement && <Requirement />}
         {data.loan_status && <LoanStatus />}
+        {data.client && <Client/>}
       </div>
     </div>
   );
