@@ -6,6 +6,7 @@ const HomeLoanForm = () => {
   const [user_Info, setUser_Info] = useState({});
   const [message, setMessage] = useState("");
   const [alertMessage, setAlert] = useState("");
+  const { user_email } = user_Info;
   useEffect(() => {
     window.scrollTo(0, 0);
     const getUserInfo = JSON.parse(
@@ -17,6 +18,7 @@ const HomeLoanForm = () => {
   const handleTextData = (e) => {
     const newText = { ...textData };
     newText[e.target.name] = e.target.value;
+    newText["status"] = "processing";
     setTextData(newText);
   };
   const handleFileData = (e) => {
@@ -42,7 +44,7 @@ const HomeLoanForm = () => {
   };
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    const loanData = { ...textData, ...fileData, ...user_Info };
+    const loanData = { ...textData, ...fileData, user_email };
     console.log(loanData);
     fetch("https://sixtyninethstreet.herokuapp.com/api/loanReq", {
       method: "POST",
@@ -53,6 +55,7 @@ const HomeLoanForm = () => {
       .then((data) => {
         setMessage("Home loan request added successfully");
         setAlert(data.message);
+        alert(data.message);
       })
       .catch((error) => {
         console.error(error.message);
