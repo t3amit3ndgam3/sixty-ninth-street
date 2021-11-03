@@ -2,8 +2,10 @@ import Styles from "./HomeLoan.module.css";
 import homeloanbg from "../../images/homeloanimage.jpg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 const HomeLoan = () => {
+  const {currentUser} = useAuth();
   const [Pamount, setpAmount] = useState(0);
   const [interest, setInterest] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -53,9 +55,12 @@ const HomeLoan = () => {
           Financing your next home starts here
         </p>
         <img className={Styles.BannerImage} src={homeloanbg} alt="homeloanbg" />
-        <Link className={Styles.BannerButtonLinks} to="/login">
-          <button className={Styles.BannerButtons}>Account Login</button>
-        </Link>
+        {!currentUser.user_name && (
+          <Link className={Styles.BannerButtonLinks} to="/login">
+            <button className={Styles.BannerButtons}>Account Login</button>
+          </Link>
+        )}
+
         <Link className={Styles.BannerButtonLinks} to="/loan">
           <button className={Styles.BannerButtons}>Apply For Loan</button>
         </Link>
