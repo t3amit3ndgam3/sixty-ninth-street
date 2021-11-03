@@ -61,9 +61,9 @@ const HomeLoanForm = () => {
 				console.error(error.message);
 			});
 	};
-	// setTimeout(function () {
-	// 	setAlert("");
-	// }, 5000);
+	setTimeout(function () {
+		setAlert("");
+	}, 5000);
 
 	return (
 		<div className="homeloan_section navSpace">

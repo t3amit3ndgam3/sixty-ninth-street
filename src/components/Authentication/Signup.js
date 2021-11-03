@@ -49,7 +49,7 @@ const Signup = () => {
     history.push("/");
   };
   return (
-    <div className="login_wrapper navSpace">
+    <div className="login_wrapper">
       <div className="login_card ">
         <div className="signup_header">
           <h4>

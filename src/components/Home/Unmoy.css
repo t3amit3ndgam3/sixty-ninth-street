@@ -191,6 +191,7 @@ input:focus ~ .bar:after {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 .login_card {
   /* height: 700px; */
@@ -244,7 +245,7 @@ input:focus ~ .bar:after {
 
 .social_wrapper {
   text-align: center;
-  margin-top: 5px;
+  margin-top: 30px;
   padding-bottom: 5px;
 }
 .social_wrapper p {
@@ -639,7 +640,7 @@ input:focus ~ .bar:after {
   justify-content: center;
   align-items: center;
   padding: 8px 34px;
-  margin: 0 auto;
+  margin: 20px auto;
   background-color: #10257f;
   color: #fff;
   font-size: 15px;

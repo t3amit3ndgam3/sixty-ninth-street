@@ -22,6 +22,7 @@ const SinglePageProperty = () => {
   const form = useRef();
   const { id } = useParams([]);
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetch(`https://sixtyninethstreet.herokuapp.com/api/findProperties/${id}`)
       .then((res) => res.json())
       .then((data) => setSingleProperties(data.data[0]));

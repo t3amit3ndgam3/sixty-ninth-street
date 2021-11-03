@@ -8,20 +8,32 @@
 body {
   background: #fafafc;
 }
-/* background-color: #fafafc
-  button background color: #10257f
-  button background hover color: #0C33CE
-  Primary font : Roboto
-  primary font weight : 600
-  Secondary font : Roboto Slab
-  secondary font weight : 400
-  heading color : #222222
-  */
+.navSpace {
+  padding-top: 70px;
+}
 
-/* useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []); */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5e5e5e;
+  border-radius: 10px;
+  border-right: 2px white solid;
+  background-clip: padding-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a5a5a5;
+}
 .p_heading {
   color: #222222;
 }
@@ -42,6 +54,17 @@ body {
   line-height: 1.2em;
   text-align: center;
 }
-.navSpace {
-  padding-top: 70px;
+.route_links {
+  text-decoration: none;
 }
+/* background-color: #fafafc
+  button background color: #10257f
+  button background hover color: #0C33CE
+  Primary font : Roboto
+  primary font weight : 600
+  Secondary font : Roboto Slab
+  secondary font weight : 400
+  heading color : #222222
+   background: #008dff
+  */
+/* window.scrollTo(0, 0); */

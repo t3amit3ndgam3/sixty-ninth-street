@@ -9,7 +9,7 @@ export default function PrivateRoute({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={(props) => {
-        return currentUser ? (
+        return currentUser.user_email ? (
           <Component {...props} />
         ) : (
           <Redirect to="/login" />

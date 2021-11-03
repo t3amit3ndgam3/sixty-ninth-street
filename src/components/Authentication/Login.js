@@ -40,7 +40,7 @@ const Login = () => {
     history.push("/");
   };
   return (
-    <div className="login_wrapper navSpace">
+    <div className="login_wrapper">
       <div className="login_card">
         <div className="login_header">
           <h4>
@@ -58,6 +58,7 @@ const Login = () => {
               name="email"
               type="text"
               required
+              autoComplete="off"
             />
             <span class="bar"></span>
             <label className="contact_label">Email</label>
