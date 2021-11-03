@@ -1,27 +1,65 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./HomeLoan.css";
 const HomeLoanForm = () => {
   const [textData, setTextData] = useState({});
   const [fileData, setFileData] = useState({});
-  // console.log(textData.price_is);
-  // console.log(fileData);
+  const [user_Info, setUser_Info] = useState({});
+  const [message, setMessage] = useState("");
+  const [alertMessage, setAlert] = useState("");
+  useEffect(() => {
+    const getUserInfo = JSON.parse(
+      localStorage.getItem("userInfo" || "not found")
+    );
+    setUser_Info(getUserInfo);
+  }, []);
 
   const handleTextData = (e) => {
     const newText = { ...textData };
     newText[e.target.name] = e.target.value;
-    newText["process"] = "processing";
     setTextData(newText);
   };
   const handleFileData = (e) => {
     const newFile = { ...fileData };
-    newFile[e.target.name] = e.target.files[0];
-    setFileData(newFile);
+    const formData = new FormData();
+    formData.append("file", e.target.files[0]);
+    formData.append("upload_preset", "cubeit");
+    formData.append("cloud_name", "cubeitstoreimage");
+
+    fetch("https://api.cloudinary.com/v1_1/cubeitstoreimage/image/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        newFile[e.target.name] = data.url;
+        setFileData(newFile);
+        console.log("image upload done");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    console.log(textData);
+    const loanData = { ...textData, ...fileData, ...user_Info };
+    console.log(loanData);
+    fetch("https://sixtyninethstreet.herokuapp.com/api/loanReq", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(loanData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setMessage("Home loan request added successfully");
+        setAlert(data.message);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   };
-
+  setTimeout(function () {
+    setAlert("");
+  }, 5000);
   return (
     <div className="homeloan_section navSpace">
       <div className="homeloan_header">
@@ -75,7 +113,7 @@ const HomeLoanForm = () => {
                     onBlur={handleTextData}
                     className="homeloan_input_field"
                     type="text"
-                    name="address"
+                    name="area"
                   />
                 </div>
               </div>
@@ -124,7 +162,7 @@ const HomeLoanForm = () => {
                     className="homeloan_select_box"
                     name="city"
                   >
-                    <option selected>Choose One</option>
+                    <option value=" ">Choose One</option>
                     <option value="dhaka">Dhaka</option>
                     <option value="chittagong">Chittagong</option>
                     <option value="khulna">Khulna</option>
@@ -231,7 +269,7 @@ const HomeLoanForm = () => {
                     onBlur={handleTextData}
                     className="homeloan_input_field"
                     type="number"
-                    name="loan_validity"
+                    name="loan_tenure"
                   />
                 </div>
               </div>
@@ -251,7 +289,7 @@ const HomeLoanForm = () => {
                     className="homeloan_select_box"
                     name="loan_exist"
                   >
-                    <option selected>Select One</option>
+                    <option value=" ">Select One</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                   </select>
@@ -282,7 +320,7 @@ const HomeLoanForm = () => {
                 <div className="homeloan_input_wrapper">
                   <input
                     required
-                    onBlur={handleTextData}
+                    onBlur={handleFileData}
                     className="homeloan_input_field"
                     type="file"
                     name="national_id_pic"

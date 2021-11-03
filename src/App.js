@@ -44,7 +44,7 @@ function App() {
       <AuthProvider>
         <Router>
           <Switch>
-            <Route exact path="/dashboard" component={UserDashboard} />
+            <PrivateRoute exact path="/dashboard" component={UserDashboard} />
             <Route exact path="/adminDashboard" component={AdminDashboard} />
             <Route exact path="/agentDashboard" component={AgentDashboard} />
             <div>
