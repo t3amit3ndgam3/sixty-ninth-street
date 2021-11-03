@@ -64,7 +64,7 @@ const Footer = () => {
       <div className="copyright_section">
         <p>
           Copyright {new Date().getFullYear()} All Rights Reserved | this
-          project is made with <FontAwesomeIcon icon={faHeart} /> by team-it
+          project is made with <FontAwesomeIcon icon={faHeart} /> by team-IT
         </p>
         <img src={footerImage} alt="footerImage" />
       </div>

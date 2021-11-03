@@ -7,6 +7,7 @@ const HomeLoanForm = () => {
   const [message, setMessage] = useState("");
   const [alertMessage, setAlert] = useState("");
   useEffect(() => {
+    window.scrollTo(0, 0);
     const getUserInfo = JSON.parse(
       localStorage.getItem("userInfo" || "not found")
     );

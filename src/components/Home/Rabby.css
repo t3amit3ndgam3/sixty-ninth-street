@@ -23,7 +23,7 @@
 .topNavbarCustom {
   padding: 15px 0px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  background: #00000094;
+  background: #212b5b;
 }
 .scrolltrue {
   padding: 5px 0px;
@@ -31,7 +31,9 @@
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
   transition: ease-in-out 0.6s all;
 }
-
+.offcanvas-end {
+  width: 280px;
+}
 .scrollfalse {
   transition: ease-in-out 0.6s all;
 }
@@ -404,7 +406,7 @@
   position: relative;
   overflow: hidden;
 }
-.AgentSlideImg{
+.AgentSlideImg {
   height: 250px;
 }
 .RjAgenticon {
