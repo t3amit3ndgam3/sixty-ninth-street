@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 const HomeLoan = () => {
+  const {currentUser} = useAuth();
   const [Pamount, setpAmount] = useState(0);
   const [interest, setInterest] = useState(0);
   const [duration, setDuration] = useState(0);
-  const { currentUser } = useAuth();
   const intr = interest / 1200;
   const emi = duration
     ? Math.round((Pamount * intr) / (1 - Math.pow(1 / (1 + intr), duration)))
@@ -280,6 +280,7 @@ const HomeLoan = () => {
       {/* EMI CALCULATOR Ends */}
     </div>
   );
+
 };
 
 export default HomeLoan;

@@ -1,6 +1,19 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { useAuth } from "../components/contexts/AuthContext";
 import "./UserDashboard.css";
 const LoanStatus = () => {
+  const { currentUser} = useAuth();
+  const [loan, setLoan] = useState([]);
+  const [operationUpdate, setOperation] = useState();
+
+  useEffect(() => {
+    const email = currentUser.user_email;
+    console.log(email);
+    fetch(`https://sixtyninethstreet.herokuapp.com/api/getSpecificUserAllLoan/${email}`)
+    .then( res => res.json()
+    .then( data => setLoan(data.result)))
+  }, [])
+
   return (
     <div>
       <div className="dashboard_header">
@@ -17,15 +30,13 @@ const LoanStatus = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Brie Larson</td>
-              <td>2021/09/28</td>
-              <td>500,0000</td>
-              <td className="loan_status_btn">
-                <button>Approved</button>
-                <button>Not Approved</button>
-              </td>
-            </tr>
+          {loan && loan.map(ln =>(
+            <tr id={ln._id}>
+              <td>{ln.name}</td>
+              <td>{ln.createdAt}</td>
+              <td>{ln.loan_amount}</td>
+              <td>{ln.loan_status}</td>
+            </tr>))}
           </tbody>
         </table>
       </div>
