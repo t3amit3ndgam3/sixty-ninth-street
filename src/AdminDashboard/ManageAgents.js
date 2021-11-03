@@ -31,7 +31,7 @@ const ManageAgents = () => {
 					<thead>
 						<tr>
 							<th>Agent Name</th>
-							<th>Hiring Date</th>
+							<th>Hiring Price</th>
 							<th>Actions</th>
 						</tr>
 					</thead>

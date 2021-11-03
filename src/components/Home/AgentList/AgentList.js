@@ -109,7 +109,7 @@ const AgentList = () => {
             </div>
             <div class="card-body">
               <p class="card-text">
-                <span className="fs-4 fw-bold">{agt.agent_name}</span> <br /> {agt.agent_title}
+                <span className="fs-6 fw-bold">{agt.agent_name}</span> <br /> {agt.agent_title}
               </p>
             </div>
           </div

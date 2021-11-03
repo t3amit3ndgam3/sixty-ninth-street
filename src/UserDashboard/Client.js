@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../components/contexts/AuthContext";
 
-const MyClients = () => {
+const Client = () => {
 	const { currentUser } = useAuth();
 	const [client, setClient] = useState([]);
 
 	useEffect(() => {
 		fetch(
-			`https://sixtyninethstreet.herokuapp.com/api/getHireByAgent/${currentUser.user_email}`
+			`https://sixtyninethstreet.herokuapp.com/api/getHireByUser/${currentUser.user_email}`
 		)
 			.then((res) => res.json())
 			.then((data) => setClient(data.data));
@@ -18,19 +18,19 @@ const MyClients = () => {
 			{client.map((clnt) => (
 				<div className="col-12 col-sm-6 col-md-4 mt-3">
 					<div className="BSRSec">
-						<Link to={`/singleAgent/${clnt._id}`} className="RjcardLInk">
+						<p className="RjcardLInk">
 							<div class="card RjcustomCard">
-								{/* <img
+								<img
 									src={clnt.agent_image}
 									class="card-img-top RjagentsCardImg"
 									alt="agent_image"
-								/> */}
+								/>
 								<div class="card-body">
-									<h5 class="card-title">{clnt.user_email}</h5>
+									<h5 class="card-title">{clnt.agent_name}</h5>
 									<p class="card-text pt-2 RjAgentPageP">
-                  {clnt.agent_name}
+                                     {clnt.agent_title}
 									</p>
-									<span className="RjAgentPageSpan">{clnt.agent_title}</span>
+									<span className="RjAgentPageSpan"> Hire Amount - {clnt.fees} </span>
 									{/* <div className="RjAgentsPageIconSection">
 										<div className="RjAgentsLeftIcon">
 											<Link to="">{facebook}</Link>&nbsp;&nbsp;
@@ -44,7 +44,7 @@ const MyClients = () => {
 									</div> */}
 								</div>
 							</div>
-						</Link>
+						</p>
 					</div>
 				</div>
 			))}
@@ -52,4 +52,5 @@ const MyClients = () => {
 	);
 };
 
-export default MyClients;
+
+export default Client;

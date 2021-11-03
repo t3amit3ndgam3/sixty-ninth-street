@@ -23,7 +23,7 @@
 .topNavbarCustom {
   padding: 15px 0px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  background: #00000094;
+  background: #003aa5;
 }
 .scrolltrue {
   padding: 5px 0px;
@@ -402,11 +402,14 @@
 }
 .RjAgentCardImg {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .AgentSlideImg{
   height: 250px;
 }
+/* .card-body {
+  border: 10px solid red !important;
+} */
 .RjAgenticon {
   position: absolute;
   font-size: 22px;
@@ -483,7 +486,7 @@
   border-left: 2px solid #222222;
 }
 .RjtestimonialsPTest {
-  min-height: 150px;
+  min-height: 200px;
 }
 .Rjtestimonialsbody h6 {
   color: #222222;
