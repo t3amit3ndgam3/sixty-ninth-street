@@ -20,6 +20,7 @@ const AgentsPage = () => {
   const [agent, setAgent] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetch("https://sixtyninethstreet.herokuapp.com/api/getAgent")
       .then((res) => res.json())
       .then((data) => setAgent(data.data));

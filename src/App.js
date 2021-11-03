@@ -47,12 +47,12 @@ function App() {
             <PrivateRoute exact path="/dashboard" component={UserDashboard} />
             <Route exact path="/adminDashboard" component={AdminDashboard} />
             <Route exact path="/agentDashboard" component={AgentDashboard} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login" component={Login} />
             <div>
               <Navbar />
               <Route exact path="/" component={Home} />
               <Route exact path="/properties" component={PropertiesList} />
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/login" component={Login} />
               <Route exact path="/spp/:id" component={SinglePageProperty} />
               <Route path="/feature" component={AppointmentFeatureDetails} />
               <Route exact path="/addProperty" component={AddProperty} />

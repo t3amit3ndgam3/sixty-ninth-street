@@ -1,0 +1,14 @@
+.type {
+  font-size: 11px;
+  float: left;
+  background-color: #10257fd9;
+  color: #fff;
+  position: relative;
+  padding: 1px 17px;
+  top: 0;
+  left: 200px;
+  text-align: center;
+  line-height: 20px;
+  box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 10%);
+  border-radius: 2px;
+}

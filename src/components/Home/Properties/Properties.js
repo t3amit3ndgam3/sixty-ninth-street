@@ -7,8 +7,6 @@ import {
   faBath,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
 const Properties = () => {
   const [properties, setProperties] = useState([]);
   useEffect(() => {
@@ -93,7 +91,9 @@ const Properties = () => {
             ))}
         </div>
         <div className="more_btn">
-          <button>Load More Listings</button>
+          <Link to="/feature" className="route_links">
+            <button>Load More Listings</button>
+          </Link>
         </div>
       </div>
     </div>

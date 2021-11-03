@@ -1,242 +1,99 @@
-import React from "react";
-// import { MDBIcon, MDBRipple } from "mdb-react-ui-kit";
-import Nestor from "../../../images/NESTOR.png";
-import James from "../../../images/JAMES PHELPS.png";
-import EMA from "../../../images/ema.png";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBed,
+  faLandmark,
+  faBath,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import "./FeatureDetails.css";
 const AppointmentFeatureDetails = ({ feature }) => {
+  const [PropertiesList, setPropertiesList] = useState([]);
+  console.log(PropertiesList);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    fetch("https://sixtyninethstreet.herokuapp.com/api/allProperty")
+      .then((res) => res.json())
+      .then((data) => setPropertiesList(data.data));
+  }, []);
   return (
-    <div>
-      {/* <div className="container pt-5">
-        <div className="row p-3">
-          <div className="col-md-4 mt-3">
-            <div className="BSRSec">
-              <a href="/" className="RjcardLInk">
-                <div
-                  class="card RjcustomCard bg-image hover-overlay shadow-1-strong rounded"
-                  style={{ maxWidth: "22rem" }}
-                  rippleTag="div"
-                  rippleColor="light"
-                >
-                  <img src="/" class="card-img-top RJcardImg" alt="" />
-                  <a href="/">
-                    <div
-                      className="mask"
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
-                    >
-                      <p className="text-black mb-0">
-                        <MDBIcon
-                          className="ms-1"
-                          icon="location-arrow"
-                          size="sm"
-                        />
-                        Gulshan,Dhaka
-                      </p>
-                    </div>
-                  </a>
-
-                  <div class="card-body">
-                    <h5 class="card-title text-start">gg</h5>
-                    <h6 class="card-title text-start"> 20</h6>
-                    <p class="card-text text-start">
-                      Downtown Frederick hot spot. Top location for local
-                      entertainment. All fixtures are included. Liquor license
-                      can be included. Price includes 3 leased apartments on the
-                      second floor income $2,200 per month.[more]
-                    </p>
-                    <div
-                      className="col-md-12 card-text d-flex justify-content-start"
-                      style={{ marginLeft: "5px" }}
-                    >
-                      <span class="card-text p-2">
-                        <MDBIcon className="ms-1" icon="bed" size="sm" /> 3
-                      </span>
-                      <span class="card-text p-2">
-                        <MDBIcon className="ms-1" icon="bath" size="sm" /> 2
-                      </span>
-                      <span class="card-text p-2">
-                        <MDBIcon
-                          className="ms-1"
-                          icon="angle-right"
-                          size="sm"
-                        />{" "}
-                        1200 sqrt
-                      </span>
-
-                      <button
-                        className="btn d-flex justify-content-evenly"
-                        style={{
-                          background: "#ff783d",
-                          margin: "10px",
-                          padding: "5px",
-                        }}
-                      >
-                        Details
-                      </button>
-                    </div>
-                    <div className="card-footer d-flex  align-items-center">
-                      <img className="mx-2" src={Nestor} alt="" width="50" />
-                      <div>
-                        <h6 style={{ color: "black" }}> Nestor</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className="col-md-4 mt-3">
-            <div className="BSRSec">
-              <a href="/" className="RjcardLInk">
-                <div
-                  class="card RjcustomCard bg-image hover-overlay shadow-1-strong rounded"
-                  style={{ maxWidth: "22rem" }}
-                  rippleTag="div"
-                  rippleColor="light"
-                >
-                  <img src="/" class="card-img-top RJcardImg" alt="..." />
-                  <a href="#!">
-                    <div
-                      className="mask"
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
-                    >
-                      <p className="text-black mb-0">
-                        <MDBIcon
-                          className="ms-1"
-                          icon="location-arrow"
-                          size="sm"
-                        />
-                        Baridhara,Dhaka
-                      </p>
-                    </div>
-                  </a>
-                  <div class="card-body">
-                    <h5 class="card-title text-start">Heading</h5>
-                    <h6 class="card-title text-start">1</h6>
-                    <p class="card-text text-start">
-                      Downtown Frederick hot spot. Top location for local
-                      entertainment. All fixtures are included. Liquor license
-                      can be included. Price includes 3 leased apartments on the
-                      second floor income $2,200 per month.[more]
-                    </p>
-                    <div
-                      className="col-md-12 card-text d-flex justify-content-start"
-                      style={{ marginLeft: "5px" }}
-                    >
-                      <span class="card-text p-2">
-                        <MDBIcon className="ms-1" icon="bed" size="sm" /> 3
-                      </span>
-                      <span class="card-text p-2">
-                        <MDBIcon className="ms-1" icon="bath" size="sm" /> 2
-                      </span>
-                      <span class="card-text p-2">
-                        <MDBIcon
-                          className="ms-1"
-                          icon="angle-right"
-                          size="sm"
-                        />
-                        1200 sqrt
-                      </span>
-
-                      <button
-                        className="btn d-flex justify-content-evenly"
-                        style={{
-                          background: "#ff783d",
-                          margin: "10px",
-                          padding: "5px",
-                        }}
-                      >
-                        Details
-                      </button>
-                    </div>
-                    <div className="card-footer d-flex  align-items-center">
-                      <img className="mx-2" src={James} alt="" width="50" />
-                      <div>
-                        <h6 style={{ color: "black" }}> James</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className="col-md-4 mt-3">
-            <div className="BSRSec">
-              <a href="/" className="RjcardLInk">
-                <div
-                  class="card RjcustomCard bg-image hover-overlay shadow-1-strong rounded"
-                  style={{ maxWidth: "22rem" }}
-                  rippleTag="div"
-                  rippleColor="light"
-                >
-                  <img src="/" class="card-img-top RJcardImg" alt="..." />
-                  <a href="#!">
-                    <div
-                      className="mask"
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
-                    >
-                      <p className="text-black mb-0">
-                        <MDBIcon
-                          className="ms-1"
-                          icon="location-arrow"
-                          size="sm"
-                        />
-                        Banani,Dhaka
-                      </p>
-                    </div>
-                  </a>
-                  <div class="card-body">
-                    <h5 class="card-title text-start">heading</h5>
-                    <h6 class="card-title text-start"> 22</h6>
-                    <p class="card-text text-start">
-                      Downtown Frederick hot spot. Top location for local
-                      entertainment. All fixtures are included. Liquor license
-                      can be included. Price includes 3 leased apartments on the
-                      second floor income $2,200 per month.[more]
-                    </p>
-                    <div
-                      className="col-md-12 card-text d-flex justify-content-start"
-                      style={{ marginLeft: "5px" }}
-                    >
-                      <span class="card-text p-2">
-                        <MDBIcon className="ms-1" icon="bed" size="sm" /> 3
-                      </span>
-                      <span class="card-text p-2">
-                        <MDBIcon className="ms-1" icon="bath" size="sm" /> 2
-                      </span>
-                      <span class="card-text p-2">
-                        <MDBIcon
-                          className="ms-1"
-                          icon="angle-right"
-                          size="sm"
-                        />{" "}
-                        1200 sqrt
-                      </span>
-
-                      <button
-                        className="btn d-flex justify-content-evenly"
-                        style={{
-                          background: "#ff783d",
-                          margin: "10px",
-                          padding: "5px",
-                        }}
-                      >
-                        Details
-                      </button>
-                    </div>
-                    <div className="card-footer d-flex  align-items-center">
-                      <img className="mx-2" src={EMA} alt="" width="50" />
-                      <div>
-                        <h6 style={{ color: "black" }}> Ema Watson</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
+    <div className="navSpace">
+      <div className="homeloan_header">
+        <div>
+          <h1>Featured properties in Bangladesh</h1>
         </div>
-      </div> */}
-      Feature Details
+      </div>
+      <div className="container">
+        <div className="row">
+          {PropertiesList &&
+            PropertiesList.map((item) => (
+              <div className="col-md-3 mt-3">
+                <div className="property_card">
+                  <Link to={`/spp/${item._id}`} className="card_links">
+                    <div className="tag_wrapper">
+                      <div>
+                        <div className="feature_type">Featured</div>
+                      </div>
+                      <div>
+                        <div className="type">Rentals</div>
+                      </div>
+                    </div>
+                    <div className="home_property_card_image">
+                      <img
+                        src={item.image_one}
+                        className="card-img-top"
+                        alt="flat-imag"
+                      />
+                    </div>
+                    <div className="property_card_body">
+                      <h5 className="card-title">{item.property_name}</h5>
+                      <h6>৳ {item.price}</h6>
+                      <p>{item.property_description.substring(0, 80)}...</p>
+                      <div className="d-flex justify-content-evenly">
+                        <span className="card_props">
+                          <FontAwesomeIcon
+                            className="card_prop_icon"
+                            icon={faBed}
+                          />
+                          {item.bedroom}
+                        </span>
+                        <span className="card_props">
+                          <FontAwesomeIcon
+                            className="card_prop_icon"
+                            icon={faBath}
+                          />
+                          {item.bathroom}
+                        </span>
+                        <span className="card_props">
+                          <FontAwesomeIcon
+                            className="card_prop_icon"
+                            icon={faLandmark}
+                          />
+                          {item.property_size} ft<sup>2</sup>
+                        </span>
+                        <span className="card_prop_button">
+                          <button>Details</button>
+                        </span>
+                      </div>
+                      <div className="card_footer">
+                        <div>
+                          <h6>
+                            <FontAwesomeIcon
+                              className="cta_icon"
+                              icon={faUser}
+                            />
+                            {item.owner_name}
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 };
