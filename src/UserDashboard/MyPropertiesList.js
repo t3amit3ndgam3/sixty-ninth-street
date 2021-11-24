@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./UserDashboard.css";
-import i1 from "../images/UserBoard/e1.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHighlighter,
@@ -20,7 +19,7 @@ const MyPropertiesList = () => {
     )
       .then((res) => res.json())
       .then((data) => setPersonalData(data.data));
-  }, []);
+  }, [currentUser.user_email]);
   return (
     <div>
       <div className="dashboard_property_list_header dashboard_header ">
@@ -38,19 +37,19 @@ const MyPropertiesList = () => {
           </Link>
         </button>
       </div>
-      <div>
-        <table class="styled-table">
-          <thead>
-            <tr>
-              <th>Photo</th>
-              <th>Property Name</th>
-              <th>Price</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {personalData &&
-              personalData.map((pdata) => (
+      {personalData.length ? (
+        <div>
+          <table className="styled-table">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Property Name</th>
+                <th>Price</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {personalData.map((pdata) => (
                 <tr>
                   <td>
                     <Link to={`/spp/${pdata._id}`}>
@@ -69,9 +68,12 @@ const MyPropertiesList = () => {
                   </td>
                 </tr>
               ))}
-          </tbody>
-        </table>
-      </div>
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div>You dont</div>
+      )}
     </div>
   );
 };

@@ -24,7 +24,7 @@ import SellDetails from "./components/Home/WorkDetails/SellDetails";
 import BuyDetails from "./components/Home/WorkDetails/BuyDetails";
 import AgentRoleDetails from "./components/Home/WorkDetails/AgentRoleDetails";
 import AgentDashboard from "./AgentDashboard/AgentDashboard";
-import PorpertiesListPage from "./Test/PorpertiesListPage";
+
 function App() {
   const wishlist = JSON.parse(localStorage.getItem("69wishlist") || "[]");
   if (wishlist.length === 0) {
@@ -44,12 +44,12 @@ function App() {
       <AuthProvider>
         <Router>
           <Switch>
-            <PrivateRoute exact path="/dashboard" component={UserDashboard} />
+            <PrivateRoute path="/dashboard" component={UserDashboard} />
             <Route exact path="/adminDashboard" component={AdminDashboard} />
             <Route exact path="/agentDashboard" component={AgentDashboard} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
-            <div>
+            <>
               <Navbar />
               <Route exact path="/" component={Home} />
               <Route exact path="/properties" component={PropertiesList} />
@@ -61,10 +61,9 @@ function App() {
               <Route exact path="/userReview" component={UserReviews} />
               <Route exact path="/addAgents" component={AddAgents} />
               <Route exact path="/sellHome" component={SellHome} />
-              <Route exact path="/loan" component={HomeLoanForm} />
+              <PrivateRoute exact path="/loan" component={HomeLoanForm} />
               <Route exact path="/homeLoan" component={HomeLoan} />
               <Route exact path="/selldetails" component={SellDetails} />
-              <Route exact path="/test" component={PorpertiesListPage} />
               <Route
                 exact
                 path="/agentroledetails"
@@ -72,7 +71,7 @@ function App() {
               />
               <Route exact path="/buydetails" component={BuyDetails} />
               <Footer />
-            </div>
+            </>
           </Switch>
         </Router>
       </AuthProvider>

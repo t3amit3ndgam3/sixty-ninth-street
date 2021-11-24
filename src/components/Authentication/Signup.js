@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,12 +18,6 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      history.push("/dashboard");
-    }
-  }, [history]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -60,7 +54,7 @@ const Signup = () => {
         <h5 className="text-center mb-4">Create an account</h5>
         {error && <alert variant="danger">{error}</alert>}
         <form onSubmit={handleSubmit} className="login_content">
-          <div class="group">
+          <div className="group">
             <input
               ref={nameRef}
               className="contact_input"
@@ -68,10 +62,10 @@ const Signup = () => {
               type="text"
               required
             />
-            <span class="bar"></span>
+            <span className="bar"></span>
             <label className="contact_label">Name</label>
           </div>
-          <div class="group">
+          <div className="group">
             <input
               ref={emailRef}
               className="contact_input"
@@ -79,10 +73,10 @@ const Signup = () => {
               type="text"
               required
             />
-            <span class="bar"></span>
+            <span className="bar"></span>
             <label className="contact_label">Email</label>
           </div>
-          <div class="group">
+          <div className="group">
             <input
               ref={passwordRef}
               className="contact_input"
@@ -90,10 +84,10 @@ const Signup = () => {
               type="password"
               required
             />
-            <span class="bar"></span>
+            <span className="bar"></span>
             <label className="contact_label">Password</label>
           </div>
-          <div class="group">
+          <div className="group">
             <input
               ref={passwordConfirmRef}
               className="contact_input"
@@ -101,7 +95,7 @@ const Signup = () => {
               type="password"
               required
             />
-            <span class="bar"></span>
+            <span className="bar"></span>
             <label className="contact_label">Confirm Password</label>
           </div>
           <div className="login_button_wrap">

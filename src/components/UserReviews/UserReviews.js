@@ -26,45 +26,45 @@ const UserReviews = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="navSpace p_bg topUserReviewsSection">
+    <div className="topUserReviewsSection">
       <div className="container">
         <div className="row">
           <div className="col-md-6 offset-md-3 p-5">
             <div className="userReviewsSection">
               <h1>User Reviews Sections</h1>
               <form onSubmit={handleUserSubmit} className="mt-5">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">
+                <div className="mb-3">
+                  <label for="exampleInputEmail1" className="form-label">
                     Your Name
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputEmail1"
                     name="user_name"
                     onBlur={handleUserReviews}
                     required
                   />
                 </div>
-                <div class="mb-5">
-                  <label for="exampleInputEmail2" class="form-label">
+                <div className="mb-5">
+                  <label for="exampleInputEmail2" className="form-label">
                     Your Valuable Words
                   </label>
                   <textarea
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputEmail2"
                     name="user_reviews"
                     onBlur={handleUserReviews}
                     required
                   />
                 </div>
-                <div class="mb-3">
+                <div className="mb-3">
                   <input
                     type="submit"
-                    class="wpresidence_button agent_submit_class container"
+                    className="wpresidence_button agent_submit_class container"
                     id="agent_submit"
-                    value="Reviews Done"
+                    value="Submit Review"
                   />
                 </div>
               </form>

@@ -10,7 +10,7 @@ import {
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login, signUp, signInWithGoogle } = useAuth();
+  const { login, signInWithGoogle } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -51,7 +51,7 @@ const Login = () => {
         <h5 className="text-center mb-4">Sign in to your account</h5>
         {error && <alert variant="danger">{error}</alert>}
         <form onSubmit={handleSubmit} className="login_content">
-          <div class="group">
+          <div className="group">
             <input
               ref={emailRef}
               className="contact_input"
@@ -60,10 +60,10 @@ const Login = () => {
               required
               autoComplete="off"
             />
-            <span class="bar"></span>
+            <span className="bar"></span>
             <label className="contact_label">Email</label>
           </div>
-          <div class="group">
+          <div className="group">
             <input
               ref={passwordRef}
               className="contact_input"
@@ -71,7 +71,7 @@ const Login = () => {
               type="password"
               required
             />
-            <span class="bar"></span>
+            <span className="bar"></span>
             <label className="contact_label">Password</label>
           </div>
           <div className="login_button_wrap">

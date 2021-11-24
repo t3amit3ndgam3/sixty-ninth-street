@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { createContext } from "react";
 import { authentication } from "../../firebase";
-import axios from "axios";
 import {
   GoogleAuthProvider,
   getAuth,
@@ -20,23 +19,10 @@ export const AuthProvider = ({ children }) => {
     user_email: "",
     user_phone: "01717-",
   });
-  console.log("this is currentUser", currentUser);
-  const [tokenId, setTokenId] = useState("");
+
   const [loading, setLoading] = useState(true);
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
-  useEffect(() => {
-    if (tokenId.length) {
-      axios({
-        method: "POST",
-        url: "http://localhost:5000/api/googlelogin",
-        data: { tokenId: tokenId },
-      }).then((response) => {
-        console.log("Google signed in completed successfully", response);
-      });
-      console.log("working");
-    }
-  }, [tokenId]);
 
   function signUp(email, password, name) {
     return authentication
@@ -59,10 +45,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   function signInWithGoogle() {
-    return signInWithPopup(auth, provider).then((userCredentials) => {
-      console.log(userCredentials._tokenResponse.idToken);
-      setTokenId(userCredentials._tokenResponse.idToken);
-    });
+    return signInWithPopup(auth, provider);
   }
 
   function logout() {
@@ -97,7 +80,7 @@ export const AuthProvider = ({ children }) => {
           })
         );
       }
-      console.log("....................test auth", user);
+
       setLoading(false);
     });
     return unsubscribe;

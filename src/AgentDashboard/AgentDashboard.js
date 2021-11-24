@@ -4,21 +4,37 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAlignLeft,
-  faAlignRight,
+  faTimes,
   faBookmark,
   faUnlockAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import AddProperty from "../components/AddProperty/AddProperty";
 import MyClients from "./MyClients";
-
+import { useAuth } from ".././components/contexts/AuthContext";
+import { useHistory } from "react-router-dom";
 const AgentDashboard = () => {
   const [inactive, setInactive] = useState(false);
-
+  const { logout, setCurrentUser } = useAuth();
+  const history = useHistory();
   const [data, setData] = useState({
     MyClients: true,
     AddProperty: false,
   });
-
+  const handleLogout = async () => {
+    try {
+      await logout();
+      setCurrentUser({
+        user_name: "",
+        user_email: "",
+        user_phone: "01717-",
+      });
+      localStorage.removeItem("token");
+      localStorage.removeItem("userInfo");
+      history.push("/login");
+    } catch {
+      alert("Failed to Logout");
+    }
+  };
   const handleMenuBar = (menuName) => {
     if (menuName === "AddProperty") {
       setData({
@@ -52,7 +68,7 @@ const AgentDashboard = () => {
       <div className={`side-menu ${inactive ? "inactive" : ""}`}>
         <div className="top-section">
           <div className="brand_name">
-            <Link to="/">
+            <Link to="/" className="dashboard_route_links text-white">
               <h4>SNS</h4>
             </Link>
           </div>
@@ -61,9 +77,9 @@ const AgentDashboard = () => {
             className="toggle-menu-btn"
           >
             {inactive ? (
-              <FontAwesomeIcon icon={faAlignRight} />
-            ) : (
               <FontAwesomeIcon icon={faAlignLeft} />
+            ) : (
+              <FontAwesomeIcon icon={faTimes} />
             )}
           </div>
         </div>
@@ -96,6 +112,14 @@ const AgentDashboard = () => {
                   <FontAwesomeIcon icon={faUnlockAlt} />
                 </div>
                 <span>Add property</span>
+              </div>
+            </li>
+            <li>
+              <div onClick={handleLogout} className="menu-item">
+                <div className="menu-icon">
+                  <FontAwesomeIcon icon={faUnlockAlt} />
+                </div>
+                <span>Log out</span>
               </div>
             </li>
           </ul>

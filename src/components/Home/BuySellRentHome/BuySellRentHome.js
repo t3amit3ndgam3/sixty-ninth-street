@@ -21,16 +21,16 @@ const BuySellRentHome = () => {
           <div className="col-12 col-md-4 mt-3">
             <div className="BSRSec">
               <Link to="/properties" className="RjcardLInk">
-                <div class="card RjcustomCard">
-                  <img src={buy} class="card-img-top RJcardImg" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Buy a Home</h5>
-                    <p class="card-text">
+                <div className="card RjcustomCard">
+                  <img src={buy} className="card-img-top RJcardImg" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">Buy a Home</h5>
+                    <p className="card-text">
                       Find your place with an immersive photo experience and the
                       most listings, including things you won’t find anywhere
                       else.
                     </p>
-                    <p class="btn RJcustomcardButton mt-3">Search Homes</p>
+                    <p className="btn RJcustomcardButton mt-3">Search Homes</p>
                   </div>
                 </div>
               </Link>
@@ -39,16 +39,16 @@ const BuySellRentHome = () => {
           <div className="col-12 col-md-4 mt-3">
             <div className="BSRSec">
               <Link to="/sellHome" className="RjcardLInk">
-                <div class="card RjcustomCard">
-                  <img src={sell} class="card-img-top RJcardImg" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Sell a Home</h5>
-                    <p class="card-text">
+                <div className="card RjcustomCard">
+                  <img src={sell} className="card-img-top RJcardImg" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">Sell a Home</h5>
+                    <p className="card-text">
                       Find your place with an immersive photo experience and the
                       most listings, including things you won’t find anywhere
                       else.
                     </p>
-                    <p class="btn RJcustomcardButton mt-3">Choose Options</p>
+                    <p className="btn RJcustomcardButton mt-3">Choose Options</p>
                   </div>
                 </div>
               </Link>
@@ -57,16 +57,16 @@ const BuySellRentHome = () => {
           <div className="col-12 col-md-4 mt-3">
             <div className="BSRSec">
               <Link to="/properties" className="RjcardLInk">
-                <div class="card RjcustomCard">
-                  <img src={rent} class="card-img-top RJcardImg" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">Rent a Home</h5>
-                    <p class="card-text">
+                <div className="card RjcustomCard">
+                  <img src={rent} className="card-img-top RJcardImg" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">Rent a Home</h5>
+                    <p className="card-text">
                       Find your place with an immersive photo experience and the
                       most listings, including things you won’t find anywhere
                       else.
                     </p>
-                    <p class="btn RJcustomcardButton mt-3">Find Rentals</p>
+                    <p className="btn RJcustomcardButton mt-3">Find Rentals</p>
                   </div>
                 </div>
               </Link>

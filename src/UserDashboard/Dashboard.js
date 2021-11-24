@@ -2,8 +2,10 @@ import { faHouseUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./UserDashboard.css";
+import { useAuth } from ".././components/contexts/AuthContext";
 
 const Dashboard = () => {
+  const { currentUser } = useAuth();
   return (
     <div className="dasboard_board">
       <div className="dashboard_header">
@@ -50,10 +52,10 @@ const Dashboard = () => {
             </ul>
           </div>
           <div className="profile_table_content">
-            <li>Tom Holland</li>
-            <li>+9874587985</li>
+            <li>{currentUser.user_name}</li>
+            <li>{currentUser.user_phone}</li>
             <li>Newyork,US</li>
-            <li>adammilne@yahoo.com</li>
+            <li>{currentUser.user_email}</li>
             <li>Businessman</li>
           </div>
         </div>

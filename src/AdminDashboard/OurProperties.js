@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../components/contexts/AuthContext";
 
 const OurProperties = () => {
-  const { currentUser, logout } = useAuth();
+  const { currentUser } = useAuth();
   const [properties, setProperties] = useState([]);
   useEffect(() => {
     fetch(
@@ -11,7 +11,7 @@ const OurProperties = () => {
     )
       .then((res) => res.json())
       .then((data) => setProperties(data.data));
-  }, []);
+  }, [currentUser.user_email]);
 
   return (
     <div>

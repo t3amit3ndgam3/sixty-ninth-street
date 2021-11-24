@@ -22,37 +22,42 @@ const ManageAgents = () => {
     });
   }
 	return (
-		<div>
-			<div className="admin_dashboard_header">
-				<h1>Manage Agents</h1>
-			</div>
-			<div>
-				<table class="styled-table">
-					<thead>
-						<tr>
-							<th>Agent Name</th>
-							<th>Hiring Price</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					{agent &&
-						agent.map((agt) => (
-							<tbody id={agt._id}>
-								<tr>
-                <Link to={`/singleAgent/${agt._id}`}><td>{agt.agent_name}</td></Link>
-									<td>{agt.fees} tk</td>
-									<td className="property_list_cta_buttons">
-										<button>
-											<FontAwesomeIcon onClick={()=>deleteAgent(agt._id)} icon={faTrashAlt} />
-										</button>
-									</td>
-								</tr>
-							</tbody>
-						))}
-				</table>
-			</div>
-		</div>
-	);
+    <div>
+      <div className="admin_dashboard_header">
+        <h1>Manage Agents</h1>
+      </div>
+      <div>
+        <table className="styled-table">
+          <thead>
+            <tr>
+              <th>Agent Name</th>
+              <th>Hiring Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          {agent &&
+            agent.map((agt) => (
+              <tbody id={agt._id}>
+                <tr>
+                  <Link to={`/singleAgent/${agt._id}`}>
+                    <td>{agt.agent_name}</td>
+                  </Link>
+                  <td>{agt.fees} tk</td>
+                  <td className="property_list_cta_buttons">
+                    <button>
+                      <FontAwesomeIcon
+                        onClick={() => deleteAgent(agt._id)}
+                        icon={faTrashAlt}
+                      />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            ))}
+        </table>
+      </div>
+    </div>
+  );
 };
 
 export default ManageAgents;

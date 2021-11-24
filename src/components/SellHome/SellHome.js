@@ -128,7 +128,7 @@ const SellHome = () => {
               </div>
               <div className="sellHomebtnSection mt-5">
                 <button
-                  class="wpresidence_button agent_submit_class mb-3"
+                  className="wpresidence_button agent_submit_class mb-3"
                   id="agent_submit"
                 >
                   Find an Agent
@@ -188,7 +188,7 @@ const SellHome = () => {
               </div>
               <div className="sellHomebtnSection mt-5">
                 <button
-                  class="wpresidence_button agent_submit_class mb-3"
+                  className="wpresidence_button agent_submit_class mb-3"
                   id="agent_submit"
                 >
                   Create a Listing
