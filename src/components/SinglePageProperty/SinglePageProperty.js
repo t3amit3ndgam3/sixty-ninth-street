@@ -18,7 +18,6 @@ const SinglePageProperty = () => {
   const [alertMessage, setAlert] = useState("");
   const [show, setShow] = useState(true);
   const [singleProperties, setSingleProperties] = useState([]);
-  console.log(singleProperties);
   const form = useRef();
   const { id } = useParams([]);
   useEffect(() => {
@@ -26,15 +25,11 @@ const SinglePageProperty = () => {
     fetch(`https://sixtyninethstreet.herokuapp.com/api/findProperties/${id}`)
       .then((res) => res.json())
       .then((data) => setSingleProperties(data.data[0]));
-  }, []);
+  }, [id]);
 
   const handleSubmit = (e) => {
-    console.log(e.target.value);
     e.preventDefault();
   };
-  // useEffect(() => {
-  // 	window.scrollTo(0, 0);
-  // }, []);
   const [wishFlag, setWishFlag] = useState(true);
 
   const handleClickList = () => {
@@ -48,7 +43,7 @@ const SinglePageProperty = () => {
       return setWishFlag(true);
     });
 
-    if (wishFlag && wishlist.length == count) {
+    if (wishFlag && wishlist.length === count) {
       wishlist.push({
         image: singleProperties.image_one,
         name: singleProperties.property_name,
@@ -76,11 +71,10 @@ const SinglePageProperty = () => {
         <div className="notice_area">
           <div className="single_property_labels_left">
             <div className="label_btn">
-              <div className="type_label">For type</div>
-              <div className="type_label">House Type</div>
+              <div className="type_label">{singleProperties.property_for}</div>
+              <div className="type_label">{singleProperties.property_type}</div>
             </div>
             <h1 className="entry_title">{singleProperties.property_name}</h1>
-
             <p>
               <FontAwesomeIcon
                 className="title_prop_icon"
@@ -96,7 +90,7 @@ const SinglePageProperty = () => {
                 <FontAwesomeIcon className="prop_btn_icon" icon={faShareAlt} />
                 Share
               </button>
-              <button>
+              <button onClick={handleClickList}>
                 <FontAwesomeIcon className="prop_btn_icon " icon={faHeart} />
                 Add to favourites
               </button>
@@ -157,11 +151,11 @@ const SinglePageProperty = () => {
                 <li className="">
                   <FontAwesomeIcon
                     onClick={handleClickList}
-                    className="cta_icon wishlistIcon "
+                    className="cta_icon wishlistIcon"
                     icon={faHeart}
                   />
                 </li>
-                <li>with list</li>
+                <li>Add to Favourites</li>
               </ul>
             </div>
             <div className="property_description">
@@ -284,50 +278,53 @@ const SinglePageProperty = () => {
               onSubmit={handleSubmit}
               className="owner_details_form"
             >
-              <div class="group">
+              <div className="group">
                 <input
                   className="contact_input"
                   name="name"
                   type="text"
                   required
                 />
-                <span class="bar"></span>
+                <span className="bar"></span>
                 <label className="contact_label">Name</label>
               </div>
-              <div class="group">
+              <div className="group">
                 <input
                   className="contact_input"
                   name="number"
                   type="number"
                   required
                 />
-                <span class="bar"></span>
+                <span className="bar"></span>
                 <label className="contact_label">Phone Number</label>
               </div>
-              <div class="group">
+              <div className="group">
                 <input
                   className="contact_input"
                   name="email"
                   type="text"
                   required
                 />
-                <span class="bar"></span>
+                <span className="bar"></span>
                 <label className="contact_label">Email</label>
               </div>
-              <div class="group">
+              <div className="group">
                 <input
                   className="contact_input"
                   name="message"
                   type="text"
                   required
                 />
-                <span class="bar"></span>
+                <span className="bar"></span>
                 <label className="contact_label">Your Messege</label>
               </div>
               <div className="spp_button_wrap">
                 <button type="submit">Send Messege</button>
               </div>
             </form>
+            <div className="mt-2">
+              This message will be directly sent to owner.
+            </div>
           </div>
         </div>
       </div>

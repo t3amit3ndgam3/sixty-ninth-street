@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./UserDashboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import UserReviews from "../components/UserReviews/UserReviews";
 import {
   faAlignLeft,
-  faAlignRight,
+  faTimes,
   faBookmark,
   faFileAlt,
   faListUl,
   faPeopleArrows,
   faUnlockAlt,
+  faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import Dashboard from "./Dashboard";
 import Favourites from "./Favourites";
@@ -19,10 +21,12 @@ import { Link } from "react-router-dom";
 import LoanStatus from "./LoanStatus";
 import { faStaylinked } from "@fortawesome/free-brands-svg-icons";
 import Client from "./Client";
-
+import { useAuth } from ".././components/contexts/AuthContext";
+import { useHistory } from "react-router-dom";
 const UserDashboard = () => {
   const [inactive, setInactive] = useState(false);
-
+  const { logout, setCurrentUser } = useAuth();
+  const history = useHistory();
   const [data, setData] = useState({
     password: false,
     properties: false,
@@ -31,8 +35,23 @@ const UserDashboard = () => {
     favourites: false,
     loan_status: false,
     client: false,
+    review: false,
   });
-
+  const handleLogout = async () => {
+    try {
+      await logout();
+      setCurrentUser({
+        user_name: "",
+        user_email: "",
+        user_phone: "01717-",
+      });
+      localStorage.removeItem("token");
+      localStorage.removeItem("userInfo");
+      history.push("/login");
+    } catch {
+      alert("Failed to Logout");
+    }
+  };
   const handleMenuBar = (menuName) => {
     if (menuName === "password") {
       setData({
@@ -43,6 +62,7 @@ const UserDashboard = () => {
         favourites: false,
         loan_status: false,
         client: false,
+        review: false,
       });
     }
     if (menuName === "properties") {
@@ -54,6 +74,7 @@ const UserDashboard = () => {
         favourites: false,
         loan_status: false,
         client: false,
+        review: false,
       });
     }
     if (menuName === "dashboard") {
@@ -65,6 +86,7 @@ const UserDashboard = () => {
         favourites: false,
         loan_status: false,
         client: false,
+        review: false,
       });
     }
     if (menuName === "favourites") {
@@ -76,6 +98,7 @@ const UserDashboard = () => {
         favourites: true,
         loan_status: false,
         client: false,
+        review: false,
       });
     }
     if (menuName === "requirement") {
@@ -87,6 +110,7 @@ const UserDashboard = () => {
         favourites: false,
         loan_status: false,
         client: false,
+        review: false,
       });
     }
     if (menuName === "loan_status") {
@@ -98,18 +122,32 @@ const UserDashboard = () => {
         favourites: false,
         loan_status: true,
         client: false,
-      })
-    };
-      if (menuName === "client") {
-        setData({
-          password: false,
-          properties: false,
-          dashboard: false,
-          requirement: false,
-          favourites: false,
-          loan_status: false,
-          client: true,
-        });
+        review: false,
+      });
+    }
+    if (menuName === "client") {
+      setData({
+        password: false,
+        properties: false,
+        dashboard: false,
+        requirement: false,
+        favourites: false,
+        loan_status: false,
+        client: true,
+        review: false,
+      });
+    }
+    if (menuName === "review") {
+      setData({
+        password: false,
+        properties: false,
+        dashboard: false,
+        requirement: false,
+        favourites: false,
+        loan_status: false,
+        client: false,
+        review: true,
+      });
     }
   };
 
@@ -131,8 +169,8 @@ const UserDashboard = () => {
       <div className={`side-menu ${inactive ? "inactive" : ""}`}>
         <div className="top-section">
           <div className="brand_name">
-            <Link to="/">
-              <h4>SNS</h4>
+            <Link to="/" className="dashboard_route_links text-white">
+              <h4>69S</h4>
             </Link>
           </div>
           <div
@@ -140,9 +178,9 @@ const UserDashboard = () => {
             className="toggle-menu-btn"
           >
             {inactive ? (
-              <FontAwesomeIcon icon={faAlignRight} />
-            ) : (
               <FontAwesomeIcon icon={faAlignLeft} />
+            ) : (
+              <FontAwesomeIcon icon={faTimes} />
             )}
           </div>
         </div>
@@ -232,7 +270,24 @@ const UserDashboard = () => {
                 <span>My Loan Status</span>
               </div>
             </li>
+            <li>
+              <div
+                onClick={() => handleMenuBar("review")}
+                className="menu-item"
+              >
+                <div className="menu-icon">
+                  <FontAwesomeIcon icon={faStaylinked} />
+                </div>
+                <span>Add Review</span>
+              </div>
+            </li>
           </ul>
+        </div>
+        <div className="logout_button" onClick={handleLogout}>
+          <div className="logout_icon">
+            <FontAwesomeIcon icon={faSignOutAlt} />
+          </div>
+          <span>Log out</span>
         </div>
       </div>
       <div
@@ -244,7 +299,8 @@ const UserDashboard = () => {
         {data.dashboard && <Dashboard />}
         {data.requirement && <Requirement />}
         {data.loan_status && <LoanStatus />}
-        {data.client && <Client/>}
+        {data.client && <Client />}
+        {data.review && <UserReviews />}
       </div>
     </div>
   );

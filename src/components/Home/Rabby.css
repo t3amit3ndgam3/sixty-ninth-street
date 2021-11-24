@@ -31,13 +31,27 @@
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
   transition: ease-in-out 0.6s all;
 }
+.scrolltrue .nav_login_btn {
+  border: 2px solid #000;
+}
 .offcanvas-end {
   width: 280px;
 }
 .scrollfalse {
   transition: ease-in-out 0.6s all;
 }
-
+.nav_login_btn {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 6px 8px !important;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: transparent;
+  margin-top: 3px;
+}
 .navbar-light .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.685);
 }
@@ -346,6 +360,11 @@
     bottom: 0;
     z-index: 1;
   } */
+
+.agent_card_body h6 {
+  text-transform: uppercase;
+  font-size: 13px;
+}
 .AgentPagesliderImg {
   position: relative;
   height: 70vh;
@@ -367,6 +386,9 @@
   color: rgba(255, 255, 255, 0.932);
   letter-spacing: 2px;
   font-weight: 500;
+}
+.RjAgentsPageIconSection {
+  padding: 20px;
 }
 .RjAgentsLeftIcon {
   float: left;
@@ -404,7 +426,7 @@
 }
 .RjAgentCardImg {
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .AgentSlideImg {
   height: 250px;
@@ -420,23 +442,29 @@
   transform: translate(-40%, 0);
   visibility: hidden;
   transition: ease-in-out 0.5s all;
-  color: #2a2a2e;
+  color: #0c33ce;
+  background: #fff;
+  padding: 4px 6px;
+  border-radius: 50%;
 }
 .RjAgentIconOver a {
   text-decoration: none;
 }
 .AgentFacebbok {
   transition: ease-in-out 0.5s all;
-  left: 40%;
+  left: 35%;
+  color: #0c87ef;
 }
 
 .AgentEmail {
   transition: ease-in-out 0.7s all;
-  left: 50%;
+  left: 49%;
+  color: #ea4335;
 }
 .AgentLinkend {
   transition: ease-in-out 0.9s all;
-  left: 60%;
+  left: 63%;
+  color: #0e76a8;
 }
 .RJAgentCARD:hover .RjAgenticon {
   bottom: 10px;

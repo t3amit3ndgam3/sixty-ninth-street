@@ -307,13 +307,22 @@ input:focus ~ .bar:after {
   font-size: 13px;
   line-height: 1;
 }
+.type_label {
+  font-weight: 500;
+}
 .entry_title {
   font-size: 38px;
   line-height: 1.1;
   letter-spacing: -1px;
+  font-family: "Roboto";
+  font-weight: 400;
+  margin-top: 10px;
 }
 .single_property_labels_right {
   margin-top: 36px;
+}
+.single_property_labels_left p {
+  text-transform: capitalize;
 }
 .price_label {
   text-align: right;
@@ -517,7 +526,7 @@ input:focus ~ .bar:after {
 }
 .input_section {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   margin-top: 10px;
@@ -529,11 +538,11 @@ input:focus ~ .bar:after {
 
 /* Home Properties */
 .property_card {
-  max-width: 22rem;
   border-radius: 2px;
   box-shadow: 0 10px 31px 0 rgb(7 152 255 / 9%);
   border: 1px solid #f1f8ff;
 }
+
 .property_card:hover {
   box-shadow: 0 10px 31px 0 rgb(7 152 255 / 15%);
 }
@@ -541,9 +550,9 @@ input:focus ~ .bar:after {
   overflow: hidden;
   height: 320px;
 }
-.home_property_card_image img{
+.home_property_card_image img {
   overflow: hidden;
-  height:320px;
+  height: 320px;
 }
 .property_card:hover .home_property_card_image img {
   transform: scale(1.1);
@@ -628,13 +637,7 @@ input:focus ~ .bar:after {
   font-weight: 700;
   font-size: 15px;
 }
-/* .cta_btn .cta_icon {
-} */
-.cta_icon {
-  font-size: 15px;
-  margin-right: 10px;
-  color: #0c33ce;
-}
+
 .more_btn button {
   display: flex;
   justify-content: center;
@@ -664,8 +667,8 @@ input:focus ~ .bar:after {
   border-bottom: 1px solid #ffffff;
   transition: all 0.6s ease;
 }
-.workDetails_wrapper img{
-  height:100px;
+.workDetails_wrapper img {
+  height: 100px;
 }
 .workDetails_wrapperP {
   height: 100px;
@@ -744,6 +747,7 @@ input:focus ~ .bar:after {
   .single_property_labels_right {
     margin-top: 0;
   }
+
   .price_label {
     text-align: left;
     font-size: 28px;

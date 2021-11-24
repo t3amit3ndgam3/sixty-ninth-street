@@ -45,7 +45,7 @@ const UserProperties = () => {
         </button>
       </div>
       <div>
-        <table class="styled-table">
+        <table className="styled-table">
           <thead>
             <tr>
               <th>Photo</th>

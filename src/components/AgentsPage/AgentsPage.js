@@ -30,15 +30,14 @@ const AgentsPage = () => {
     <div className="mb-5 navSpace">
       <div
         id="carouselExampleSlidesOnly"
-        class="carousel slide"
+        className="carousel slide mb-5"
         data-bs-ride="carousel"
-        className="mb-5"
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active sliderBlack">
+        <div className="carousel-inner">
+          <div className="carousel-item active sliderBlack">
             <img
               src={agentbd1}
-              class="d-block w-100 AgentPagesliderImg"
+              className="d-block w-100 AgentPagesliderImg"
               alt="..."
             />
             <div className="AgentPageTextSlider">
@@ -46,10 +45,10 @@ const AgentsPage = () => {
               <p>Let us guide you home</p>
             </div>
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <img
               src={agentbd1}
-              class="d-block w-100 AgentPagesliderImg"
+              className="d-block w-100 AgentPagesliderImg"
               alt="..."
             />
           </div>
@@ -58,35 +57,68 @@ const AgentsPage = () => {
       <div className="container">
         <div className="row">
           {agent.map((agt) => (
-            <div className="col-12 col-sm-6 col-md-4 mt-3">
+            <div key={agt._id} className="col-12 col-sm-6 col-md-4 mt-3">
               <div className="BSRSec">
-                <Link to={`/singleAgent/${agt._id}`} className="RjcardLInk">
-                  <div class="card RjcustomCard">
+                <div className="card RjcustomCard">
+                  <Link to={`/singleAgent/${agt._id}`} className="RjcardLInk">
                     <img
                       src={agt.agent_image}
-                      class="card-img-top RjagentsCardImg"
+                      className="card-img-top RjagentsCardImg"
                       alt="agent_image"
                     />
-                    <div class="card-body">
-                      <h5 class="card-title">{agt.agent_name}</h5>
+                    <div className="card-body">
+                      <h5 className="card-title">{agt.agent_name}</h5>
                       <span className="RjAgentPageSpan">{agt.agent_title}</span>
-                      <p class="card-text pt-2 RjAgentPageP">
+                      <p className="card-text pt-2 RjAgentPageP">
                         {agt.agent_description.substring(0, 50)} .......
                       </p>
-                      <div className="RjAgentsPageIconSection">
-                        <div className="RjAgentsLeftIcon">
-                          <Link to="">{facebook}</Link>&nbsp;&nbsp;
-                          <Link to="">{linkend}</Link>&nbsp;&nbsp;
-                          <Link to="">{twitter}</Link>
-                        </div>
-                        <div className="RjAgentsrighttIcon">
-                          <Link to="">{email}</Link>&nbsp;&nbsp;
-                          <Link to="">{phone}</Link>
-                        </div>
-                      </div>
+                    </div>
+                  </Link>
+                  <div className="RjAgentsPageIconSection">
+                    <div className="RjAgentsLeftIcon">
+                      <a
+                        href="https://www.facebook.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {facebook}
+                      </a>
+                      &nbsp;&nbsp;
+                      <a
+                        href="https://www.linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {linkend}
+                      </a>
+                      &nbsp;&nbsp;
+                      <a
+                        href="https://www.twitter.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {twitter}
+                      </a>
+                    </div>
+                    <div className="RjAgentsrighttIcon">
+                      <a
+                        href="https://www.google.com/intl/bn/gmail/about/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {email}
+                      </a>
+                      &nbsp;&nbsp;
+                      <a
+                        href="tel:{agt.agent_number}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {phone}
+                      </a>
                     </div>
                   </div>
-                </Link>
+                </div>
               </div>
             </div>
           ))}

@@ -5,7 +5,7 @@ const PropertyFilters = () => {
   const [range, setRange] = useState([0]);
   return (
     <div className="propertyColFour">
-      <select class="TypeSelector">
+      <select className="TypeSelector">
         <option selected>Select Type</option>
         <option value="flat">Apartment</option>
         <option value="duplex">Duplex Home</option>
@@ -13,10 +13,10 @@ const PropertyFilters = () => {
         <option value="office">Office Space</option>
         <option value="shop">Shop</option>
       </select>
-      <select class="TypeSelector">
+      <select className="TypeSelector">
         <option selected>Categories</option>
       </select>
-      <select class="TypeSelector">
+      <select className="TypeSelector">
         <option selected>States</option>
       </select>
       {/* Range */}

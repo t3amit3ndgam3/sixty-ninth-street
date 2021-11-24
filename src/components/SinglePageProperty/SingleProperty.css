@@ -1,15 +1,21 @@
 .carousel .slide img {
-    height: 400px !important;
-  
-  }
-  .carousel .thumb {
-    height: 60px !important;
-  }
+  height: 400px !important;
+}
+.carousel .thumb {
+  height: 60px !important;
+}
 
-  .wishlistIcon{
-      color: red !important;
-      cursor: pointer !important;
-  }
-  .wishlistIcon:hover{
-    color: rgb(10, 235, 77) !important;
-  }
+.wishlistIcon {
+  color: red !important;
+  cursor: pointer !important;
+}
+.wishlistIcon:hover {
+  color: rgb(10, 235, 77) !important;
+}
+
+.wishlistIcon:focus {
+  background-color: blue;
+}
+.label_btn {
+  text-transform: capitalize;
+}

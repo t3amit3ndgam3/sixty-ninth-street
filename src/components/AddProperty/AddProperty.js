@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../Home/Unmoy.css";
-// import { toast, ToastContainer } from "react-toastify";
-// import { useAuth } from "./../contexts/AuthContext";
 
 const AddProperty = () => {
   const [alertMessage, setAlert] = useState("");
@@ -14,11 +12,8 @@ const AddProperty = () => {
     setUser_Info(getUserInfo);
   }, []);
 
-  console.log("consol from property", user_Info);
-
   const [textData, setTextData] = useState({});
   const [fileData, setFileData] = useState({});
-  const [message, setMessage] = useState("");
   const handleTextData = (e) => {
     const newText = { ...textData };
     newText[e.target.name] = e.target.value;
@@ -59,7 +54,6 @@ const AddProperty = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setMessage("Property add Successful");
         setAlert(data.message);
       });
     e.target.reset();
@@ -83,7 +77,7 @@ const AddProperty = () => {
               <div className="ckeckbox_wrapper">
                 <div className="input_wrapper">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="radio"
                     name="property_for"
                     value="sell"
@@ -91,13 +85,13 @@ const AddProperty = () => {
                     // required
                     onBlur={handleTextData}
                   />
-                  <label class="form-check-label" for="PropertyFor">
+                  <label className="form-check-label" for="PropertyFor">
                     Sell
                   </label>
                 </div>
                 <div className="input_wrapper">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="radio"
                     name="property_for"
                     value="rent"
@@ -105,7 +99,7 @@ const AddProperty = () => {
                     // required
                     onBlur={handleTextData}
                   />
-                  <label class="form-check-label" for="flexRadioDefault222">
+                  <label className="form-check-label" for="flexRadioDefault222">
                     Rent
                   </label>
                 </div>
@@ -278,7 +272,7 @@ const AddProperty = () => {
               <div className="ckeckbox_wrapper">
                 <div className="input_wrapper">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="radio"
                     name="price_is"
                     id="Fixed"
@@ -286,13 +280,13 @@ const AddProperty = () => {
                     // required
                     onBlur={handleTextData}
                   />
-                  <label class="form-check-label" for="Fixed">
+                  <label className="form-check-label" for="Fixed">
                     Fixed
                   </label>
                 </div>
                 <div className="input_wrapper">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="radio"
                     name="price_is"
                     value="negotiable"
@@ -300,7 +294,7 @@ const AddProperty = () => {
                     // required/
                     onBlur={handleTextData}
                   />
-                  <label class="form-check-label" for="Negotiable">
+                  <label className="form-check-label" for="Negotiable">
                     Negotiable
                   </label>
                 </div>

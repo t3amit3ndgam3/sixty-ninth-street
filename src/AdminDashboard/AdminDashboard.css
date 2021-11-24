@@ -8,6 +8,10 @@
   padding: 30px 20px;
   transition: width 0.2s ease-in;
 }
+.dashboard_route_links {
+  text-decoration: none;
+  letter-spacing: 1px;
+}
 
 .side-menu.inactive {
   width: 80px;
@@ -18,16 +22,15 @@
 }
 
 .side-menu .top-section .brand_name {
-  max-width: 100%;
-  max-height: 100%;
   color: #fff;
+  display: inline-block;
 }
 
 .side-menu .top-section .toggle-menu-btn {
   color: #0c33ce;
   font-size: 20px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   right: 0;
   transform: translateY(-50%);
   cursor: pointer;

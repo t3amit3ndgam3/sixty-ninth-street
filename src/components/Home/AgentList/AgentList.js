@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import agentImg from "../../../images/agent1.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -10,6 +9,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import "../Rabby.css";
 
 var settings = {
   dots: true,
@@ -63,18 +63,12 @@ const AgentList = () => {
 
   const [agent, setAgent] = useState([]);
   useEffect(() => {
-      fetch('https://sixtyninethstreet.herokuapp.com/api/getAgent')
-      .then(res => res.json())
-      .then( data => {
-        // const cutAgent = data.slice(data.length - 5, data.length);
-        setAgent(data.data)
-      })
-  }, [])
-
-
-
-
-
+    fetch("https://sixtyninethstreet.herokuapp.com/api/getAgent")
+      .then((res) => res.json())
+      .then((data) => {
+        setAgent(data.data);
+      });
+  }, []);
 
   return (
     <div className="container pb-5 mb-5 dreamHome_wrapper">
@@ -89,31 +83,49 @@ const AgentList = () => {
           </div>
         </div>
         <Slider {...settings}>
-          {agent&& agent.map( agt =>(
-          <div key={agt.key} class="card RJAgentCARD">
-            <div className="RjAgentCardImg">
-              <Link to={`/singleAgent/${agt._id}`}>
-                <img src={agt.agent_image} class="imh-fluid card-img-top AgentSlideImg" alt="..." />
-              </Link>
-              <div className="RjAgentIconOver">
-                <a target="_blank" href={agt.agent_facebook} >
-                  <span className="RjAgenticon AgentFacebbok">{facebook}</span>
-                </a>
-                <a target="_blank" href={agt.agent_email}>
-                  <span className="RjAgenticon AgentEmail">{email}</span>
-                </a>
-                <a target="_blank" href={agt.agent_linkend}>
-                  <span className="RjAgenticon AgentLinkend">{linkend}</span>
-                </a>
+          {agent &&
+            agent.map((agt) => (
+              <div key={agt.key} className="card RJAgentCARD">
+                <div className="RjAgentCardImg">
+                  <Link to={`/singleAgent/${agt._id}`}>
+                    <img
+                      src={agt.agent_image}
+                      className="imh-fluid card-img-top AgentSlideImg"
+                      alt="..."
+                    />
+                  </Link>
+                  <div className="RjAgentIconOver">
+                    <a
+                      target="_blank"
+                      href={agt.agent_facebook}
+                      rel="noreferrer"
+                    >
+                      <span className="RjAgenticon AgentFacebbok">
+                        {facebook}
+                      </span>
+                    </a>
+                    <a target="_blank" href={agt.agent_email} rel="noreferrer">
+                      <span className="RjAgenticon AgentEmail">{email}</span>
+                    </a>
+                    <a
+                      target="_blank"
+                      href={agt.agent_linkend}
+                      rel="noreferrer"
+                    >
+                      <span className="RjAgenticon AgentLinkend">
+                        {linkend}
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div className="card-body agent_card_body">
+                  <p className="card-text">
+                    <span className="fs-6 fw-bold">{agt.agent_name}</span>{" "}
+                  </p>
+                  <h6>{agt.agent_title}</h6>
+                </div>
               </div>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                <span className="fs-6 fw-bold">{agt.agent_name}</span> <br /> {agt.agent_title}
-              </p>
-            </div>
-          </div
-          >))}
+            ))}
           {/* ................................. */}
         </Slider>
       </div>

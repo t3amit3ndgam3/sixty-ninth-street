@@ -8,15 +8,15 @@ const Header = () => {
     <div>
       <div
         id="carouselExampleCaptions"
-        class="carousel slide"
+        className="carousel slide"
         data-bs-ride="carousel"
       >
-        <div class="carousel-indicators">
+        <div className="carousel-indicators">
           <button
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="0"
-            class="active"
+            className="active"
             aria-current="true"
             aria-label="Slide 1"
           ></button>
@@ -27,10 +27,10 @@ const Header = () => {
             aria-label="Slide 2"
           ></button>
         </div>
-        <div style={{ fontFamily: "Roboto" }} class="carousel-inner">
-          <div class="carousel-item active sliderBlack">
-            <img src={sliderOne} class="d-block w-100 sliderImg" alt="..." />
-            <div class="carousel-caption  d-md-block">
+        <div style={{ fontFamily: "Roboto" }} className="carousel-inner">
+          <div className="carousel-item active sliderBlack">
+            <img src={sliderOne} className="d-block w-100 sliderImg" alt="..." />
+            <div className="carousel-caption  d-md-block">
               <div className="sliderText">
                 <h3>Find your perfect property</h3>
                 <h4>For your home</h4>
@@ -46,9 +46,9 @@ const Header = () => {
               </a>
             </div>
           </div>
-          <div class="carousel-item sliderBlack">
-            <img src={sliderTwo} class="d-block w-100 sliderImg" alt="..." />
-            <div class="carousel-caption  d-md-block">
+          <div className="carousel-item sliderBlack">
+            <img src={sliderTwo} className="d-block w-100 sliderImg" alt="..." />
+            <div className="carousel-caption  d-md-block">
               <div className="sliderText">
                 <h3>Buy and sell real estate properties</h3>
                 <p className="mb-5">
@@ -63,22 +63,22 @@ const Header = () => {
           </div>
         </div>
         <button
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          className="carousel-control-next"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
     </div>

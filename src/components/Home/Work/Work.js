@@ -6,14 +6,15 @@ import logo3 from "../../../images/WorkDetailLogos/hub 3.png";
 
 const worksData = [
   {
+    id: 1,
     name: "See Role of a Listing Agent",
     image: logo2,
     description:
       "A great real estate agent for a seller is a jack of all trades. They will help you prepare your home for sale, set a price, determine a selling strategy and negotiate with buyers. ",
     to: "/agentroledetails",
   },
-
   {
+    id: 2,
     name: "Buy Property",
     image: logo1,
     description:
@@ -21,6 +22,7 @@ const worksData = [
     to: "/buydetails",
   },
   {
+    id: 3,
     name: "How to Get Your House Ready to Sell",
     image: logo3,
     description:
@@ -34,10 +36,10 @@ const Work = () => {
       <div className="text-center section_headers">
         <h1>How It Works</h1>
       </div>
-      <div className="d-flex justify-content-center ">
+      <div className="d-flex justify-content-center">
         <div className="w-75 row mt-5">
           {worksData.map((Work) => (
-            <WorkDetails Work={Work}></WorkDetails>
+            <WorkDetails Work={Work} key={Work.id}></WorkDetails>
           ))}
         </div>
       </div>

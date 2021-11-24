@@ -1,11 +1,11 @@
 import Styles from "./HomeLoan.module.css";
 import homeloanbg from "../../images/homeloanimage.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 const HomeLoan = () => {
-  const {currentUser} = useAuth();
+  const { currentUser } = useAuth();
   const [Pamount, setpAmount] = useState(0);
   const [interest, setInterest] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -13,24 +13,24 @@ const HomeLoan = () => {
   const emi = duration
     ? Math.round((Pamount * intr) / (1 - Math.pow(1 / (1 + intr), duration)))
     : 0;
-  const totalAmount = duration * emi;
-  var TotalAmountOfCredit = duration
-    ? Math.round((emi / intr) * (1 - Math.pow(1 / (1 + intr), -duration)))
-    : 0;
+  // const totalAmount = duration * emi;
+  // var TotalAmountOfCredit = duration
+  //   ? Math.round((emi / intr) * (1 - Math.pow(1 / (1 + intr), -duration)))
+  //   : 0;
 
-  const TotalAmountOfInterest = Math.round(totalAmount - TotalAmountOfCredit);
+  // const TotalAmountOfInterest = Math.round(totalAmount - TotalAmountOfCredit);
   const handleAmountChange = (e) => {
     setpAmount(e.target.value);
-    console.log(e.target.value);
   };
   const handleInterestChange = (e) => {
     setInterest(e.target.value);
-    console.log(e.target.value);
   };
   const handleMonthsChange = (e) => {
     setDuration(e.target.value);
-    console.log(e.target.value);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={Styles.HomeLoan}>
       {/* SVG */}
@@ -60,7 +60,6 @@ const HomeLoan = () => {
             <button className={Styles.BannerButtons}>Account Login</button>
           </Link>
         )}
-
         <Link className={Styles.BannerButtonLinks} to="/loan">
           <button className={Styles.BannerButtons}>Apply For Loan</button>
         </Link>
@@ -79,12 +78,12 @@ const HomeLoan = () => {
         </p>
         {/* Tabs */}
         <ul
-          class="nav nav-pills mb-3 row mt-5 gy-2"
+          className="nav nav-pills mb-3 row mt-5 gy-2"
           id="pills-tab"
           role="tablist"
         >
           {/* Buttons */}
-          <li class="nav-item col-6 col-md-3" role="presentation">
+          <li className="nav-item col-6 col-md-3" role="presentation">
             <button
               className={`${Styles.LoanDetailsButton} nav-link`}
               id="pills-home-tab"
@@ -98,7 +97,7 @@ const HomeLoan = () => {
               Feature
             </button>
           </li>
-          <li class="nav-item col-6 col-md-3" role="presentation">
+          <li className="nav-item col-6 col-md-3" role="presentation">
             <button
               className={`${Styles.LoanDetailsButton} ${Styles.Buttons} nav-link`}
               id="pills-profile-tab"
@@ -112,7 +111,7 @@ const HomeLoan = () => {
               Eligibility
             </button>
           </li>
-          <li class="nav-item col-6 col-md-3" role="presentation">
+          <li className="nav-item col-6 col-md-3" role="presentation">
             <button
               className={`${Styles.LoanDetailsButton} ${Styles.Buttons} nav-link`}
               id="pills-contact-tab"
@@ -126,7 +125,7 @@ const HomeLoan = () => {
               How can I use this loan
             </button>
           </li>
-          <li class="nav-item col-6 col-md-3" role="presentation">
+          <li className="nav-item col-6 col-md-3" role="presentation">
             <button
               className={`${Styles.LoanDetailsButton} ${Styles.Buttons} nav-link`}
               id="pills-contact-tab"
@@ -142,9 +141,9 @@ const HomeLoan = () => {
           </li>
         </ul>
         {/* Details */}
-        <div class="tab-content" id="pills-tabContent">
+        <div className="tab-content" id="pills-tabContent">
           <div
-            class={`${Styles.FeatureDetails} tab-pane fade show active`}
+            className={`${Styles.FeatureDetails} tab-pane fade show active`}
             id="pills-home"
             role="tabpanel"
             aria-labelledby="pills-home-tab"
@@ -167,10 +166,12 @@ const HomeLoan = () => {
               <li>No hidden charges</li>
             </ul>
             {/* Apply Button */}
-            <button className={Styles.ApplyButton}>Apply now</button>
+            <Link to="/loan" className="route_links">
+              <button className={Styles.ApplyButton}>Apply now</button>
+            </Link>
           </div>
           <div
-            class={`${Styles.FeatureDetails} tab-pane fade`}
+            className={`${Styles.FeatureDetails} tab-pane fade`}
             id="pills-profile"
             role="tabpanel"
             aria-labelledby="pills-profile-tab"
@@ -194,10 +195,12 @@ const HomeLoan = () => {
               </li>
             </ul>
             {/* Apply Button */}
-            <button className={Styles.ApplyButton}>Apply now</button>
+            <Link to="/loan" className="route_links">
+              <button className={Styles.ApplyButton}>Apply now</button>
+            </Link>
           </div>
           <div
-            class={`${Styles.FeatureDetails} tab-pane fade`}
+            className={`${Styles.FeatureDetails} tab-pane fade`}
             id="pills-contact"
             role="tabpanel"
             aria-labelledby="pills-contact-tab"
@@ -207,10 +210,12 @@ const HomeLoan = () => {
               ownership.
             </p>
             {/* Apply Button */}
-            <button className={Styles.ApplyButton}>Apply now</button>
+            <Link to="/loan" className="route_links">
+              <button className={Styles.ApplyButton}>Apply now</button>
+            </Link>
           </div>
           <div
-            class={`${Styles.FeatureDetails} tab-pane fade`}
+            className={`${Styles.FeatureDetails} tab-pane fade`}
             id="pills-l"
             role="tabpanel"
             aria-labelledby="pills-l-tab"
@@ -221,7 +226,9 @@ const HomeLoan = () => {
               the Apartment Purchase Loan download the following PDF.
             </p>
             {/* Apply Button */}
-            <button className={Styles.ApplyButton}>Apply now</button>
+            <Link to="/loan" className="route_links">
+              <button className={Styles.ApplyButton}>Apply now</button>
+            </Link>
           </div>
         </div>
       </section>
@@ -263,17 +270,19 @@ const HomeLoan = () => {
                         col-md-3`}
           >
             <div>
-              <p className="fs-3  fw-bold  text-center">
+              <p className="fs-3 fw-bold text-center">
                 Equal Monthly Installment(EMI)
               </p>
               <p className="fs-4 fw-bold text-center text-danger">
                 <strong>&#2547;</strong> {emi ? emi : 0}
               </p>
-              <button
-                className={`${Styles.CalculatorFormOutputButton} ${Styles.Buttons}`}
-              >
-                Apply Now
-              </button>
+              <Link to="/loan" className="route_links">
+                <button
+                  className={`${Styles.CalculatorFormOutputButton} ${Styles.Buttons}`}
+                >
+                  Apply Now
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -281,7 +290,6 @@ const HomeLoan = () => {
       {/* EMI CALCULATOR Ends */}
     </div>
   );
-
 };
 
 export default HomeLoan;

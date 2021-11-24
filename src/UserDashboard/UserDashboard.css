@@ -18,8 +18,7 @@
 }
 
 .side-menu .top-section .brand_name {
-  max-width: 100%;
-  max-height: 100%;
+  display: inline-block;
   color: #fff;
 }
 
@@ -27,7 +26,7 @@
   color: #0c33ce;
   font-size: 20px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   right: 0;
   transform: translateY(-50%);
   cursor: pointer;
@@ -110,7 +109,25 @@
 .dashboard_panel.inactive {
   margin-left: 80px;
 }
-
+.logout_button {
+  position: fixed;
+  bottom: 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.logout_icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
 /* User Dashboard CSS */
 .dasboard_board {
   background-color: #fafafc;
@@ -180,7 +197,9 @@
 }
 .profile_table_content li {
   margin: 10px;
+  margin: 10px;
 }
+
 /* My Properties start */
 .dashboard_property_list_header {
   display: flex;
@@ -309,10 +328,16 @@
 }
 /* Chnage Password End */
 /* Requirement section */
-
+.requirement_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .requirement_wrapper {
   margin-top: 30px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 800px;
   height: 500px;
   border-radius: 28px;
@@ -324,6 +349,7 @@
   flex-direction: column;
   justify-content: center;
   flex: 1;
+  margin-left: 50px;
 }
 .requirement_content_right {
   display: flex;
@@ -362,6 +388,10 @@
 }
 .requirement_button {
   margin-top: 30px;
+  width: 100%;
+}
+.requirement_button button {
+  width: 70%;
 }
 /* Requirement section */
 /* loan status */
@@ -385,7 +415,7 @@
 .hide {
   display: none;
 }
-.undefined{
+.undefined {
   display: none;
 }
 .closeButtonmain {
@@ -395,8 +425,15 @@
   position: absolute;
   bottom: 0px;
   right: 0px;
- 
 }
 .btn-close:hover {
   color: rgb(228, 9, 9) !important;
+}
+.status_col_btn {
+  background: #595959d6;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  text-transform: capitalize;
 }

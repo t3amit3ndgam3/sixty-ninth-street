@@ -18,8 +18,7 @@
 }
 
 .side-menu .top-section .brand_name {
-  max-width: 100%;
-  max-height: 100%;
+  display: inline-block;
   color: #fff;
 }
 
@@ -27,7 +26,7 @@
   color: #0c33ce;
   font-size: 20px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   right: 0;
   transform: translateY(-50%);
   cursor: pointer;

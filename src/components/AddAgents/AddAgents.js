@@ -5,8 +5,7 @@ const AddAgents = () => {
   const [alertMessage, setAlert] = useState("");
   const [agentInfo, setAgentInfo] = useState({});
   const [AgentImg, setAgentImg] = useState({});
-  const [agent_image, setAgentImgUrl] = useState();
-  console.log(agentInfo);
+
   const handleAgentForm = (e) => {
     const data = { ...agentInfo };
     data[e.target.name] = e.target.value;
@@ -69,90 +68,90 @@ const AddAgents = () => {
           </div>
           <div className="col-md-6 p-5">
             <div className="">
-              <div class="mb-3">
-                <label for="agentName" class="form-label">
+              <div className="mb-3">
+                <label for="agentName" className="form-label">
                   Agent Name
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="agentName"
                   name="agent_name"
                   onBlur={handleAgentForm}
                 />
               </div>
-              <div class="mb-3">
-                <label for="agentTitle" class="form-label">
+              <div className="mb-3">
+                <label for="agentTitle" className="form-label">
                   Agent Title
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="agentTitle"
                   name="agent_title"
                   onBlur={handleAgentForm}
                   // required
                 />
               </div>
-              <div class="mb-3">
-                <label for="agentNumber" class="form-label">
+              <div className="mb-3">
+                <label for="agentNumber" className="form-label">
                   Agent Number
                 </label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="agentNumber"
                   name="agent_number"
                   onBlur={handleAgentForm}
                   // required
                 />
               </div>
-              <div class="mb-3">
-                <label for="agentEmail" class="form-label">
+              <div className="mb-3">
+                <label for="agentEmail" className="form-label">
                   Agent Email
                 </label>
                 <input
                   type="email"
-                  class="form-control"
+                  className="form-control"
                   id="agentEmail"
                   name="agent_email"
                   onBlur={handleAgentForm}
                   // required
                 />
               </div>
-              <div class="mb-3">
-                <label for="agentFacebook" class="form-label">
+              <div className="mb-3">
+                <label for="agentFacebook" className="form-label">
                   Agent Facebook Link
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="agentFacebook"
                   name="agent_facebook"
                   onBlur={handleAgentForm}
                   // required
                 />
               </div>
-              <div class="mb-2">
-                <label for="experienceYear" class="form-label">
+              <div className="mb-2">
+                <label for="experienceYear" className="form-label">
                   Year of experience
                 </label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="experienceYear"
                   name="experience"
                   onBlur={handleAgentForm}
                   // required
                 />
               </div>
-              <div class="mb-3">
-                <label for="AgentFee" class="form-label">
+              <div className="mb-3">
+                <label for="AgentFee" className="form-label">
                   Agent Fees
                 </label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="AgentFee"
                   name="fees"
                   onBlur={handleAgentForm}
@@ -163,8 +162,8 @@ const AddAgents = () => {
           </div>
           <div className="col-md-6 p-5">
             <div className="">
-              <div class="mb-3 mt-2">
-                <label for="agentImage" class="form-label">
+              <div className="mb-3 mt-2">
+                <label for="agentImage" className="form-label">
                   Agent Formal Image
                 </label>
                 <input
@@ -176,65 +175,65 @@ const AddAgents = () => {
                   required
                 />
               </div>
-              <div class="mb-3">
-                <label for="agentLinkend" class="form-label">
+              <div className="mb-3">
+                <label for="agentLinkend" className="form-label">
                   Agent Linkend Link
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="agentLinkend"
                   name="agent_linkend"
                   onBlur={handleAgentForm}
                   // required
                 />
               </div>
-              <div class="mb-3">
-                <label for="agentTwitter" class="form-label">
+              <div className="mb-3">
+                <label for="agentTwitter" className="form-label">
                   Agent Twitter Link
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="agentTwitter"
                   name="agent_twitter"
                   onBlur={handleAgentForm}
                   // required
                 />
               </div>
-              <div class="mb-3">
-                <label for="agentInstagram" class="form-label">
+              <div className="mb-3">
+                <label for="agentInstagram" className="form-label">
                   Agent Instagram Link
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="agentInstagram"
                   name="agent_instagram"
                   onBlur={handleAgentForm}
                   // required
                 />
               </div>
-              <div class="mb-4">
-                <label for="agentSkype" class="form-label">
+              <div className="mb-4">
+                <label for="agentSkype" className="form-label">
                   Agent Skype Id
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="agentSkype"
                   name="agent_skype"
                   onBlur={handleAgentForm}
                   // required/
                 />
               </div>
-              <div class="mb-1 mt-3">
-                <label for="Descriptioninput" class="form-label">
+              <div className="mb-1 mt-3">
+                <label for="Descriptioninput" className="form-label">
                   Description
                 </label>
                 <textarea
                   type="text"
-                  class="form-control p-4"
+                  className="form-control p-4"
                   id="Descriptioninput"
                   name="agent_description"
                   onBlur={handleAgentForm}
@@ -244,10 +243,10 @@ const AddAgents = () => {
             </div>
           </div>
           <div className="col-md-6 offset-md-3">
-            <div class="mb-3">
+            <div className="mb-3">
               <input
                 type="submit"
-                class="wpresidence_button agent_submit_class container"
+                className="wpresidence_button agent_submit_class container"
                 id=""
                 value="Add Agents"
               />
